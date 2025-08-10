@@ -1,0 +1,68 @@
+{
+  "timestamp": "2025-07-08T01:22:48.269867",
+  "test_type": "focused_market_regime_test",
+  "test_duration_seconds": 0.299775,
+  "summary": {
+    "total_tests": 4,
+    "successful": 2,
+    "warnings": 1,
+    "failed": 1,
+    "success_rate": 50.0
+  },
+  "results": {
+    "excel_parsing": {
+      "status": "success",
+      "total_sheets": 31,
+      "config_parameters": 0,
+      "output_parameters": 0,
+      "regime_parameters": 0,
+      "sample_config": {},
+      "sample_output": [],
+      "sample_regimes": {},
+      "message": "Excel configuration parsing successful"
+    },
+    "direct_module_execution": {
+      "status": "error",
+      "error": "No module named 'enhanced_indicator_parameters'",
+      "traceback": "Traceback (most recent call last):\n  File \"/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/excel_config_parser.py\", line 47, in <module>\n    from .enhanced_modules.enhanced_indicator_parameters import EnhancedIndicatorParameters, UserLevel\nImportError: attempted relative import with no known parent package\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/focused_market_regime_test.py\", line 117, in test_direct_module_execution\n    spec.loader.exec_module(excel_parser_module)\n  File \"<frozen importlib._bootstrap_external>\", line 883, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/excel_config_parser.py\", line 54, in <module>\n    from enhanced_indicator_parameters import EnhancedIndicatorParameters, UserLevel\nModuleNotFoundError: No module named 'enhanced_indicator_parameters'\n",
+      "message": "Direct module execution failed"
+    },
+    "csv_time_series": {
+      "status": "success",
+      "csv_files_created": [
+        "market_regime_analysis_20250708_012248.csv",
+        "regime_summary_20250708_012248.csv",
+        "weekly_statistics_20250708_012248.csv"
+      ],
+      "total_files": 3,
+      "total_records": 366,
+      "date_range": "2024-01-01 to 2024-12-31",
+      "columns_generated": 10,
+      "output_directory": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/csv_outputs",
+      "message": "CSV time series generation successful"
+    },
+    "backward_compatibility": {
+      "status": "warning",
+      "expected_sheets": [
+        "MasterConfiguration",
+        "StabilityConfiguration",
+        "OutputFormat",
+        "RegimeClassification",
+        "IndicatorConfiguration"
+      ],
+      "present_sheets": [
+        "MasterConfiguration",
+        "StabilityConfiguration",
+        "OutputFormat",
+        "RegimeClassification",
+        "IndicatorConfiguration"
+      ],
+      "missing_sheets": [],
+      "config_consistency": false,
+      "total_sheets_available": 31,
+      "message": "Backward compatibility validated"
+    }
+  },
+  "excel_config_path": "/srv/samba/shared/bt/backtester_stable/BTRUN/input_sheets/market_regime/PHASE2_ENHANCED_ULTIMATE_UNIFIED_MARKET_REGIME_CONFIG_20250627_195625_20250628_104335.xlsx",
+  "output_directory": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/csv_outputs"
+}

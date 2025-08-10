@@ -1,0 +1,15 @@
+{
+  "market_regime": {
+    "module_path": "backtester_v2.strategies.market_regime",
+    "endpoints": {
+      "analyze": "/api/strategies/market-regime/analyze",
+      "config": "/api/strategies/market-regime/config",
+      "export": "/api/strategies/market-regime/export"
+    },
+    "ui_components": {
+      "dashboard": "/strategies/market-regime/dashboard",
+      "config_editor": "/strategies/market-regime/config",
+      "results_viewer": "/strategies/market-regime/results"
+    }
+  }
+}

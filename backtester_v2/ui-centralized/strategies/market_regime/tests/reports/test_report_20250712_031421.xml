@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<testsuites name="Market Regime Strategy Test Suite" tests="10" failures="1" time="120.0" timestamp="2025-07-12T03:14:20.597140">
+  <testsuite name="Test Validation" tests="5" failures="0" time="60.0">
+    <testcase name="sample_test.py" classname="Test Validation" time="10.0"/>
+  </testsuite>
+</testsuites>

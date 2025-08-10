@@ -1,0 +1,5285 @@
+{
+  "validation_timestamp": "2025-07-24T18:34:07.607532",
+  "strategies_validated": [
+    "TBS",
+    "TV",
+    "ORB",
+    "OI",
+    "POS",
+    "ML",
+    "MR"
+  ],
+  "total_files_analyzed": 22,
+  "total_parameters_found": 811,
+  "validation_results": {
+    "TBS": {
+      "strategy": "TBS",
+      "files_found": [
+        "TBS_CONFIG_PORTFOLIO_1.0.0.xlsx",
+        "TBS_CONFIG_STRATEGY_1.0.0.xlsx"
+      ],
+      "files_missing": [],
+      "sheet_analysis": {
+        "TBS_CONFIG_PORTFOLIO_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/tbs/TBS_CONFIG_PORTFOLIO_1.0.0.xlsx",
+          "sheets_found": [
+            "PortfolioSetting",
+            "StrategySetting"
+          ],
+          "sheets_missing": [
+            "GeneralParameter",
+            "LegParameter"
+          ],
+          "sheets": {
+            "PortfolioSetting": {
+              "sheet_name": "PortfolioSetting",
+              "rows": 1,
+              "columns": [
+                "Capital",
+                "MaxRisk",
+                "MaxPositions",
+                "RiskPerTrade",
+                "UseKellyCriterion",
+                "RebalanceFrequency"
+              ],
+              "column_count": 6,
+              "data_types": {
+                "Capital": "int64",
+                "MaxRisk": "int64",
+                "MaxPositions": "int64",
+                "RiskPerTrade": "int64",
+                "UseKellyCriterion": "object",
+                "RebalanceFrequency": "object"
+              },
+              "null_counts": {
+                "Capital": 0,
+                "MaxRisk": 0,
+                "MaxPositions": 0,
+                "RiskPerTrade": 0,
+                "UseKellyCriterion": 0,
+                "RebalanceFrequency": 0
+              },
+              "sample_data": {
+                "Capital": "1000000",
+                "MaxRisk": "5",
+                "MaxPositions": "5",
+                "RiskPerTrade": "2",
+                "UseKellyCriterion": "NO",
+                "RebalanceFrequency": "DAILY"
+              },
+              "validation_issues": []
+            },
+            "StrategySetting": {
+              "sheet_name": "StrategySetting",
+              "rows": 1,
+              "columns": [
+                "StrategyName",
+                "StrategyExcelFilePath",
+                "Enabled",
+                "Priority",
+                "AllocationPercent"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "StrategyName": "object",
+                "StrategyExcelFilePath": "object",
+                "Enabled": "object",
+                "Priority": "int64",
+                "AllocationPercent": "int64"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "StrategyExcelFilePath": 0,
+                "Enabled": 0,
+                "Priority": 0,
+                "AllocationPercent": 0
+              },
+              "sample_data": {
+                "StrategyName": "TBS_Strategy_1",
+                "StrategyExcelFilePath": "TBS_CONFIG_STRATEGY_1.0.0.xlsx",
+                "Enabled": "YES",
+                "Priority": "1",
+                "AllocationPercent": "100"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "TBS_CONFIG_STRATEGY_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/tbs/TBS_CONFIG_STRATEGY_1.0.0.xlsx",
+          "sheets_found": [
+            "GeneralParameter",
+            "LegParameter"
+          ],
+          "sheets_missing": [
+            "PortfolioSetting",
+            "StrategySetting"
+          ],
+          "sheets": {
+            "GeneralParameter": {
+              "sheet_name": "GeneralParameter",
+              "rows": 1,
+              "columns": [
+                "StrategyName",
+                "MoveSlToCost",
+                "Underlying",
+                "Index",
+                "Weekdays",
+                "DTE",
+                "StrikeSelectionTime",
+                "StartTime",
+                "LastEntryTime",
+                "EndTime",
+                "StrategyProfit",
+                "StrategyLoss",
+                "StrategyProfitReExecuteNo",
+                "StrategyLossReExecuteNo",
+                "StrategyTrailingType",
+                "PnLCalTime",
+                "LockPercent",
+                "TrailPercent",
+                "SqOff1Time",
+                "SqOff1Percent",
+                "SqOff2Time",
+                "SqOff2Percent",
+                "ProfitReaches",
+                "LockMinProfitAt",
+                "IncreaseInProfit",
+                "TrailMinProfitBy",
+                "TgtTrackingFrom",
+                "TgtRegisterPriceFrom",
+                "SlTrackingFrom",
+                "SlRegisterPriceFrom",
+                "PnLCalculationFrom",
+                "ConsiderHedgePnLForStgyPnL",
+                "CheckPremiumDiffCondition",
+                "PremiumDiffType",
+                "PremiumDiffValue",
+                "PremiumDiffChangeStrike",
+                "PremiumDiffDoForceEntry",
+                "PremiumDiffDoForceAfter",
+                "PremiumDiffForceEntryConsiderPremium",
+                "StoplossCheckingInterval",
+                "TargetCheckingInterval",
+                "ReEntryCheckingInterval",
+                "OnExpiryDayTradeNextExpiry"
+              ],
+              "column_count": 43,
+              "data_types": {
+                "StrategyName": "object",
+                "MoveSlToCost": "object",
+                "Underlying": "object",
+                "Index": "object",
+                "Weekdays": "object",
+                "DTE": "int64",
+                "StrikeSelectionTime": "int64",
+                "StartTime": "int64",
+                "LastEntryTime": "int64",
+                "EndTime": "int64",
+                "StrategyProfit": "int64",
+                "StrategyLoss": "int64",
+                "StrategyProfitReExecuteNo": "int64",
+                "StrategyLossReExecuteNo": "int64",
+                "StrategyTrailingType": "object",
+                "PnLCalTime": "int64",
+                "LockPercent": "int64",
+                "TrailPercent": "int64",
+                "SqOff1Time": "int64",
+                "SqOff1Percent": "int64",
+                "SqOff2Time": "int64",
+                "SqOff2Percent": "int64",
+                "ProfitReaches": "int64",
+                "LockMinProfitAt": "int64",
+                "IncreaseInProfit": "int64",
+                "TrailMinProfitBy": "int64",
+                "TgtTrackingFrom": "object",
+                "TgtRegisterPriceFrom": "object",
+                "SlTrackingFrom": "object",
+                "SlRegisterPriceFrom": "object",
+                "PnLCalculationFrom": "object",
+                "ConsiderHedgePnLForStgyPnL": "object",
+                "CheckPremiumDiffCondition": "object",
+                "PremiumDiffType": "object",
+                "PremiumDiffValue": "int64",
+                "PremiumDiffChangeStrike": "object",
+                "PremiumDiffDoForceEntry": "object",
+                "PremiumDiffDoForceAfter": "int64",
+                "PremiumDiffForceEntryConsiderPremium": "object",
+                "StoplossCheckingInterval": "int64",
+                "TargetCheckingInterval": "int64",
+                "ReEntryCheckingInterval": "int64",
+                "OnExpiryDayTradeNextExpiry": "object"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "MoveSlToCost": 0,
+                "Underlying": 0,
+                "Index": 0,
+                "Weekdays": 0,
+                "DTE": 0,
+                "StrikeSelectionTime": 0,
+                "StartTime": 0,
+                "LastEntryTime": 0,
+                "EndTime": 0,
+                "StrategyProfit": 0,
+                "StrategyLoss": 0,
+                "StrategyProfitReExecuteNo": 0,
+                "StrategyLossReExecuteNo": 0,
+                "StrategyTrailingType": 0,
+                "PnLCalTime": 0,
+                "LockPercent": 0,
+                "TrailPercent": 0,
+                "SqOff1Time": 0,
+                "SqOff1Percent": 0,
+                "SqOff2Time": 0,
+                "SqOff2Percent": 0,
+                "ProfitReaches": 0,
+                "LockMinProfitAt": 0,
+                "IncreaseInProfit": 0,
+                "TrailMinProfitBy": 0,
+                "TgtTrackingFrom": 0,
+                "TgtRegisterPriceFrom": 0,
+                "SlTrackingFrom": 0,
+                "SlRegisterPriceFrom": 0,
+                "PnLCalculationFrom": 0,
+                "ConsiderHedgePnLForStgyPnL": 0,
+                "CheckPremiumDiffCondition": 0,
+                "PremiumDiffType": 0,
+                "PremiumDiffValue": 0,
+                "PremiumDiffChangeStrike": 0,
+                "PremiumDiffDoForceEntry": 0,
+                "PremiumDiffDoForceAfter": 0,
+                "PremiumDiffForceEntryConsiderPremium": 0,
+                "StoplossCheckingInterval": 0,
+                "TargetCheckingInterval": 0,
+                "ReEntryCheckingInterval": 0,
+                "OnExpiryDayTradeNextExpiry": 0
+              },
+              "sample_data": {
+                "StrategyName": "TBS_Strategy_Sample",
+                "MoveSlToCost": "NO",
+                "Underlying": "SPOT",
+                "Index": "NIFTY",
+                "Weekdays": "1,2,3,4,5",
+                "DTE": "0",
+                "StrikeSelectionTime": "92000",
+                "StartTime": "91600",
+                "LastEntryTime": "150000",
+                "EndTime": "150000",
+                "StrategyProfit": "0",
+                "StrategyLoss": "0",
+                "StrategyProfitReExecuteNo": "0",
+                "StrategyLossReExecuteNo": "0",
+                "StrategyTrailingType": "Lock Minimum Profit",
+                "PnLCalTime": "0",
+                "LockPercent": "0",
+                "TrailPercent": "0",
+                "SqOff1Time": "0",
+                "SqOff1Percent": "0",
+                "SqOff2Time": "0",
+                "SqOff2Percent": "0",
+                "ProfitReaches": "0",
+                "LockMinProfitAt": "0",
+                "IncreaseInProfit": "0",
+                "TrailMinProfitBy": "0",
+                "TgtTrackingFrom": "close",
+                "TgtRegisterPriceFrom": "tick",
+                "SlTrackingFrom": "close",
+                "SlRegisterPriceFrom": "tick",
+                "PnLCalculationFrom": "close",
+                "ConsiderHedgePnLForStgyPnL": "no",
+                "CheckPremiumDiffCondition": "no",
+                "PremiumDiffType": "point",
+                "PremiumDiffValue": "0",
+                "PremiumDiffChangeStrike": "no",
+                "PremiumDiffDoForceEntry": "no",
+                "PremiumDiffDoForceAfter": "0",
+                "PremiumDiffForceEntryConsiderPremium": "higher",
+                "StoplossCheckingInterval": "1",
+                "TargetCheckingInterval": "1",
+                "ReEntryCheckingInterval": "1",
+                "OnExpiryDayTradeNextExpiry": "no"
+              },
+              "validation_issues": []
+            },
+            "LegParameter": {
+              "sheet_name": "LegParameter",
+              "rows": 2,
+              "columns": [
+                "StrategyName",
+                "IsIdle",
+                "LegID",
+                "Instrument",
+                "Transaction",
+                "Expiry",
+                "W&Type",
+                "W&TValue",
+                "TrailW&T",
+                "StrikeMethod",
+                "MatchPremium",
+                "StrikeValue",
+                "StrikePremiumCondition",
+                "SLType",
+                "SLValue",
+                "TGTType",
+                "TGTValue",
+                "TrailSLType",
+                "SL_TrailAt",
+                "SL_TrailBy",
+                "Lots",
+                "SL_ReEntryType",
+                "SL_ReEntryNo",
+                "TGT_ReEntryType",
+                "TGT_ReEntryNo",
+                "OpenHedge",
+                "HedgeStrikeMethod",
+                "HedgeStrikeValue",
+                "HedgeStrikePremiumCondition"
+              ],
+              "column_count": 29,
+              "data_types": {
+                "StrategyName": "object",
+                "IsIdle": "object",
+                "LegID": "object",
+                "Instrument": "object",
+                "Transaction": "object",
+                "Expiry": "object",
+                "W&Type": "object",
+                "W&TValue": "int64",
+                "TrailW&T": "object",
+                "StrikeMethod": "object",
+                "MatchPremium": "object",
+                "StrikeValue": "int64",
+                "StrikePremiumCondition": "object",
+                "SLType": "object",
+                "SLValue": "int64",
+                "TGTType": "object",
+                "TGTValue": "int64",
+                "TrailSLType": "object",
+                "SL_TrailAt": "int64",
+                "SL_TrailBy": "int64",
+                "Lots": "int64",
+                "SL_ReEntryType": "object",
+                "SL_ReEntryNo": "int64",
+                "TGT_ReEntryType": "object",
+                "TGT_ReEntryNo": "int64",
+                "OpenHedge": "object",
+                "HedgeStrikeMethod": "object",
+                "HedgeStrikeValue": "int64",
+                "HedgeStrikePremiumCondition": "object"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "IsIdle": 0,
+                "LegID": 0,
+                "Instrument": 0,
+                "Transaction": 0,
+                "Expiry": 0,
+                "W&Type": 0,
+                "W&TValue": 0,
+                "TrailW&T": 0,
+                "StrikeMethod": 0,
+                "MatchPremium": 0,
+                "StrikeValue": 0,
+                "StrikePremiumCondition": 0,
+                "SLType": 0,
+                "SLValue": 0,
+                "TGTType": 0,
+                "TGTValue": 0,
+                "TrailSLType": 0,
+                "SL_TrailAt": 0,
+                "SL_TrailBy": 0,
+                "Lots": 0,
+                "SL_ReEntryType": 0,
+                "SL_ReEntryNo": 0,
+                "TGT_ReEntryType": 0,
+                "TGT_ReEntryNo": 0,
+                "OpenHedge": 0,
+                "HedgeStrikeMethod": 0,
+                "HedgeStrikeValue": 0,
+                "HedgeStrikePremiumCondition": 0
+              },
+              "sample_data": {
+                "StrategyName": "TBS_Strategy_Sample",
+                "IsIdle": "no",
+                "LegID": "leg1",
+                "Instrument": "call",
+                "Transaction": "sell",
+                "Expiry": "current",
+                "W&Type": "percentage",
+                "W&TValue": "0",
+                "TrailW&T": "no",
+                "StrikeMethod": "ATM",
+                "MatchPremium": "high",
+                "StrikeValue": "0",
+                "StrikePremiumCondition": "=",
+                "SLType": "percentage",
+                "SLValue": "100",
+                "TGTType": "percentage",
+                "TGTValue": "0",
+                "TrailSLType": "percentage",
+                "SL_TrailAt": "0",
+                "SL_TrailBy": "0",
+                "Lots": "1",
+                "SL_ReEntryType": "cost",
+                "SL_ReEntryNo": "0",
+                "TGT_ReEntryType": "cost",
+                "TGT_ReEntryNo": "0",
+                "OpenHedge": "No",
+                "HedgeStrikeMethod": "atm",
+                "HedgeStrikeValue": "0",
+                "HedgeStrikePremiumCondition": "="
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        }
+      },
+      "parameter_counts": {
+        "TBS_CONFIG_PORTFOLIO_1.0.0.xlsx:PortfolioSetting": 6,
+        "TBS_CONFIG_PORTFOLIO_1.0.0.xlsx:StrategySetting": 5,
+        "TBS_CONFIG_STRATEGY_1.0.0.xlsx:GeneralParameter": 43,
+        "TBS_CONFIG_STRATEGY_1.0.0.xlsx:LegParameter": 29
+      },
+      "data_validation": {},
+      "total_parameters": 83
+    },
+    "TV": {
+      "strategy": "TV",
+      "files_found": [
+        "TV_CONFIG_MASTER_1.0.0.xlsx",
+        "TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx",
+        "TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx",
+        "TV_CONFIG_PORTFOLIO_MANUAL_1.0.0.xlsx",
+        "TV_CONFIG_SIGNALS_1.0.0.xlsx",
+        "TV_CONFIG_STRATEGY_1.0.0.xlsx"
+      ],
+      "files_missing": [],
+      "sheet_analysis": {
+        "TV_CONFIG_MASTER_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/tv/TV_CONFIG_MASTER_1.0.0.xlsx",
+          "sheets_found": [
+            "Setting"
+          ],
+          "sheets_missing": [
+            "TV Setting",
+            "TV Signals",
+            "PortfolioSetting",
+            "GeneralParameter",
+            "LegParameter"
+          ],
+          "sheets": {
+            "Setting": {
+              "sheet_name": "Setting",
+              "rows": 1,
+              "columns": [
+                "Name",
+                "Enabled",
+                "SignalFilePath",
+                "StartDate",
+                "EndDate",
+                "SignalDateFormat",
+                "IntradaySqOffApplicable",
+                "IntradayExitTime",
+                "TvExitApplicable",
+                "DoRollover",
+                "RolloverTime",
+                "ManualTradeEntryTime",
+                "ManualTradeLots",
+                "FirstTradeEntryTime",
+                "IncreaseEntrySignalTimeBy",
+                "IncreaseExitSignalTimeBy",
+                "ExpiryDayExitTime",
+                "SlippagePercent",
+                "LongPortfolioFilePath",
+                "ShortPortfolioFilePath",
+                "ManualPortfolioFilePath",
+                "UseDbExitTiming",
+                "ExitSearchInterval",
+                "ExitPriceSource"
+              ],
+              "column_count": 24,
+              "data_types": {
+                "Name": "object",
+                "Enabled": "object",
+                "SignalFilePath": "object",
+                "StartDate": "object",
+                "EndDate": "object",
+                "SignalDateFormat": "object",
+                "IntradaySqOffApplicable": "object",
+                "IntradayExitTime": "int64",
+                "TvExitApplicable": "object",
+                "DoRollover": "object",
+                "RolloverTime": "int64",
+                "ManualTradeEntryTime": "int64",
+                "ManualTradeLots": "int64",
+                "FirstTradeEntryTime": "int64",
+                "IncreaseEntrySignalTimeBy": "int64",
+                "IncreaseExitSignalTimeBy": "int64",
+                "ExpiryDayExitTime": "int64",
+                "SlippagePercent": "float64",
+                "LongPortfolioFilePath": "object",
+                "ShortPortfolioFilePath": "object",
+                "ManualPortfolioFilePath": "object",
+                "UseDbExitTiming": "object",
+                "ExitSearchInterval": "int64",
+                "ExitPriceSource": "object"
+              },
+              "null_counts": {
+                "Name": 0,
+                "Enabled": 0,
+                "SignalFilePath": 0,
+                "StartDate": 0,
+                "EndDate": 0,
+                "SignalDateFormat": 0,
+                "IntradaySqOffApplicable": 0,
+                "IntradayExitTime": 0,
+                "TvExitApplicable": 0,
+                "DoRollover": 0,
+                "RolloverTime": 0,
+                "ManualTradeEntryTime": 0,
+                "ManualTradeLots": 0,
+                "FirstTradeEntryTime": 0,
+                "IncreaseEntrySignalTimeBy": 0,
+                "IncreaseExitSignalTimeBy": 0,
+                "ExpiryDayExitTime": 0,
+                "SlippagePercent": 0,
+                "LongPortfolioFilePath": 0,
+                "ShortPortfolioFilePath": 0,
+                "ManualPortfolioFilePath": 0,
+                "UseDbExitTiming": 0,
+                "ExitSearchInterval": 0,
+                "ExitPriceSource": 0
+              },
+              "sample_data": {
+                "Name": "TV_Backtest_Sample",
+                "Enabled": "YES",
+                "SignalFilePath": "TV_CONFIG_SIGNALS_1.0.0.xlsx",
+                "StartDate": "01_01_2024",
+                "EndDate": "31_12_2024",
+                "SignalDateFormat": "%Y%m%d %H%M%S",
+                "IntradaySqOffApplicable": "YES",
+                "IntradayExitTime": "153000",
+                "TvExitApplicable": "YES",
+                "DoRollover": "NO",
+                "RolloverTime": "152000",
+                "ManualTradeEntryTime": "0",
+                "ManualTradeLots": "0",
+                "FirstTradeEntryTime": "0",
+                "IncreaseEntrySignalTimeBy": "0",
+                "IncreaseExitSignalTimeBy": "0",
+                "ExpiryDayExitTime": "152000",
+                "SlippagePercent": "0.1",
+                "LongPortfolioFilePath": "TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx",
+                "ShortPortfolioFilePath": "TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx",
+                "ManualPortfolioFilePath": "TV_CONFIG_PORTFOLIO_MANUAL_1.0.0.xlsx",
+                "UseDbExitTiming": "NO",
+                "ExitSearchInterval": "5",
+                "ExitPriceSource": "SPOT"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/tv/TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx",
+          "sheets_found": [
+            "PortfolioSetting",
+            "StrategySetting"
+          ],
+          "sheets_missing": [
+            "TV Setting",
+            "TV Signals",
+            "GeneralParameter",
+            "LegParameter"
+          ],
+          "sheets": {
+            "PortfolioSetting": {
+              "sheet_name": "PortfolioSetting",
+              "rows": 1,
+              "columns": [
+                "Capital",
+                "MaxRisk",
+                "MaxPositions",
+                "RiskPerTrade",
+                "UseKellyCriterion",
+                "RebalanceFrequency"
+              ],
+              "column_count": 6,
+              "data_types": {
+                "Capital": "int64",
+                "MaxRisk": "int64",
+                "MaxPositions": "int64",
+                "RiskPerTrade": "int64",
+                "UseKellyCriterion": "object",
+                "RebalanceFrequency": "object"
+              },
+              "null_counts": {
+                "Capital": 0,
+                "MaxRisk": 0,
+                "MaxPositions": 0,
+                "RiskPerTrade": 0,
+                "UseKellyCriterion": 0,
+                "RebalanceFrequency": 0
+              },
+              "sample_data": {
+                "Capital": "1000000",
+                "MaxRisk": "5",
+                "MaxPositions": "5",
+                "RiskPerTrade": "2",
+                "UseKellyCriterion": "NO",
+                "RebalanceFrequency": "DAILY"
+              },
+              "validation_issues": []
+            },
+            "StrategySetting": {
+              "sheet_name": "StrategySetting",
+              "rows": 1,
+              "columns": [
+                "StrategyName",
+                "StrategyExcelFilePath",
+                "Enabled",
+                "Priority",
+                "AllocationPercent"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "StrategyName": "object",
+                "StrategyExcelFilePath": "object",
+                "Enabled": "object",
+                "Priority": "int64",
+                "AllocationPercent": "int64"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "StrategyExcelFilePath": 0,
+                "Enabled": 0,
+                "Priority": 0,
+                "AllocationPercent": 0
+              },
+              "sample_data": {
+                "StrategyName": "LONG_Strategy_1",
+                "StrategyExcelFilePath": "TV_CONFIG_STRATEGY_LONG_1.0.0.xlsx",
+                "Enabled": "YES",
+                "Priority": "1",
+                "AllocationPercent": "100"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/tv/TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx",
+          "sheets_found": [
+            "PortfolioSetting",
+            "StrategySetting"
+          ],
+          "sheets_missing": [
+            "TV Setting",
+            "TV Signals",
+            "GeneralParameter",
+            "LegParameter"
+          ],
+          "sheets": {
+            "PortfolioSetting": {
+              "sheet_name": "PortfolioSetting",
+              "rows": 1,
+              "columns": [
+                "Capital",
+                "MaxRisk",
+                "MaxPositions",
+                "RiskPerTrade",
+                "UseKellyCriterion",
+                "RebalanceFrequency"
+              ],
+              "column_count": 6,
+              "data_types": {
+                "Capital": "int64",
+                "MaxRisk": "int64",
+                "MaxPositions": "int64",
+                "RiskPerTrade": "int64",
+                "UseKellyCriterion": "object",
+                "RebalanceFrequency": "object"
+              },
+              "null_counts": {
+                "Capital": 0,
+                "MaxRisk": 0,
+                "MaxPositions": 0,
+                "RiskPerTrade": 0,
+                "UseKellyCriterion": 0,
+                "RebalanceFrequency": 0
+              },
+              "sample_data": {
+                "Capital": "1000000",
+                "MaxRisk": "5",
+                "MaxPositions": "5",
+                "RiskPerTrade": "2",
+                "UseKellyCriterion": "NO",
+                "RebalanceFrequency": "DAILY"
+              },
+              "validation_issues": []
+            },
+            "StrategySetting": {
+              "sheet_name": "StrategySetting",
+              "rows": 1,
+              "columns": [
+                "StrategyName",
+                "StrategyExcelFilePath",
+                "Enabled",
+                "Priority",
+                "AllocationPercent"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "StrategyName": "object",
+                "StrategyExcelFilePath": "object",
+                "Enabled": "object",
+                "Priority": "int64",
+                "AllocationPercent": "int64"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "StrategyExcelFilePath": 0,
+                "Enabled": 0,
+                "Priority": 0,
+                "AllocationPercent": 0
+              },
+              "sample_data": {
+                "StrategyName": "SHORT_Strategy_1",
+                "StrategyExcelFilePath": "TV_CONFIG_STRATEGY_SHORT_1.0.0.xlsx",
+                "Enabled": "YES",
+                "Priority": "1",
+                "AllocationPercent": "100"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "TV_CONFIG_PORTFOLIO_MANUAL_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/tv/TV_CONFIG_PORTFOLIO_MANUAL_1.0.0.xlsx",
+          "sheets_found": [
+            "PortfolioSetting",
+            "StrategySetting"
+          ],
+          "sheets_missing": [
+            "TV Setting",
+            "TV Signals",
+            "GeneralParameter",
+            "LegParameter"
+          ],
+          "sheets": {
+            "PortfolioSetting": {
+              "sheet_name": "PortfolioSetting",
+              "rows": 1,
+              "columns": [
+                "Capital",
+                "MaxRisk",
+                "MaxPositions",
+                "RiskPerTrade",
+                "UseKellyCriterion",
+                "RebalanceFrequency"
+              ],
+              "column_count": 6,
+              "data_types": {
+                "Capital": "int64",
+                "MaxRisk": "int64",
+                "MaxPositions": "int64",
+                "RiskPerTrade": "int64",
+                "UseKellyCriterion": "object",
+                "RebalanceFrequency": "object"
+              },
+              "null_counts": {
+                "Capital": 0,
+                "MaxRisk": 0,
+                "MaxPositions": 0,
+                "RiskPerTrade": 0,
+                "UseKellyCriterion": 0,
+                "RebalanceFrequency": 0
+              },
+              "sample_data": {
+                "Capital": "1000000",
+                "MaxRisk": "5",
+                "MaxPositions": "5",
+                "RiskPerTrade": "2",
+                "UseKellyCriterion": "NO",
+                "RebalanceFrequency": "DAILY"
+              },
+              "validation_issues": []
+            },
+            "StrategySetting": {
+              "sheet_name": "StrategySetting",
+              "rows": 1,
+              "columns": [
+                "StrategyName",
+                "StrategyExcelFilePath",
+                "Enabled",
+                "Priority",
+                "AllocationPercent"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "StrategyName": "object",
+                "StrategyExcelFilePath": "object",
+                "Enabled": "object",
+                "Priority": "int64",
+                "AllocationPercent": "int64"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "StrategyExcelFilePath": 0,
+                "Enabled": 0,
+                "Priority": 0,
+                "AllocationPercent": 0
+              },
+              "sample_data": {
+                "StrategyName": "MANUAL_Strategy_1",
+                "StrategyExcelFilePath": "TV_CONFIG_STRATEGY_MANUAL_1.0.0.xlsx",
+                "Enabled": "YES",
+                "Priority": "1",
+                "AllocationPercent": "100"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "TV_CONFIG_SIGNALS_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/tv/TV_CONFIG_SIGNALS_1.0.0.xlsx",
+          "sheets_found": [
+            "List of trades"
+          ],
+          "sheets_missing": [
+            "TV Setting",
+            "TV Signals",
+            "PortfolioSetting",
+            "GeneralParameter",
+            "LegParameter"
+          ],
+          "sheets": {
+            "List of trades": {
+              "sheet_name": "List of trades",
+              "rows": 4,
+              "columns": [
+                "Trade #",
+                "Type",
+                "Date/Time",
+                "Contracts"
+              ],
+              "column_count": 4,
+              "data_types": {
+                "Trade #": "object",
+                "Type": "object",
+                "Date/Time": "object",
+                "Contracts": "int64"
+              },
+              "null_counts": {
+                "Trade #": 0,
+                "Type": 0,
+                "Date/Time": 0,
+                "Contracts": 0
+              },
+              "sample_data": {
+                "Trade #": "T001",
+                "Type": "Entry Long",
+                "Date/Time": "20240101 091600",
+                "Contracts": "1"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "TV_CONFIG_STRATEGY_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/tv/TV_CONFIG_STRATEGY_1.0.0.xlsx",
+          "sheets_found": [
+            "GeneralParameter",
+            "LegParameter"
+          ],
+          "sheets_missing": [
+            "TV Setting",
+            "TV Signals",
+            "PortfolioSetting"
+          ],
+          "sheets": {
+            "GeneralParameter": {
+              "sheet_name": "GeneralParameter",
+              "rows": 1,
+              "columns": [
+                "StrategyName",
+                "MoveSlToCost",
+                "Underlying",
+                "Index",
+                "Weekdays",
+                "DTE",
+                "StrikeSelectionTime",
+                "StartTime",
+                "LastEntryTime",
+                "EndTime",
+                "StrategyProfit",
+                "StrategyLoss",
+                "StrategyProfitReExecuteNo",
+                "StrategyLossReExecuteNo",
+                "StrategyTrailingType",
+                "PnLCalTime",
+                "LockPercent",
+                "TrailPercent",
+                "SqOff1Time",
+                "SqOff1Percent",
+                "SqOff2Time",
+                "SqOff2Percent",
+                "ProfitReaches",
+                "LockMinProfitAt",
+                "IncreaseInProfit",
+                "TrailMinProfitBy",
+                "TgtTrackingFrom",
+                "TgtRegisterPriceFrom",
+                "SlTrackingFrom",
+                "SlRegisterPriceFrom",
+                "PnLCalculationFrom",
+                "ConsiderHedgePnLForStgyPnL",
+                "CheckPremiumDiffCondition",
+                "PremiumDiffType",
+                "PremiumDiffValue",
+                "PremiumDiffChangeStrike",
+                "PremiumDiffDoForceEntry",
+                "PremiumDiffDoForceAfter",
+                "PremiumDiffForceEntryConsiderPremium",
+                "StoplossCheckingInterval",
+                "TargetCheckingInterval",
+                "ReEntryCheckingInterval",
+                "OnExpiryDayTradeNextExpiry"
+              ],
+              "column_count": 43,
+              "data_types": {
+                "StrategyName": "object",
+                "MoveSlToCost": "object",
+                "Underlying": "object",
+                "Index": "object",
+                "Weekdays": "object",
+                "DTE": "int64",
+                "StrikeSelectionTime": "int64",
+                "StartTime": "int64",
+                "LastEntryTime": "int64",
+                "EndTime": "int64",
+                "StrategyProfit": "int64",
+                "StrategyLoss": "int64",
+                "StrategyProfitReExecuteNo": "int64",
+                "StrategyLossReExecuteNo": "int64",
+                "StrategyTrailingType": "object",
+                "PnLCalTime": "int64",
+                "LockPercent": "int64",
+                "TrailPercent": "int64",
+                "SqOff1Time": "int64",
+                "SqOff1Percent": "int64",
+                "SqOff2Time": "int64",
+                "SqOff2Percent": "int64",
+                "ProfitReaches": "int64",
+                "LockMinProfitAt": "int64",
+                "IncreaseInProfit": "int64",
+                "TrailMinProfitBy": "int64",
+                "TgtTrackingFrom": "object",
+                "TgtRegisterPriceFrom": "object",
+                "SlTrackingFrom": "object",
+                "SlRegisterPriceFrom": "object",
+                "PnLCalculationFrom": "object",
+                "ConsiderHedgePnLForStgyPnL": "object",
+                "CheckPremiumDiffCondition": "object",
+                "PremiumDiffType": "object",
+                "PremiumDiffValue": "int64",
+                "PremiumDiffChangeStrike": "object",
+                "PremiumDiffDoForceEntry": "object",
+                "PremiumDiffDoForceAfter": "int64",
+                "PremiumDiffForceEntryConsiderPremium": "object",
+                "StoplossCheckingInterval": "int64",
+                "TargetCheckingInterval": "int64",
+                "ReEntryCheckingInterval": "int64",
+                "OnExpiryDayTradeNextExpiry": "object"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "MoveSlToCost": 0,
+                "Underlying": 0,
+                "Index": 0,
+                "Weekdays": 0,
+                "DTE": 0,
+                "StrikeSelectionTime": 0,
+                "StartTime": 0,
+                "LastEntryTime": 0,
+                "EndTime": 0,
+                "StrategyProfit": 0,
+                "StrategyLoss": 0,
+                "StrategyProfitReExecuteNo": 0,
+                "StrategyLossReExecuteNo": 0,
+                "StrategyTrailingType": 0,
+                "PnLCalTime": 0,
+                "LockPercent": 0,
+                "TrailPercent": 0,
+                "SqOff1Time": 0,
+                "SqOff1Percent": 0,
+                "SqOff2Time": 0,
+                "SqOff2Percent": 0,
+                "ProfitReaches": 0,
+                "LockMinProfitAt": 0,
+                "IncreaseInProfit": 0,
+                "TrailMinProfitBy": 0,
+                "TgtTrackingFrom": 0,
+                "TgtRegisterPriceFrom": 0,
+                "SlTrackingFrom": 0,
+                "SlRegisterPriceFrom": 0,
+                "PnLCalculationFrom": 0,
+                "ConsiderHedgePnLForStgyPnL": 0,
+                "CheckPremiumDiffCondition": 0,
+                "PremiumDiffType": 0,
+                "PremiumDiffValue": 0,
+                "PremiumDiffChangeStrike": 0,
+                "PremiumDiffDoForceEntry": 0,
+                "PremiumDiffDoForceAfter": 0,
+                "PremiumDiffForceEntryConsiderPremium": 0,
+                "StoplossCheckingInterval": 0,
+                "TargetCheckingInterval": 0,
+                "ReEntryCheckingInterval": 0,
+                "OnExpiryDayTradeNextExpiry": 0
+              },
+              "sample_data": {
+                "StrategyName": "TV_Strategy_Sample",
+                "MoveSlToCost": "NO",
+                "Underlying": "SPOT",
+                "Index": "NIFTY",
+                "Weekdays": "1,2,3,4,5",
+                "DTE": "0",
+                "StrikeSelectionTime": "92000",
+                "StartTime": "91600",
+                "LastEntryTime": "150000",
+                "EndTime": "150000",
+                "StrategyProfit": "0",
+                "StrategyLoss": "0",
+                "StrategyProfitReExecuteNo": "0",
+                "StrategyLossReExecuteNo": "0",
+                "StrategyTrailingType": "Lock Minimum Profit",
+                "PnLCalTime": "0",
+                "LockPercent": "0",
+                "TrailPercent": "0",
+                "SqOff1Time": "0",
+                "SqOff1Percent": "0",
+                "SqOff2Time": "0",
+                "SqOff2Percent": "0",
+                "ProfitReaches": "0",
+                "LockMinProfitAt": "0",
+                "IncreaseInProfit": "0",
+                "TrailMinProfitBy": "0",
+                "TgtTrackingFrom": "close",
+                "TgtRegisterPriceFrom": "tick",
+                "SlTrackingFrom": "close",
+                "SlRegisterPriceFrom": "tick",
+                "PnLCalculationFrom": "close",
+                "ConsiderHedgePnLForStgyPnL": "no",
+                "CheckPremiumDiffCondition": "no",
+                "PremiumDiffType": "point",
+                "PremiumDiffValue": "0",
+                "PremiumDiffChangeStrike": "no",
+                "PremiumDiffDoForceEntry": "no",
+                "PremiumDiffDoForceAfter": "0",
+                "PremiumDiffForceEntryConsiderPremium": "higher",
+                "StoplossCheckingInterval": "1",
+                "TargetCheckingInterval": "1",
+                "ReEntryCheckingInterval": "1",
+                "OnExpiryDayTradeNextExpiry": "no"
+              },
+              "validation_issues": []
+            },
+            "LegParameter": {
+              "sheet_name": "LegParameter",
+              "rows": 2,
+              "columns": [
+                "StrategyName",
+                "IsIdle",
+                "LegID",
+                "Instrument",
+                "Transaction",
+                "Expiry",
+                "W&Type",
+                "W&TValue",
+                "TrailW&T",
+                "StrikeMethod",
+                "MatchPremium",
+                "StrikeValue",
+                "StrikePremiumCondition",
+                "SLType",
+                "SLValue",
+                "TGTType",
+                "TGTValue",
+                "TrailSLType",
+                "SL_TrailAt",
+                "SL_TrailBy",
+                "Lots",
+                "SL_ReEntryType",
+                "SL_ReEntryNo",
+                "TGT_ReEntryType",
+                "TGT_ReEntryNo",
+                "OpenHedge",
+                "HedgeStrikeMethod",
+                "HedgeStrikeValue",
+                "HedgeStrikePremiumCondition"
+              ],
+              "column_count": 29,
+              "data_types": {
+                "StrategyName": "object",
+                "IsIdle": "object",
+                "LegID": "object",
+                "Instrument": "object",
+                "Transaction": "object",
+                "Expiry": "object",
+                "W&Type": "object",
+                "W&TValue": "int64",
+                "TrailW&T": "object",
+                "StrikeMethod": "object",
+                "MatchPremium": "object",
+                "StrikeValue": "int64",
+                "StrikePremiumCondition": "object",
+                "SLType": "object",
+                "SLValue": "int64",
+                "TGTType": "object",
+                "TGTValue": "int64",
+                "TrailSLType": "object",
+                "SL_TrailAt": "int64",
+                "SL_TrailBy": "int64",
+                "Lots": "int64",
+                "SL_ReEntryType": "object",
+                "SL_ReEntryNo": "int64",
+                "TGT_ReEntryType": "object",
+                "TGT_ReEntryNo": "int64",
+                "OpenHedge": "object",
+                "HedgeStrikeMethod": "object",
+                "HedgeStrikeValue": "int64",
+                "HedgeStrikePremiumCondition": "object"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "IsIdle": 0,
+                "LegID": 0,
+                "Instrument": 0,
+                "Transaction": 0,
+                "Expiry": 0,
+                "W&Type": 0,
+                "W&TValue": 0,
+                "TrailW&T": 0,
+                "StrikeMethod": 0,
+                "MatchPremium": 0,
+                "StrikeValue": 0,
+                "StrikePremiumCondition": 0,
+                "SLType": 0,
+                "SLValue": 0,
+                "TGTType": 0,
+                "TGTValue": 0,
+                "TrailSLType": 0,
+                "SL_TrailAt": 0,
+                "SL_TrailBy": 0,
+                "Lots": 0,
+                "SL_ReEntryType": 0,
+                "SL_ReEntryNo": 0,
+                "TGT_ReEntryType": 0,
+                "TGT_ReEntryNo": 0,
+                "OpenHedge": 0,
+                "HedgeStrikeMethod": 0,
+                "HedgeStrikeValue": 0,
+                "HedgeStrikePremiumCondition": 0
+              },
+              "sample_data": {
+                "StrategyName": "TV_Strategy_Sample",
+                "IsIdle": "no",
+                "LegID": "leg1",
+                "Instrument": "call",
+                "Transaction": "sell",
+                "Expiry": "current",
+                "W&Type": "percentage",
+                "W&TValue": "0",
+                "TrailW&T": "no",
+                "StrikeMethod": "ATM",
+                "MatchPremium": "high",
+                "StrikeValue": "0",
+                "StrikePremiumCondition": "=",
+                "SLType": "percentage",
+                "SLValue": "100",
+                "TGTType": "percentage",
+                "TGTValue": "0",
+                "TrailSLType": "percentage",
+                "SL_TrailAt": "0",
+                "SL_TrailBy": "0",
+                "Lots": "1",
+                "SL_ReEntryType": "cost",
+                "SL_ReEntryNo": "0",
+                "TGT_ReEntryType": "cost",
+                "TGT_ReEntryNo": "0",
+                "OpenHedge": "No",
+                "HedgeStrikeMethod": "atm",
+                "HedgeStrikeValue": "0",
+                "HedgeStrikePremiumCondition": "="
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        }
+      },
+      "parameter_counts": {
+        "TV_CONFIG_MASTER_1.0.0.xlsx:Setting": 24,
+        "TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx:PortfolioSetting": 6,
+        "TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx:StrategySetting": 5,
+        "TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx:PortfolioSetting": 6,
+        "TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx:StrategySetting": 5,
+        "TV_CONFIG_PORTFOLIO_MANUAL_1.0.0.xlsx:PortfolioSetting": 6,
+        "TV_CONFIG_PORTFOLIO_MANUAL_1.0.0.xlsx:StrategySetting": 5,
+        "TV_CONFIG_SIGNALS_1.0.0.xlsx:List of trades": 4,
+        "TV_CONFIG_STRATEGY_1.0.0.xlsx:GeneralParameter": 43,
+        "TV_CONFIG_STRATEGY_1.0.0.xlsx:LegParameter": 29
+      },
+      "data_validation": {},
+      "total_parameters": 133
+    },
+    "ORB": {
+      "strategy": "ORB",
+      "files_found": [
+        "ORB_CONFIG_PORTFOLIO_1.0.0.xlsx",
+        "ORB_CONFIG_STRATEGY_1.0.0.xlsx"
+      ],
+      "files_missing": [],
+      "sheet_analysis": {
+        "ORB_CONFIG_PORTFOLIO_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/orb/ORB_CONFIG_PORTFOLIO_1.0.0.xlsx",
+          "sheets_found": [
+            "PortfolioSetting",
+            "StrategySetting"
+          ],
+          "sheets_missing": [
+            "GeneralParameter",
+            "LegParameter"
+          ],
+          "sheets": {
+            "PortfolioSetting": {
+              "sheet_name": "PortfolioSetting",
+              "rows": 1,
+              "columns": [
+                "Capital",
+                "MaxRisk",
+                "MaxPositions",
+                "RiskPerTrade",
+                "UseKellyCriterion",
+                "RebalanceFrequency"
+              ],
+              "column_count": 6,
+              "data_types": {
+                "Capital": "int64",
+                "MaxRisk": "int64",
+                "MaxPositions": "int64",
+                "RiskPerTrade": "int64",
+                "UseKellyCriterion": "object",
+                "RebalanceFrequency": "object"
+              },
+              "null_counts": {
+                "Capital": 0,
+                "MaxRisk": 0,
+                "MaxPositions": 0,
+                "RiskPerTrade": 0,
+                "UseKellyCriterion": 0,
+                "RebalanceFrequency": 0
+              },
+              "sample_data": {
+                "Capital": "1000000",
+                "MaxRisk": "5",
+                "MaxPositions": "5",
+                "RiskPerTrade": "2",
+                "UseKellyCriterion": "NO",
+                "RebalanceFrequency": "DAILY"
+              },
+              "validation_issues": []
+            },
+            "StrategySetting": {
+              "sheet_name": "StrategySetting",
+              "rows": 1,
+              "columns": [
+                "StrategyName",
+                "StrategyExcelFilePath",
+                "Enabled",
+                "Priority",
+                "AllocationPercent"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "StrategyName": "object",
+                "StrategyExcelFilePath": "object",
+                "Enabled": "object",
+                "Priority": "int64",
+                "AllocationPercent": "int64"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "StrategyExcelFilePath": 0,
+                "Enabled": 0,
+                "Priority": 0,
+                "AllocationPercent": 0
+              },
+              "sample_data": {
+                "StrategyName": "ORB_Strategy_1",
+                "StrategyExcelFilePath": "ORB_CONFIG_STRATEGY_1.0.0.xlsx",
+                "Enabled": "YES",
+                "Priority": "1",
+                "AllocationPercent": "100"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "ORB_CONFIG_STRATEGY_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/orb/ORB_CONFIG_STRATEGY_1.0.0.xlsx",
+          "sheets_found": [
+            "MainSetting"
+          ],
+          "sheets_missing": [
+            "PortfolioSetting",
+            "GeneralParameter",
+            "LegParameter"
+          ],
+          "sheets": {
+            "MainSetting": {
+              "sheet_name": "MainSetting",
+              "rows": 1,
+              "columns": [
+                "StrategyName",
+                "Enabled",
+                "Index",
+                "OpeningRangeStart",
+                "OpeningRangeEnd",
+                "BreakoutThreshold",
+                "StopLoss",
+                "Target"
+              ],
+              "column_count": 8,
+              "data_types": {
+                "StrategyName": "object",
+                "Enabled": "object",
+                "Index": "object",
+                "OpeningRangeStart": "int64",
+                "OpeningRangeEnd": "int64",
+                "BreakoutThreshold": "float64",
+                "StopLoss": "float64",
+                "Target": "int64"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "Enabled": 0,
+                "Index": 0,
+                "OpeningRangeStart": 0,
+                "OpeningRangeEnd": 0,
+                "BreakoutThreshold": 0,
+                "StopLoss": 0,
+                "Target": 0
+              },
+              "sample_data": {
+                "StrategyName": "ORB_Strategy_Sample",
+                "Enabled": "YES",
+                "Index": "NIFTY",
+                "OpeningRangeStart": "91500",
+                "OpeningRangeEnd": "93000",
+                "BreakoutThreshold": "0.5",
+                "StopLoss": "0.3",
+                "Target": "1"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        }
+      },
+      "parameter_counts": {
+        "ORB_CONFIG_PORTFOLIO_1.0.0.xlsx:PortfolioSetting": 6,
+        "ORB_CONFIG_PORTFOLIO_1.0.0.xlsx:StrategySetting": 5,
+        "ORB_CONFIG_STRATEGY_1.0.0.xlsx:MainSetting": 8
+      },
+      "data_validation": {},
+      "total_parameters": 19
+    },
+    "OI": {
+      "strategy": "OI",
+      "files_found": [
+        "OI_CONFIG_PORTFOLIO_1.0.0.xlsx",
+        "OI_CONFIG_STRATEGY_1.0.0.xlsx"
+      ],
+      "files_missing": [],
+      "sheet_analysis": {
+        "OI_CONFIG_PORTFOLIO_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/oi/OI_CONFIG_PORTFOLIO_1.0.0.xlsx",
+          "sheets_found": [
+            "PortfolioSetting",
+            "StrategySetting"
+          ],
+          "sheets_missing": [
+            "GeneralParameter",
+            "LegParameter"
+          ],
+          "sheets": {
+            "PortfolioSetting": {
+              "sheet_name": "PortfolioSetting",
+              "rows": 1,
+              "columns": [
+                "Capital",
+                "MaxRisk",
+                "MaxPositions",
+                "RiskPerTrade",
+                "UseKellyCriterion",
+                "RebalanceFrequency"
+              ],
+              "column_count": 6,
+              "data_types": {
+                "Capital": "int64",
+                "MaxRisk": "int64",
+                "MaxPositions": "int64",
+                "RiskPerTrade": "int64",
+                "UseKellyCriterion": "object",
+                "RebalanceFrequency": "object"
+              },
+              "null_counts": {
+                "Capital": 0,
+                "MaxRisk": 0,
+                "MaxPositions": 0,
+                "RiskPerTrade": 0,
+                "UseKellyCriterion": 0,
+                "RebalanceFrequency": 0
+              },
+              "sample_data": {
+                "Capital": "1000000",
+                "MaxRisk": "5",
+                "MaxPositions": "5",
+                "RiskPerTrade": "2",
+                "UseKellyCriterion": "NO",
+                "RebalanceFrequency": "DAILY"
+              },
+              "validation_issues": []
+            },
+            "StrategySetting": {
+              "sheet_name": "StrategySetting",
+              "rows": 1,
+              "columns": [
+                "StrategyName",
+                "StrategyExcelFilePath",
+                "Enabled",
+                "Priority",
+                "AllocationPercent"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "StrategyName": "object",
+                "StrategyExcelFilePath": "object",
+                "Enabled": "object",
+                "Priority": "int64",
+                "AllocationPercent": "int64"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "StrategyExcelFilePath": 0,
+                "Enabled": 0,
+                "Priority": 0,
+                "AllocationPercent": 0
+              },
+              "sample_data": {
+                "StrategyName": "OI_Strategy_1",
+                "StrategyExcelFilePath": "OI_CONFIG_STRATEGY_1.0.0.xlsx",
+                "Enabled": "YES",
+                "Priority": "1",
+                "AllocationPercent": "100"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "OI_CONFIG_STRATEGY_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/oi/OI_CONFIG_STRATEGY_1.0.0.xlsx",
+          "sheets_found": [
+            "GeneralParameter",
+            "LegParameter",
+            "WeightConfiguration",
+            "FactorParameters",
+            "PortfolioSetting",
+            "StrategySetting"
+          ],
+          "sheets_missing": [],
+          "sheets": {
+            "GeneralParameter": {
+              "sheet_name": "GeneralParameter",
+              "rows": 2,
+              "columns": [
+                "StrategyName",
+                "Underlying",
+                "Index",
+                "DTE",
+                "Timeframe",
+                "StartTime",
+                "EndTime",
+                "LastEntryTime",
+                "StrikeSelectionTime",
+                "MaxOpenPositions",
+                "OiThreshold",
+                "StrikeCount",
+                "Weekdays",
+                "StrategyProfit",
+                "StrategyLoss",
+                "OiMethod",
+                "CoiBasedOn",
+                "OiRecheckInterval",
+                "OiThresholdType",
+                "OiConcentrationThreshold",
+                "OiDistributionAnalysis",
+                "StrikeRangeType",
+                "StrikeRangeValue",
+                "OiMomentumPeriod",
+                "OiTrendAnalysis",
+                "OiSeasonalAdjustment",
+                "OiVolumeCorrelation",
+                "OiLiquidityFilter",
+                "OiAnomalyDetection",
+                "OiSignalConfirmation",
+                "EnableDynamicWeights",
+                "WeightAdjustmentPeriod",
+                "LearningRate",
+                "PerformanceWindow",
+                "MinWeight",
+                "MaxWeight",
+                "WeightDecayFactor",
+                "CorrelationThreshold",
+                "DiversificationBonus",
+                "RegimeAdjustment",
+                "VolatilityAdjustment",
+                "LiquidityAdjustment",
+                "TrendAdjustment",
+                "MomentumAdjustment",
+                "SeasonalAdjustment"
+              ],
+              "column_count": 45,
+              "data_types": {
+                "StrategyName": "object",
+                "Underlying": "object",
+                "Index": "object",
+                "DTE": "int64",
+                "Timeframe": "int64",
+                "StartTime": "int64",
+                "EndTime": "int64",
+                "LastEntryTime": "int64",
+                "StrikeSelectionTime": "int64",
+                "MaxOpenPositions": "int64",
+                "OiThreshold": "int64",
+                "StrikeCount": "int64",
+                "Weekdays": "object",
+                "StrategyProfit": "int64",
+                "StrategyLoss": "int64",
+                "OiMethod": "object",
+                "CoiBasedOn": "object",
+                "OiRecheckInterval": "int64",
+                "OiThresholdType": "object",
+                "OiConcentrationThreshold": "float64",
+                "OiDistributionAnalysis": "object",
+                "StrikeRangeType": "object",
+                "StrikeRangeValue": "int64",
+                "OiMomentumPeriod": "int64",
+                "OiTrendAnalysis": "object",
+                "OiSeasonalAdjustment": "object",
+                "OiVolumeCorrelation": "object",
+                "OiLiquidityFilter": "object",
+                "OiAnomalyDetection": "object",
+                "OiSignalConfirmation": "object",
+                "EnableDynamicWeights": "object",
+                "WeightAdjustmentPeriod": "int64",
+                "LearningRate": "float64",
+                "PerformanceWindow": "int64",
+                "MinWeight": "float64",
+                "MaxWeight": "float64",
+                "WeightDecayFactor": "float64",
+                "CorrelationThreshold": "float64",
+                "DiversificationBonus": "float64",
+                "RegimeAdjustment": "object",
+                "VolatilityAdjustment": "object",
+                "LiquidityAdjustment": "object",
+                "TrendAdjustment": "object",
+                "MomentumAdjustment": "object",
+                "SeasonalAdjustment": "object"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "Underlying": 0,
+                "Index": 0,
+                "DTE": 0,
+                "Timeframe": 0,
+                "StartTime": 0,
+                "EndTime": 0,
+                "LastEntryTime": 0,
+                "StrikeSelectionTime": 0,
+                "MaxOpenPositions": 0,
+                "OiThreshold": 0,
+                "StrikeCount": 0,
+                "Weekdays": 0,
+                "StrategyProfit": 0,
+                "StrategyLoss": 0,
+                "OiMethod": 0,
+                "CoiBasedOn": 0,
+                "OiRecheckInterval": 0,
+                "OiThresholdType": 0,
+                "OiConcentrationThreshold": 0,
+                "OiDistributionAnalysis": 0,
+                "StrikeRangeType": 0,
+                "StrikeRangeValue": 0,
+                "OiMomentumPeriod": 0,
+                "OiTrendAnalysis": 0,
+                "OiSeasonalAdjustment": 0,
+                "OiVolumeCorrelation": 0,
+                "OiLiquidityFilter": 0,
+                "OiAnomalyDetection": 0,
+                "OiSignalConfirmation": 0,
+                "EnableDynamicWeights": 0,
+                "WeightAdjustmentPeriod": 0,
+                "LearningRate": 0,
+                "PerformanceWindow": 0,
+                "MinWeight": 0,
+                "MaxWeight": 0,
+                "WeightDecayFactor": 0,
+                "CorrelationThreshold": 0,
+                "DiversificationBonus": 0,
+                "RegimeAdjustment": 0,
+                "VolatilityAdjustment": 0,
+                "LiquidityAdjustment": 0,
+                "TrendAdjustment": 0,
+                "MomentumAdjustment": 0,
+                "SeasonalAdjustment": 0
+              },
+              "sample_data": {
+                "StrategyName": "ENHANCED_OI_MAXOI_1",
+                "Underlying": "SPOT",
+                "Index": "NIFTY",
+                "DTE": "0",
+                "Timeframe": "3",
+                "StartTime": "91600",
+                "EndTime": "152000",
+                "LastEntryTime": "150000",
+                "StrikeSelectionTime": "91530",
+                "MaxOpenPositions": "2",
+                "OiThreshold": "800000",
+                "StrikeCount": "10",
+                "Weekdays": "1,2,3,4,5",
+                "StrategyProfit": "0",
+                "StrategyLoss": "0",
+                "OiMethod": "MAXOI_1",
+                "CoiBasedOn": "YESTERDAY_CLOSE",
+                "OiRecheckInterval": "180",
+                "OiThresholdType": "ABSOLUTE",
+                "OiConcentrationThreshold": "0.3",
+                "OiDistributionAnalysis": "YES",
+                "StrikeRangeType": "FIXED",
+                "StrikeRangeValue": "10",
+                "OiMomentumPeriod": "5",
+                "OiTrendAnalysis": "YES",
+                "OiSeasonalAdjustment": "NO",
+                "OiVolumeCorrelation": "YES",
+                "OiLiquidityFilter": "YES",
+                "OiAnomalyDetection": "YES",
+                "OiSignalConfirmation": "YES",
+                "EnableDynamicWeights": "YES",
+                "WeightAdjustmentPeriod": "20",
+                "LearningRate": "0.01",
+                "PerformanceWindow": "100",
+                "MinWeight": "0.05",
+                "MaxWeight": "0.5",
+                "WeightDecayFactor": "0.95",
+                "CorrelationThreshold": "0.7",
+                "DiversificationBonus": "1.1",
+                "RegimeAdjustment": "YES",
+                "VolatilityAdjustment": "YES",
+                "LiquidityAdjustment": "YES",
+                "TrendAdjustment": "YES",
+                "MomentumAdjustment": "YES",
+                "SeasonalAdjustment": "NO"
+              },
+              "validation_issues": []
+            },
+            "LegParameter": {
+              "sheet_name": "LegParameter",
+              "rows": 2,
+              "columns": [
+                "StrategyName",
+                "LegID",
+                "Instrument",
+                "Transaction",
+                "Expiry",
+                "StrikeMethod",
+                "StrikeValue",
+                "Lots",
+                "SLType",
+                "SLValue",
+                "TGTType",
+                "TGTValue",
+                "TrailSLType",
+                "SL_TrailAt",
+                "SL_TrailBy",
+                "LegOiThreshold",
+                "LegOiWeight",
+                "LegCoiWeight",
+                "LegOiRank",
+                "LegOiConcentration",
+                "LegOiMomentum",
+                "LegOiTrend",
+                "LegOiLiquidity",
+                "LegOiAnomaly",
+                "LegOiConfirmation",
+                "DeltaWeight",
+                "GammaWeight",
+                "ThetaWeight",
+                "VegaWeight",
+                "DeltaThreshold",
+                "GammaThreshold",
+                "ThetaThreshold",
+                "VegaThreshold",
+                "GreekRebalanceFreq",
+                "GreekRiskLimit"
+              ],
+              "column_count": 35,
+              "data_types": {
+                "StrategyName": "object",
+                "LegID": "object",
+                "Instrument": "object",
+                "Transaction": "object",
+                "Expiry": "object",
+                "StrikeMethod": "object",
+                "StrikeValue": "int64",
+                "Lots": "int64",
+                "SLType": "object",
+                "SLValue": "int64",
+                "TGTType": "object",
+                "TGTValue": "int64",
+                "TrailSLType": "object",
+                "SL_TrailAt": "int64",
+                "SL_TrailBy": "int64",
+                "LegOiThreshold": "int64",
+                "LegOiWeight": "float64",
+                "LegCoiWeight": "float64",
+                "LegOiRank": "int64",
+                "LegOiConcentration": "float64",
+                "LegOiMomentum": "float64",
+                "LegOiTrend": "float64",
+                "LegOiLiquidity": "float64",
+                "LegOiAnomaly": "float64",
+                "LegOiConfirmation": "object",
+                "DeltaWeight": "float64",
+                "GammaWeight": "float64",
+                "ThetaWeight": "float64",
+                "VegaWeight": "float64",
+                "DeltaThreshold": "float64",
+                "GammaThreshold": "float64",
+                "ThetaThreshold": "float64",
+                "VegaThreshold": "float64",
+                "GreekRebalanceFreq": "int64",
+                "GreekRiskLimit": "int64"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "LegID": 0,
+                "Instrument": 0,
+                "Transaction": 0,
+                "Expiry": 0,
+                "StrikeMethod": 0,
+                "StrikeValue": 0,
+                "Lots": 0,
+                "SLType": 0,
+                "SLValue": 0,
+                "TGTType": 0,
+                "TGTValue": 0,
+                "TrailSLType": 0,
+                "SL_TrailAt": 0,
+                "SL_TrailBy": 0,
+                "LegOiThreshold": 0,
+                "LegOiWeight": 0,
+                "LegCoiWeight": 0,
+                "LegOiRank": 0,
+                "LegOiConcentration": 0,
+                "LegOiMomentum": 0,
+                "LegOiTrend": 0,
+                "LegOiLiquidity": 0,
+                "LegOiAnomaly": 0,
+                "LegOiConfirmation": 0,
+                "DeltaWeight": 0,
+                "GammaWeight": 0,
+                "ThetaWeight": 0,
+                "VegaWeight": 0,
+                "DeltaThreshold": 0,
+                "GammaThreshold": 0,
+                "ThetaThreshold": 0,
+                "VegaThreshold": 0,
+                "GreekRebalanceFreq": 0,
+                "GreekRiskLimit": 0
+              },
+              "sample_data": {
+                "StrategyName": "ENHANCED_OI_MAXOI_1",
+                "LegID": "CE_LEG_1",
+                "Instrument": "CE",
+                "Transaction": "SELL",
+                "Expiry": "current",
+                "StrikeMethod": "MAXOI_1",
+                "StrikeValue": "0",
+                "Lots": "1",
+                "SLType": "percentage",
+                "SLValue": "30",
+                "TGTType": "percentage",
+                "TGTValue": "50",
+                "TrailSLType": "percentage",
+                "SL_TrailAt": "25",
+                "SL_TrailBy": "10",
+                "LegOiThreshold": "800000",
+                "LegOiWeight": "0.4",
+                "LegCoiWeight": "0.3",
+                "LegOiRank": "1",
+                "LegOiConcentration": "0.3",
+                "LegOiMomentum": "0.2",
+                "LegOiTrend": "0.15",
+                "LegOiLiquidity": "0.1",
+                "LegOiAnomaly": "0.05",
+                "LegOiConfirmation": "YES",
+                "DeltaWeight": "0.25",
+                "GammaWeight": "0.2",
+                "ThetaWeight": "0.15",
+                "VegaWeight": "0.1",
+                "DeltaThreshold": "0.5",
+                "GammaThreshold": "0.1",
+                "ThetaThreshold": "-0.05",
+                "VegaThreshold": "0.2",
+                "GreekRebalanceFreq": "300",
+                "GreekRiskLimit": "10000"
+              },
+              "validation_issues": []
+            },
+            "WeightConfiguration": {
+              "sheet_name": "WeightConfiguration",
+              "rows": 1,
+              "columns": [
+                "OiFactorWeight",
+                "CoiFactorWeight",
+                "GreekFactorWeight",
+                "MarketFactorWeight",
+                "PerformanceFactorWeight",
+                "CurrentOiWeight",
+                "OiConcentrationWeight",
+                "OiDistributionWeight",
+                "OiMomentumWeight",
+                "OiTrendWeight",
+                "OiSeasonalWeight",
+                "OiLiquidityWeight",
+                "OiAnomalyWeight",
+                "WeightLearningRate",
+                "WeightDecayFactor",
+                "WeightSmoothingFactor",
+                "MinFactorWeight",
+                "MaxFactorWeight",
+                "WeightRebalanceFreq",
+                "PerformanceThreshold",
+                "CorrelationThreshold",
+                "DiversificationBonus",
+                "VolatilityAdjustment",
+                "TrendAdjustment",
+                "RegimeAdjustment"
+              ],
+              "column_count": 25,
+              "data_types": {
+                "OiFactorWeight": "float64",
+                "CoiFactorWeight": "float64",
+                "GreekFactorWeight": "float64",
+                "MarketFactorWeight": "float64",
+                "PerformanceFactorWeight": "float64",
+                "CurrentOiWeight": "float64",
+                "OiConcentrationWeight": "float64",
+                "OiDistributionWeight": "float64",
+                "OiMomentumWeight": "float64",
+                "OiTrendWeight": "float64",
+                "OiSeasonalWeight": "float64",
+                "OiLiquidityWeight": "float64",
+                "OiAnomalyWeight": "float64",
+                "WeightLearningRate": "float64",
+                "WeightDecayFactor": "float64",
+                "WeightSmoothingFactor": "float64",
+                "MinFactorWeight": "float64",
+                "MaxFactorWeight": "float64",
+                "WeightRebalanceFreq": "int64",
+                "PerformanceThreshold": "float64",
+                "CorrelationThreshold": "float64",
+                "DiversificationBonus": "float64",
+                "VolatilityAdjustment": "float64",
+                "TrendAdjustment": "float64",
+                "RegimeAdjustment": "float64"
+              },
+              "null_counts": {
+                "OiFactorWeight": 0,
+                "CoiFactorWeight": 0,
+                "GreekFactorWeight": 0,
+                "MarketFactorWeight": 0,
+                "PerformanceFactorWeight": 0,
+                "CurrentOiWeight": 0,
+                "OiConcentrationWeight": 0,
+                "OiDistributionWeight": 0,
+                "OiMomentumWeight": 0,
+                "OiTrendWeight": 0,
+                "OiSeasonalWeight": 0,
+                "OiLiquidityWeight": 0,
+                "OiAnomalyWeight": 0,
+                "WeightLearningRate": 0,
+                "WeightDecayFactor": 0,
+                "WeightSmoothingFactor": 0,
+                "MinFactorWeight": 0,
+                "MaxFactorWeight": 0,
+                "WeightRebalanceFreq": 0,
+                "PerformanceThreshold": 0,
+                "CorrelationThreshold": 0,
+                "DiversificationBonus": 0,
+                "VolatilityAdjustment": 0,
+                "TrendAdjustment": 0,
+                "RegimeAdjustment": 0
+              },
+              "sample_data": {
+                "OiFactorWeight": "0.35",
+                "CoiFactorWeight": "0.25",
+                "GreekFactorWeight": "0.2",
+                "MarketFactorWeight": "0.15",
+                "PerformanceFactorWeight": "0.05",
+                "CurrentOiWeight": "0.3",
+                "OiConcentrationWeight": "0.2",
+                "OiDistributionWeight": "0.15",
+                "OiMomentumWeight": "0.15",
+                "OiTrendWeight": "0.1",
+                "OiSeasonalWeight": "0.05",
+                "OiLiquidityWeight": "0.03",
+                "OiAnomalyWeight": "0.02",
+                "WeightLearningRate": "0.01",
+                "WeightDecayFactor": "0.95",
+                "WeightSmoothingFactor": "0.15",
+                "MinFactorWeight": "0.05",
+                "MaxFactorWeight": "0.5",
+                "WeightRebalanceFreq": "300",
+                "PerformanceThreshold": "0.6",
+                "CorrelationThreshold": "0.7",
+                "DiversificationBonus": "1.1",
+                "VolatilityAdjustment": "1.15",
+                "TrendAdjustment": "1.1",
+                "RegimeAdjustment": "1.2"
+              },
+              "validation_issues": []
+            },
+            "FactorParameters": {
+              "sheet_name": "FactorParameters",
+              "rows": 3,
+              "columns": [
+                "FactorName",
+                "FactorType",
+                "BaseWeight",
+                "MinWeight",
+                "MaxWeight",
+                "LookbackPeriod",
+                "SmoothingFactor",
+                "ThresholdType",
+                "ThresholdValue",
+                "NormalizationMethod",
+                "OutlierHandling",
+                "SeasonalAdjustment",
+                "VolatilityAdjustment",
+                "TrendAdjustment",
+                "RegimeAdjustment",
+                "PerformanceTracking"
+              ],
+              "column_count": 16,
+              "data_types": {
+                "FactorName": "object",
+                "FactorType": "object",
+                "BaseWeight": "float64",
+                "MinWeight": "float64",
+                "MaxWeight": "float64",
+                "LookbackPeriod": "int64",
+                "SmoothingFactor": "float64",
+                "ThresholdType": "object",
+                "ThresholdValue": "float64",
+                "NormalizationMethod": "object",
+                "OutlierHandling": "object",
+                "SeasonalAdjustment": "object",
+                "VolatilityAdjustment": "object",
+                "TrendAdjustment": "object",
+                "RegimeAdjustment": "object",
+                "PerformanceTracking": "object"
+              },
+              "null_counts": {
+                "FactorName": 0,
+                "FactorType": 0,
+                "BaseWeight": 0,
+                "MinWeight": 0,
+                "MaxWeight": 0,
+                "LookbackPeriod": 0,
+                "SmoothingFactor": 0,
+                "ThresholdType": 0,
+                "ThresholdValue": 0,
+                "NormalizationMethod": 0,
+                "OutlierHandling": 0,
+                "SeasonalAdjustment": 0,
+                "VolatilityAdjustment": 0,
+                "TrendAdjustment": 0,
+                "RegimeAdjustment": 0,
+                "PerformanceTracking": 0
+              },
+              "sample_data": {
+                "FactorName": "OI_CURRENT",
+                "FactorType": "OI",
+                "BaseWeight": "0.3",
+                "MinWeight": "0.1",
+                "MaxWeight": "0.5",
+                "LookbackPeriod": "5",
+                "SmoothingFactor": "0.2",
+                "ThresholdType": "ABSOLUTE",
+                "ThresholdValue": "800000.0",
+                "NormalizationMethod": "ZSCORE",
+                "OutlierHandling": "WINSORIZE",
+                "SeasonalAdjustment": "NO",
+                "VolatilityAdjustment": "YES",
+                "TrendAdjustment": "YES",
+                "RegimeAdjustment": "YES",
+                "PerformanceTracking": "YES"
+              },
+              "validation_issues": []
+            },
+            "PortfolioSetting": {
+              "sheet_name": "PortfolioSetting",
+              "rows": 5,
+              "columns": [
+                "Parameter",
+                "Value",
+                "StrategyName",
+                "Enabled",
+                "Weight",
+                "MaxPositions"
+              ],
+              "column_count": 6,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "StrategyName": "object",
+                "Enabled": "object",
+                "Weight": "int64",
+                "MaxPositions": "int64"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "StrategyName": 0,
+                "Enabled": 0,
+                "Weight": 0,
+                "MaxPositions": 0
+              },
+              "sample_data": {
+                "Parameter": "PortfolioName",
+                "Value": "OI_Strategy",
+                "StrategyName": "DEFAULT",
+                "Enabled": "YES",
+                "Weight": "1",
+                "MaxPositions": "2"
+              },
+              "validation_issues": []
+            },
+            "StrategySetting": {
+              "sheet_name": "StrategySetting",
+              "rows": 1,
+              "columns": [
+                "StrategyName",
+                "Enabled",
+                "Weight",
+                "MaxPositions",
+                "OIThreshold"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "StrategyName": "object",
+                "Enabled": "bool",
+                "Weight": "int64",
+                "MaxPositions": "int64",
+                "OIThreshold": "int64"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "Enabled": 0,
+                "Weight": 0,
+                "MaxPositions": 0,
+                "OIThreshold": 0
+              },
+              "sample_data": {
+                "StrategyName": "MAXOI_1",
+                "Enabled": "True",
+                "Weight": "1",
+                "MaxPositions": "2",
+                "OIThreshold": "800000"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        }
+      },
+      "parameter_counts": {
+        "OI_CONFIG_PORTFOLIO_1.0.0.xlsx:PortfolioSetting": 6,
+        "OI_CONFIG_PORTFOLIO_1.0.0.xlsx:StrategySetting": 5,
+        "OI_CONFIG_STRATEGY_1.0.0.xlsx:GeneralParameter": 45,
+        "OI_CONFIG_STRATEGY_1.0.0.xlsx:LegParameter": 35,
+        "OI_CONFIG_STRATEGY_1.0.0.xlsx:WeightConfiguration": 25,
+        "OI_CONFIG_STRATEGY_1.0.0.xlsx:FactorParameters": 16,
+        "OI_CONFIG_STRATEGY_1.0.0.xlsx:PortfolioSetting": 6,
+        "OI_CONFIG_STRATEGY_1.0.0.xlsx:StrategySetting": 5
+      },
+      "data_validation": {},
+      "total_parameters": 143
+    },
+    "POS": {
+      "strategy": "POS",
+      "files_found": [
+        "POS_CONFIG_PORTFOLIO_1.0.0.xlsx",
+        "POS_CONFIG_STRATEGY_1.0.0.xlsx",
+        "POS_CONFIG_ADJUSTMENT_1.0.0.xlsx"
+      ],
+      "files_missing": [],
+      "sheet_analysis": {
+        "POS_CONFIG_PORTFOLIO_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/pos/POS_CONFIG_PORTFOLIO_1.0.0.xlsx",
+          "sheets_found": [
+            "PortfolioSetting",
+            "StrategySetting",
+            "RiskManagement",
+            "MarketFilters"
+          ],
+          "sheets_missing": [
+            "PositionalParameter",
+            "LegParameter",
+            "AdjustmentRules",
+            "MarketStructure",
+            "GreekLimits"
+          ],
+          "sheets": {
+            "PortfolioSetting": {
+              "sheet_name": "PortfolioSetting",
+              "rows": 25,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Description"
+              ],
+              "column_count": 4,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "PortfolioName",
+                "Value": "POS_Portfolio_Enhanced_v1",
+                "Type": "string",
+                "Description": "Portfolio identifier name"
+              },
+              "validation_issues": []
+            },
+            "StrategySetting": {
+              "sheet_name": "StrategySetting",
+              "rows": 4,
+              "columns": [
+                "StrategyName",
+                "StrategyType",
+                "PortfolioName",
+                "StrategyExcelFilePath",
+                "Enabled",
+                "Priority",
+                "AllocationPercent"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "StrategyName": "object",
+                "StrategyType": "object",
+                "PortfolioName": "object",
+                "StrategyExcelFilePath": "object",
+                "Enabled": "object",
+                "Priority": "int64",
+                "AllocationPercent": "int64"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "StrategyType": 0,
+                "PortfolioName": 0,
+                "StrategyExcelFilePath": 0,
+                "Enabled": 0,
+                "Priority": 0,
+                "AllocationPercent": 0
+              },
+              "sample_data": {
+                "StrategyName": "POS_Calendar_Spread_v1",
+                "StrategyType": "POSITIONAL",
+                "PortfolioName": "POS_Portfolio_Enhanced_v1",
+                "StrategyExcelFilePath": "POS_CONFIG_STRATEGY_1.0.0.xlsx",
+                "Enabled": "YES",
+                "Priority": "1",
+                "AllocationPercent": "100"
+              },
+              "validation_issues": []
+            },
+            "RiskManagement": {
+              "sheet_name": "RiskManagement",
+              "rows": 13,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Description"
+              ],
+              "column_count": 3,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "MaxPortfolioDelta",
+                "Value": "5",
+                "Description": "Maximum portfolio delta exposure"
+              },
+              "validation_issues": []
+            },
+            "MarketFilters": {
+              "sheet_name": "MarketFilters",
+              "rows": 10,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Description"
+              ],
+              "column_count": 3,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "TrendFilter",
+                "Value": "ANY",
+                "Description": "Market trend filter (BULLISH/BEARISH/NEUTRAL/ANY)"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "POS_CONFIG_STRATEGY_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/pos/POS_CONFIG_STRATEGY_1.0.0.xlsx",
+          "sheets_found": [
+            "PositionalParameter",
+            "LegParameter"
+          ],
+          "sheets_missing": [
+            "PortfolioSetting",
+            "AdjustmentRules",
+            "MarketStructure",
+            "GreekLimits"
+          ],
+          "sheets": {
+            "PositionalParameter": {
+              "sheet_name": "PositionalParameter",
+              "rows": 66,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type"
+              ],
+              "column_count": 3,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0
+              },
+              "sample_data": {
+                "Parameter": "StrategyName",
+                "Value": "Weekly_Calendar_BE_v1",
+                "Type": "string"
+              },
+              "validation_issues": []
+            },
+            "LegParameter": {
+              "sheet_name": "LegParameter",
+              "rows": 2,
+              "columns": [
+                "StrategyName",
+                "LegID",
+                "LegName",
+                "IsActive",
+                "LegPriority",
+                "Instrument",
+                "Transaction",
+                "PositionRole",
+                "IsWeeklyLeg",
+                "IsProtectiveLeg",
+                "StrikeMethod",
+                "StrikeValue",
+                "OptimizeForBE",
+                "TargetBEDistance",
+                "Lots",
+                "DynamicSizing",
+                "IVPSizing",
+                "IVPSizeMin",
+                "IVPSizeMax",
+                "TrackLegBE",
+                "LegBEContribution",
+                "LegBEWeight",
+                "BEAdjustmentRole",
+                "StopLossType",
+                "StopLossValue",
+                "TargetType",
+                "TargetValue"
+              ],
+              "column_count": 27,
+              "data_types": {
+                "StrategyName": "object",
+                "LegID": "object",
+                "LegName": "object",
+                "IsActive": "object",
+                "LegPriority": "int64",
+                "Instrument": "object",
+                "Transaction": "object",
+                "PositionRole": "object",
+                "IsWeeklyLeg": "object",
+                "IsProtectiveLeg": "object",
+                "StrikeMethod": "object",
+                "StrikeValue": "int64",
+                "OptimizeForBE": "object",
+                "TargetBEDistance": "int64",
+                "Lots": "int64",
+                "DynamicSizing": "object",
+                "IVPSizing": "object",
+                "IVPSizeMin": "float64",
+                "IVPSizeMax": "float64",
+                "TrackLegBE": "object",
+                "LegBEContribution": "object",
+                "LegBEWeight": "float64",
+                "BEAdjustmentRole": "object",
+                "StopLossType": "object",
+                "StopLossValue": "int64",
+                "TargetType": "object",
+                "TargetValue": "int64"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "LegID": 0,
+                "LegName": 0,
+                "IsActive": 0,
+                "LegPriority": 0,
+                "Instrument": 0,
+                "Transaction": 0,
+                "PositionRole": 0,
+                "IsWeeklyLeg": 0,
+                "IsProtectiveLeg": 0,
+                "StrikeMethod": 0,
+                "StrikeValue": 0,
+                "OptimizeForBE": 0,
+                "TargetBEDistance": 0,
+                "Lots": 0,
+                "DynamicSizing": 0,
+                "IVPSizing": 0,
+                "IVPSizeMin": 0,
+                "IVPSizeMax": 0,
+                "TrackLegBE": 0,
+                "LegBEContribution": 0,
+                "LegBEWeight": 0,
+                "BEAdjustmentRole": 0,
+                "StopLossType": 0,
+                "StopLossValue": 0,
+                "TargetType": 0,
+                "TargetValue": 0
+              },
+              "sample_data": {
+                "StrategyName": "Weekly_Calendar_BE_v1",
+                "LegID": "weekly_short",
+                "LegName": "Weekly Short Call",
+                "IsActive": "YES",
+                "LegPriority": "1",
+                "Instrument": "CALL",
+                "Transaction": "SELL",
+                "PositionRole": "PRIMARY",
+                "IsWeeklyLeg": "YES",
+                "IsProtectiveLeg": "NO",
+                "StrikeMethod": "ATM",
+                "StrikeValue": "0",
+                "OptimizeForBE": "YES",
+                "TargetBEDistance": "75",
+                "Lots": "1",
+                "DynamicSizing": "YES",
+                "IVPSizing": "YES",
+                "IVPSizeMin": "0.8",
+                "IVPSizeMax": "1.2",
+                "TrackLegBE": "YES",
+                "LegBEContribution": "NEGATIVE",
+                "LegBEWeight": "0.6",
+                "BEAdjustmentRole": "MAINTAIN",
+                "StopLossType": "PERCENTAGE",
+                "StopLossValue": "30",
+                "TargetType": "PERCENTAGE",
+                "TargetValue": "50"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "POS_CONFIG_ADJUSTMENT_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/pos/POS_CONFIG_ADJUSTMENT_1.0.0.xlsx",
+          "sheets_found": [
+            "AdjustmentRules"
+          ],
+          "sheets_missing": [
+            "PortfolioSetting",
+            "PositionalParameter",
+            "LegParameter",
+            "MarketStructure",
+            "GreekLimits"
+          ],
+          "sheets": {
+            "AdjustmentRules": {
+              "sheet_name": "AdjustmentRules",
+              "rows": 6,
+              "columns": [
+                "RuleID",
+                "RuleName",
+                "TriggerType",
+                "TriggerThreshold",
+                "ActionType",
+                "ActionParameters",
+                "Enabled",
+                "Priority"
+              ],
+              "column_count": 8,
+              "data_types": {
+                "RuleID": "object",
+                "RuleName": "object",
+                "TriggerType": "object",
+                "TriggerThreshold": "float64",
+                "ActionType": "object",
+                "ActionParameters": "object",
+                "Enabled": "object",
+                "Priority": "int64"
+              },
+              "null_counts": {
+                "RuleID": 0,
+                "RuleName": 0,
+                "TriggerType": 0,
+                "TriggerThreshold": 0,
+                "ActionType": 0,
+                "ActionParameters": 0,
+                "Enabled": 0,
+                "Priority": 0
+              },
+              "sample_data": {
+                "RuleID": "DELTA_BREACH_ROLL",
+                "RuleName": "Delta Breach Roll Out",
+                "TriggerType": "DELTA_BREACH",
+                "TriggerThreshold": "0.5",
+                "ActionType": "ROLL_OUT",
+                "ActionParameters": "roll_days=7,new_dte=14",
+                "Enabled": "YES",
+                "Priority": "1"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        }
+      },
+      "parameter_counts": {
+        "POS_CONFIG_PORTFOLIO_1.0.0.xlsx:PortfolioSetting": 4,
+        "POS_CONFIG_PORTFOLIO_1.0.0.xlsx:StrategySetting": 7,
+        "POS_CONFIG_PORTFOLIO_1.0.0.xlsx:RiskManagement": 3,
+        "POS_CONFIG_PORTFOLIO_1.0.0.xlsx:MarketFilters": 3,
+        "POS_CONFIG_STRATEGY_1.0.0.xlsx:PositionalParameter": 3,
+        "POS_CONFIG_STRATEGY_1.0.0.xlsx:LegParameter": 27,
+        "POS_CONFIG_ADJUSTMENT_1.0.0.xlsx:AdjustmentRules": 8
+      },
+      "data_validation": {},
+      "total_parameters": 55
+    },
+    "ML": {
+      "strategy": "ML",
+      "files_found": [
+        "ML_CONFIG_PORTFOLIO_1.0.0.xlsx",
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx",
+        "ML_CONFIG_INDICATORS_1.0.0.xlsx"
+      ],
+      "files_missing": [],
+      "sheet_analysis": {
+        "ML_CONFIG_PORTFOLIO_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/ml/ML_CONFIG_PORTFOLIO_1.0.0.xlsx",
+          "sheets_found": [
+            "PortfolioSetting",
+            "StrategySetting"
+          ],
+          "sheets_missing": [
+            "GeneralParameter",
+            "LegParameter",
+            "IndicatorConfig"
+          ],
+          "sheets": {
+            "PortfolioSetting": {
+              "sheet_name": "PortfolioSetting",
+              "rows": 1,
+              "columns": [
+                "Capital",
+                "MaxRisk",
+                "MaxPositions",
+                "RiskPerTrade",
+                "UseKellyCriterion",
+                "RebalanceFrequency"
+              ],
+              "column_count": 6,
+              "data_types": {
+                "Capital": "int64",
+                "MaxRisk": "int64",
+                "MaxPositions": "int64",
+                "RiskPerTrade": "int64",
+                "UseKellyCriterion": "object",
+                "RebalanceFrequency": "object"
+              },
+              "null_counts": {
+                "Capital": 0,
+                "MaxRisk": 0,
+                "MaxPositions": 0,
+                "RiskPerTrade": 0,
+                "UseKellyCriterion": 0,
+                "RebalanceFrequency": 0
+              },
+              "sample_data": {
+                "Capital": "1000000",
+                "MaxRisk": "5",
+                "MaxPositions": "5",
+                "RiskPerTrade": "2",
+                "UseKellyCriterion": "NO",
+                "RebalanceFrequency": "DAILY"
+              },
+              "validation_issues": []
+            },
+            "StrategySetting": {
+              "sheet_name": "StrategySetting",
+              "rows": 1,
+              "columns": [
+                "StrategyName",
+                "StrategyExcelFilePath",
+                "Enabled",
+                "Priority",
+                "AllocationPercent"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "StrategyName": "object",
+                "StrategyExcelFilePath": "object",
+                "Enabled": "object",
+                "Priority": "int64",
+                "AllocationPercent": "int64"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "StrategyExcelFilePath": 0,
+                "Enabled": 0,
+                "Priority": 0,
+                "AllocationPercent": 0
+              },
+              "sample_data": {
+                "StrategyName": "ML_Strategy_1",
+                "StrategyExcelFilePath": "ML_CONFIG_STRATEGY_1.0.0.xlsx",
+                "Enabled": "YES",
+                "Priority": "1",
+                "AllocationPercent": "100"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/ml/ML_CONFIG_STRATEGY_1.0.0.xlsx",
+          "sheets_found": [
+            "00_Sheet_Index",
+            "01_LightGBM_Config",
+            "02_CatBoost_Config",
+            "03_TabNet_Config",
+            "04_LSTM_Config",
+            "05_Transformer_Config",
+            "06_Ensemble_Config",
+            "07_Market_Regime_Features",
+            "08_Greek_Features",
+            "09_IV_Features",
+            "10_OI_Features",
+            "11_Technical_Features",
+            "12_Microstructure_Features",
+            "13_Rejection_Candle_Features",
+            "14_Volume_Profile_Features",
+            "15_Enhanced_VWAP_Features",
+            "16_Position_Sizing",
+            "17_Risk_Limits",
+            "18_Pattern_Based_Stops",
+            "19_Circuit_Breaker",
+            "20_Straddle_Config",
+            "21_Signal_Filters",
+            "22_Signal_Processing",
+            "23_Training_Config",
+            "24_Model_Training",
+            "25_Backtesting_Config",
+            "26_HeavyDB_Connection",
+            "27_Data_Source",
+            "28_System_Overview",
+            "29_Performance_Targets"
+          ],
+          "sheets_missing": [
+            "PortfolioSetting",
+            "GeneralParameter",
+            "LegParameter",
+            "IndicatorConfig"
+          ],
+          "sheets": {
+            "00_Sheet_Index": {
+              "sheet_name": "00_Sheet_Index",
+              "rows": 32,
+              "columns": [
+                "Sheet #",
+                "Sheet Name",
+                "Parameters",
+                "Category",
+                "Enhancement Status",
+                "Description"
+              ],
+              "column_count": 6,
+              "data_types": {
+                "Sheet #": "object",
+                "Sheet Name": "object",
+                "Parameters": "object",
+                "Category": "object",
+                "Enhancement Status": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Sheet #": 1,
+                "Sheet Name": 1,
+                "Parameters": 1,
+                "Category": 1,
+                "Enhancement Status": 1,
+                "Description": 1
+              },
+              "sample_data": {
+                "Sheet #": "00",
+                "Sheet Name": "Sheet_Index",
+                "Parameters": "30",
+                "Category": "Navigation",
+                "Enhancement Status": "\u2705 Complete",
+                "Description": "Complete navigation guide with all features"
+              },
+              "validation_issues": [
+                "1 completely empty rows found"
+              ]
+            },
+            "01_LightGBM_Config": {
+              "sheet_name": "01_LightGBM_Config",
+              "rows": 25,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "model_weight",
+                "Value": "0.35",
+                "Type": "float",
+                "Enhancement": "\ud83d\udd25 Enhanced",
+                "Description": "Increased weight due to superior rejection pattern handling"
+              },
+              "validation_issues": []
+            },
+            "02_CatBoost_Config": {
+              "sheet_name": "02_CatBoost_Config",
+              "rows": 25,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "model_weight",
+                "Value": "0.3",
+                "Type": "float",
+                "Enhancement": "\ud83d\udd25 Enhanced",
+                "Description": "Strong performance with categorical pattern features"
+              },
+              "validation_issues": []
+            },
+            "03_TabNet_Config": {
+              "sheet_name": "03_TabNet_Config",
+              "rows": 25,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 2,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "model_weight",
+                "Value": "0.25",
+                "Type": "float",
+                "Enhancement": "\ud83d\udd25 Enhanced",
+                "Description": "Strong attention mechanism for pattern recognition"
+              },
+              "validation_issues": []
+            },
+            "04_LSTM_Config": {
+              "sheet_name": "04_LSTM_Config",
+              "rows": 18,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "model_weight",
+                "Value": "0.08",
+                "Type": "float",
+                "Enhancement": "\ud83d\udd25 Enhanced",
+                "Description": "Reduced due to planned TCN upgrade but pattern-aware"
+              },
+              "validation_issues": []
+            },
+            "05_Transformer_Config": {
+              "sheet_name": "05_Transformer_Config",
+              "rows": 18,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "model_weight",
+                "Value": "0.02",
+                "Type": "float",
+                "Enhancement": "\ud83d\udd25 Enhanced",
+                "Description": "Minimal due to planned TiDE upgrade"
+              },
+              "validation_issues": []
+            },
+            "06_Ensemble_Config": {
+              "sheet_name": "06_Ensemble_Config",
+              "rows": 15,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "ensemble_method",
+                "Value": "weighted_average",
+                "Type": "string",
+                "Enhancement": "\ud83d\udd25 Enhanced",
+                "Description": "Weighted by pattern confidence"
+              },
+              "validation_issues": []
+            },
+            "07_Market_Regime_Features": {
+              "sheet_name": "07_Market_Regime_Features",
+              "rows": 45,
+              "columns": [
+                "Feature_Name",
+                "Enable",
+                "Weight",
+                "Lookback_Minutes",
+                "Update_Frequency",
+                "Normalization",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Feature_Name": "object",
+                "Enable": "bool",
+                "Weight": "float64",
+                "Lookback_Minutes": "int64",
+                "Update_Frequency": "object",
+                "Normalization": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Feature_Name": 0,
+                "Enable": 0,
+                "Weight": 0,
+                "Lookback_Minutes": 0,
+                "Update_Frequency": 0,
+                "Normalization": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Feature_Name": "ema_crossover",
+                "Enable": "True",
+                "Weight": "1.0",
+                "Lookback_Minutes": "15",
+                "Update_Frequency": "1min",
+                "Normalization": "zscore",
+                "Description": "EMA crossover signal strength"
+              },
+              "validation_issues": []
+            },
+            "08_Greek_Features": {
+              "sheet_name": "08_Greek_Features",
+              "rows": 30,
+              "columns": [
+                "Feature_Name",
+                "Enable",
+                "Weight",
+                "Calculation_Method",
+                "Normalization",
+                "Smoothing_Window",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Feature_Name": "object",
+                "Enable": "bool",
+                "Weight": "float64",
+                "Calculation_Method": "object",
+                "Normalization": "object",
+                "Smoothing_Window": "int64",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Feature_Name": 0,
+                "Enable": 0,
+                "Weight": 0,
+                "Calculation_Method": 0,
+                "Normalization": 0,
+                "Smoothing_Window": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Feature_Name": "delta_atm_ce",
+                "Enable": "True",
+                "Weight": "1.5",
+                "Calculation_Method": "black_scholes",
+                "Normalization": "minmax",
+                "Smoothing_Window": "5",
+                "Description": "ATM call delta"
+              },
+              "validation_issues": []
+            },
+            "09_IV_Features": {
+              "sheet_name": "09_IV_Features",
+              "rows": 35,
+              "columns": [
+                "Feature_Name",
+                "Enable",
+                "Weight",
+                "Calculation_Window",
+                "Smoothing",
+                "Outlier_Method",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Feature_Name": "object",
+                "Enable": "bool",
+                "Weight": "float64",
+                "Calculation_Window": "int64",
+                "Smoothing": "object",
+                "Outlier_Method": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Feature_Name": 0,
+                "Enable": 0,
+                "Weight": 0,
+                "Calculation_Window": 0,
+                "Smoothing": 0,
+                "Outlier_Method": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Feature_Name": "iv_strike_minus_10",
+                "Enable": "True",
+                "Weight": "1.1",
+                "Calculation_Window": "252",
+                "Smoothing": "exponential",
+                "Outlier_Method": "clip_3sigma",
+                "Description": "IV at -10 strike from ATM"
+              },
+              "validation_issues": []
+            },
+            "10_OI_Features": {
+              "sheet_name": "10_OI_Features",
+              "rows": 28,
+              "columns": [
+                "Feature_Name",
+                "Enable",
+                "Weight",
+                "Rolling_Window",
+                "Change_Calc",
+                "Filter_Method",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Feature_Name": "object",
+                "Enable": "bool",
+                "Weight": "float64",
+                "Rolling_Window": "int64",
+                "Change_Calc": "object",
+                "Filter_Method": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Feature_Name": 0,
+                "Enable": 0,
+                "Weight": 0,
+                "Rolling_Window": 0,
+                "Change_Calc": 0,
+                "Filter_Method": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Feature_Name": "oi_atm_ce",
+                "Enable": "True",
+                "Weight": "1.5",
+                "Rolling_Window": "20",
+                "Change_Calc": "absolute",
+                "Filter_Method": "volume_weighted",
+                "Description": "ATM call open interest"
+              },
+              "validation_issues": []
+            },
+            "11_Technical_Features": {
+              "sheet_name": "11_Technical_Features",
+              "rows": 40,
+              "columns": [
+                "Feature_Name",
+                "Enable",
+                "Weight",
+                "Period",
+                "Calculation",
+                "Smoothing",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Feature_Name": "object",
+                "Enable": "bool",
+                "Weight": "float64",
+                "Period": "int64",
+                "Calculation": "object",
+                "Smoothing": "bool",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Feature_Name": 0,
+                "Enable": 0,
+                "Weight": 0,
+                "Period": 0,
+                "Calculation": 0,
+                "Smoothing": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Feature_Name": "price_current",
+                "Enable": "True",
+                "Weight": "1.0",
+                "Period": "1",
+                "Calculation": "standard",
+                "Smoothing": "False",
+                "Description": "Current market price"
+              },
+              "validation_issues": []
+            },
+            "12_Microstructure_Features": {
+              "sheet_name": "12_Microstructure_Features",
+              "rows": 25,
+              "columns": [
+                "Feature_Name",
+                "Enable",
+                "Weight",
+                "Window_Min",
+                "Aggregation",
+                "Filter",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Feature_Name": "object",
+                "Enable": "bool",
+                "Weight": "float64",
+                "Window_Min": "int64",
+                "Aggregation": "object",
+                "Filter": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Feature_Name": 0,
+                "Enable": 0,
+                "Weight": 0,
+                "Window_Min": 0,
+                "Aggregation": 0,
+                "Filter": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Feature_Name": "buy_pressure",
+                "Enable": "True",
+                "Weight": "1.7",
+                "Window_Min": "5",
+                "Aggregation": "volume_weighted",
+                "Filter": "outlier_robust",
+                "Description": "Buy-side order pressure"
+              },
+              "validation_issues": []
+            },
+            "13_Rejection_Candle_Features": {
+              "sheet_name": "13_Rejection_Candle_Features",
+              "rows": 30,
+              "columns": [
+                "Feature_Name",
+                "Type",
+                "Weight",
+                "Priority",
+                "Lookback",
+                "Threshold",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Feature_Name": "object",
+                "Type": "object",
+                "Weight": "float64",
+                "Priority": "object",
+                "Lookback": "int64",
+                "Threshold": "float64",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Feature_Name": 0,
+                "Type": 0,
+                "Weight": 0,
+                "Priority": 0,
+                "Lookback": 0,
+                "Threshold": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Feature_Name": "rejection_hammer_count",
+                "Type": "int",
+                "Weight": "2.0",
+                "Priority": "HIGH",
+                "Lookback": "50",
+                "Threshold": "0.6",
+                "Description": "Count of hammer patterns in lookback window"
+              },
+              "validation_issues": []
+            },
+            "14_Volume_Profile_Features": {
+              "sheet_name": "14_Volume_Profile_Features",
+              "rows": 20,
+              "columns": [
+                "Feature_Name",
+                "Type",
+                "Weight",
+                "Priority",
+                "Bins",
+                "Update_Freq",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Feature_Name": "object",
+                "Type": "object",
+                "Weight": "float64",
+                "Priority": "object",
+                "Bins": "int64",
+                "Update_Freq": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Feature_Name": 0,
+                "Type": 0,
+                "Weight": 0,
+                "Priority": 0,
+                "Bins": 0,
+                "Update_Freq": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Feature_Name": "volume_poc_price",
+                "Type": "float",
+                "Weight": "2.0",
+                "Priority": "HIGH",
+                "Bins": "50",
+                "Update_Freq": "1min",
+                "Description": "Point of Control price level"
+              },
+              "validation_issues": []
+            },
+            "15_Enhanced_VWAP_Features": {
+              "sheet_name": "15_Enhanced_VWAP_Features",
+              "rows": 25,
+              "columns": [
+                "Feature_Name",
+                "Type",
+                "Weight",
+                "Priority",
+                "Lookback",
+                "Deviation_Bands",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Feature_Name": "object",
+                "Type": "object",
+                "Weight": "float64",
+                "Priority": "object",
+                "Lookback": "int64",
+                "Deviation_Bands": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Feature_Name": 0,
+                "Type": 0,
+                "Weight": 0,
+                "Priority": 0,
+                "Lookback": 0,
+                "Deviation_Bands": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Feature_Name": "vwap_current",
+                "Type": "float",
+                "Weight": "1.8",
+                "Priority": "HIGH",
+                "Lookback": "1",
+                "Deviation_Bands": "none",
+                "Description": "Current VWAP value"
+              },
+              "validation_issues": []
+            },
+            "16_Position_Sizing": {
+              "sheet_name": "16_Position_Sizing",
+              "rows": 15,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "position_sizing_method",
+                "Value": "kelly",
+                "Type": "string",
+                "Enhancement": "\ud83d\udd25 Enhanced",
+                "Description": "Kelly criterion with pattern confidence"
+              },
+              "validation_issues": []
+            },
+            "17_Risk_Limits": {
+              "sheet_name": "17_Risk_Limits",
+              "rows": 15,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "float64",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "max_portfolio_risk",
+                "Value": "0.3",
+                "Type": "float",
+                "Enhancement": "\u2705 Standard",
+                "Description": "Maximum portfolio risk exposure"
+              },
+              "validation_issues": []
+            },
+            "18_Pattern_Based_Stops": {
+              "sheet_name": "18_Pattern_Based_Stops",
+              "rows": 20,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "float64",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "use_pattern_based_stops",
+                "Value": "1.0",
+                "Type": "bool",
+                "Enhancement": "\ud83d\udd25 NEW",
+                "Description": "Enable pattern-based stop loss calculation"
+              },
+              "validation_issues": []
+            },
+            "19_Circuit_Breaker": {
+              "sheet_name": "19_Circuit_Breaker",
+              "rows": 15,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "float64",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "circuit_breaker_enable",
+                "Value": "1.0",
+                "Type": "bool",
+                "Enhancement": "\u2705 Standard",
+                "Description": "Enable circuit breaker functionality"
+              },
+              "validation_issues": []
+            },
+            "20_Straddle_Config": {
+              "sheet_name": "20_Straddle_Config",
+              "rows": 18,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "float64",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "atm_confidence_threshold",
+                "Value": "0.75",
+                "Type": "float",
+                "Enhancement": "\ud83d\udd25 Enhanced",
+                "Description": "ATM straddle confidence with pattern validation"
+              },
+              "validation_issues": []
+            },
+            "21_Signal_Filters": {
+              "sheet_name": "21_Signal_Filters",
+              "rows": 20,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "min_volume_filter",
+                "Value": "1000",
+                "Type": "int",
+                "Enhancement": "\u2705 Standard",
+                "Description": "Minimum volume threshold"
+              },
+              "validation_issues": []
+            },
+            "22_Signal_Processing": {
+              "sheet_name": "22_Signal_Processing",
+              "rows": 18,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "signal_smoothing_enable",
+                "Value": "True",
+                "Type": "bool",
+                "Enhancement": "\u2705 Standard",
+                "Description": "Enable signal smoothing"
+              },
+              "validation_issues": []
+            },
+            "23_Training_Config": {
+              "sheet_name": "23_Training_Config",
+              "rows": 20,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "training_start_date",
+                "Value": "2020-01-01",
+                "Type": "date",
+                "Enhancement": "\u2705 Standard",
+                "Description": "Training data start date"
+              },
+              "validation_issues": []
+            },
+            "24_Model_Training": {
+              "sheet_name": "24_Model_Training",
+              "rows": 22,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "early_stopping_enable",
+                "Value": "True",
+                "Type": "bool",
+                "Enhancement": "\u2705 Standard",
+                "Description": "Enable early stopping"
+              },
+              "validation_issues": []
+            },
+            "25_Backtesting_Config": {
+              "sheet_name": "25_Backtesting_Config",
+              "rows": 20,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "backtest_start_date",
+                "Value": "2023-01-01",
+                "Type": "date",
+                "Enhancement": "\u2705 Standard",
+                "Description": "Backtest start date"
+              },
+              "validation_issues": []
+            },
+            "26_HeavyDB_Connection": {
+              "sheet_name": "26_HeavyDB_Connection",
+              "rows": 18,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "host",
+                "Value": "localhost",
+                "Type": "string",
+                "Enhancement": "\u2705 Standard",
+                "Description": "HeavyDB host address"
+              },
+              "validation_issues": []
+            },
+            "27_Data_Source": {
+              "sheet_name": "27_Data_Source",
+              "rows": 18,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Type",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Type": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Type": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "primary_table",
+                "Value": "nifty_option_chain",
+                "Type": "string",
+                "Enhancement": "\u2705 Standard",
+                "Description": "Primary data table"
+              },
+              "validation_issues": []
+            },
+            "28_System_Overview": {
+              "sheet_name": "28_System_Overview",
+              "rows": 15,
+              "columns": [
+                "Component",
+                "Status",
+                "Enhancement",
+                "Key Features",
+                "Performance",
+                "Configuration_Sheets"
+              ],
+              "column_count": 6,
+              "data_types": {
+                "Component": "object",
+                "Status": "object",
+                "Enhancement": "object",
+                "Key Features": "object",
+                "Performance": "object",
+                "Configuration_Sheets": "object"
+              },
+              "null_counts": {
+                "Component": 0,
+                "Status": 0,
+                "Enhancement": 0,
+                "Key Features": 0,
+                "Performance": 0,
+                "Configuration_Sheets": 0
+              },
+              "sample_data": {
+                "Component": "ML Models",
+                "Status": "\ud83d\udd25 Enhanced",
+                "Enhancement": "Rejection Pattern Integration",
+                "Key Features": "5-model ensemble with pattern-aware training",
+                "Performance": "75%+ accuracy",
+                "Configuration_Sheets": "Sheets 1-6"
+              },
+              "validation_issues": []
+            },
+            "29_Performance_Targets": {
+              "sheet_name": "29_Performance_Targets",
+              "rows": 25,
+              "columns": [
+                "Metric",
+                "Target",
+                "Current",
+                "Enhancement",
+                "Description"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "Metric": "object",
+                "Target": "object",
+                "Current": "object",
+                "Enhancement": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Metric": 0,
+                "Target": 0,
+                "Current": 0,
+                "Enhancement": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Metric": "Signal Latency",
+                "Target": "<100ms",
+                "Current": "\u2705 65ms",
+                "Enhancement": "\ud83d\udd25 Enhanced",
+                "Description": "Pattern validation within latency budget"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "ML_CONFIG_INDICATORS_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/ml/ML_CONFIG_INDICATORS_1.0.0.xlsx",
+          "sheets_found": [
+            "IndicatorConfig"
+          ],
+          "sheets_missing": [
+            "PortfolioSetting",
+            "GeneralParameter",
+            "LegParameter"
+          ],
+          "sheets": {
+            "IndicatorConfig": {
+              "sheet_name": "IndicatorConfig",
+              "rows": 3,
+              "columns": [
+                "IndicatorName",
+                "Enabled",
+                "Parameters"
+              ],
+              "column_count": 3,
+              "data_types": {
+                "IndicatorName": "object",
+                "Enabled": "object",
+                "Parameters": "object"
+              },
+              "null_counts": {
+                "IndicatorName": 0,
+                "Enabled": 0,
+                "Parameters": 0
+              },
+              "sample_data": {
+                "IndicatorName": "RSI",
+                "Enabled": "YES",
+                "Parameters": "14"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        }
+      },
+      "parameter_counts": {
+        "ML_CONFIG_PORTFOLIO_1.0.0.xlsx:PortfolioSetting": 6,
+        "ML_CONFIG_PORTFOLIO_1.0.0.xlsx:StrategySetting": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:00_Sheet_Index": 6,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:01_LightGBM_Config": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:02_CatBoost_Config": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:03_TabNet_Config": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:04_LSTM_Config": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:05_Transformer_Config": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:06_Ensemble_Config": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:07_Market_Regime_Features": 7,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:08_Greek_Features": 7,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:09_IV_Features": 7,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:10_OI_Features": 7,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:11_Technical_Features": 7,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:12_Microstructure_Features": 7,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:13_Rejection_Candle_Features": 7,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:14_Volume_Profile_Features": 7,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:15_Enhanced_VWAP_Features": 7,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:16_Position_Sizing": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:17_Risk_Limits": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:18_Pattern_Based_Stops": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:19_Circuit_Breaker": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:20_Straddle_Config": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:21_Signal_Filters": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:22_Signal_Processing": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:23_Training_Config": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:24_Model_Training": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:25_Backtesting_Config": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:26_HeavyDB_Connection": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:27_Data_Source": 5,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:28_System_Overview": 6,
+        "ML_CONFIG_STRATEGY_1.0.0.xlsx:29_Performance_Targets": 5,
+        "ML_CONFIG_INDICATORS_1.0.0.xlsx:IndicatorConfig": 3
+      },
+      "data_validation": {},
+      "total_parameters": 184
+    },
+    "MR": {
+      "strategy": "MR",
+      "files_found": [
+        "MR_CONFIG_PORTFOLIO_1.0.0.xlsx",
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx",
+        "MR_CONFIG_REGIME_1.0.0.xlsx",
+        "MR_CONFIG_OPTIMIZATION_1.0.0.xlsx"
+      ],
+      "files_missing": [],
+      "sheet_analysis": {
+        "MR_CONFIG_PORTFOLIO_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/mr/MR_CONFIG_PORTFOLIO_1.0.0.xlsx",
+          "sheets_found": [
+            "PortfolioSetting",
+            "StrategySetting"
+          ],
+          "sheets_missing": [
+            "RegimeParameter",
+            "OptimizationParameter",
+            "MarketStructure"
+          ],
+          "sheets": {
+            "PortfolioSetting": {
+              "sheet_name": "PortfolioSetting",
+              "rows": 1,
+              "columns": [
+                "Capital",
+                "MaxRisk",
+                "MaxPositions",
+                "RiskPerTrade",
+                "UseKellyCriterion",
+                "RebalanceFrequency"
+              ],
+              "column_count": 6,
+              "data_types": {
+                "Capital": "int64",
+                "MaxRisk": "int64",
+                "MaxPositions": "int64",
+                "RiskPerTrade": "int64",
+                "UseKellyCriterion": "object",
+                "RebalanceFrequency": "object"
+              },
+              "null_counts": {
+                "Capital": 0,
+                "MaxRisk": 0,
+                "MaxPositions": 0,
+                "RiskPerTrade": 0,
+                "UseKellyCriterion": 0,
+                "RebalanceFrequency": 0
+              },
+              "sample_data": {
+                "Capital": "1000000",
+                "MaxRisk": "5",
+                "MaxPositions": "5",
+                "RiskPerTrade": "2",
+                "UseKellyCriterion": "NO",
+                "RebalanceFrequency": "DAILY"
+              },
+              "validation_issues": []
+            },
+            "StrategySetting": {
+              "sheet_name": "StrategySetting",
+              "rows": 1,
+              "columns": [
+                "StrategyName",
+                "StrategyExcelFilePath",
+                "Enabled",
+                "Priority",
+                "AllocationPercent"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "StrategyName": "object",
+                "StrategyExcelFilePath": "object",
+                "Enabled": "object",
+                "Priority": "int64",
+                "AllocationPercent": "int64"
+              },
+              "null_counts": {
+                "StrategyName": 0,
+                "StrategyExcelFilePath": 0,
+                "Enabled": 0,
+                "Priority": 0,
+                "AllocationPercent": 0
+              },
+              "sample_data": {
+                "StrategyName": "MR_Strategy_1",
+                "StrategyExcelFilePath": "MR_CONFIG_STRATEGY_1.0.0.xlsx",
+                "Enabled": "YES",
+                "Priority": "1",
+                "AllocationPercent": "100"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/mr/MR_CONFIG_STRATEGY_1.0.0.xlsx",
+          "sheets_found": [
+            "Summary",
+            "MasterConfiguration",
+            "StabilityConfiguration",
+            "TransitionManagement",
+            "NoiseFiltering",
+            "TransitionRules",
+            "IndicatorConfiguration",
+            "GreekSentimentConfig",
+            "TrendingOIPAConfig",
+            "StraddleAnalysisConfig",
+            "IVSurfaceConfig",
+            "ATRIndicatorsConfig",
+            "RegimeClassification",
+            "RegimeFormationConfig",
+            "RegimeParameters",
+            "MultiTimeframeConfig",
+            "DynamicWeightageConfig",
+            "PerformanceMetrics",
+            "ValidationRules",
+            "AdaptiveTuning",
+            "IntradaySettings",
+            "OutputFormat",
+            "TemplateMetadata",
+            "EnsembleMethods",
+            "ConfidenceCalibration",
+            "MultiTimeframeFusion",
+            "AdaptiveLearning",
+            "AccuracyEnhancement",
+            "RegimeStability",
+            "ValidationFramework",
+            "RiskControls"
+          ],
+          "sheets_missing": [
+            "PortfolioSetting",
+            "RegimeParameter",
+            "OptimizationParameter",
+            "MarketStructure"
+          ],
+          "sheets": {
+            "Summary": {
+              "sheet_name": "Summary",
+              "rows": 6,
+              "columns": [
+                "Unnamed: 0",
+                "Unnamed: 1"
+              ],
+              "column_count": 2,
+              "data_types": {
+                "Unnamed: 0": "object",
+                "Unnamed: 1": "object"
+              },
+              "null_counts": {
+                "Unnamed: 0": 1,
+                "Unnamed: 1": 2
+              },
+              "sample_data": {
+                "Unnamed: 0": "PHASE 2 UPDATE",
+                "Unnamed: 1": "2025-06-28 10:43:35"
+              },
+              "validation_issues": [
+                "1 completely empty rows found"
+              ]
+            },
+            "MasterConfiguration": {
+              "sheet_name": "MasterConfiguration",
+              "rows": 27,
+              "columns": [
+                "ULTIMATE UNIFIED MARKET REGIME CONFIGURATION",
+                "Unnamed: 1",
+                "Unnamed: 2",
+                "Unnamed: 3",
+                "Unnamed: 4"
+              ],
+              "column_count": 5,
+              "data_types": {
+                "ULTIMATE UNIFIED MARKET REGIME CONFIGURATION": "object",
+                "Unnamed: 1": "object",
+                "Unnamed: 2": "object",
+                "Unnamed: 3": "object",
+                "Unnamed: 4": "object"
+              },
+              "null_counts": {
+                "ULTIMATE UNIFIED MARKET REGIME CONFIGURATION": 1,
+                "Unnamed: 1": 2,
+                "Unnamed: 2": 5,
+                "Unnamed: 3": 5,
+                "Unnamed: 4": 5
+              },
+              "sample_data": {
+                "ULTIMATE UNIFIED MARKET REGIME CONFIGURATION": "Parameter",
+                "Unnamed: 1": "Value",
+                "Unnamed: 2": "Options",
+                "Unnamed: 3": "Default",
+                "Unnamed: 4": "Description"
+              },
+              "validation_issues": [
+                "1 completely empty rows found"
+              ]
+            },
+            "StabilityConfiguration": {
+              "sheet_name": "StabilityConfiguration",
+              "rows": 26,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Default",
+                "Min",
+                "Max",
+                "Unit",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Default": "object",
+                "Min": "object",
+                "Max": "object",
+                "Unit": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Default": 0,
+                "Min": 0,
+                "Max": 0,
+                "Unit": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "minimum_regime_duration",
+                "Value": "30",
+                "Default": "30",
+                "Min": "15",
+                "Max": "120",
+                "Unit": "minutes",
+                "Description": "Minimum time before allowing transition (30min for intraday)"
+              },
+              "validation_issues": []
+            },
+            "TransitionManagement": {
+              "sheet_name": "TransitionManagement",
+              "rows": 21,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Default",
+                "Min",
+                "Max",
+                "Unit",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Default": "object",
+                "Min": "object",
+                "Max": "object",
+                "Unit": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Default": 0,
+                "Min": 0,
+                "Max": 0,
+                "Unit": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "transition_detection_method",
+                "Value": "MULTI_FACTOR",
+                "Default": "MULTI_FACTOR",
+                "Min": "SIMPLE",
+                "Max": "ML_BASED",
+                "Unit": "type",
+                "Description": "Method for detecting regime transitions"
+              },
+              "validation_issues": []
+            },
+            "NoiseFiltering": {
+              "sheet_name": "NoiseFiltering",
+              "rows": 18,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Default",
+                "Min",
+                "Max",
+                "Unit",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Default": "object",
+                "Min": "object",
+                "Max": "object",
+                "Unit": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Default": 0,
+                "Min": 0,
+                "Max": 0,
+                "Unit": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "microstructure_filter_enabled",
+                "Value": "TRUE",
+                "Default": "TRUE",
+                "Min": "TRUE",
+                "Max": "FALSE",
+                "Unit": "boolean",
+                "Description": "Filter market microstructure noise"
+              },
+              "validation_issues": []
+            },
+            "TransitionRules": {
+              "sheet_name": "TransitionRules",
+              "rows": 25,
+              "columns": [
+                "RuleID",
+                "FromRegime",
+                "ToRegime",
+                "MinConfidence",
+                "MaxDuration",
+                "RequiredSignals",
+                "Priority",
+                "Description"
+              ],
+              "column_count": 8,
+              "data_types": {
+                "RuleID": "int64",
+                "FromRegime": "object",
+                "ToRegime": "object",
+                "MinConfidence": "float64",
+                "MaxDuration": "int64",
+                "RequiredSignals": "int64",
+                "Priority": "int64",
+                "Description": "object"
+              },
+              "null_counts": {
+                "RuleID": 0,
+                "FromRegime": 0,
+                "ToRegime": 0,
+                "MinConfidence": 0,
+                "MaxDuration": 0,
+                "RequiredSignals": 0,
+                "Priority": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "RuleID": "1",
+                "FromRegime": "Neutral_Low_Vol",
+                "ToRegime": "Neutral_Med_Vol",
+                "MinConfidence": "0.4",
+                "MaxDuration": "60",
+                "RequiredSignals": "2",
+                "Priority": "1",
+                "Description": "Common volatility expansion in neutral"
+              },
+              "validation_issues": []
+            },
+            "IndicatorConfiguration": {
+              "sheet_name": "IndicatorConfiguration",
+              "rows": 12,
+              "columns": [
+                "Unified Enhanced Market Regime - Indicator Configuration",
+                "Unnamed: 1",
+                "Unnamed: 2",
+                "Unnamed: 3",
+                "Unnamed: 4",
+                "Unnamed: 5",
+                "Unnamed: 6",
+                "Unnamed: 7"
+              ],
+              "column_count": 8,
+              "data_types": {
+                "Unified Enhanced Market Regime - Indicator Configuration": "object",
+                "Unnamed: 1": "object",
+                "Unnamed: 2": "object",
+                "Unnamed: 3": "object",
+                "Unnamed: 4": "object",
+                "Unnamed: 5": "object",
+                "Unnamed: 6": "object",
+                "Unnamed: 7": "object"
+              },
+              "null_counts": {
+                "Unified Enhanced Market Regime - Indicator Configuration": 1,
+                "Unnamed: 1": 1,
+                "Unnamed: 2": 1,
+                "Unnamed: 3": 1,
+                "Unnamed: 4": 1,
+                "Unnamed: 5": 1,
+                "Unnamed: 6": 1,
+                "Unnamed: 7": 1
+              },
+              "sample_data": {
+                "Unified Enhanced Market Regime - Indicator Configuration": "IndicatorID",
+                "Unnamed: 1": "IndicatorName",
+                "Unnamed: 2": "Enabled",
+                "Unnamed: 3": "Weight",
+                "Unnamed: 4": "Parameters",
+                "Unnamed: 5": "UpdateFrequency",
+                "Unnamed: 6": "RequiresData",
+                "Unnamed: 7": "Description"
+              },
+              "validation_issues": [
+                "1 completely empty rows found"
+              ]
+            },
+            "GreekSentimentConfig": {
+              "sheet_name": "GreekSentimentConfig",
+              "rows": 18,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Default",
+                "Min",
+                "Max",
+                "Unit",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Default": "object",
+                "Min": "object",
+                "Max": "object",
+                "Unit": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Default": 0,
+                "Min": 0,
+                "Max": 0,
+                "Unit": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "delta_weight",
+                "Value": "0.25",
+                "Default": "0.25",
+                "Min": "0.1",
+                "Max": "0.4",
+                "Unit": "ratio",
+                "Description": "Weight for delta in sentiment"
+              },
+              "validation_issues": []
+            },
+            "TrendingOIPAConfig": {
+              "sheet_name": "TrendingOIPAConfig",
+              "rows": 16,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Default",
+                "Min",
+                "Max",
+                "Unit",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Default": "object",
+                "Min": "object",
+                "Max": "object",
+                "Unit": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Default": 0,
+                "Min": 0,
+                "Max": 0,
+                "Unit": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "oi_lookback_period",
+                "Value": "20",
+                "Default": "20",
+                "Min": "10",
+                "Max": "50",
+                "Unit": "points",
+                "Description": "Lookback for OI trend analysis"
+              },
+              "validation_issues": []
+            },
+            "StraddleAnalysisConfig": {
+              "sheet_name": "StraddleAnalysisConfig",
+              "rows": 19,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Default",
+                "Min",
+                "Max",
+                "Unit",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Default": "object",
+                "Min": "object",
+                "Max": "object",
+                "Unit": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Default": 0,
+                "Min": 0,
+                "Max": 0,
+                "Unit": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "straddle_strikes",
+                "Value": "3",
+                "Default": "3",
+                "Min": "1",
+                "Max": "5",
+                "Unit": "strikes",
+                "Description": "Number of straddles to analyze"
+              },
+              "validation_issues": []
+            },
+            "IVSurfaceConfig": {
+              "sheet_name": "IVSurfaceConfig",
+              "rows": 18,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Default",
+                "Min",
+                "Max",
+                "Unit",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Default": "object",
+                "Min": "object",
+                "Max": "object",
+                "Unit": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Default": 0,
+                "Min": 0,
+                "Max": 0,
+                "Unit": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "surface_strike_points",
+                "Value": "7",
+                "Default": "7",
+                "Min": "5",
+                "Max": "11",
+                "Unit": "strikes",
+                "Description": "Strike points for surface construction"
+              },
+              "validation_issues": []
+            },
+            "ATRIndicatorsConfig": {
+              "sheet_name": "ATRIndicatorsConfig",
+              "rows": 20,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Default",
+                "Min",
+                "Max",
+                "Unit",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Default": "object",
+                "Min": "object",
+                "Max": "object",
+                "Unit": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Default": 0,
+                "Min": 0,
+                "Max": 0,
+                "Unit": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "atr_period",
+                "Value": "14",
+                "Default": "14",
+                "Min": "7",
+                "Max": "21",
+                "Unit": "periods",
+                "Description": "ATR calculation period"
+              },
+              "validation_issues": []
+            },
+            "RegimeClassification": {
+              "sheet_name": "RegimeClassification",
+              "rows": 35,
+              "columns": [
+                "RegimeID",
+                "RegimeName",
+                "VolatilityClass",
+                "TrendClass",
+                "MinDuration",
+                "Priority",
+                "Color",
+                "Description"
+              ],
+              "column_count": 8,
+              "data_types": {
+                "RegimeID": "object",
+                "RegimeName": "object",
+                "VolatilityClass": "object",
+                "TrendClass": "object",
+                "MinDuration": "object",
+                "Priority": "float64",
+                "Color": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "RegimeID": 4,
+                "RegimeName": 6,
+                "VolatilityClass": 6,
+                "TrendClass": 6,
+                "MinDuration": 6,
+                "Priority": 17,
+                "Color": 17,
+                "Description": 17
+              },
+              "sample_data": {
+                "RegimeID": "0",
+                "RegimeName": "Strong_Bullish_High_Vol",
+                "VolatilityClass": "High",
+                "TrendClass": "Strong_Bullish",
+                "MinDuration": "30",
+                "Priority": "1.0",
+                "Color": "#00FF00",
+                "Description": "Strong uptrend with high volatility - aggressive longs"
+              },
+              "validation_issues": [
+                "4 completely empty rows found"
+              ]
+            },
+            "RegimeFormationConfig": {
+              "sheet_name": "RegimeFormationConfig",
+              "rows": 12,
+              "columns": [
+                "Market Regime Formation Rules (18 Regime Types)",
+                "Unnamed: 1",
+                "Unnamed: 2",
+                "Unnamed: 3",
+                "Unnamed: 4",
+                "Unnamed: 5",
+                "Unnamed: 6"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Market Regime Formation Rules (18 Regime Types)": "object",
+                "Unnamed: 1": "object",
+                "Unnamed: 2": "object",
+                "Unnamed: 3": "object",
+                "Unnamed: 4": "object",
+                "Unnamed: 5": "object",
+                "Unnamed: 6": "object"
+              },
+              "null_counts": {
+                "Market Regime Formation Rules (18 Regime Types)": 1,
+                "Unnamed: 1": 1,
+                "Unnamed: 2": 1,
+                "Unnamed: 3": 1,
+                "Unnamed: 4": 1,
+                "Unnamed: 5": 1,
+                "Unnamed: 6": 1
+              },
+              "sample_data": {
+                "Market Regime Formation Rules (18 Regime Types)": "RuleID",
+                "Unnamed: 1": "RegimeType",
+                "Unnamed: 2": "Condition1",
+                "Unnamed: 3": "Condition2",
+                "Unnamed: 4": "Condition3",
+                "Unnamed: 5": "MinScore",
+                "Unnamed: 6": "Description"
+              },
+              "validation_issues": [
+                "1 completely empty rows found"
+              ]
+            },
+            "RegimeParameters": {
+              "sheet_name": "RegimeParameters",
+              "rows": 18,
+              "columns": [
+                "RegimeID",
+                "RegimeName",
+                "MinDuration",
+                "TypicalDuration",
+                "MaxDuration",
+                "EntryThreshold",
+                "ExitThreshold",
+                "TradingBias"
+              ],
+              "column_count": 8,
+              "data_types": {
+                "RegimeID": "int64",
+                "RegimeName": "object",
+                "MinDuration": "int64",
+                "TypicalDuration": "int64",
+                "MaxDuration": "int64",
+                "EntryThreshold": "float64",
+                "ExitThreshold": "float64",
+                "TradingBias": "object"
+              },
+              "null_counts": {
+                "RegimeID": 0,
+                "RegimeName": 0,
+                "MinDuration": 0,
+                "TypicalDuration": 0,
+                "MaxDuration": 0,
+                "EntryThreshold": 0,
+                "ExitThreshold": 0,
+                "TradingBias": 0
+              },
+              "sample_data": {
+                "RegimeID": "8",
+                "RegimeName": "Neutral_Low_Vol",
+                "MinDuration": "20",
+                "TypicalDuration": "60",
+                "MaxDuration": "180",
+                "EntryThreshold": "0.4",
+                "ExitThreshold": "0.35",
+                "TradingBias": "NONE"
+              },
+              "validation_issues": []
+            },
+            "MultiTimeframeConfig": {
+              "sheet_name": "MultiTimeframeConfig",
+              "rows": 14,
+              "columns": [
+                "Timeframe",
+                "Weight",
+                "Window",
+                "UpdateFreq",
+                "MinConsensus",
+                "RequiredBars",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Timeframe": "object",
+                "Weight": "object",
+                "Window": "object",
+                "UpdateFreq": "object",
+                "MinConsensus": "float64",
+                "RequiredBars": "float64",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Timeframe": 2,
+                "Weight": 3,
+                "Window": 3,
+                "UpdateFreq": 3,
+                "MinConsensus": 9,
+                "RequiredBars": 9,
+                "Description": 9
+              },
+              "sample_data": {
+                "Timeframe": "1min",
+                "Weight": "0.3",
+                "Window": "30",
+                "UpdateFreq": "1",
+                "MinConsensus": "0.0",
+                "RequiredBars": "20.0",
+                "Description": "Primary intraday signal (highest weight)"
+              },
+              "validation_issues": [
+                "2 completely empty rows found"
+              ]
+            },
+            "DynamicWeightageConfig": {
+              "sheet_name": "DynamicWeightageConfig",
+              "rows": 16,
+              "columns": [
+                "Component",
+                "BaseWeight",
+                "MinWeight",
+                "MaxWeight",
+                "AdaptiveEnabled",
+                "VolatilityAdjust",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Component": "object",
+                "BaseWeight": "object",
+                "MinWeight": "object",
+                "MaxWeight": "object",
+                "AdaptiveEnabled": "object",
+                "VolatilityAdjust": "float64",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Component": 1,
+                "BaseWeight": 2,
+                "MinWeight": 2,
+                "MaxWeight": 2,
+                "AdaptiveEnabled": 8,
+                "VolatilityAdjust": 8,
+                "Description": 8
+              },
+              "sample_data": {
+                "Component": "GreekSentiment",
+                "BaseWeight": "0.2",
+                "MinWeight": "0.1",
+                "MaxWeight": "0.35",
+                "AdaptiveEnabled": "True",
+                "VolatilityAdjust": "1.2",
+                "Description": "Options Greeks-based sentiment weight"
+              },
+              "validation_issues": [
+                "1 completely empty rows found"
+              ]
+            },
+            "PerformanceMetrics": {
+              "sheet_name": "PerformanceMetrics",
+              "rows": 15,
+              "columns": [
+                "Metric",
+                "Target",
+                "Acceptable",
+                "Critical",
+                "Weight",
+                "UpdateFreq",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Metric": "object",
+                "Target": "float64",
+                "Acceptable": "float64",
+                "Critical": "float64",
+                "Weight": "float64",
+                "UpdateFreq": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Metric": 1,
+                "Target": 3,
+                "Acceptable": 3,
+                "Critical": 3,
+                "Weight": 3,
+                "UpdateFreq": 3,
+                "Description": 3
+              },
+              "sample_data": {
+                "Metric": "regime_accuracy",
+                "Target": "0.75",
+                "Acceptable": "0.65",
+                "Critical": "0.55",
+                "Weight": "0.25",
+                "UpdateFreq": "realtime",
+                "Description": "Correct regime identification rate"
+              },
+              "validation_issues": [
+                "1 completely empty rows found"
+              ]
+            },
+            "ValidationRules": {
+              "sheet_name": "ValidationRules",
+              "rows": 12,
+              "columns": [
+                "RuleID",
+                "RuleName",
+                "Condition",
+                "Action",
+                "Severity",
+                "Enabled",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "RuleID": "object",
+                "RuleName": "object",
+                "Condition": "object",
+                "Action": "object",
+                "Severity": "object",
+                "Enabled": "bool",
+                "Description": "object"
+              },
+              "null_counts": {
+                "RuleID": 0,
+                "RuleName": 0,
+                "Condition": 0,
+                "Action": 0,
+                "Severity": 0,
+                "Enabled": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "RuleID": "VAL001",
+                "RuleName": "MissingDataCheck",
+                "Condition": "data_gaps>5min",
+                "Action": "halt_regime_detection",
+                "Severity": "CRITICAL",
+                "Enabled": "True",
+                "Description": "Stop processing on data gaps"
+              },
+              "validation_issues": []
+            },
+            "AdaptiveTuning": {
+              "sheet_name": "AdaptiveTuning",
+              "rows": 18,
+              "columns": [
+                "Parameter",
+                "Value",
+                "Default",
+                "Min",
+                "Max",
+                "Unit",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object",
+                "Default": "object",
+                "Min": "object",
+                "Max": "object",
+                "Unit": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0,
+                "Default": 0,
+                "Min": 0,
+                "Max": 0,
+                "Unit": 0,
+                "Description": 0
+              },
+              "sample_data": {
+                "Parameter": "enable_adaptive_learning",
+                "Value": "TRUE",
+                "Default": "TRUE",
+                "Min": "TRUE",
+                "Max": "FALSE",
+                "Unit": "boolean",
+                "Description": "Enable ML-based parameter adaptation"
+              },
+              "validation_issues": []
+            },
+            "IntradaySettings": {
+              "sheet_name": "IntradaySettings",
+              "rows": 19,
+              "columns": [
+                "TimeSlot",
+                "StartTime",
+                "EndTime",
+                "Sensitivity",
+                "PreferredRegimes",
+                "RestrictedRegimes",
+                "Description"
+              ],
+              "column_count": 7,
+              "data_types": {
+                "TimeSlot": "object",
+                "StartTime": "object",
+                "EndTime": "object",
+                "Sensitivity": "object",
+                "PreferredRegimes": "object",
+                "RestrictedRegimes": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "TimeSlot": 1,
+                "StartTime": 2,
+                "EndTime": 2,
+                "Sensitivity": 2,
+                "PreferredRegimes": 10,
+                "RestrictedRegimes": 10,
+                "Description": 10
+              },
+              "sample_data": {
+                "TimeSlot": "PreMarket",
+                "StartTime": "09:00",
+                "EndTime": "09:15",
+                "Sensitivity": "0.8",
+                "PreferredRegimes": "Neutral_*",
+                "RestrictedRegimes": "Strong_*",
+                "Description": "Pre-market reduced sensitivity"
+              },
+              "validation_issues": [
+                "1 completely empty rows found"
+              ]
+            },
+            "OutputFormat": {
+              "sheet_name": "OutputFormat",
+              "rows": 40,
+              "columns": [
+                "ColumnName",
+                "DataType",
+                "Required",
+                "DefaultValue",
+                "Format",
+                "Description"
+              ],
+              "column_count": 6,
+              "data_types": {
+                "ColumnName": "object",
+                "DataType": "object",
+                "Required": "object",
+                "DefaultValue": "float64",
+                "Format": "object",
+                "Description": "object"
+              },
+              "null_counts": {
+                "ColumnName": 3,
+                "DataType": 4,
+                "Required": 4,
+                "DefaultValue": 40,
+                "Format": 10,
+                "Description": 10
+              },
+              "sample_data": {
+                "ColumnName": "timestamp",
+                "DataType": "datetime",
+                "Required": "TRUE",
+                "DefaultValue": "ALL_NULL",
+                "Format": "%Y-%m-%d %H:%M:%S",
+                "Description": "Record timestamp"
+              },
+              "validation_issues": [
+                "Column 'DefaultValue' has all null values",
+                "3 completely empty rows found"
+              ]
+            },
+            "TemplateMetadata": {
+              "sheet_name": "TemplateMetadata",
+              "rows": 33,
+              "columns": [
+                "ULTIMATE UNIFIED MARKET REGIME CONFIGURATION - METADATA",
+                "Unnamed: 1",
+                "Unnamed: 2"
+              ],
+              "column_count": 3,
+              "data_types": {
+                "ULTIMATE UNIFIED MARKET REGIME CONFIGURATION - METADATA": "object",
+                "Unnamed: 1": "object",
+                "Unnamed: 2": "object"
+              },
+              "null_counts": {
+                "ULTIMATE UNIFIED MARKET REGIME CONFIGURATION - METADATA": 6,
+                "Unnamed: 1": 24,
+                "Unnamed: 2": 24
+              },
+              "sample_data": {
+                "ULTIMATE UNIFIED MARKET REGIME CONFIGURATION - METADATA": "Property",
+                "Unnamed: 1": "Value",
+                "Unnamed: 2": "Description"
+              },
+              "validation_issues": [
+                "6 completely empty rows found"
+              ]
+            },
+            "EnsembleMethods": {
+              "sheet_name": "EnsembleMethods",
+              "rows": 10,
+              "columns": [
+                "ENSEMBLE METHODS CONFIGURATION",
+                "Unnamed: 1",
+                "Unnamed: 2"
+              ],
+              "column_count": 3,
+              "data_types": {
+                "ENSEMBLE METHODS CONFIGURATION": "object",
+                "Unnamed: 1": "object",
+                "Unnamed: 2": "object"
+              },
+              "null_counts": {
+                "ENSEMBLE METHODS CONFIGURATION": 0,
+                "Unnamed: 1": 0,
+                "Unnamed: 2": 0
+              },
+              "sample_data": {
+                "ENSEMBLE METHODS CONFIGURATION": "Parameter",
+                "Unnamed: 1": "Value",
+                "Unnamed: 2": "Description"
+              },
+              "validation_issues": []
+            },
+            "ConfidenceCalibration": {
+              "sheet_name": "ConfidenceCalibration",
+              "rows": 11,
+              "columns": [
+                "CONFIDENCE CALIBRATION CONFIGURATION",
+                "Unnamed: 1",
+                "Unnamed: 2"
+              ],
+              "column_count": 3,
+              "data_types": {
+                "CONFIDENCE CALIBRATION CONFIGURATION": "object",
+                "Unnamed: 1": "object",
+                "Unnamed: 2": "object"
+              },
+              "null_counts": {
+                "CONFIDENCE CALIBRATION CONFIGURATION": 0,
+                "Unnamed: 1": 0,
+                "Unnamed: 2": 0
+              },
+              "sample_data": {
+                "CONFIDENCE CALIBRATION CONFIGURATION": "Parameter",
+                "Unnamed: 1": "Value",
+                "Unnamed: 2": "Description"
+              },
+              "validation_issues": []
+            },
+            "MultiTimeframeFusion": {
+              "sheet_name": "MultiTimeframeFusion",
+              "rows": 9,
+              "columns": [
+                "MULTI-TIMEFRAME FUSION CONFIGURATION",
+                "Unnamed: 1",
+                "Unnamed: 2"
+              ],
+              "column_count": 3,
+              "data_types": {
+                "MULTI-TIMEFRAME FUSION CONFIGURATION": "object",
+                "Unnamed: 1": "object",
+                "Unnamed: 2": "object"
+              },
+              "null_counts": {
+                "MULTI-TIMEFRAME FUSION CONFIGURATION": 0,
+                "Unnamed: 1": 0,
+                "Unnamed: 2": 0
+              },
+              "sample_data": {
+                "MULTI-TIMEFRAME FUSION CONFIGURATION": "Parameter",
+                "Unnamed: 1": "Value",
+                "Unnamed: 2": "Description"
+              },
+              "validation_issues": []
+            },
+            "AdaptiveLearning": {
+              "sheet_name": "AdaptiveLearning",
+              "rows": 11,
+              "columns": [
+                "ADAPTIVE LEARNING CONFIGURATION",
+                "Unnamed: 1",
+                "Unnamed: 2"
+              ],
+              "column_count": 3,
+              "data_types": {
+                "ADAPTIVE LEARNING CONFIGURATION": "object",
+                "Unnamed: 1": "object",
+                "Unnamed: 2": "object"
+              },
+              "null_counts": {
+                "ADAPTIVE LEARNING CONFIGURATION": 0,
+                "Unnamed: 1": 0,
+                "Unnamed: 2": 0
+              },
+              "sample_data": {
+                "ADAPTIVE LEARNING CONFIGURATION": "Parameter",
+                "Unnamed: 1": "Value",
+                "Unnamed: 2": "Description"
+              },
+              "validation_issues": []
+            },
+            "AccuracyEnhancement": {
+              "sheet_name": "AccuracyEnhancement",
+              "rows": 11,
+              "columns": [
+                "ACCURACY ENHANCEMENT CONFIGURATION",
+                "Unnamed: 1",
+                "Unnamed: 2"
+              ],
+              "column_count": 3,
+              "data_types": {
+                "ACCURACY ENHANCEMENT CONFIGURATION": "object",
+                "Unnamed: 1": "object",
+                "Unnamed: 2": "object"
+              },
+              "null_counts": {
+                "ACCURACY ENHANCEMENT CONFIGURATION": 0,
+                "Unnamed: 1": 0,
+                "Unnamed: 2": 0
+              },
+              "sample_data": {
+                "ACCURACY ENHANCEMENT CONFIGURATION": "Parameter",
+                "Unnamed: 1": "Value",
+                "Unnamed: 2": "Description"
+              },
+              "validation_issues": []
+            },
+            "RegimeStability": {
+              "sheet_name": "RegimeStability",
+              "rows": 10,
+              "columns": [
+                "REGIME STABILITY CONFIGURATION",
+                "Unnamed: 1",
+                "Unnamed: 2"
+              ],
+              "column_count": 3,
+              "data_types": {
+                "REGIME STABILITY CONFIGURATION": "object",
+                "Unnamed: 1": "object",
+                "Unnamed: 2": "object"
+              },
+              "null_counts": {
+                "REGIME STABILITY CONFIGURATION": 0,
+                "Unnamed: 1": 0,
+                "Unnamed: 2": 0
+              },
+              "sample_data": {
+                "REGIME STABILITY CONFIGURATION": "Parameter",
+                "Unnamed: 1": "Value",
+                "Unnamed: 2": "Description"
+              },
+              "validation_issues": []
+            },
+            "ValidationFramework": {
+              "sheet_name": "ValidationFramework",
+              "rows": 10,
+              "columns": [
+                "VALIDATION FRAMEWORK CONFIGURATION",
+                "Unnamed: 1",
+                "Unnamed: 2"
+              ],
+              "column_count": 3,
+              "data_types": {
+                "VALIDATION FRAMEWORK CONFIGURATION": "object",
+                "Unnamed: 1": "object",
+                "Unnamed: 2": "object"
+              },
+              "null_counts": {
+                "VALIDATION FRAMEWORK CONFIGURATION": 0,
+                "Unnamed: 1": 0,
+                "Unnamed: 2": 0
+              },
+              "sample_data": {
+                "VALIDATION FRAMEWORK CONFIGURATION": "Parameter",
+                "Unnamed: 1": "Value",
+                "Unnamed: 2": "Description"
+              },
+              "validation_issues": []
+            },
+            "RiskControls": {
+              "sheet_name": "RiskControls",
+              "rows": 8,
+              "columns": [
+                "RISK CONTROLS CONFIGURATION",
+                "Unnamed: 1",
+                "Unnamed: 2"
+              ],
+              "column_count": 3,
+              "data_types": {
+                "RISK CONTROLS CONFIGURATION": "object",
+                "Unnamed: 1": "object",
+                "Unnamed: 2": "object"
+              },
+              "null_counts": {
+                "RISK CONTROLS CONFIGURATION": 0,
+                "Unnamed: 1": 0,
+                "Unnamed: 2": 0
+              },
+              "sample_data": {
+                "RISK CONTROLS CONFIGURATION": "Parameter",
+                "Unnamed: 1": "Value",
+                "Unnamed: 2": "Description"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "MR_CONFIG_REGIME_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/mr/MR_CONFIG_REGIME_1.0.0.xlsx",
+          "sheets_found": [
+            "RegimeDefinitions"
+          ],
+          "sheets_missing": [
+            "PortfolioSetting",
+            "RegimeParameter",
+            "OptimizationParameter",
+            "MarketStructure"
+          ],
+          "sheets": {
+            "RegimeDefinitions": {
+              "sheet_name": "RegimeDefinitions",
+              "rows": 3,
+              "columns": [
+                "RegimeID",
+                "VolatilityLevel",
+                "TrendDirection",
+                "MarketStructure"
+              ],
+              "column_count": 4,
+              "data_types": {
+                "RegimeID": "int64",
+                "VolatilityLevel": "object",
+                "TrendDirection": "object",
+                "MarketStructure": "object"
+              },
+              "null_counts": {
+                "RegimeID": 0,
+                "VolatilityLevel": 0,
+                "TrendDirection": 0,
+                "MarketStructure": 0
+              },
+              "sample_data": {
+                "RegimeID": "1",
+                "VolatilityLevel": "Low",
+                "TrendDirection": "Up",
+                "MarketStructure": "Trending"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        },
+        "MR_CONFIG_OPTIMIZATION_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/mr/MR_CONFIG_OPTIMIZATION_1.0.0.xlsx",
+          "sheets_found": [
+            "OptimizationSettings"
+          ],
+          "sheets_missing": [
+            "PortfolioSetting",
+            "RegimeParameter",
+            "OptimizationParameter",
+            "MarketStructure"
+          ],
+          "sheets": {
+            "OptimizationSettings": {
+              "sheet_name": "OptimizationSettings",
+              "rows": 3,
+              "columns": [
+                "Parameter",
+                "Value"
+              ],
+              "column_count": 2,
+              "data_types": {
+                "Parameter": "object",
+                "Value": "object"
+              },
+              "null_counts": {
+                "Parameter": 0,
+                "Value": 0
+              },
+              "sample_data": {
+                "Parameter": "OptimizationMethod",
+                "Value": "GENETIC_ALGORITHM"
+              },
+              "validation_issues": []
+            }
+          },
+          "file_accessible": true
+        }
+      },
+      "parameter_counts": {
+        "MR_CONFIG_PORTFOLIO_1.0.0.xlsx:PortfolioSetting": 6,
+        "MR_CONFIG_PORTFOLIO_1.0.0.xlsx:StrategySetting": 5,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:Summary": 2,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:MasterConfiguration": 5,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:StabilityConfiguration": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:TransitionManagement": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:NoiseFiltering": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:TransitionRules": 8,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:IndicatorConfiguration": 8,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:GreekSentimentConfig": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:TrendingOIPAConfig": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:StraddleAnalysisConfig": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:IVSurfaceConfig": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:ATRIndicatorsConfig": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:RegimeClassification": 8,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:RegimeFormationConfig": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:RegimeParameters": 8,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:MultiTimeframeConfig": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:DynamicWeightageConfig": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:PerformanceMetrics": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:ValidationRules": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:AdaptiveTuning": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:IntradaySettings": 7,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:OutputFormat": 6,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:TemplateMetadata": 3,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:EnsembleMethods": 3,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:ConfidenceCalibration": 3,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:MultiTimeframeFusion": 3,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:AdaptiveLearning": 3,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:AccuracyEnhancement": 3,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:RegimeStability": 3,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:ValidationFramework": 3,
+        "MR_CONFIG_STRATEGY_1.0.0.xlsx:RiskControls": 3,
+        "MR_CONFIG_REGIME_1.0.0.xlsx:RegimeDefinitions": 4,
+        "MR_CONFIG_OPTIMIZATION_1.0.0.xlsx:OptimizationSettings": 2
+      },
+      "data_validation": {},
+      "total_parameters": 194
+    }
+  }
+}

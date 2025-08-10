@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Test Suite - Test Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .header .subtitle {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        .metric-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .metric-label {
+            color: #666;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .success { color: #4CAF50; }
+        .failure { color: #f44336; }
+        .warning { color: #ff9800; }
+        .info { color: #2196F3; }
+        
+        .section {
+            margin: 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .section-header {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .section-content {
+            padding: 20px;
+        }
+        
+        .phase-results {
+            margin: 20px 0;
+        }
+        .phase-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        .phase-header {
+            background: #f8f9fa;
+            padding: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .phase-status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: white;
+            font-size: 0.9em;
+        }
+        .test-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .test-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .test-item:last-child {
+            border-bottom: none;
+        }
+        .test-name {
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        .test-duration {
+            color: #666;
+            font-size: 0.8em;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+        
+        .trend-chart {
+            position: relative;
+            height: 300px;
+            margin: 20px 0;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .collapsible {
+            cursor: pointer;
+        }
+        .collapsible:hover {
+            background: #f0f0f0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Automated Test Suite</h1>
+            <div class="subtitle">Market Regime Strategy - Test Execution Report</div>
+            <div class="subtitle">2025-07-12T03:14:20.597140 | Production Validation</div>
+        </div>
+        
+        <!-- Executive Summary -->
+        <div class="summary-grid">
+            <div class="metric-card">
+                <div class="metric-label">Total Tests</div>
+                <div class="metric-value info">10</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Passed</div>
+                <div class="metric-value success">9</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Failed</div>
+                <div class="metric-value failure">1</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Success Rate</div>
+                <div class="metric-value success">
+                    90.0%
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Execution Time</div>
+                <div class="metric-value info">120.0s</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Test Phases</div>
+                <div class="metric-value info">0</div>
+            </div>
+        </div>
+        
+        <!-- Overall Progress -->
+        <div class="section">
+            <div class="section-header">Overall Progress</div>
+            <div class="section-content">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 90.0%"></div>
+                </div>
+                <p>9 of 10 tests passed (90.0%)</p>
+            </div>
+        </div>
+        
+        <!-- Performance Metrics Chart -->
+        <div class="section">
+            <div class="section-header">Performance Overview</div>
+            <div class="section-content">
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Phase Results -->
+        <div class="section">
+            <div class="section-header">Phase Results Detail</div>
+            <div class="section-content">
+                <div class="phase-results">
+                    
+                    <div class="phase-card">
+                        <div class="phase-header collapsible" onclick="togglePhase('')">
+                            <div>
+                                <strong>Test Validation</strong>
+                                <div style="font-size: 0.9em; color: #666; font-weight: normal;">
+                                    
+                                </div>
+                            </div>
+                            <div class="phase-status success" 
+                                 style="background: #4CAF50;">
+                                5/5
+                            </div>
+                        </div>
+                        <div id="phase-" class="test-list" style="display: none;">
+                            
+                            <div class="test-item">
+                                <div class="test-name">sample_test.py</div>
+                                <div>
+                                    <span class="success">
+                                        PASSED
+                                    </span>
+                                    <span class="test-duration">10.00s</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- Test Coverage Analysis -->
+        <div class="section">
+            <div class="section-header">Test Coverage Analysis</div>
+            <div class="section-content">
+                <div class="chart-container">
+                    <canvas id="coverageChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Historical Trends -->
+        <div class="section">
+            <div class="section-header">Historical Trends</div>
+            <div class="section-content">
+                <div class="trend-chart">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- System Information -->
+        <div class="section">
+            <div class="section-header">System Information</div>
+            <div class="section-content">
+                <table>
+                    <tr><th>Configuration File</th><td>N/A</td></tr>
+                    <tr><th>Test Directory</th><td>N/A</td></tr>
+                    <tr><th>Environment</th><td>Production Validation</td></tr>
+                    <tr><th>Version</th><td>1.0.0</td></tr>
+                    <tr><th>Generated</th><td>2025-07-12 03:14:21</td></tr>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>Generated by Market Regime Strategy Automated Test Suite</p>
+            <p>Report generated on 2025-07-12 03:14:21</p>
+        </div>
+    </div>
+    
+    <script>
+        // Toggle phase details
+        function togglePhase(phaseId) {
+            const element = document.getElementById('phase-' + phaseId);
+            element.style.display = element.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        // Performance Chart
+        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(performanceCtx, {
+            type: 'bar',
+            data: {
+                labels: ["Test Validation"],
+                datasets: [{
+                    label: 'Execution Time (seconds)',
+                    data: [60.0],
+                    backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        // Coverage Chart
+        const coverageCtx = document.getElementById('coverageChart').getContext('2d');
+        new Chart(coverageCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Passed', 'Failed'],
+                datasets: [{
+                    data: [9, 1],
+                    backgroundColor: ['#4CAF50', '#f44336'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+        
+        // Historical Trends Chart
+        const trendCtx = document.getElementById('trendChart').getContext('2d');
+        new Chart(trendCtx, {
+            type: 'line',
+            data: {
+                labels: ["2025-07-10", "2025-07-11", "2025-07-12"],
+                datasets: [{
+                    label: 'Success Rate (%)',
+                    data: [85, 92, 90.0],
+                    borderColor: '#4CAF50',
+                    backgroundColor: 'rgba(76, 175, 80, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+        

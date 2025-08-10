@@ -1,0 +1,238 @@
+# BMAD Validation System Configuration
+
+## expansion-packs/bmad-validation-system/config.yaml
+
+```yaml
+name: bmad-validation-system
+version: 1.0.0
+description: BMAD-Enhanced Excel-Backend-HeavyDB Validation System with GPU Optimization
+author: Enhanced Validation Team
+
+core_version_requirement: ">=4.0.0"
+
+dependencies:
+  core_agents:
+    - analyst
+    - pm
+    - architect
+    - po
+    - sm
+    - dev
+    - qa
+
+expansion_assets:
+  agents:
+    - validation-orchestrator
+    - validation-master
+    - heavydb-validator
+    - placeholder-guardian
+    - gpu-optimizer
+    # Strategy-specific validators
+    - tbs-validator
+    - tv-validator
+    - oi-validator
+    - orb-validator
+    - pos-validator
+    - ml-validator
+    - mr-validator
+    - ind-validator
+    - opt-validator
+    # Fix and optimization team
+    - fix-agent
+    - performance-optimizer
+    - doc-updater
+    
+  tasks:
+    - validate-strategy
+    - check-heavydb-storage
+    - optimize-gpu-query
+    - detect-synthetic-data
+    - create-validation-story
+    - execute-validation-checklist
+    - generate-validation-report
+    
+  templates:
+    - validation-prd-tmpl.yaml
+    - validation-architecture-tmpl.yaml
+    - validation-story-tmpl.yaml
+    - validation-report-tmpl.yaml
+    - strategy-validation-tmpl.yaml
+    
+  data:
+    - validation-kb.md
+    - heavydb-optimization-guide.md
+    - synthetic-data-patterns.md
+    - strategy-parameters-reference.md
+    
+  checklists:
+    - validation-master-checklist.md
+    - strategy-validation-checklist.md
+    - gpu-optimization-checklist.md
+    - data-integrity-checklist.md
+    
+  workflows:
+    - validation-greenfield.yaml
+    - validation-brownfield.yaml
+    - validation-ml-enhanced.yaml
+```
+
+## bmad-core/validation-config.yaml
+
+```yaml
+# BMAD Validation System Core Configuration
+validationSystem:
+  version: "1.0.0"
+  mode: "production"
+  
+  # Document Management
+  prdFile: docs/validation-prd.md
+  prdVersion: v4
+  prdSharded: true
+  prdShardedLocation: docs/validation-prd
+  epicFilePattern: validation-epic-{n}*.md
+  
+  architectureFile: docs/validation-architecture.md
+  architectureVersion: v4
+  architectureSharded: true
+  architectureShardedLocation: docs/validation-architecture
+  
+  # Validation-specific paths
+  backendMappingPath: /srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/backend_mapping
+  backendTestPath: /srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/backend_test
+  backendValidationPath: /srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/backend_validation
+  
+  # Strategy paths
+  strategyBasePath: /backtester_v2/strategies
+  strategies:
+    - name: tbs
+      path: /backtester_v2/strategies/tbs/
+      paramCount: 83
+      priority: high
+    - name: tv
+      path: /backtester_v2/strategies/tv/
+      paramCount: 133
+      priority: high
+    - name: oi
+      path: /backtester_v2/strategies/oi/
+      paramCount: 142
+      priority: medium
+    - name: orb
+      path: /backtester_v2/strategies/orb/
+      paramCount: 19
+      priority: medium
+    - name: pos
+      path: /backtester_v2/strategies/pos/
+      paramCount: 156
+      priority: medium
+    - name: ml_indicator
+      path: /backtester_v2/strategies/ml_indicator/
+      paramCount: 439
+      priority: critical
+      enhancedValidation: true
+    - name: market_regime
+      path: /backtester_v2/strategies/market_regime/
+      paramCount: 267
+      priority: critical
+      enhancedValidation: true
+    - name: indicator
+      path: /backtester_v2/strategies/indicator/
+      paramCount: 197
+      priority: high
+    - name: optimization
+      path: /backtester_v2/strategies/optimization/
+      paramCount: 283
+      priority: high
+      
+  # HeavyDB Configuration
+  heavyDB:
+    host: "${HEAVYDB_HOST:-127.0.0.1}"
+    port: "${HEAVYDB_PORT:-6274}"
+    user: "${HEAVYDB_USER:-admin}"
+    password: "${HEAVYDB_PASSWORD:-HyperInteractive}"
+    database: "${HEAVYDB_DATABASE:-heavyai}"
+    protocol: "${HEAVYDB_PROTOCOL:-binary}"
+    
+    # Production configuration
+    production:
+      host: "173.208.247.17"
+      port: "6274"
+      user: "admin"
+      password: ""
+      database: "heavyai"
+      protocol: "binary"
+    
+    # Connection settings
+    timeout: 30
+    maxRetries: 3
+    connectionPool: true
+    
+    # GPU settings
+    gpuEnabled: true
+    gpuTargetUtilization: 70
+    queryTimeout: 300
+    chunkSize: 1000000
+    maxRows: 10000000
+    
+  # Performance Targets
+  performanceTargets:
+    maxQueryTime: 50  # milliseconds
+    minGPUUtilization: 70  # percentage
+    maxMemoryUsage: 80  # percentage
+    targetThroughput: 1000  # queries per second
+    
+  # Data Integrity Rules
+  dataIntegrity:
+    allowSyntheticData: false
+    requireProductionData: true
+    validateDataSources: true
+    crossReferenceThreshold: 0.95
+    
+    # Synthetic data patterns to detect
+    syntheticPatterns:
+      - pattern: "^(123|999|000)$"
+        description: "Common test values"
+      - pattern: "^\\d{2,}\\.00$"
+        description: "Round placeholder prices"
+      - pattern: "^2020-01-01"
+        description: "Common test date"
+      - pattern: "^(ABC|XYZ|TEST)"
+        description: "Test identifiers"
+      - pattern: "^\\d+\\.\\d{10,}$"
+        description: "Excessive decimal places"
+    
+  # Validation Rules
+  validationRules:
+    parameterCoverage: 100  # percentage
+    passRateThreshold: 100  # percentage
+    documentationRequired: true
+    auditTrailEnabled: true
+    
+  # Agent Configuration
+  agentConfig:
+    devLoadAlwaysFiles:
+      - docs/validation-architecture/performance-standards.md
+      - docs/validation-architecture/data-integrity-rules.md
+      - docs/validation-architecture/gpu-optimization-guide.md
+      - docs/validation-architecture/heavydb-schema.md
+    
+    debugLog: .ai/validation-debug.log
+    storyLocation: docs/validation-stories
+    reportLocation: docs/validation-reports
+    
+  # Workflow Configuration
+  workflow:
+    mode: "automated"  # automated | interactive
+    parallelValidation: true
+    maxParallelAgents: 5
+    handoffTimeout: 300  # seconds
+    
+  # Monitoring Configuration
+  monitoring:
+    dashboardEnabled: true
+    metricsCollection: true
+    alertingEnabled: true
+    slackWebhook: "${SLACK_WEBHOOK_URL}"
+    
+  # Slash command prefix
+  slashPrefix: "val"
+```

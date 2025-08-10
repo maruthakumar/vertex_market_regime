@@ -1,0 +1,38 @@
+{
+  "validation_timestamp": "2025-07-08T01:43:56.920963",
+  "total_timestamps": 10,
+  "data_statistics": {
+    "underlying_price_range": {
+      "min": 49914.14098086889,
+      "max": 50102.656876186884,
+      "mean": 50009.72313761753
+    },
+    "data_points_per_timestamp": {
+      "min": 40,
+      "max": 40,
+      "mean": 40.0
+    }
+  },
+  "regime_detection_results": {
+    "regime_12": {
+      "successful": 0,
+      "errors": 0,
+      "module_not_loaded": 10
+    },
+    "regime_18": {
+      "successful": 0,
+      "errors": 0,
+      "module_not_loaded": 10
+    },
+    "enhanced_regime": {
+      "successful": 0,
+      "errors": 0,
+      "module_not_loaded": 10
+    }
+  },
+  "correlation_matrix_results": {
+    "successful_calculations": 10,
+    "failed_calculations": 0,
+    "success_rate": "100.0%"
+  }
+}

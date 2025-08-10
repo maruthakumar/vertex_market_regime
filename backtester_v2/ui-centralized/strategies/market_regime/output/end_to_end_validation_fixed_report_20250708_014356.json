@@ -1,0 +1,160 @@
+{
+  "validation_completed": true,
+  "start_time": "2025-07-08T01:43:55.431956",
+  "end_time": "2025-07-08T01:43:56.927610",
+  "duration_seconds": 1.495654,
+  "database_used": true,
+  "excel_config_processed": true,
+  "refactored_modules_tested": true,
+  "csv_output_generated": true,
+  "import_issues_fixed": true,
+  "results": {
+    "database_connection": {
+      "status": "success",
+      "connection_type": "sqlite",
+      "verified": true,
+      "connection_time": "2025-07-08T01:43:55.456869"
+    },
+    "excel_validation": {
+      "status": "success",
+      "file_path": "/srv/samba/shared/bt/backtester_stable/BTRUN/input_sheets/market_regime/PHASE2_ENHANCED_ULTIMATE_UNIFIED_MARKET_REGIME_CONFIG_20250627_195625_20250628_104335.xlsx",
+      "total_sheets": 31,
+      "sheets_analyzed": 4,
+      "config_analysis": {
+        "Summary": {
+          "rows": 6,
+          "columns": 2,
+          "column_names": [
+            "Unnamed: 0",
+            "Unnamed: 1"
+          ]
+        },
+        "MasterConfiguration": {
+          "rows": 27,
+          "columns": 5,
+          "column_names": [
+            "ULTIMATE UNIFIED MARKET REGIME CONFIGURATION",
+            "Unnamed: 1",
+            "Unnamed: 2",
+            "Unnamed: 3",
+            "Unnamed: 4"
+          ]
+        },
+        "IndicatorConfiguration": {
+          "rows": 12,
+          "columns": 8,
+          "column_names": [
+            "Unified Enhanced Market Regime - Indicator Configuration",
+            "Unnamed: 1",
+            "Unnamed: 2",
+            "Unnamed: 3",
+            "Unnamed: 4",
+            "Unnamed: 5",
+            "Unnamed: 6",
+            "Unnamed: 7"
+          ]
+        },
+        "StraddleAnalysisConfig": {
+          "rows": 19,
+          "columns": 7,
+          "column_names": [
+            "Parameter",
+            "Value",
+            "Default",
+            "Min",
+            "Max",
+            "Unit",
+            "Description"
+          ]
+        }
+      },
+      "validation_time": "2025-07-08T01:43:55.747676"
+    },
+    "module_testing": {
+      "status": "completed",
+      "successful_modules": [
+        "RegimeDetectorBase",
+        "Enhanced10x10MatrixCalculator",
+        "ConfigurationValidator"
+      ],
+      "failed_modules": [
+        "Refactored12RegimeDetector",
+        "Refactored18RegimeClassifier",
+        "PerformanceEnhancedMarketRegimeEngine"
+      ],
+      "modules_tested": {
+        "RegimeDetectorBase": "success",
+        "Refactored12RegimeDetector": "failed: attempted relative import beyond top-level package",
+        "Refactored18RegimeClassifier": "failed: attempted relative import beyond top-level package",
+        "PerformanceEnhancedMarketRegimeEngine": "failed: attempted relative import beyond top-level package",
+        "Enhanced10x10MatrixCalculator": "success",
+        "ConfigurationValidator": "success"
+      },
+      "test_time": "2025-07-08T01:43:56.865915"
+    },
+    "data_extraction": {
+      "status": "success",
+      "rows_extracted": 800,
+      "source": "database",
+      "extraction_time": "2025-07-08T01:43:56.871779"
+    },
+    "regime_detection": {
+      "status": "success",
+      "timestamps_processed": 10,
+      "success_stats": {
+        "total_processed": 10,
+        "successful_12_regime": 10,
+        "successful_18_regime": 10,
+        "successful_enhanced": 10,
+        "successful_correlations": 10
+      },
+      "pipeline_time": "2025-07-08T01:43:56.917898"
+    },
+    "csv_output": {
+      "status": "success",
+      "csv_file": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/market_regime_validation_fixed_20250708_014356.csv",
+      "summary_file": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/validation_summary_fixed_20250708_014356.json",
+      "regime_dist_file": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/regime_distribution_20250708_014356.json",
+      "rows_generated": 10,
+      "summary_stats": {
+        "validation_timestamp": "2025-07-08T01:43:56.920963",
+        "total_timestamps": 10,
+        "data_statistics": {
+          "underlying_price_range": {
+            "min": 49914.14098086889,
+            "max": 50102.656876186884,
+            "mean": 50009.72313761753
+          },
+          "data_points_per_timestamp": {
+            "min": 40,
+            "max": 40,
+            "mean": 40.0
+          }
+        },
+        "regime_detection_results": {
+          "regime_12": {
+            "successful": 0,
+            "errors": 0,
+            "module_not_loaded": 10
+          },
+          "regime_18": {
+            "successful": 0,
+            "errors": 0,
+            "module_not_loaded": 10
+          },
+          "enhanced_regime": {
+            "successful": 0,
+            "errors": 0,
+            "module_not_loaded": 10
+          }
+        },
+        "correlation_matrix_results": {
+          "successful_calculations": 10,
+          "failed_calculations": 0,
+          "success_rate": "100.0%"
+        }
+      },
+      "generation_time": "2025-07-08T01:43:56.927587"
+    }
+  }
+}

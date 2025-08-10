@@ -1,0 +1,18 @@
+{
+  "test_name": "HeavyDB Connection Validation",
+  "timestamp": "2025-07-11T18:18:42.219372",
+  "status": "FAILED",
+  "checks": [
+    {
+      "name": "Connection Establishment",
+      "passed": false,
+      "details": {},
+      "error": "Cannot import HeavyDB connection module: cannot import name 'HeavyDBConnection' from 'backtester_v2.dal.heavydb_connection' (/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/dal/heavydb_connection.py)"
+    }
+  ],
+  "errors": [
+    "Cannot establish HeavyDB connection"
+  ],
+  "warnings": [],
+  "performance_metrics": {}
+}

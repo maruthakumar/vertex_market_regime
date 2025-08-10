@@ -1,0 +1,98 @@
+{
+  "VolumeWeightedGreeksConfig": {
+    "baseline_time_hour": 9,
+    "baseline_time_minute": 15,
+    "normalization_method": "tanh",
+    "accuracy_tolerance": 0.002,
+    "dte_0_weight": 0.6,
+    "dte_1_weight": 0.3,
+    "dte_2_weight": 0.3,
+    "dte_3_weight": 0.3,
+    "delta_component_weight": 0.4,
+    "gamma_component_weight": 0.3,
+    "theta_component_weight": 0.2,
+    "vega_component_weight": 0.1,
+    "risk_free_rate": 0.05,
+    "default_iv": 0.2,
+    "enable_black_scholes_fallback": true,
+    "performance_target_seconds": 4.0
+  },
+  "DeltaStrikeSelectionConfig": {
+    "call_delta_min": 0.01,
+    "call_delta_max": 0.5,
+    "put_delta_min": -0.5,
+    "put_delta_max": -0.01,
+    "max_strikes_per_expiry": 50,
+    "recalculate_frequency_seconds": 60,
+    "enable_delta_caching": true,
+    "cache_expiry_seconds": 300,
+    "selection_confidence_threshold": 0.6,
+    "mathematical_tolerance": 0.001,
+    "performance_target_seconds": 3.0
+  },
+  "HybridClassificationConfig": {
+    "enhanced_system_weight": 0.8,
+    "timeframe_hierarchy_weight": 0.2,
+    "agreement_threshold": 0.65,
+    "confidence_threshold": 0.5,
+    "transition_smoothing_factor": 0.1,
+    "transition_memory_window": 10,
+    "volatility_low_threshold": 0.15,
+    "volatility_normal_threshold": 0.25,
+    "volatility_high_threshold": 0.25,
+    "strong_bullish_threshold": 0.6,
+    "mild_bullish_threshold": 0.2,
+    "neutral_threshold": 0.1,
+    "mild_bearish_threshold": -0.2,
+    "strong_bearish_threshold": -0.6,
+    "mathematical_tolerance": 0.001,
+    "performance_target_seconds": 3.0
+  },
+  "PerformanceMonitoringConfig": {
+    "max_processing_time_seconds": 4.0,
+    "min_accuracy_threshold": 0.8,
+    "mathematical_tolerance": 0.001,
+    "max_memory_usage_mb": 500,
+    "alert_threshold_violations": 5,
+    "alert_cooldown_seconds": 300,
+    "enable_processing_time_alerts": true,
+    "enable_accuracy_alerts": true,
+    "enable_memory_alerts": true,
+    "enable_mathematical_accuracy_alerts": true,
+    "monitoring_interval_seconds": 10,
+    "metrics_history_limit": 10000,
+    "gc_frequency_operations": 100,
+    "enable_real_time_monitoring": true
+  },
+  "MathematicalAccuracyConfig": {
+    "tolerance": 0.001,
+    "enable_precision_validation": true,
+    "enable_bounds_checking": true,
+    "enable_finite_validation": true,
+    "correlation_threshold": 0.8,
+    "pattern_similarity_threshold": 0.75,
+    "time_decay_lambda": 0.1,
+    "time_decay_window_seconds": 300,
+    "baseline_weight": 1.0,
+    "min_weight": 0.1,
+    "max_weight": 2.0,
+    "validation_sample_size": 1000,
+    "stress_test_iterations": 100
+  },
+  "ConfigurationProfiles": {
+    "active_profile": "Balanced",
+    "profile_descriptions": {
+      "Conservative": "Lower risk, higher accuracy thresholds, stricter validation",
+      "Balanced": "Balanced risk-reward, standard thresholds, moderate validation",
+      "Aggressive": "Higher risk, lower thresholds, faster processing"
+    }
+  },
+  "_metadata": {
+    "profile_name": "Aggressive",
+    "profile_description": "Higher risk, lower thresholds, faster processing",
+    "risk_level": "High",
+    "generated_timestamp": "2025-06-20T20:09:36.028331",
+    "generator_version": "2.0.0",
+    "framework_version": "Enhanced Triple Straddle Framework v2.0"
+  }
+}

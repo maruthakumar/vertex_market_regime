@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+"""Test and fix the upload issue"""
+
+import requests
+import sys
+import os
+
+# Find Excel file
+excel_files = [f for f in os.listdir('.') if f.endswith('.xlsx') and 'MARKET_REGIME' in f]
+if not excel_files:
+    print("No Excel file found")
+    sys.exit(1)
+
+excel_file = excel_files[0]
+print(f"Using file: {excel_file}")
+
+# Test upload with detailed error handling
+url = "http://localhost:8000/api/v1/market-regime/upload"
+
+with open(excel_file, 'rb') as f:
+    files = {'configFile': (excel_file, f, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')}
+    
+    try:
+        response = requests.post(url, files=files)
+        print(f"\nStatus Code: {response.status_code}")
+        print(f"Response Headers: {dict(response.headers)}")
+        
+        if response.status_code == 200:
+            data = response.json()
+            print("\n✅ Upload successful!")
+            print(f"Message: {data.get('message')}")
+            
+            # Check validation results
+            validation = data.get('validation_results', {})
+            yaml_conv = validation.get('yaml_conversion', {})
+            print(f"\nYAML Conversion:")
+            print(f"  Success: {yaml_conv.get('success')}")
+            print(f"  Sheets processed: {yaml_conv.get('sheets_processed')}")
+            
+        else:
+            print("\n❌ Upload failed!")
+            try:
+                error_data = response.json()
+                print(f"Error: {error_data}")
+            except:
+                print(f"Raw response: {response.text[:500]}")
+                
+    except Exception as e:
+        print(f"\n❌ Request failed: {e}")
+
+# Also test if the converter works directly
+print("\n\nTesting converter directly...")
+try:
+    from unified_excel_to_yaml_converter import UnifiedExcelToYAMLConverter
+    
+    converter = UnifiedExcelToYAMLConverter()
+    output_file = "test_output.yaml"
+    
+    success, message, yaml_data = converter.convert_excel_to_yaml(excel_file, output_file)
+    
+    print(f"Direct conversion result:")
+    print(f"  Success: {success}")
+    print(f"  Message: {message}")
+    
+    if success and os.path.exists(output_file):
+        print(f"  ✅ YAML file created: {output_file}")
+        os.remove(output_file)  # Clean up
+    
+except Exception as e:
+    print(f"Direct converter test failed: {e}")
+    import traceback
+    traceback.print_exc()

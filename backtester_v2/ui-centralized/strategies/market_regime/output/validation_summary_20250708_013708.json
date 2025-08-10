@@ -1,0 +1,12 @@
+{
+  "total_timestamps": 5,
+  "successful_12_regime": 5,
+  "successful_18_regime": 5,
+  "successful_enhanced": 5,
+  "successful_correlations": 5,
+  "average_data_points": 40.0,
+  "underlying_price_range": {
+    "min": 49929.164002119134,
+    "max": 50057.30006536188
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "phases_completed": [
+    "Phase 1: Configuration Loading",
+    "Phase 2: Unified Configuration",
+    "Phase 3: Golden Format Generation",
+    "Phase 4: Parallel Processing",
+    "Phase 5: HeavyDB Integration (skipped)",
+    "Phase 6: Error Handling",
+    "Phase 7: Performance Benchmarks"
+  ],
+  "phases_failed": [],
+  "performance_metrics": {
+    "avg_parsing_time": 0.00804443359375,
+    "avg_signal_processing": 1.010894775390625e-05,
+    "memory_usage_mb": 104.61328125,
+    "Phase 1: Configuration Loading": 0.11765241622924805,
+    "Phase 2: Unified Configuration": 0.06668853759765625,
+    "Phase 3: Golden Format Generation": 0.04310178756713867,
+    "Phase 4: Parallel Processing": 0.026134729385375977,
+    "Phase 6: Error Handling": 0.03274822235107422,
+    "Phase 7: Performance Benchmarks": 0.09058904647827148
+  },
+  "error_summary": {
+    "total_errors": 1,
+    "critical_count": 0,
+    "warning_count": 1,
+    "info_count": 0,
+    "errors": {
+      "critical": [],
+      "warning": [
+        {
+          "message": "Some error handling tests failed: 1/4",
+          "timestamp": "2025-07-11T02:07:46.237751",
+          "exception": null,
+          "traceback": null
+        }
+      ],
+      "info": []
+    }
+  },
+  "test_data": {
+    "tv_config": {
+      "name": "TV_Backtest_Sample",
+      "enabled": true,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "signal_date_format": "%Y%m%d %H%M%S",
+      "tv_exit_applicable": true,
+      "intraday_sqoff_applicable": true,
+      "do_rollover": false,
+      "use_db_exit_timing": false,
+      "manual_trade_entry_time": "00:00:00",
+      "first_trade_entry_time": "00:00:00",
+      "intraday_exit_time": "15:30:00",
+      "expiry_day_exit_time": "15:20:00",
+      "rollover_time": "15:20:00",
+      "manual_trade_lots": 0,
+      "increase_entry_signal_time_by": 0,
+      "increase_exit_signal_time_by": 0,
+      "exit_search_interval": 5,
+      "slippage_percent": 0.1,
+      "signal_file_path": "TV_CONFIG_SIGNALS_1.0.0.xlsx",
+      "long_portfolio_file_path": "TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx",
+      "short_portfolio_file_path": "TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx",
+      "manual_portfolio_file_path": "TV_CONFIG_PORTFOLIO_MANUAL_1.0.0.xlsx",
+      "exit_price_source": "SPOT"
+    },
+    "signals": [
+      {
+        "trade_no": "T001",
+        "signal_type": "Entry Long",
+        "lots": 1,
+        "datetime": "2024-01-01 09:16:00"
+      },
+      {
+        "trade_no": "T001",
+        "signal_type": "Exit Long",
+        "lots": 1,
+        "datetime": "2024-01-01 12:00:00"
+      },
+      {
+        "trade_no": "T002",
+        "signal_type": "Entry Short",
+        "lots": 2,
+        "datetime": "2024-01-01 13:00:00"
+      },
+      {
+        "trade_no": "T002",
+        "signal_type": "Exit Short",
+        "lots": 2,
+        "datetime": "2024-01-01 15:00:00"
+      }
+    ],
+    "processed_signals": [
+      {
+        "trade_no": "T001",
+        "signal_direction": "LONG",
+        "entry_date": "2024-01-01",
+        "entry_time": "00:00:00",
+        "exit_date": "2024-01-01",
+        "exit_time": "12:00:00",
+        "lots": 1,
+        "is_rollover_trade": false,
+        "original_trade_no": "T001",
+        "portfolio_file": "TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx"
+      },
+      {
+        "trade_no": "T002",
+        "signal_direction": "SHORT",
+        "entry_date": "2024-01-01",
+        "entry_time": "00:00:00",
+        "exit_date": "2024-01-01",
+        "exit_time": "15:00:00",
+        "lots": 2,
+        "is_rollover_trade": false,
+        "original_trade_no": "T002",
+        "portfolio_file": "TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx"
+      }
+    ],
+    "unified_summary": {
+      "strategy_name": "TV_Backtest_Sample",
+      "hierarchy_type": "6-file",
+      "total_capital": 3000000,
+      "signal_count": 4,
+      "portfolio_count": 3,
+      "leg_count": 2,
+      "date_range": {
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      }
+    }
+  },
+  "summary": {
+    "total_phases": 7,
+    "phases_passed": 7,
+    "phases_failed": 0,
+    "success_rate": 100.0,
+    "has_critical_errors": false,
+    "total_execution_time": 0.37691473960876465,
+    "timestamp": "2025-07-11T02:07:46.328529"
+  }
+}

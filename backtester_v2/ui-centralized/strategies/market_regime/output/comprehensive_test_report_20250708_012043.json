@@ -1,0 +1,50 @@
+{
+  "timestamp": "2025-07-08T01:20:43.167110",
+  "test_duration_seconds": 1.027778,
+  "summary": {
+    "total_tests": 5,
+    "successful": 2,
+    "failed": 3,
+    "success_rate": 40.0
+  },
+  "results": {
+    "excel_configuration": {
+      "status": "success",
+      "total_sheets": 31,
+      "config_parameters": 0,
+      "output_parameters": 0,
+      "key_params": {},
+      "output_params_sample": [],
+      "message": "Excel configuration loaded successfully"
+    },
+    "heavydb_connection": {
+      "status": "error",
+      "error": "object of type 'Cursor' has no len()",
+      "message": "HeavyDB connection failed"
+    },
+    "unified_engine": {
+      "status": "error",
+      "error": "attempted relative import with no known parent package",
+      "traceback": "Traceback (most recent call last):\n  File \"/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/comprehensive_end_to_end_test.py\", line 164, in test_unified_engine_initialization\n    from unified_enhanced_market_regime_engine import UnifiedMarketRegimeEngine\n  File \"/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/unified_enhanced_market_regime_engine.py\", line 33, in <module>\n    from .enhanced_module_integration_manager import (\nImportError: attempted relative import with no known parent package\n",
+      "message": "Unified engine initialization failed"
+    },
+    "system_integrator": {
+      "status": "error",
+      "error": "attempted relative import with no known parent package",
+      "traceback": "Traceback (most recent call last):\n  File \"/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/comprehensive_end_to_end_test.py\", line 205, in test_system_integrator\n    from actual_system_integrator import ActualSystemIntegrator\n  File \"/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/actual_system_integrator.py\", line 34, in <module>\n    from .actual_system_excel_manager import ActualSystemExcelManager\nImportError: attempted relative import with no known parent package\n",
+      "message": "System integrator initialization failed"
+    },
+    "csv_generation": {
+      "status": "success",
+      "csv_files_created": [
+        "test_market_regime_20250708_012043.csv",
+        "test_price_data_20250708_012043.csv"
+      ],
+      "total_files": 2,
+      "output_directory": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/csv_outputs",
+      "message": "CSV output generation successful"
+    }
+  },
+  "excel_config_path": "/srv/samba/shared/bt/backtester_stable/BTRUN/input_sheets/market_regime/PHASE2_ENHANCED_ULTIMATE_UNIFIED_MARKET_REGIME_CONFIG_20250627_195625_20250628_104335.xlsx",
+  "output_directory": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/csv_outputs"
+}

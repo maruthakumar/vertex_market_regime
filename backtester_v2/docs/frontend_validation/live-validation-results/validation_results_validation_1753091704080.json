@@ -1,0 +1,456 @@
+{
+  "sessionId": "validation_1753091704080",
+  "timestamp": "2025-07-21T09:55:04.080Z",
+  "duration": 69.87,
+  "targetUrl": "http://173.208.247.17:3000/",
+  "summary": {
+    "totalIssues": 19,
+    "criticalIssues": 0,
+    "highIssues": 2,
+    "mediumIssues": 17,
+    "lowIssues": 0,
+    "screenshotsCaptured": 3
+  },
+  "issues": [
+    {
+      "type": "page-error",
+      "severity": "HIGH",
+      "page": "Home",
+      "description": "Page testing failed: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://173.208.247.17:3000/\", waiting until \"networkidle\"\u001b[22m\n",
+      "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://173.208.247.17:3000/\", waiting until \"networkidle\"\u001b[22m\n\n    at SimpleLiveValidator.validateApplication (/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/scripts/simple_live_validation.js:66:49)\n    at async main (/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/scripts/simple_live_validation.js:488:25)",
+      "id": "issue_1753091664414_t3qbc7o5k",
+      "timestamp": "2025-07-21T09:54:24.414Z"
+    },
+    {
+      "type": "page-error",
+      "severity": "HIGH",
+      "page": "Dashboard",
+      "description": "Page testing failed: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://173.208.247.17:3000/dashboard\", waiting until \"networkidle\"\u001b[22m\n",
+      "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://173.208.247.17:3000/dashboard\", waiting until \"networkidle\"\u001b[22m\n\n    at SimpleLiveValidator.validateApplication (/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/scripts/simple_live_validation.js:66:49)\n    at async main (/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/scripts/simple_live_validation.js:488:25)",
+      "id": "issue_1753091694463_wcazamjrp",
+      "timestamp": "2025-07-21T09:54:54.463Z"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Backtest",
+      "description": "Missing Navigation element (nav)",
+      "selector": "nav"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Backtest",
+      "description": "Missing Header element (header)",
+      "selector": "header"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Backtest",
+      "description": "Missing Main content element (main)",
+      "selector": "main"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Backtest",
+      "description": "Missing Footer element (footer)",
+      "selector": "footer"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Backtest",
+      "description": "Missing Forms element (form)",
+      "selector": "form"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Backtest",
+      "description": "Missing Inputs element (input)",
+      "selector": "input"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Results",
+      "description": "Missing Navigation element (nav)",
+      "selector": "nav"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Results",
+      "description": "Missing Header element (header)",
+      "selector": "header"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Results",
+      "description": "Missing Main content element (main)",
+      "selector": "main"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Results",
+      "description": "Missing Footer element (footer)",
+      "selector": "footer"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Results",
+      "description": "Missing Forms element (form)",
+      "selector": "form"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Results",
+      "description": "Missing Inputs element (input)",
+      "selector": "input"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Settings",
+      "description": "Missing Navigation element (nav)",
+      "selector": "nav"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Settings",
+      "description": "Missing Header element (header)",
+      "selector": "header"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Settings",
+      "description": "Missing Main content element (main)",
+      "selector": "main"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Settings",
+      "description": "Missing Footer element (footer)",
+      "selector": "footer"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Settings",
+      "description": "Missing Forms element (form)",
+      "selector": "form"
+    }
+  ],
+  "screenshots": [
+    {
+      "page": "Backtest",
+      "path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/live-validation-results/screenshots/backtest_2025-07-21T09-54-57-150Z.png",
+      "timestamp": "2025-07-21T09:54:57.346Z"
+    },
+    {
+      "page": "Results",
+      "path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/live-validation-results/screenshots/results_2025-07-21T09-55-00-302Z.png",
+      "timestamp": "2025-07-21T09:55:00.534Z"
+    },
+    {
+      "page": "Settings",
+      "path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/live-validation-results/screenshots/settings_2025-07-21T09-55-03-554Z.png",
+      "timestamp": "2025-07-21T09:55:03.752Z"
+    }
+  ],
+  "issuesByType": {
+    "page-error": [
+      {
+        "type": "page-error",
+        "severity": "HIGH",
+        "page": "Home",
+        "description": "Page testing failed: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://173.208.247.17:3000/\", waiting until \"networkidle\"\u001b[22m\n",
+        "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://173.208.247.17:3000/\", waiting until \"networkidle\"\u001b[22m\n\n    at SimpleLiveValidator.validateApplication (/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/scripts/simple_live_validation.js:66:49)\n    at async main (/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/scripts/simple_live_validation.js:488:25)",
+        "id": "issue_1753091664414_t3qbc7o5k",
+        "timestamp": "2025-07-21T09:54:24.414Z"
+      },
+      {
+        "type": "page-error",
+        "severity": "HIGH",
+        "page": "Dashboard",
+        "description": "Page testing failed: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://173.208.247.17:3000/dashboard\", waiting until \"networkidle\"\u001b[22m\n",
+        "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://173.208.247.17:3000/dashboard\", waiting until \"networkidle\"\u001b[22m\n\n    at SimpleLiveValidator.validateApplication (/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/scripts/simple_live_validation.js:66:49)\n    at async main (/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/scripts/simple_live_validation.js:488:25)",
+        "id": "issue_1753091694463_wcazamjrp",
+        "timestamp": "2025-07-21T09:54:54.463Z"
+      }
+    ],
+    "missing-element": [
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Navigation element (nav)",
+        "selector": "nav"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Header element (header)",
+        "selector": "header"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Main content element (main)",
+        "selector": "main"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Forms element (form)",
+        "selector": "form"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Inputs element (input)",
+        "selector": "input"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Results",
+        "description": "Missing Navigation element (nav)",
+        "selector": "nav"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Results",
+        "description": "Missing Header element (header)",
+        "selector": "header"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Results",
+        "description": "Missing Main content element (main)",
+        "selector": "main"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Results",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Results",
+        "description": "Missing Forms element (form)",
+        "selector": "form"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Results",
+        "description": "Missing Inputs element (input)",
+        "selector": "input"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Settings",
+        "description": "Missing Navigation element (nav)",
+        "selector": "nav"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Settings",
+        "description": "Missing Header element (header)",
+        "selector": "header"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Settings",
+        "description": "Missing Main content element (main)",
+        "selector": "main"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Settings",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Settings",
+        "description": "Missing Forms element (form)",
+        "selector": "form"
+      }
+    ]
+  },
+  "issuesBySeverity": {
+    "HIGH": [
+      {
+        "type": "page-error",
+        "severity": "HIGH",
+        "page": "Home",
+        "description": "Page testing failed: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://173.208.247.17:3000/\", waiting until \"networkidle\"\u001b[22m\n",
+        "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://173.208.247.17:3000/\", waiting until \"networkidle\"\u001b[22m\n\n    at SimpleLiveValidator.validateApplication (/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/scripts/simple_live_validation.js:66:49)\n    at async main (/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/scripts/simple_live_validation.js:488:25)",
+        "id": "issue_1753091664414_t3qbc7o5k",
+        "timestamp": "2025-07-21T09:54:24.414Z"
+      },
+      {
+        "type": "page-error",
+        "severity": "HIGH",
+        "page": "Dashboard",
+        "description": "Page testing failed: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://173.208.247.17:3000/dashboard\", waiting until \"networkidle\"\u001b[22m\n",
+        "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://173.208.247.17:3000/dashboard\", waiting until \"networkidle\"\u001b[22m\n\n    at SimpleLiveValidator.validateApplication (/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/scripts/simple_live_validation.js:66:49)\n    at async main (/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/scripts/simple_live_validation.js:488:25)",
+        "id": "issue_1753091694463_wcazamjrp",
+        "timestamp": "2025-07-21T09:54:54.463Z"
+      }
+    ],
+    "MEDIUM": [
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Navigation element (nav)",
+        "selector": "nav"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Header element (header)",
+        "selector": "header"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Main content element (main)",
+        "selector": "main"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Forms element (form)",
+        "selector": "form"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Inputs element (input)",
+        "selector": "input"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Results",
+        "description": "Missing Navigation element (nav)",
+        "selector": "nav"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Results",
+        "description": "Missing Header element (header)",
+        "selector": "header"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Results",
+        "description": "Missing Main content element (main)",
+        "selector": "main"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Results",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Results",
+        "description": "Missing Forms element (form)",
+        "selector": "form"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Results",
+        "description": "Missing Inputs element (input)",
+        "selector": "input"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Settings",
+        "description": "Missing Navigation element (nav)",
+        "selector": "nav"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Settings",
+        "description": "Missing Header element (header)",
+        "selector": "header"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Settings",
+        "description": "Missing Main content element (main)",
+        "selector": "main"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Settings",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Settings",
+        "description": "Missing Forms element (form)",
+        "selector": "form"
+      }
+    ]
+  }
+}

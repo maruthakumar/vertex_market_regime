@@ -1,0 +1,136 @@
+# Validation Story Template
+# This template is used by the Validation SM to create detailed validation stories
+
+story:
+  id: "VAL-{strategy}-{number}"
+  title: "Validate {strategy} Strategy Parameters"
+  type: "validation"
+  status: "draft"  # draft | approved | in_progress | ready_for_review | done
+  priority: "high"  # critical | high | medium | low
+  
+  metadata:
+    strategy: "{strategy_name}"
+    parameter_count: {count}
+    enhanced_validation: {true/false}
+    created_by: "Validation SM"
+    created_date: "{timestamp}"
+    assigned_to: "{strategy}_validator"
+    
+  context:
+    strategy_overview: |
+      {Brief description of the strategy}
+      
+    parameter_categories: |
+      {List of parameter categories for this strategy}
+      
+    critical_parameters: |
+      {List of parameters requiring special attention}
+      
+    dependencies: |
+      {Inter-parameter dependencies}
+      
+    historical_issues: |
+      {Known issues from previous validations}
+      
+  requirements:
+    functional:
+      - Validate all {count} parameters for {strategy}
+      - Verify Excel format compliance
+      - Check backend mapping existence
+      - Validate data type conversions
+      - Test value ranges and constraints
+      - Verify HeavyDB storage integrity
+      - Ensure GPU query optimization
+      - Detect and block synthetic data
+      
+    performance:
+      - All queries must execute in < 50ms
+      - GPU utilization must exceed 70%
+      - Memory usage must stay below 80%
+      - Support parallel validation of parameters
+      
+    data_integrity:
+      - Zero synthetic data tolerance
+      - 100% production data verification
+      - Complete audit trail
+      - Statistical validation for ML/MR strategies
+      
+  validation_tasks:
+    - task_id: "VAL-{strategy}-001"
+      name: "Parse Excel Parameters"
+      description: |
+        Extract all parameters from Excel files for {strategy}
+        Location: {excel_path}
+      validation_points:
+        - All parameters extracted
+        - Correct data types identified
+        - Metadata preserved
+      success_criteria:
+        - Parameter count matches expected: {count}
+        - No parsing errors
+        - All metadata captured
+        
+    - task_id: "VAL-{strategy}-002"
+      name: "Validate Backend Mappings"
+      description: |
+        Verify each parameter has correct backend mapping
+        Mapping location: {backend_mapping_path}
+      validation_points:
+        - Mapping exists for each parameter
+        - Data type compatibility
+        - Transformation rules valid
+      success_criteria:
+        - 100% mapping coverage
+        - All transformations tested
+        - No type mismatches
+        
+    - task_id: "VAL-{strategy}-003"
+      name: "HeavyDB Storage Validation"
+      description: |
+        Verify parameter storage and retrieval in HeavyDB
+      validation_points:
+        - Table schema correctness
+        - Data insertion success
+        - Query retrieval accuracy
+        - Index optimization
+      success_criteria:
+        - 100% storage success
+        - 100% retrieval accuracy
+        - Proper indexing confirmed
+        
+    - task_id: "VAL-{strategy}-004"
+      name: "GPU Performance Optimization"
+      description: |
+        Optimize all queries for GPU execution
+      validation_points:
+        - Query plan analysis
+        - GPU kernel compatibility
+        - Memory access patterns
+        - Execution time measurement
+      success_criteria:
+        - All queries < 50ms
+        - GPU utilization > 70%
+        - No CPU bottlenecks
+        
+    - task_id: "VAL-{strategy}-005"
+      name: "Data Integrity Verification"
+      description: |
+        Ensure only production data is used
+      validation_points:
+        - Synthetic pattern scanning
+        - Statistical distribution check
+        - Source verification
+        - Anomaly detection
+      success_criteria:
+        - Zero synthetic data detected
+        - Statistical properties validated
+        - All sources verified as production
+        
+  acceptance_criteria:
+    - All {count} parameters validated successfully
+    - Zero validation failures
+    - All queries execute in < 50ms
+    - GPU utilization > 70%
+    - No synthetic data detected
+    - Complete audit trail generated
+    -

@@ -1,0 +1,48 @@
+{
+  "monitoring_summary": {
+    "total_checks": 5,
+    "healthy_checks": 5,
+    "unhealthy_checks": 0,
+    "health_percentage": "100.0%",
+    "average_health_check_time": "0.032s",
+    "total_alerts": 0,
+    "alerts_by_severity": {}
+  },
+  "latest_status": {
+    "timestamp": "18:24:48",
+    "check_number": 5,
+    "connection_healthy": "True",
+    "status": {
+      "connection_available": true,
+      "connection_validated": "True",
+      "real_data_validated": true,
+      "table_exists": true,
+      "table_row_count": 33191869,
+      "data_authenticity_score": 1.0,
+      "config": {
+        "host": "localhost",
+        "port": 6274,
+        "user": "admin",
+        "password": "***",
+        "dbname": "heavyai",
+        "table": "nifty_option_chain",
+        "timeout": 30,
+        "max_retries": 3
+      },
+      "error_message": null,
+      "synthetic_data_prohibited": true
+    },
+    "performance_metrics": {
+      "health_check_time": 0.061162471771240234,
+      "status_check_time": 0.3441634178161621,
+      "query_performance_time": 0.04609847068786621
+    }
+  },
+  "performance_trend": [
+    0.02414250373840332,
+    0.024194717407226562,
+    0.024352073669433594,
+    0.024997472763061523,
+    0.061162471771240234
+  ]
+}

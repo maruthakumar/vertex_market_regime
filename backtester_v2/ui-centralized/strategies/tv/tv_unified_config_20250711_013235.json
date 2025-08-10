@@ -1,0 +1,190 @@
+{
+  "strategy_type": "TV",
+  "version": "2.0.0",
+  "hierarchy_type": "6-file",
+  "created_at": "2025-07-11T01:32:35.559067",
+  "master_settings": {
+    "name": "TV_Backtest_Sample",
+    "enabled": true,
+    "signal_file_path": "TV_CONFIG_SIGNALS_1.0.0.xlsx",
+    "start_date": "2024-01-01",
+    "end_date": "2024-12-31",
+    "signal_date_format": "%Y%m%d %H%M%S",
+    "intraday_sqoff_applicable": "YES",
+    "intraday_exit_time": "15:30:00",
+    "tv_exit_applicable": "YES",
+    "do_rollover": "NO",
+    "rollover_time": "15:20:00",
+    "manual_trade_entry_time": null,
+    "manual_trade_lots": 0,
+    "first_trade_entry_time": null,
+    "increase_entry_signal_time_by": 0,
+    "increase_exit_signal_time_by": 0,
+    "expiry_day_exit_time": "15:20:00",
+    "slippage_percent": 0.1,
+    "long_portfolio_file_path": "TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx",
+    "short_portfolio_file_path": "TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx",
+    "manual_portfolio_file_path": "TV_CONFIG_PORTFOLIO_MANUAL_1.0.0.xlsx",
+    "use_db_exit_timing": "NO",
+    "exit_search_interval": 5,
+    "exit_price_source": "SPOT"
+  },
+  "signals": [
+    {
+      "Trade #": "T001",
+      "Type": "Entry Long",
+      "Date/Time": "20240101 091600",
+      "Contracts": 1
+    },
+    {
+      "Trade #": "T001",
+      "Type": "Exit Long",
+      "Date/Time": "20240101 120000",
+      "Contracts": 1
+    },
+    {
+      "Trade #": "T002",
+      "Type": "Entry Short",
+      "Date/Time": "20240101 130000",
+      "Contracts": 2
+    },
+    {
+      "Trade #": "T002",
+      "Type": "Exit Short",
+      "Date/Time": "20240101 150000",
+      "Contracts": 2
+    }
+  ],
+  "portfolios": {
+    "long": {
+      "portfolio_name": "TV_Long",
+      "capital": 1000000,
+      "max_risk": 5,
+      "max_positions": 5,
+      "risk_per_trade": 2,
+      "use_kelly": "NO",
+      "rebalance_freq": "DAILY",
+      "stop_loss_type": "Percentage",
+      "stop_loss_value": 2.0,
+      "take_profit_type": "Percentage",
+      "take_profit_value": 5.0
+    },
+    "short": {
+      "portfolio_name": "TV_Short",
+      "capital": 1000000,
+      "max_risk": 5,
+      "max_positions": 5,
+      "risk_per_trade": 2,
+      "use_kelly": "NO",
+      "rebalance_freq": "DAILY",
+      "stop_loss_type": "Percentage",
+      "stop_loss_value": 2.0,
+      "take_profit_type": "Percentage",
+      "take_profit_value": 5.0
+    },
+    "manual": {
+      "portfolio_name": "TV_Manual",
+      "capital": 1000000,
+      "max_risk": 5,
+      "max_positions": 5,
+      "risk_per_trade": 2,
+      "use_kelly": "NO",
+      "rebalance_freq": "DAILY",
+      "stop_loss_type": "Percentage",
+      "stop_loss_value": 2.0,
+      "take_profit_type": "Percentage",
+      "take_profit_value": 5.0
+    }
+  },
+  "tbs_strategy": {
+    "general_parameters": {
+      "StrategyName": "TV_Strategy_Sample",
+      "MoveSlToCost": "NO",
+      "Underlying": "SPOT",
+      "Index": "NIFTY",
+      "Weekdays": "1,2,3,4,5",
+      "DTE": 0,
+      "StrikeSelectionTime": 92000,
+      "StartTime": 91600,
+      "LastEntryTime": 150000,
+      "EndTime": 150000,
+      "StrategyProfit": 0,
+      "StrategyLoss": 0,
+      "StrategyProfitReExecuteNo": 0,
+      "StrategyLossReExecuteNo": 0,
+      "StrategyTrailingType": "Lock Minimum Profit",
+      "PnLCalTime": 0,
+      "LockPercent": 0,
+      "TrailPercent": 0,
+      "SqOff1Time": 0,
+      "SqOff1Percent": 0,
+      "SqOff2Time": 0,
+      "SqOff2Percent": 0,
+      "ProfitReaches": 0,
+      "LockMinProfitAt": 0,
+      "IncreaseInProfit": 0,
+      "TrailMinProfitBy": 0,
+      "TgtTrackingFrom": "close",
+      "TgtRegisterPriceFrom": "tick",
+      "SlTrackingFrom": "close",
+      "SlRegisterPriceFrom": "tick",
+      "PnLCalculationFrom": "close",
+      "ConsiderHedgePnLForStgyPnL": "no",
+      "CheckPremiumDiffCondition": "no",
+      "PremiumDiffType": "point",
+      "PremiumDiffValue": 0,
+      "PremiumDiffChangeStrike": "no",
+      "PremiumDiffDoForceEntry": "no",
+      "PremiumDiffDoForceAfter": 0,
+      "PremiumDiffForceEntryConsiderPremium": "higher",
+      "StoplossCheckingInterval": 1,
+      "TargetCheckingInterval": 1,
+      "ReEntryCheckingInterval": 1,
+      "OnExpiryDayTradeNextExpiry": "no"
+    },
+    "legs": [
+      {
+        "leg_id": "leg1",
+        "instrument": "CALL",
+        "transaction": "SELL",
+        "expiry": "current",
+        "strike_method": "ATM",
+        "strike_value": 0,
+        "lots": 1,
+        "sl_type": "percentage",
+        "sl_value": 100.0,
+        "tgt_type": "percentage",
+        "tgt_value": 0.0
+      },
+      {
+        "leg_id": "leg2",
+        "instrument": "PUT",
+        "transaction": "SELL",
+        "expiry": "current",
+        "strike_method": "ATM",
+        "strike_value": 0,
+        "lots": 1,
+        "sl_type": "percentage",
+        "sl_value": 100.0,
+        "tgt_type": "percentage",
+        "tgt_value": 0.0
+      }
+    ]
+  },
+  "trading_parameters": {
+    "start_date": "2024-01-01",
+    "end_date": "2024-12-31",
+    "capital": 3000000,
+    "signal_count": 4,
+    "portfolio_count": 3,
+    "leg_count": 2
+  },
+  "source_files": {
+    "tv_master": "../../configurations/data/prod/tv/TV_CONFIG_MASTER_1.0.0.xlsx",
+    "signals": "../../configurations/data/prod/tv/TV_CONFIG_SIGNALS_1.0.0.xlsx",
+    "portfolio_long": "../../configurations/data/prod/tv/TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx",
+    "portfolio_short": "../../configurations/data/prod/tv/TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx",
+    "portfolio_manual": "../../configurations/data/prod/tv/TV_CONFIG_PORTFOLIO_MANUAL_1.0.0.xlsx",
+    "strategy": "../../configurations/data/prod/tv/TV_CONFIG_STRATEGY_1.0.0.xlsx"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "generation_time": "2025-07-08T02:30:19.659286",
+  "rows": 375,
+  "time_interval": "1 minute",
+  "trading_hours": "09:15:00 to 15:30:00",
+  "unique_regime_12": 2,
+  "unique_regime_18": 18,
+  "price_stats": {
+    "min": 49972.61,
+    "max": 50151.59,
+    "mean": 50055.55632,
+    "std": 40.6534458590927
+  },
+  "regime_distribution": {
+    "volatility": {
+      "LOW": 238,
+      "MODERATE": 137
+    },
+    "trend": {
+      "NONDIRECTIONAL": 375
+    },
+    "structure": {
+      "RANGE": 375
+    }
+  }
+}

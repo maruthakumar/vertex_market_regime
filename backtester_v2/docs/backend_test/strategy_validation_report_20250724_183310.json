@@ -1,0 +1,55 @@
+{
+  "validation_timestamp": "2025-07-24T18:33:10.205994",
+  "strategies_validated": [
+    "TBS",
+    "TV",
+    "ORB",
+    "OI",
+    "POS",
+    "ML",
+    "MR"
+  ],
+  "total_files_analyzed": 22,
+  "total_parameters_found": 811,
+  "validation_results": {
+    "TBS": {
+      "strategy": "TBS",
+      "files_found": [
+        "TBS_CONFIG_PORTFOLIO_1.0.0.xlsx",
+        "TBS_CONFIG_STRATEGY_1.0.0.xlsx"
+      ],
+      "files_missing": [],
+      "sheet_analysis": {
+        "TBS_CONFIG_PORTFOLIO_1.0.0.xlsx": {
+          "file_path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/backtester_v2/configurations/data/prod/tbs/TBS_CONFIG_PORTFOLIO_1.0.0.xlsx",
+          "sheets_found": [
+            "PortfolioSetting",
+            "StrategySetting"
+          ],
+          "sheets_missing": [
+            "GeneralParameter",
+            "LegParameter"
+          ],
+          "sheets": {
+            "PortfolioSetting": {
+              "sheet_name": "PortfolioSetting",
+              "rows": 1,
+              "columns": [
+                "Capital",
+                "MaxRisk",
+                "MaxPositions",
+                "RiskPerTrade",
+                "UseKellyCriterion",
+                "RebalanceFrequency"
+              ],
+              "column_count": 6,
+              "data_types": {
+                "Capital": "int64",
+                "MaxRisk": "int64",
+                "MaxPositions": "int64",
+                "RiskPerTrade": "int64",
+                "UseKellyCriterion": "object",
+                "RebalanceFrequency": "object"
+              },
+              "null_counts": {
+                "Capital": 

@@ -1,0 +1,209 @@
+{
+  "sessionId": "validation_1753090778495",
+  "timestamp": "2025-07-21T09:39:38.495Z",
+  "duration": 17.068,
+  "targetUrl": "http://173.208.247.17:3000/",
+  "summary": {
+    "totalIssues": 7,
+    "criticalIssues": 1,
+    "highIssues": 2,
+    "mediumIssues": 4,
+    "lowIssues": 0,
+    "screenshotsCaptured": 2
+  },
+  "issues": [
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Home",
+      "description": "Missing Footer element (footer)",
+      "selector": "footer"
+    },
+    {
+      "type": "accessibility-labels",
+      "severity": "MEDIUM",
+      "page": "Home",
+      "description": "1 form inputs missing labels",
+      "count": 1
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Dashboard",
+      "description": "Missing Footer element (footer)",
+      "selector": "footer"
+    },
+    {
+      "type": "accessibility-labels",
+      "severity": "MEDIUM",
+      "page": "Dashboard",
+      "description": "1 form inputs missing labels",
+      "count": 1
+    },
+    {
+      "type": "navigation",
+      "severity": "CRITICAL",
+      "page": "Backtest",
+      "description": "Failed to load page: HTTP 404",
+      "url": "http://173.208.247.17:3000/backtest",
+      "id": "issue_1753090774604_emsjy4boh",
+      "timestamp": "2025-07-21T09:39:34.604Z"
+    },
+    {
+      "type": "navigation",
+      "severity": "HIGH",
+      "page": "Results",
+      "description": "Failed to load page: HTTP 404",
+      "url": "http://173.208.247.17:3000/results",
+      "id": "issue_1753090776765_jzerykd11",
+      "timestamp": "2025-07-21T09:39:36.765Z"
+    },
+    {
+      "type": "navigation",
+      "severity": "HIGH",
+      "page": "Settings",
+      "description": "Failed to load page: HTTP 404",
+      "url": "http://173.208.247.17:3000/settings",
+      "id": "issue_1753090778429_3ud3g4r0i",
+      "timestamp": "2025-07-21T09:39:38.429Z"
+    }
+  ],
+  "screenshots": [
+    {
+      "page": "Home",
+      "path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/live-validation-results/screenshots/home_2025-07-21T09-39-26-815Z.png",
+      "timestamp": "2025-07-21T09:39:27.227Z"
+    },
+    {
+      "page": "Dashboard",
+      "path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/live-validation-results/screenshots/dashboard_2025-07-21T09-39-31-429Z.png",
+      "timestamp": "2025-07-21T09:39:31.881Z"
+    }
+  ],
+  "issuesByType": {
+    "missing-element": [
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Home",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Dashboard",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      }
+    ],
+    "accessibility-labels": [
+      {
+        "type": "accessibility-labels",
+        "severity": "MEDIUM",
+        "page": "Home",
+        "description": "1 form inputs missing labels",
+        "count": 1
+      },
+      {
+        "type": "accessibility-labels",
+        "severity": "MEDIUM",
+        "page": "Dashboard",
+        "description": "1 form inputs missing labels",
+        "count": 1
+      }
+    ],
+    "navigation": [
+      {
+        "type": "navigation",
+        "severity": "CRITICAL",
+        "page": "Backtest",
+        "description": "Failed to load page: HTTP 404",
+        "url": "http://173.208.247.17:3000/backtest",
+        "id": "issue_1753090774604_emsjy4boh",
+        "timestamp": "2025-07-21T09:39:34.604Z"
+      },
+      {
+        "type": "navigation",
+        "severity": "HIGH",
+        "page": "Results",
+        "description": "Failed to load page: HTTP 404",
+        "url": "http://173.208.247.17:3000/results",
+        "id": "issue_1753090776765_jzerykd11",
+        "timestamp": "2025-07-21T09:39:36.765Z"
+      },
+      {
+        "type": "navigation",
+        "severity": "HIGH",
+        "page": "Settings",
+        "description": "Failed to load page: HTTP 404",
+        "url": "http://173.208.247.17:3000/settings",
+        "id": "issue_1753090778429_3ud3g4r0i",
+        "timestamp": "2025-07-21T09:39:38.429Z"
+      }
+    ]
+  },
+  "issuesBySeverity": {
+    "MEDIUM": [
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Home",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "accessibility-labels",
+        "severity": "MEDIUM",
+        "page": "Home",
+        "description": "1 form inputs missing labels",
+        "count": 1
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Dashboard",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "accessibility-labels",
+        "severity": "MEDIUM",
+        "page": "Dashboard",
+        "description": "1 form inputs missing labels",
+        "count": 1
+      }
+    ],
+    "CRITICAL": [
+      {
+        "type": "navigation",
+        "severity": "CRITICAL",
+        "page": "Backtest",
+        "description": "Failed to load page: HTTP 404",
+        "url": "http://173.208.247.17:3000/backtest",
+        "id": "issue_1753090774604_emsjy4boh",
+        "timestamp": "2025-07-21T09:39:34.604Z"
+      }
+    ],
+    "HIGH": [
+      {
+        "type": "navigation",
+        "severity": "HIGH",
+        "page": "Results",
+        "description": "Failed to load page: HTTP 404",
+        "url": "http://173.208.247.17:3000/results",
+        "id": "issue_1753090776765_jzerykd11",
+        "timestamp": "2025-07-21T09:39:36.765Z"
+      },
+      {
+        "type": "navigation",
+        "severity": "HIGH",
+        "page": "Settings",
+        "description": "Failed to load page: HTTP 404",
+        "url": "http://173.208.247.17:3000/settings",
+        "id": "issue_1753090778429_3ud3g4r0i",
+        "timestamp": "2025-07-21T09:39:38.429Z"
+      }
+    ]
+  }
+}

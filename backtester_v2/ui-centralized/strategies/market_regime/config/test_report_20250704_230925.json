@@ -1,0 +1,422 @@
+{
+  "enhanced_modules": {
+    "enhanced_market_regime_engine": {
+      "module": "enhanced_market_regime_engine",
+      "status": "passed",
+      "classes_found": [
+        "ComprehensiveTripleStraddleEngine",
+        "EnhancedMarketRegimeEngine",
+        "Path",
+        "datetime"
+      ],
+      "methods_tested": [
+        "ComprehensiveTripleStraddleEngine.analyze_comprehensive_triple_straddle",
+        "ComprehensiveTripleStraddleEngine.export_comprehensive_analysis_results",
+        "ComprehensiveTripleStraddleEngine.get_system_status",
+        "EnhancedMarketRegimeEngine.add_technical_analysis_indicators",
+        "EnhancedMarketRegimeEngine.analyze_comprehensive_market_regime",
+        "EnhancedMarketRegimeEngine.analyze_spot_data_issues",
+        "EnhancedMarketRegimeEngine.calculate_advanced_greek_sentiment",
+        "EnhancedMarketRegimeEngine.calculate_dte_based_weighting",
+        "EnhancedMarketRegimeEngine.calculate_enhanced_final_regime_score",
+        "EnhancedMarketRegimeEngine.calculate_enhanced_triple_straddle_component",
+        "EnhancedMarketRegimeEngine.calculate_technical_analysis_fusion",
+        "EnhancedMarketRegimeEngine.implement_rolling_analysis",
+        "EnhancedMarketRegimeEngine.run_enhanced_analysis",
+        "Path.absolute",
+        "Path.as_posix",
+        "Path.as_uri",
+        "Path.chmod",
+        "Path.cwd",
+        "Path.exists",
+        "Path.expanduser",
+        "Path.glob",
+        "Path.group",
+        "Path.hardlink_to",
+        "Path.home",
+        "Path.is_absolute",
+        "Path.is_block_device",
+        "Path.is_char_device",
+        "Path.is_dir",
+        "Path.is_fifo",
+        "Path.is_file",
+        "Path.is_mount",
+        "Path.is_relative_to",
+        "Path.is_reserved",
+        "Path.is_socket",
+        "Path.is_symlink",
+        "Path.iterdir",
+        "Path.joinpath",
+        "Path.lchmod",
+        "Path.link_to",
+        "Path.lstat",
+        "Path.match",
+        "Path.mkdir",
+        "Path.open",
+        "Path.owner",
+        "Path.read_bytes",
+        "Path.read_text",
+        "Path.readlink",
+        "Path.relative_to",
+        "Path.rename",
+        "Path.replace",
+        "Path.resolve",
+        "Path.rglob",
+        "Path.rmdir",
+        "Path.samefile",
+        "Path.stat",
+        "Path.symlink_to",
+        "Path.touch",
+        "Path.unlink",
+        "Path.with_name",
+        "Path.with_stem",
+        "Path.with_suffix",
+        "Path.write_bytes",
+        "Path.write_text"
+      ],
+      "test_results": {}
+    },
+    "enhanced_regime_detector_v2": {
+      "status": "failed",
+      "error": "attempted relative import with no known parent package",
+      "traceback": "Traceback (most recent call last):\n  File \"/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/market_regime/unified_market_regime_test_runner.py\", line 220, in _test_enhanced_modules\n    module = importlib.import_module(module_name)\n  File \"/usr/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1006, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 688, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 883, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/market_regime/enhanced_regime_detector_v2.py\", line 31, in <module>\n    from .enhanced_regime_detector import Enhanced18RegimeDetector, Enhanced18RegimeType\nImportError: attempted relative import with no known parent package\n"
+    },
+    "enhanced_18_regime_classifier": {
+      "module": "enhanced_18_regime_classifier",
+      "status": "passed",
+      "classes_found": [
+        "Enhanced18RegimeClassifier",
+        "Enum",
+        "RegimeClassificationResult",
+        "datetime"
+      ],
+      "methods_tested": [
+        "Enhanced18RegimeClassifier.classify_market_regime",
+        "Enhanced18RegimeClassifier.get_regime_statistics",
+        "Enhanced18RegimeClassifier.reset_history"
+      ],
+      "test_results": {}
+    },
+    "enhanced_12_regime_detector": {
+      "module": "enhanced_12_regime_detector",
+      "status": "passed",
+      "classes_found": [
+        "CacheManager",
+        "Enhanced12RegimeDetector",
+        "Enum",
+        "Path",
+        "PerformanceMonitor",
+        "RealDataUnavailableError",
+        "Regime12Classification",
+        "RegimeType",
+        "SyntheticDataProhibitedError",
+        "datetime",
+        "timedelta"
+      ],
+      "methods_tested": [
+        "CacheManager.clear",
+        "Enhanced12RegimeDetector.classify_12_regime",
+        "Enhanced12RegimeDetector.get_performance_metrics",
+        "Enhanced12RegimeDetector.get_regime_definitions",
+        "Enhanced12RegimeDetector.get_regime_mapping",
+        "Enhanced12RegimeDetector.get_regime_stability_metrics",
+        "Enhanced12RegimeDetector.map_18_to_12_regime",
+        "Enhanced12RegimeDetector.reset_cache",
+        "Enhanced12RegimeDetector.validate_regime_mapping_accuracy",
+        "Path.absolute",
+        "Path.as_posix",
+        "Path.as_uri",
+        "Path.chmod",
+        "Path.cwd",
+        "Path.exists",
+        "Path.expanduser",
+        "Path.glob",
+        "Path.group",
+        "Path.hardlink_to",
+        "Path.home",
+        "Path.is_absolute",
+        "Path.is_block_device",
+        "Path.is_char_device",
+        "Path.is_dir",
+        "Path.is_fifo",
+        "Path.is_file",
+        "Path.is_mount",
+        "Path.is_relative_to",
+        "Path.is_reserved",
+        "Path.is_socket",
+        "Path.is_symlink",
+        "Path.iterdir",
+        "Path.joinpath",
+        "Path.lchmod",
+        "Path.link_to",
+        "Path.lstat",
+        "Path.match",
+        "Path.mkdir",
+        "Path.open",
+        "Path.owner",
+        "Path.read_bytes",
+        "Path.read_text",
+        "Path.readlink",
+        "Path.relative_to",
+        "Path.rename",
+        "Path.replace",
+        "Path.resolve",
+        "Path.rglob",
+        "Path.rmdir",
+        "Path.samefile",
+        "Path.stat",
+        "Path.symlink_to",
+        "Path.touch",
+        "Path.unlink",
+        "Path.with_name",
+        "Path.with_stem",
+        "Path.with_suffix",
+        "Path.write_bytes",
+        "Path.write_text",
+        "PerformanceMonitor.get_metrics",
+        "PerformanceMonitor.record_processing_time",
+        "RealDataUnavailableError.with_traceback",
+        "SyntheticDataProhibitedError.with_traceback",
+        "timedelta.total_seconds"
+      ],
+      "test_results": {}
+    },
+    "enhanced_greek_sentiment_analysis": {
+      "module": "enhanced_greek_sentiment_analysis",
+      "status": "passed",
+      "classes_found": [
+        "EnhancedGreekSentimentAnalysis",
+        "Enum",
+        "GreekAnalysisResult",
+        "GreekSentimentType",
+        "datetime",
+        "timedelta"
+      ],
+      "methods_tested": [
+        "EnhancedGreekSentimentAnalysis.analyze_greek_sentiment",
+        "EnhancedGreekSentimentAnalysis.get_current_baselines",
+        "EnhancedGreekSentimentAnalysis.get_performance_summary",
+        "EnhancedGreekSentimentAnalysis.reset_session_baselines",
+        "EnhancedGreekSentimentAnalysis.update_sentiment_thresholds",
+        "timedelta.total_seconds"
+      ],
+      "test_results": {}
+    },
+    "enhanced_triple_straddle_analyzer": {
+      "status": "failed",
+      "error": "No module named 'enhanced_triple_straddle_analyzer'",
+      "traceback": "Traceback (most recent call last):\n  File \"/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/market_regime/unified_market_regime_test_runner.py\", line 220, in _test_enhanced_modules\n    module = importlib.import_module(module_name)\n  File \"/usr/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'enhanced_triple_straddle_analyzer'\n"
+    },
+    "enhanced_multi_indicator_engine": {
+      "status": "failed",
+      "error": "No module named 'enhanced_multi_indicator_engine'",
+      "traceback": "Traceback (most recent call last):\n  File \"/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/market_regime/unified_market_regime_test_runner.py\", line 220, in _test_enhanced_modules\n    module = importlib.import_module(module_name)\n  File \"/usr/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'enhanced_multi_indicator_engine'\n"
+    },
+    "enhanced_configurable_excel_manager": {
+      "module": "enhanced_configurable_excel_manager",
+      "status": "passed",
+      "classes_found": [
+        "EnhancedConfigurableExcelManager",
+        "Enum",
+        "IndicatorCategory",
+        "Path",
+        "datetime",
+        "timedelta"
+      ],
+      "methods_tested": [
+        "EnhancedConfigurableExcelManager.generate_enhanced_excel_template",
+        "EnhancedConfigurableExcelManager.get_confidence_score_configuration",
+        "EnhancedConfigurableExcelManager.get_configuration_summary",
+        "EnhancedConfigurableExcelManager.get_dynamic_weightage_configuration",
+        "EnhancedConfigurableExcelManager.get_historical_performance_configuration",
+        "EnhancedConfigurableExcelManager.get_indicator_configuration",
+        "EnhancedConfigurableExcelManager.get_regime_definitions",
+        "EnhancedConfigurableExcelManager.get_timeframe_configuration",
+        "EnhancedConfigurableExcelManager.get_user_profiles",
+        "EnhancedConfigurableExcelManager.load_configuration",
+        "EnhancedConfigurableExcelManager.save_configuration",
+        "EnhancedConfigurableExcelManager.update_indicator_weight",
+        "EnhancedConfigurableExcelManager.update_regime_threshold",
+        "EnhancedConfigurableExcelManager.validate_configuration",
+        "Path.absolute",
+        "Path.as_posix",
+        "Path.as_uri",
+        "Path.chmod",
+        "Path.cwd",
+        "Path.exists",
+        "Path.expanduser",
+        "Path.glob",
+        "Path.group",
+        "Path.hardlink_to",
+        "Path.home",
+        "Path.is_absolute",
+        "Path.is_block_device",
+        "Path.is_char_device",
+        "Path.is_dir",
+        "Path.is_fifo",
+        "Path.is_file",
+        "Path.is_mount",
+        "Path.is_relative_to",
+        "Path.is_reserved",
+        "Path.is_socket",
+        "Path.is_symlink",
+        "Path.iterdir",
+        "Path.joinpath",
+        "Path.lchmod",
+        "Path.link_to",
+        "Path.lstat",
+        "Path.match",
+        "Path.mkdir",
+        "Path.open",
+        "Path.owner",
+        "Path.read_bytes",
+        "Path.read_text",
+        "Path.readlink",
+        "Path.relative_to",
+        "Path.rename",
+        "Path.replace",
+        "Path.resolve",
+        "Path.rglob",
+        "Path.rmdir",
+        "Path.samefile",
+        "Path.stat",
+        "Path.symlink_to",
+        "Path.touch",
+        "Path.unlink",
+        "Path.with_name",
+        "Path.with_stem",
+        "Path.with_suffix",
+        "Path.write_bytes",
+        "Path.write_text",
+        "timedelta.total_seconds"
+      ],
+      "test_results": {}
+    }
+  },
+  "comprehensive_modules": {
+    "error": "attempted relative import with no known parent package",
+    "phase0_data_validation": {
+      "status": "failed",
+      "error": "No module named 'phase0_data_validation'"
+    },
+    "phase1_environment": {
+      "status": "failed",
+      "error": "No module named 'phase1_environment'"
+    },
+    "phase2_ui_upload": {
+      "status": "failed",
+      "error": "No module named 'phase2_ui_upload'"
+    },
+    "phase3_backend_excel_yaml": {
+      "status": "failed",
+      "error": "No module named 'phase3_backend_excel_yaml'"
+    },
+    "phase4_indicator_logic": {
+      "status": "failed",
+      "error": "No module named 'phase4_indicator_logic'"
+    },
+    "phase5_output_generation": {
+      "status": "failed",
+      "error": "No module named 'phase5_output_generation'"
+    }
+  },
+  "integration_tests": [
+    {
+      "test": "engine_excel_integration",
+      "status": "failed",
+      "error": "EnhancedConfigurableExcelManager.load_configuration() takes 1 positional argument but 2 were given"
+    },
+    {
+      "test": "regime_greek_integration",
+      "status": "failed",
+      "error": "attempted relative import with no known parent package"
+    }
+  ],
+  "performance_tests": {
+    "regime_calculation": {
+      "target_ms": 100,
+      "actual_ms": null,
+      "passed": false,
+      "performance_ratio": 0
+    },
+    "indicator_analysis": {
+      "target_ms": 50,
+      "actual_ms": null,
+      "passed": false,
+      "performance_ratio": 0
+    },
+    "greek_calculation": {
+      "target_ms": 75,
+      "actual_ms": null,
+      "passed": false,
+      "performance_ratio": 0
+    },
+    "excel_loading": {
+      "target_ms": 200,
+      "actual_ms": null,
+      "passed": false,
+      "performance_ratio": 0
+    },
+    "csv_generation": {
+      "target_ms": 150,
+      "actual_ms": null,
+      "passed": false,
+      "performance_ratio": 0
+    }
+  },
+  "excel_validation": {
+    "status": "failed",
+    "error": "EnhancedConfigurableExcelManager.load_configuration() takes 1 positional argument but 2 were given"
+  },
+  "csv_output_tests": {
+    "basic_generation": false,
+    "parameter_inclusion": false,
+    "time_series_format": false,
+    "data_integrity": false,
+    "error": "'TimeSeriesRegimeStorage' object has no attribute 'save_to_csv'"
+  },
+  "summary": {
+    "total_duration_seconds": 3.0048627853393555,
+    "total_tests": 33,
+    "passed_tests": 5,
+    "failed_tests": 9,
+    "success_rate": 15.151515151515152,
+    "timestamp": "2025-07-04T23:09:25.075519",
+    "excel_config": "/srv/samba/shared/bt/backtester_stable/BTRUN/input_sheets/market_regime/PHASE2_ENHANCED_ULTIMATE_UNIFIED_MARKET_REGIME_CONFIG_20250627_195625_20250628_104335.xlsx",
+    "test_categories": {
+      "architecture": 3,
+      "implementation": 0,
+      "security": 0,
+      "quality": 0,
+      "performance": 0
+    }
+  },
+  "environment_validation": {
+    "python_version": "3.10.12 (main, May 27 2025, 17:12:29) [GCC 11.4.0]",
+    "heavydb_connection": true,
+    "redis_connection": true,
+    "required_packages": {
+      "pandas": true,
+      "numpy": true,
+      "scipy": true,
+      "sklearn": true,
+      "torch": true,
+      "openpyxl": true,
+      "xlsxwriter": true,
+      "pyyaml": false,
+      "pytest": true,
+      "asyncio": true,
+      "aiohttp": true,
+      "websockets": true
+    },
+    "directory_structure": {
+      "enhanced_modules": false,
+      "comprehensive_modules": false,
+      "tests": false,
+      "config": true,
+      "output": true,
+      "logs": false
+    },
+    "python_version_valid": true
+  }
+}

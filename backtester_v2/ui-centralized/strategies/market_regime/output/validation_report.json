@@ -1,0 +1,75 @@
+{
+  "timestamp": "2025-07-08T01:18:44.766235",
+  "summary": {
+    "total_checks": 4,
+    "successful": 3,
+    "warnings": 0,
+    "failed": 1
+  },
+  "results": {
+    "module_structure": {
+      "status": "error",
+      "error": "attempted relative import with no known parent package",
+      "message": "Module structure validation failed"
+    },
+    "excel_configuration": {
+      "status": "success",
+      "file_path": "/srv/samba/shared/bt/backtester_stable/BTRUN/input_sheets/market_regime/PHASE2_ENHANCED_ULTIMATE_UNIFIED_MARKET_REGIME_CONFIG_20250627_195625_20250628_104335.xlsx",
+      "total_sheets": 31,
+      "sheet_names": [
+        "Summary",
+        "MasterConfiguration",
+        "StabilityConfiguration",
+        "TransitionManagement",
+        "NoiseFiltering",
+        "TransitionRules",
+        "IndicatorConfiguration",
+        "GreekSentimentConfig",
+        "TrendingOIPAConfig",
+        "StraddleAnalysisConfig",
+        "IVSurfaceConfig",
+        "ATRIndicatorsConfig",
+        "RegimeClassification",
+        "RegimeFormationConfig",
+        "RegimeParameters",
+        "MultiTimeframeConfig",
+        "DynamicWeightageConfig",
+        "PerformanceMetrics",
+        "ValidationRules",
+        "AdaptiveTuning",
+        "IntradaySettings",
+        "OutputFormat",
+        "TemplateMetadata",
+        "EnsembleMethods",
+        "ConfidenceCalibration",
+        "MultiTimeframeFusion",
+        "AdaptiveLearning",
+        "AccuracyEnhancement",
+        "RegimeStability",
+        "ValidationFramework",
+        "RiskControls"
+      ],
+      "missing_expected_sheets": [],
+      "message": "Excel configuration validated successfully"
+    },
+    "heavydb_connectivity": {
+      "status": "success",
+      "connector_available": true,
+      "connector_type": "heavyai",
+      "connection_params": {},
+      "message": "HeavyDB connector (heavyai) available"
+    },
+    "output_directories": {
+      "status": "success",
+      "output_dir": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output",
+      "created_directories": [
+        "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/csv_outputs",
+        "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/logs",
+        "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/reports",
+        "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/cache"
+      ],
+      "write_permission": true,
+      "message": "Output directories set up successfully"
+    }
+  }
+}

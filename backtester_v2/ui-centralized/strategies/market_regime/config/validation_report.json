@@ -1,0 +1,27 @@
+{
+  "is_valid": true,
+  "metadata": {
+    "file_path": "MARKET_REGIME_SAMPLE_CONFIG.xlsx",
+    "validation_timestamp": "2025-06-29T18:16:31.195025",
+    "sheets_analyzed": 7,
+    "total_parameters": 395,
+    "error_count": 0,
+    "warning_count": 0,
+    "info_count": 0
+  },
+  "issues_by_severity": {
+    "errors": [],
+    "warnings": [],
+    "info": []
+  },
+  "issues_by_category": {},
+  "sheets_with_issues": [],
+  "summary": {
+    "total_issues": 0,
+    "error_count": 0,
+    "warning_count": 0,
+    "info_count": 0,
+    "validation_score": 100.0
+  },
+  "suggestions": []
+}

@@ -1,0 +1,195 @@
+# Alert Rules for Adaptive Market Regime System
+
+groups:
+  - name: regime_system_critical
+    interval: 30s
+    rules:
+      # Service availability
+      - alert: RegimeSystemDown
+        expr: up{job="adaptive_regime"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          team: platform
+        annotations:
+          summary: "Adaptive Regime System is down"
+          description: "The Adaptive Regime System has been down for more than 2 minutes."
+          runbook_url: "https://wiki.company.com/runbooks/regime-system-down"
+
+      # High error rate
+      - alert: HighErrorRate
+        expr: rate(regime_errors_total[5m]) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+          team: platform
+        annotations:
+          summary: "High error rate in regime detection"
+          description: "Error rate is {{ $value | humanizePercentage }} over the last 5 minutes."
+          dashboard_url: "http://grafana.company.com/d/regime-errors"
+
+      # Database connection issues
+      - alert: DatabaseConnectionLost
+        expr: regime_database_connections_active == 0
+        for: 1m
+        labels:
+          severity: critical
+          team: platform
+        annotations:
+          summary: "Lost connection to HeavyDB"
+          description: "No active database connections for more than 1 minute."
+
+  - name: regime_system_performance
+    interval: 30s
+    rules:
+      # High latency
+      - alert: HighRegimeDetectionLatency
+        expr: histogram_quantile(0.99, rate(regime_detection_latency_seconds_bucket[5m])) > 0.2
+        for: 10m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "High regime detection latency"
+          description: "P99 latency is {{ $value }}s (threshold: 200ms)."
+
+      # High CPU usage
+      - alert: HighCPUUsage
+        expr: regime_cpu_usage_percent > 80
+        for: 15m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "High CPU usage"
+          description: "CPU usage is {{ $value }}% for more than 15 minutes."
+
+      # High memory usage
+      - alert: HighMemoryUsage
+        expr: regime_memory_usage_bytes / regime_memory_limit_bytes > 0.9
+        for: 10m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "High memory usage"
+          description: "Memory usage is {{ $value | humanizePercentage }} of limit."
+
+      # Low regime detection accuracy
+      - alert: LowRegimeAccuracy
+        expr: regime_accuracy_percent < 80
+        for: 30m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "Low regime detection accuracy"
+          description: "Regime detection accuracy is {{ $value }}% (threshold: 80%)."
+
+  - name: regime_system_components
+    interval: 30s
+    rules:
+      # Component failure
+      - alert: ComponentDown
+        expr: regime_component_status{state!="running"} == 1
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "Component {{ $labels.component }} is not running"
+          description: "Component {{ $labels.component }} is in state {{ $labels.state }}."
+
+      # Learning engine issues
+      - alert: LearningEngineStalled
+        expr: increase(regime_learning_updates_total[1h]) == 0
+        for: 2h
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "Learning engine not updating"
+          description: "No learning updates in the last 2 hours."
+
+      # Concept drift detected
+      - alert: ConceptDriftDetected
+        expr: regime_concept_drift_score > 0.3
+        for: 30m
+        labels:
+          severity: info
+          team: platform
+        annotations:
+          summary: "Significant concept drift detected"
+          description: "Drift score is {{ $value }} (threshold: 0.3)."
+
+  - name: regime_system_operational
+    interval: 1m
+    rules:
+      # Queue buildup
+      - alert: TaskQueueBacklog
+        expr: regime_task_queue_size > 1000
+        for: 10m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "Large task queue backlog"
+          description: "Task queue has {{ $value }} pending tasks."
+
+      # Disk space
+      - alert: LowDiskSpace
+        expr: node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"} < 0.1
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "Low disk space"
+          description: "Only {{ $value | humanizePercentage }} disk space remaining."
+
+      # Log errors spike
+      - alert: LogErrorSpike
+        expr: rate(log_messages_total{level="error"}[5m]) > 10
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "High rate of error logs"
+          description: "{{ $value }} errors per second in logs."
+
+  - name: regime_system_sla
+    interval: 1m
+    rules:
+      # SLA violation - Availability
+      - alert: SLAAvailabilityViolation
+        expr: avg_over_time(up{job="adaptive_regime"}[1h]) < 0.999
+        labels:
+          severity: critical
+          team: platform
+          sla: availability
+        annotations:
+          summary: "SLA violation: System availability below 99.9%"
+          description: "Availability is {{ $value | humanizePercentage }} over the last hour."
+
+      # SLA violation - Latency
+      - alert: SLALatencyViolation
+        expr: histogram_quantile(0.99, rate(regime_detection_latency_seconds_bucket[1h])) > 0.1
+        labels:
+          severity: critical
+          team: platform
+          sla: latency
+        annotations:
+          summary: "SLA violation: P99 latency above 100ms"
+          description: "P99 latency is {{ $value }}s over the last hour."
+
+      # SLA violation - Error rate
+      - alert: SLAErrorRateViolation
+        expr: rate(regime_errors_total[1h]) / rate(regime_requests_total[1h]) > 0.01
+        labels:
+          severity: critical
+          team: platform
+          sla: error_rate
+        annotations:
+          summary: "SLA violation: Error rate above 1%"
+          description: "Error rate is {{ $value | humanizePercentage }} over the last hour."

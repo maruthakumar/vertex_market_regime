@@ -1,0 +1,2116 @@
+{
+  "modified": [
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.comprehensive_modules\\. -> from .archive_comprehensive_modules_do_not_use.",
+        "Updated: ComprehensiveTripleStraddleEngine -> StraddleAnalysisEngine"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/memory_optimized_triple_straddle_engine.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: EnhancedGreekSentiment -> GreekSentimentAnalyzer"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/test_enhanced_integration.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: ComprehensiveMarketRegimeAnalyzer -> MarketRegimeEngine"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/corrected_comprehensive_market_regime_analyzer.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: EnhancedGreekSentiment -> GreekSentimentAnalyzer"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/unified_market_regime_test_runner.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/api_routes.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.comprehensive_modules\\. -> from .archive_comprehensive_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/production_deployment_manager.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: EnhancedGreekSentiment -> GreekSentimentAnalyzer"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/test_integration_simple.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/technical_indicators_integration.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/technical_indicators_suite.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use.",
+        "Updated: from\\s+\\.comprehensive_modules\\. -> from .archive_comprehensive_modules_do_not_use.",
+        "Updated: ComprehensiveTripleStraddleEngine -> StraddleAnalysisEngine"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive_window_integration.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.comprehensive_modules\\. -> from .archive_comprehensive_modules_do_not_use.",
+        "Updated: ComprehensiveTripleStraddleEngine -> StraddleAnalysisEngine",
+        "Updated: ComprehensiveMarketRegimeAnalyzer -> MarketRegimeEngine",
+        "Updated: EnhancedGreekSentiment -> GreekSentimentAnalyzer"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/unified_enhanced_market_regime_engine.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/excel_config_parser.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/triple_straddle_12regime_integrator.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use.",
+        "Updated: EnhancedGreekSentiment -> GreekSentimentAnalyzer"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/enhanced_greek_sentiment_integration.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/excel_template_generator.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: ComprehensiveMarketRegimeAnalyzer -> MarketRegimeEngine"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validation_framework_corrected_analysis.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/heavydb_integrated_regime_analyzer.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/DTE_INTEGRATED_OPTIMIZED_SYSTEM.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: ComprehensiveTripleStraddleEngine -> StraddleAnalysisEngine"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/sophisticated_regime_formation_engine.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/OPTIMIZED_TRIPLE_STRADDLE_SYSTEM.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: ComprehensiveTripleStraddleEngine -> StraddleAnalysisEngine",
+        "Updated: EnhancedGreekSentiment -> GreekSentimentAnalyzer",
+        "Updated: EnhancedTrendingOIPAAnalysis -> OIPriceActionAnalyzer"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/market_regime_ml_integration.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/executor.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/excel_config_manager.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/api_integration.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/archive/unified_enhanced_triple_straddle_pipeline.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.\\.enhanced_modules\\. -> from ..archive_enhanced_modules_do_not_use.",
+        "Updated: from\\s+\\.\\.comprehensive_modules\\. -> from ..archive_comprehensive_modules_do_not_use.",
+        "Updated: ComprehensiveTripleStraddleEngine -> StraddleAnalysisEngine"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/core/engine.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: EnhancedGreekSentiment -> GreekSentimentAnalyzer"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_enhanced_integration.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: ComprehensiveTripleStraddleEngine -> StraddleAnalysisEngine"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_enhanced_comprehensive_triple_straddle_v2.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: ComprehensiveTripleStraddleEngine -> StraddleAnalysisEngine"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_comprehensive_system.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: EnhancedGreekSentiment -> GreekSentimentAnalyzer",
+        "Updated: EnhancedTrendingOIPAAnalysis -> OIPriceActionAnalyzer"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_regime_detector_v2.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.\\.comprehensive_modules\\. -> from ..archive_comprehensive_modules_do_not_use.",
+        "Updated: ComprehensiveTripleStraddleEngine -> StraddleAnalysisEngine"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_market_regime_engine.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_oi_pattern_mathematical_correlation.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_regime_engine.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: EnhancedGreekSentiment -> GreekSentimentAnalyzer"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_excel_config_template.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_adaptive_integration_framework.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_historical_weightage_optimizer.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: EnhancedGreekSentiment -> GreekSentimentAnalyzer",
+        "Updated: EnhancedTrendingOIPAAnalysis -> OIPriceActionAnalyzer"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/__init__.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: EnhancedGreekSentiment -> GreekSentimentAnalyzer"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_greek_sentiment_analysis.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.enhanced_modules\\. -> from .archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_trending_oi_pa_analysis.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: from\\s+\\.\\.enhanced_modules\\. -> from ..archive_enhanced_modules_do_not_use."
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/optimized/benchmark_performance.py"
+    },
+    {
+      "status": "modified",
+      "changes": [
+        "Updated: EnhancedGreekSentiment -> GreekSentimentAnalyzer"
+      ],
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validation/phase1_critical_fixes/greek_normalization_calibration_test.py"
+    }
+  ],
+  "unchanged": [
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/realtime_data_pipeline.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/test_end_to_end_validation_simplified.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/otm1_straddle_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/greek_aggregation_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/regime_parameter_tuner.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/unified_excel_template_generator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/check_real_table_structure.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/exact_trending_oi_pa_replication.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/phase3_oi_analysis_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/ENHANCED_TRIPLE_STRADDLE_ROLLING_SYSTEM.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/excel_configuration_mapper.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/volatility_component_calculator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/config_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/corrected_regime_formation_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/test_end_to_end_final.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/sophisticated_pattern_recognizer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/ADAPTIVE_LEARNING_BACKTESTING.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/test_enhanced_straddle_final.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/hot_reload_config_system.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/comprehensive_end_to_end_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/delta_based_strike_filter.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/fix_hardcoded_paths.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/iv_skew_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/test_end_to_end_fixed.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/analyze_enhanced_csv.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/unified_excel_to_yaml_converter.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/production_deployment_features.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/classifier.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validate_optimized_regime.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/confidence_calibration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/rolling_correlation_matrix_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/fix_heavydb_connection.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/delta_based_strike_selector.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/atm_cepe_rolling_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive_config_parser.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/test_refactored_straddle_with_heavydb.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/end_to_end_testing_framework.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/time_series_regime_storage.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/redis_caching_layer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/realtime_monitoring_dashboard.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validate_phase2_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/create_sensex_templates.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/atm_straddle_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/optimized_heavydb_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validate_with_real_heavydb.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/fix_market_regime_api_imports.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/dynamic_weight_optimization.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/itm1_straddle_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/advanced_dynamic_weighting_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/real_data_engine_adapter.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/phase4_iv_suite_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/triple_straddle_excel_config.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/backtester_integration_example.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/dynamic_threshold_optimizer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/market_regime_processor.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/atm_pe_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/correlation_based_regime_formation_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/test_end_to_end_validation.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/dte_specific_historical_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/unified_config_validator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/create_master_config_template.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive_trading_mode_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validate_12_regime.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive_rolling_window_optimizer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/progressive_upload_system.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/heavydb_column_mapper.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/dynamic_regime_boundary_optimizer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/phase4_iv_indicators_suite_v2.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/create_sample_config.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/unified_excel_parser.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/unified_api.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/performance.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/combined_straddle_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/regime_strategy_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/strategy.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/advanced_config_validator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/dynamic_support_resistance_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/progressive_upload_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/atm_ce_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/hmm_regime_detector.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/ADVANCED_REGIME_DETECTOR.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/production_integration_system.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/excel_based_regime_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/mathematical_accuracy_validator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/iv_surface_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/test_refactored_system.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/real_data_integration_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/api_1year_endpoints.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/final_validation_report.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/phase3_trending_oi_analysis_v2.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/fix_api_imports_v2.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/production_real_data_validator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/correlation_matrix_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/STANDALONE_DTE_INTEGRATED_SYSTEM.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/websocket_performance_optimizer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/CORRECTED_SYMMETRIC_IMPLEMENTATION.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive_timeframe_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/actual_system_excel_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/test_straddle_simple.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/simple_real_data_fix.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/performance_optimization.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/check_heavydb_structure.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive_learning_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/calculator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/debug_regime_detector.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/test_enhanced_comprehensive_straddle.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/input_sheet_parser.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validate_all_fixes.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/heavydb_connection_patch.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/parameter_validation_system.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validate_triple_straddle.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/analyze_excel_details.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/simple_heavydb_validation.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/test_comprehensive_straddle_analysis.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/holistic_system_optimizer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/example_usage.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/parser.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/focused_market_regime_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/debug_existing_csv.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/ENHANCED_COMBINED_STRADDLE_SYSTEM.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/ui_integration_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/excel_structure_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/mathematical_framework_volume_weighted_greeks.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/enhanced_module_integration_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/analyze_excel_structure.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/run_straddle_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/phase2_greek_sentiment_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/iv_percentile_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/create_enhanced_csv_with_spot_data.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/test_environment_validation.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/generate_1min_market_regime_csv.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/regime_transition_predictor.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/models.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/regime_formation_mathematical_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/market_regime_strategy.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/hybrid_classification_system.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/CORRECTED_ASYMMETRIC_IMPLEMENTATION.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/create_excel_config_templates.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/processor.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/timeframe_regime_extractor.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/ensemble_voting_system.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validation_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/advanced_analytics_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/regime_validation_tools.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/real_data_comprehensive_analysis.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/demo_triple_straddle.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/generate_validation_report.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/end_to_end_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/generate_12_regime_template.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/actual_system_integrator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/explore_excel_sheets.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/triple_straddle_analysis.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/OPTIMIZED_REGIME_DETECTION_FRAMEWORK.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/zerodha_live_data_fetcher.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/integration/data_pipeline.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/integration/integrated_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/integration/market_regime_orchestrator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/integration/result_aggregator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/integration/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/integration/component_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/utils/calculations.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/utils/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/csv_handlers/time_series_csv_handler.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/csv_handlers/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/integration/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/config/adaptive_regime_config_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/config/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/analysis/transition_matrix_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/analysis/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/analysis/historical_regime_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/core/dynamic_boundary_optimizer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/core/adaptive_scoring_layer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/core/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/core/regime_definition_builder.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/optimization/regime_optimization_scheduler.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/optimization/continuous_learning_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/optimization/performance_feedback_system.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/optimization/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/deployment/validate_deployment.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/intelligence/regime_stability_monitor.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/intelligence/adaptive_noise_filter.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/intelligence/intelligent_transition_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/intelligence/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/tests/standalone_test_phase2.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/tests/test_phase5_heavydb.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/tests/test_phase5_correct.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/tests/test_integration_phase1.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/tests/standalone_test_phase1.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/tests/test_dynamic_boundary_optimizer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/tests/test_phase4_heavydb.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/tests/test_phase2_heavydb.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/tests/test_phase1_core.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/tests/test_phase5_simple.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/dashboard/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/validation/system_validator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/validation/production_deployer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/validation/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive/validation/integration_orchestrator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/core/regime_detector.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/core/regime_classifier.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/core/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/core/analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/component_registry.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/performance_tracker.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/regime_detector_base.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/option_data_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/strike_selector_base.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/base_indicator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/common_utils.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/regime_name_mapper.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/adaptive_weight_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/multi_timeframe_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/data_provider.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/output/csv_output_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/output/enhanced_csv_generator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/output/time_series_generator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/output/parameter_injector.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/output/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/output/output_orchestrator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/trading_modes/hybrid_mode_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/trading_modes/positional_optimizer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/trading_modes/timeframe_coordinator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/trading_modes/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/trading_modes/intraday_optimizer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/base/trading_modes/trading_mode_orchestrator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/correlation_analysis/dynamic_correlation_matrix.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/correlation_analysis/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/correlation_analysis/correlation_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/archive_old/oi_pa_analysis_v2.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/archive_old/greek_sentiment_v2.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/oi_pa_analysis/volume_flow_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/oi_pa_analysis/divergence_detector.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/oi_pa_analysis/oi_pattern_detector.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/oi_pa_analysis/oi_pa_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/oi_pa_analysis/session_weight_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/oi_pa_analysis/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/oi_pa_analysis/correlation_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/config/excel_reader.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/config/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/enhanced/enhanced_correlation_matrix.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/enhanced/enhanced_resistance_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/enhanced/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/patterns/pattern_validator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/patterns/pattern_detector.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/patterns/ml_ensemble_demo.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/patterns/statistical_validator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/patterns/ml_ensemble.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/patterns/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/patterns/pattern_repository.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/core/resistance_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/core/weight_optimizer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/core/resistance_analyzer_legacy_backup.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/core/straddle_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/core/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/core/calculation_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/components/atm_straddle_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/components/itm1_straddle_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/components/atm_pe_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/components/base_component_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/components/atm_ce_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/components/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/components/otm1_pe_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/components/itm1_pe_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/components/itm1_ce_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/components/otm1_ce_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/components/otm1_straddle_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/components/combined_straddle_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/rolling/correlation_matrix.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/rolling/timeframe_aggregator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/rolling/correlation_matrix_legacy_backup.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/rolling/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/straddle_analysis/rolling/window_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/technical_indicators_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/option_based/option_bollinger.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/option_based/option_volume_flow.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/option_based/option_rsi.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/option_based/option_macd.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/option_based/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/composite/indicator_fusion.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/composite/regime_classifier.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/composite/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/underlying_based/trend_strength.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/underlying_based/price_rsi.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/underlying_based/price_bollinger.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/underlying_based/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/technical_indicators/underlying_based/price_macd.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/market_breadth_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/composite/breadth_momentum_scorer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/composite/breadth_divergence_detector.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/composite/regime_breadth_classifier.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/composite/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/underlying_breadth/new_highs_lows.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/underlying_breadth/volume_flow_indicator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/underlying_breadth/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/underlying_breadth/participation_ratio.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/underlying_breadth/advance_decline_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/option_breadth/sector_breadth.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/option_breadth/option_volume_flow.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/option_breadth/option_ratio_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/option_breadth/option_momentum.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/market_breadth/option_breadth/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/greek_sentiment/enhanced_greek_calculator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/greek_sentiment/itm_otm_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/greek_sentiment/baseline_tracker.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/greek_sentiment/greek_calculator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/greek_sentiment/volume_oi_weighter.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/greek_sentiment/greek_sentiment_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/greek_sentiment/dte_adjuster.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/greek_sentiment/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/iv_analytics_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/volatility_forecasting/vol_predictor.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/volatility_forecasting/regime_vol_model.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/volatility_forecasting/garch_model.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/volatility_forecasting/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/term_structure/forward_vol_calculator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/term_structure/curve_fitter.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/term_structure/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/term_structure/term_structure_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/arbitrage_detection/calendar_arbitrage.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/arbitrage_detection/strike_arbitrage.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/arbitrage_detection/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/arbitrage_detection/vol_arbitrage_scanner.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/skew_analysis/risk_reversal_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/skew_analysis/skew_momentum.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/skew_analysis/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/skew_analysis/skew_detector.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/surface_analysis/smile_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/surface_analysis/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/surface_analysis/iv_surface_modeler.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/iv_analytics/surface_analysis/surface_interpolator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/volume_profile/price_level_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/volume_profile/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/indicators/volume_profile/volume_profile_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_triple_straddle_12regime_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_config_validation.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_atm_cepe_rolling_analysis.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_phase1_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_heavydb_import.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_phase5_sophisticated_regime_formation.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_api_direct.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_market_regime_phase5.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/corrected_phase2_day5_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/mathematical_accuracy_validation_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_market_regime_phase6.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_updated_timeframes.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_oi_pa_analysis_v2_comprehensive.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_market_regime_phase4_simple.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/final_system_integration_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_heavydb_integration_fix.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_market_regime_phase7.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_heavydb_simple.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_api_debug.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_call_put_oi_correlation.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_correlation_matrix_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_runner_1year.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_fixed_query.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_market_regime_phase4.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/bypass_config_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_advanced_dynamic_weighting.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_refactored_detectors.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_phase4_production_deployment.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_optimized_regime_accuracy.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/run_comprehensive_test_suite.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_performance_benchmarks.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_indicators_basic.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_market_regime_phase0.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_adaptive_timeframes.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_greek_sentiment_v2_comprehensive.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_phase2_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_actual_system_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/validation_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/phase2_day5_excel_integration_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_market_regime_phase1_simple.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_triple_straddle_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_real_data_enforcement.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_adaptive_learning_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_optimized_heavydb_performance.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_market_regime_phase2.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_phase1_performance_optimization.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/run_comprehensive_tests.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_indicators_comprehensive.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_12_regime_system.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_market_regime_phase0_v2.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_imports_and_modules.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_comprehensive_heavy_regime.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_market_regime_phase1.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_market_regime_phase3.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/simple_12_regime_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_indicators_successful_init.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_real_data_api.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_market_regime_phase2_unified.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_parser.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_exact_replication_validation.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_real_data_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_straddle_analysis.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_market_regime_direct.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_base_components.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_phase3_advanced_analytics.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_phase2_dynamic_weights.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_integration_layer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/test_12_regime_integration.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/tests/fixtures/create_test_configs.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive_optimization/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive_optimization/core/historical_optimizer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive_optimization/core/performance_evaluator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive_optimization/core/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive_optimization/core/weight_validator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive_optimization/ml_models/random_forest_optimizer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/adaptive_optimization/ml_models/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_configurable_excel_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/excel_configuration_mapper.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_market_regime_engine_backup_20250623_153331.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_integration_manager.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_trending_oi_pa_improvements.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_mathematical_accuracy_validation.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_multi_indicator_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_market_regime_validator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_indicator_parameters.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_excel_parser.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_logging_system.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_volume_weighted_greeks.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_performance_monitor.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_triple_straddle_analyzer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_regime_formation_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_regime_detector.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_greek_sentiment_analysis_v2.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_12_regime_detector.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_triple_rolling_straddle_engine_v2.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_atr_indicators.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_18_regime_classifier.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/legacy/enhanced_excel_config_generator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/optimized/redis_cache_layer.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/optimized/performance_enhanced_engine.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/optimized/enhanced_matrix_calculator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/data/__init__.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validation/multi_timeframe_regime_validator.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validation/comprehensive_regime_debugger.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validation/phase1_critical_fixes/volatility_threshold_calibration_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validation/phase1_critical_fixes/regime_stability_hysteresis_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validation/phase1_critical_fixes/heavydb_query_fix_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validation/phase1_critical_fixes/triple_straddle_critical_fix_test.py"
+    },
+    {
+      "status": "unchanged",
+      "filepath": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/validation/phase1_critical_fixes/iv_skew_term_structure_fix_test.py"
+    }
+  ],
+  "errors": []
+}

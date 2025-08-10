@@ -1,0 +1,41 @@
+{
+  "environment": "development",
+  "paths": {
+    "base_path": "/srv/samba/shared/bt/backtester_stable/BTRUN",
+    "input_sheets_dir": "input_sheets/market_regime",
+    "backtester_v2_dir": "backtester_v2",
+    "strategies_dir": "backtester_v2/strategies/market_regime",
+    "config_dir": "backtester_v2/strategies/market_regime/config",
+    "output_dir": "backtester_v2/strategies/market_regime/output",
+    "temp_dir": "backtester_v2/strategies/market_regime/temp"
+  },
+  "database": {
+    "heavydb_host": "localhost",
+    "heavydb_port": 6274,
+    "heavydb_user": "admin",
+    "heavydb_password": "HyperInteractive",
+    "heavydb_database": "heavyai",
+    "heavydb_table": "nifty_option_chain",
+    "connection_pool_size": 4,
+    "query_timeout": 30
+  },
+  "performance": {
+    "max_processing_time_ms": 500.0,
+    "cache_ttl_seconds": 300,
+    "max_memory_mb": 2048,
+    "batch_size": 1000,
+    "parallel_workers": 2
+  },
+  "regime": {
+    "regime_mode": "18_REGIME",
+    "timeframes": [
+      3,
+      5,
+      10,
+      15
+    ],
+    "correlation_threshold": 0.7,
+    "confidence_threshold": 0.6,
+    "min_data_points": 100
+  }
+}

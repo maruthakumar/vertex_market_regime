@@ -1,0 +1,165 @@
+created_at: '2025-07-11T01:32:35.559067'
+hierarchy_type: 6-file
+master_settings:
+  do_rollover: 'NO'
+  enabled: true
+  end_date: '2024-12-31'
+  exit_price_source: SPOT
+  exit_search_interval: 5
+  expiry_day_exit_time: '15:20:00'
+  first_trade_entry_time: null
+  increase_entry_signal_time_by: 0
+  increase_exit_signal_time_by: 0
+  intraday_exit_time: '15:30:00'
+  intraday_sqoff_applicable: 'YES'
+  long_portfolio_file_path: TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx
+  manual_portfolio_file_path: TV_CONFIG_PORTFOLIO_MANUAL_1.0.0.xlsx
+  manual_trade_entry_time: null
+  manual_trade_lots: 0
+  name: TV_Backtest_Sample
+  rollover_time: '15:20:00'
+  short_portfolio_file_path: TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx
+  signal_date_format: '%Y%m%d %H%M%S'
+  signal_file_path: TV_CONFIG_SIGNALS_1.0.0.xlsx
+  slippage_percent: 0.1
+  start_date: '2024-01-01'
+  tv_exit_applicable: 'YES'
+  use_db_exit_timing: 'NO'
+portfolios:
+  long:
+    capital: 1000000
+    max_positions: 5
+    max_risk: 5
+    portfolio_name: TV_Long
+    rebalance_freq: DAILY
+    risk_per_trade: 2
+    stop_loss_type: Percentage
+    stop_loss_value: 2.0
+    take_profit_type: Percentage
+    take_profit_value: 5.0
+    use_kelly: 'NO'
+  manual:
+    capital: 1000000
+    max_positions: 5
+    max_risk: 5
+    portfolio_name: TV_Manual
+    rebalance_freq: DAILY
+    risk_per_trade: 2
+    stop_loss_type: Percentage
+    stop_loss_value: 2.0
+    take_profit_type: Percentage
+    take_profit_value: 5.0
+    use_kelly: 'NO'
+  short:
+    capital: 1000000
+    max_positions: 5
+    max_risk: 5
+    portfolio_name: TV_Short
+    rebalance_freq: DAILY
+    risk_per_trade: 2
+    stop_loss_type: Percentage
+    stop_loss_value: 2.0
+    take_profit_type: Percentage
+    take_profit_value: 5.0
+    use_kelly: 'NO'
+signals:
+- Contracts: 1
+  Date/Time: 20240101 091600
+  'Trade #': T001
+  Type: Entry Long
+- Contracts: 1
+  Date/Time: 20240101 120000
+  'Trade #': T001
+  Type: Exit Long
+- Contracts: 2
+  Date/Time: 20240101 130000
+  'Trade #': T002
+  Type: Entry Short
+- Contracts: 2
+  Date/Time: 20240101 150000
+  'Trade #': T002
+  Type: Exit Short
+source_files:
+  portfolio_long: ../../configurations/data/prod/tv/TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx
+  portfolio_manual: ../../configurations/data/prod/tv/TV_CONFIG_PORTFOLIO_MANUAL_1.0.0.xlsx
+  portfolio_short: ../../configurations/data/prod/tv/TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx
+  signals: ../../configurations/data/prod/tv/TV_CONFIG_SIGNALS_1.0.0.xlsx
+  strategy: ../../configurations/data/prod/tv/TV_CONFIG_STRATEGY_1.0.0.xlsx
+  tv_master: ../../configurations/data/prod/tv/TV_CONFIG_MASTER_1.0.0.xlsx
+strategy_type: TV
+tbs_strategy:
+  general_parameters:
+    CheckPremiumDiffCondition: 'no'
+    ConsiderHedgePnLForStgyPnL: 'no'
+    DTE: 0
+    EndTime: 150000
+    IncreaseInProfit: 0
+    Index: NIFTY
+    LastEntryTime: 150000
+    LockMinProfitAt: 0
+    LockPercent: 0
+    MoveSlToCost: 'NO'
+    OnExpiryDayTradeNextExpiry: 'no'
+    PnLCalTime: 0
+    PnLCalculationFrom: close
+    PremiumDiffChangeStrike: 'no'
+    PremiumDiffDoForceAfter: 0
+    PremiumDiffDoForceEntry: 'no'
+    PremiumDiffForceEntryConsiderPremium: higher
+    PremiumDiffType: point
+    PremiumDiffValue: 0
+    ProfitReaches: 0
+    ReEntryCheckingInterval: 1
+    SlRegisterPriceFrom: tick
+    SlTrackingFrom: close
+    SqOff1Percent: 0
+    SqOff1Time: 0
+    SqOff2Percent: 0
+    SqOff2Time: 0
+    StartTime: 91600
+    StoplossCheckingInterval: 1
+    StrategyLoss: 0
+    StrategyLossReExecuteNo: 0
+    StrategyName: TV_Strategy_Sample
+    StrategyProfit: 0
+    StrategyProfitReExecuteNo: 0
+    StrategyTrailingType: Lock Minimum Profit
+    StrikeSelectionTime: 92000
+    TargetCheckingInterval: 1
+    TgtRegisterPriceFrom: tick
+    TgtTrackingFrom: close
+    TrailMinProfitBy: 0
+    TrailPercent: 0
+    Underlying: SPOT
+    Weekdays: 1,2,3,4,5
+  legs:
+  - expiry: current
+    instrument: CALL
+    leg_id: leg1
+    lots: 1
+    sl_type: percentage
+    sl_value: 100.0
+    strike_method: ATM
+    strike_value: 0
+    tgt_type: percentage
+    tgt_value: 0.0
+    transaction: SELL
+  - expiry: current
+    instrument: PUT
+    leg_id: leg2
+    lots: 1
+    sl_type: percentage
+    sl_value: 100.0
+    strike_method: ATM
+    strike_value: 0
+    tgt_type: percentage
+    tgt_value: 0.0
+    transaction: SELL
+trading_parameters:
+  capital: 3000000
+  end_date: '2024-12-31'
+  leg_count: 2
+  portfolio_count: 3
+  signal_count: 4
+  start_date: '2024-01-01'
+version: 2.0.0

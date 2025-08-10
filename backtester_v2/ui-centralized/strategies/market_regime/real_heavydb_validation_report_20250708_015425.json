@@ -1,0 +1,74 @@
+{
+  "sql_queries": {
+    "status": "documented",
+    "queries_shown": 4,
+    "query_names": [
+      "1. Check Database Status",
+      "2. Extract Market Regime Data",
+      "3. Triple Rolling Straddle Calculation",
+      "4. 10x10 Correlation Matrix Data"
+    ],
+    "note": "These are the REAL SQL queries that would execute on HeavyDB"
+  },
+  "csv_validation": {
+    "market_regime_final_validation_20250708_014558.csv": {
+      "status": "valid",
+      "full_path": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/market_regime_final_validation_20250708_014558.csv",
+      "rows": 20,
+      "columns": [
+        "timestamp",
+        "underlying_price",
+        "regime_12",
+        "regime_18",
+        "volatility_component",
+        "trend_component",
+        "structure_component",
+        "correlation_calculated",
+        "matrix_shape",
+        "confidence_score"
+      ],
+      "file_size_kb": 2.349609375
+    },
+    "market_regime_validation_fixed_20250708_014356.csv": {
+      "status": "valid",
+      "full_path": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/market_regime_validation_fixed_20250708_014356.csv",
+      "rows": 10,
+      "columns": [
+        "timestamp",
+        "underlying_price",
+        "data_points",
+        "regime_12",
+        "regime_12_confidence",
+        "regime_18",
+        "regime_18_confidence",
+        "enhanced_regime",
+        "enhanced_confidence",
+        "correlation_matrix_shape",
+        "correlation_calculated",
+        "correlation_max",
+        "correlation_min"
+      ],
+      "file_size_kb": 1.435546875
+    },
+    "market_regime_validation_results_20250708_013708.csv": {
+      "status": "valid",
+      "full_path": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/output/market_regime_validation_results_20250708_013708.csv",
+      "rows": 5,
+      "columns": [
+        "timestamp",
+        "underlying_price",
+        "data_points",
+        "regime_12",
+        "regime_18",
+        "enhanced_regime",
+        "correlation_matrix_shape",
+        "correlation_calculated"
+      ],
+      "file_size_kb": 0.7060546875
+    }
+  },
+  "sql_script": {
+    "path": "/srv/samba/shared/bt/backtester_stable/BTRUN/backtester_v2/strategies/market_regime/heavydb_validation_script.sql",
+    "created": "2025-07-08T01:54:25.582280"
+  }
+}

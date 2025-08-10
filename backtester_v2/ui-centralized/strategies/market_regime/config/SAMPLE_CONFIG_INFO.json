@@ -1,0 +1,29 @@
+{
+  "Configuration Summary": {
+    "Total Sheets": 7,
+    "Indicators": "10 defined, 7 enabled",
+    "Straddle Types": "7 defined, 5 enabled",
+    "Timeframes": "5 (1min to 30min)",
+    "Greeks": "5 defined, 4 enabled",
+    "Regimes": "18 (full complexity)",
+    "Adaptation": "Enabled",
+    "Total Parameters": "Approximately 150+"
+  },
+  "Key Features": {
+    "Dynamic Weights": "Enabled with 0.05 learning rate",
+    "Multi-timeframe": "5 timeframes with weighted aggregation",
+    "Greek Analysis": "Delta, Gamma, Theta, Vega enabled",
+    "Regime Detection": "18-regime system with adaptation",
+    "ML Enhancement": "Disabled (can be enabled)",
+    "Anomaly Detection": "Enabled"
+  },
+  "Validation Points": {
+    "Indicator Weights": "Sum to 1.0 (valid)",
+    "Straddle Weights": "Sum to 1.0 (valid)",
+    "Timeframe Weights": "Sum to 1.0 (valid)",
+    "Greek Weights": "Sum to 1.0 (valid)",
+    "Regime Thresholds": "Properly ordered",
+    "Learning Rate": "0.05 (valid range)",
+    "Confidence Threshold": "0.75 (optimal)"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-07-07T01:32:23.626180",
+  "tests": [
+    {
+      "name": "File Structure Check",
+      "passed": true,
+      "details": "All required files present"
+    },
+    {
+      "name": "HeavyDB Connection",
+      "passed": true,
+      "details": "Connected successfully. Total records: 33191869"
+    },
+    {
+      "name": "Excel Configuration",
+      "passed": true,
+      "details": "Configuration file found"
+    },
+    {
+      "name": "Basic Calculations",
+      "passed": true,
+      "details": "Straddle: 295, Volatility: 0.6870"
+    },
+    {
+      "name": "Component Imports",
+      "passed": false,
+      "details": "Import errors detected"
+    },
+    {
+      "name": "Performance Benchmark",
+      "passed": 

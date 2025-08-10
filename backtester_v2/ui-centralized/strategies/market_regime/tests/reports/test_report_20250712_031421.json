@@ -1,0 +1,31 @@
+{
+  "execution_id": "validation_test",
+  "start_time": "2025-07-12T03:14:20.597140",
+  "total_execution_time": 120.0,
+  "total_tests_executed": 10,
+  "total_successful_tests": 9,
+  "total_failed_tests": 1,
+  "overall_success_rate": 0.9,
+  "phase_results": [
+    {
+      "phase_name": "Test Validation",
+      "execution_time": 60.0,
+      "total_tests_executed": 5,
+      "successful_tests": 5,
+      "success_rate": 1.0,
+      "test_results": [
+        {
+          "test_file": "sample_test.py",
+          "success": true,
+          "execution_time": 10.0
+        }
+      ]
+    }
+  ],
+  "report_metadata": {
+    "generated_at": "2025-07-12T03:14:21.017077",
+    "generator": "Market Regime Strategy Test Reporter",
+    "version": "1.0.0",
+    "environment": "Production Validation"
+  }
+}

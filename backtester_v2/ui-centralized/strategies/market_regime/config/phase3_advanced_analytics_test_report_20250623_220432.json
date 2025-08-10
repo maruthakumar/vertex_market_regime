@@ -1,0 +1,391 @@
+{
+  "test_suite": "Phase 3 Advanced Analytics Integration",
+  "timestamp": "2025-06-23T22:04:32.839438",
+  "total_test_time": 0.3844583034515381,
+  "test_results": {
+    "iv_surface_tests": {
+      "initialization": {
+        "analyzer_created": true,
+        "max_surface_points": 500,
+        "surface_points_count": 0,
+        "cache_size": 0
+      },
+      "surface_updates": {
+        "points_created": 15,
+        "sample_points": {
+          "dte0_strike95": {
+            "point_created": true,
+            "implied_volatility": 0.0,
+            "delta": 0,
+            "gamma": 0
+          },
+          "dte0_strike100": {
+            "point_created": true,
+            "implied_volatility": 0.0,
+            "delta": 0,
+            "gamma": 0
+          },
+          "dte0_strike105": {
+            "point_created": true,
+            "implied_volatility": 0.0,
+            "delta": 0,
+            "gamma": 0
+          }
+        }
+      },
+      "regime_analysis": {
+        "normal": {
+          "analysis_completed": true,
+          "regime_classification": {
+            "regime": "high_volatility_skewed",
+            "confidence": "medium",
+            "avg_iv": 0.8920388921681067,
+            "skew": 0.8975063166102598,
+            "convexity": 0.017639093074950207
+          },
+          "surface_characteristics": {
+            "average_iv": 0.8920388921681067,
+            "iv_std": 1.1201004529583773,
+            "iv_skew": 0.8975063166102598,
+            "iv_kurtosis": -0.5983980095587342,
+            "surface_convexity": 0.017639093074950207,
+            "points_count": 30
+          },
+          "component_count": 6
+        },
+        "high_volatility": {
+          "analysis_completed": true,
+          "regime_classification": {
+            "regime": "high_volatility_skewed",
+            "confidence": "medium",
+            "avg_iv": 1.2044653585255456,
+            "skew": 1.1600853972241085,
+            "convexity": 0.011485921072060559
+          },
+          "surface_characteristics": {
+            "average_iv": 1.2044653585255456,
+            "iv_std": 1.6125783467600343,
+            "iv_skew": 1.1600853972241085,
+            "iv_kurtosis": 0.06110340468008246,
+            "surface_convexity": 0.011485921072060559,
+            "points_count": 45
+          },
+          "component_count": 6
+        },
+        "low_volatility": {
+          "analysis_completed": true,
+          "regime_classification": {
+            "regime": "high_volatility_skewed",
+            "confidence": "high",
+            "avg_iv": 0.9974447908287196,
+            "skew": 1.4919722191497873,
+            "convexity": 0.00851542424307941
+          },
+          "surface_characteristics": {
+            "average_iv": 0.9974447908287196,
+            "iv_std": 1.4685490423595151,
+            "iv_skew": 1.4919722191497873,
+            "iv_kurtosis": 1.1487344189682926,
+            "surface_convexity": 0.00851542424307941,
+            "points_count": 60
+          },
+          "component_count": 6
+        }
+      },
+      "performance_metrics": {
+        "analysis_metrics": {
+          "total_surfaces_analyzed": 3,
+          "average_analysis_time": 0.002558628718058268,
+          "cache_hit_rate": 0.0,
+          "interpolation_accuracy": 0.0
+        },
+        "surface_points_count": 60,
+        "cache_size": 1,
+        "recent_surface_activity": {
+          "points_last_5min": 60,
+          "unique_strikes_last_5min": 5,
+          "unique_dtes_last_5min": 5
+        }
+      }
+    },
+    "greek_correlation_tests": {
+      "initialization": {
+        "analyzer_created": true,
+        "correlation_window": 50,
+        "greek_pairs_count": 6,
+        "thresholds": {
+          "high": 0.8,
+          "medium": 0.5,
+          "low": 0.3
+        }
+      },
+      "greek_data_updates": {
+        "data_points_added": 90,
+        "unique_components": 3
+      },
+      "correlation_analysis": {
+        "analysis_completed": true,
+        "components_analyzed": [
+          "atm_straddle",
+          "itm1_straddle",
+          "otm1_straddle"
+        ],
+        "data_points_used": 90,
+        "greek_correlations_count": 3,
+        "cross_component_correlations_count": 4,
+        "correlation_alerts_count": 0
+      },
+      "performance_metrics": {
+        "analysis_metrics": {
+          "total_correlations_calculated": 1,
+          "high_correlation_alerts": 0,
+          "average_calculation_time": 0.051041603088378906
+        },
+        "greek_data_points": 90,
+        "cache_size": 1,
+        "correlation_window": 50,
+        "recent_activity": {
+          "greek_updates_last_10min": 90,
+          "unique_components_last_10min": 3
+        }
+      }
+    },
+    "stress_testing_tests": {
+      "initialization": {
+        "framework_created": true,
+        "stress_scenarios_count": 6,
+        "portfolio_components_count": 6,
+        "confidence_levels": [
+          0.95,
+          0.99,
+          0.999
+        ]
+      },
+      "individual_scenarios": {
+        "market_crash": {
+          "scenario_completed": true,
+          "portfolio_pnl": 187.6,
+          "max_drawdown": 0,
+          "var_99": 0,
+          "component_impacts_count": 6
+        },
+        "volatility_explosion": {
+          "scenario_completed": true,
+          "portfolio_pnl": 292.0000000000001,
+          "max_drawdown": 0,
+          "var_99": 0,
+          "component_impacts_count": 6
+        },
+        "flash_crash": {
+          "scenario_completed": true,
+          "portfolio_pnl": 101.10000000000001,
+          "max_drawdown": 0,
+          "var_99": 0,
+          "component_impacts_count": 6
+        },
+        "volatility_collapse": {
+          "scenario_completed": true,
+          "portfolio_pnl": -102.2,
+          "max_drawdown": -102.2,
+          "var_99": -102.2,
+          "component_impacts_count": 6
+        },
+        "black_swan": {
+          "scenario_completed": true,
+          "portfolio_pnl": 412.80000000000007,
+          "max_drawdown": 0,
+          "var_99": 0,
+          "component_impacts_count": 6
+        },
+        "regime_shift": {
+          "scenario_completed": true,
+          "portfolio_pnl": 154.94,
+          "max_drawdown": 0,
+          "var_99": 0,
+          "component_impacts_count": 6
+        }
+      },
+      "comprehensive_stress_test": {
+        "test_completed": true,
+        "scenarios_tested": 6,
+        "risk_metrics_calculated": true,
+        "recommendations_count": 1,
+        "stress_test_score": 96.53057098124066
+      },
+      "performance_metrics": {
+        "stress_test_metrics": {
+          "total_stress_tests": 1,
+          "extreme_scenarios_detected": 0,
+          "average_test_time": 0.00030112266540527344,
+          "var_breaches": 0
+        },
+        "available_scenarios": [
+          "market_crash",
+          "volatility_explosion",
+          "flash_crash",
+          "volatility_collapse",
+          "black_swan",
+          "regime_shift"
+        ],
+        "test_history_size": 1,
+        "recent_stress_tests": {
+          "recent_tests_count": 1,
+          "average_worst_case_pnl": -102.2,
+          "last_test_timestamp": "2025-06-23T22:04:32.585794"
+        }
+      }
+    },
+    "integrated_system_tests": {
+      "initialization": {
+        "system_created": true,
+        "analysis_weights": {
+          "iv_surface": 0.4,
+          "greek_correlation": 0.35,
+          "stress_testing": 0.25
+        },
+        "components_initialized": {
+          "iv_surface_analyzer": true,
+          "greek_correlation_analyzer": true,
+          "stress_testing_framework": true
+        }
+      },
+      "comprehensive_analysis": {
+        "analysis_completed": true,
+        "analysis_time": 0.04736900329589844,
+        "iv_surface_analysis_present": true,
+        "greek_correlation_analysis_present": true,
+        "stress_test_results_present": true,
+        "integrated_assessment_present": true,
+        "comprehensive_alerts_count": 0,
+        "overall_risk_level": "MEDIUM"
+      },
+      "multiple_scenarios": {
+        "normal": {
+          "analysis_time": 0.0004334449768066406,
+          "analysis_completed": true,
+          "risk_level": "MEDIUM",
+          "alerts_count": 0
+        },
+        "high_volatility": {
+          "analysis_time": 0.0003826618194580078,
+          "analysis_completed": true,
+          "risk_level": "MEDIUM",
+          "alerts_count": 0
+        },
+        "low_volatility": {
+          "analysis_time": 0.00040459632873535156,
+          "analysis_completed": true,
+          "risk_level": "MEDIUM",
+          "alerts_count": 0
+        }
+      },
+      "performance_metrics": {
+        "iv_surface_metrics": {
+          "analysis_metrics": {
+            "total_surfaces_analyzed": 1,
+            "average_analysis_time": 0.0020904541015625,
+            "cache_hit_rate": 3.0,
+            "interpolation_accuracy": 0.0
+          },
+          "surface_points_count": 25,
+          "cache_size": 1,
+          "recent_surface_activity": {
+            "points_last_5min": 25,
+            "unique_strikes_last_5min": 5,
+            "unique_dtes_last_5min": 5
+          }
+        },
+        "correlation_metrics": {
+          "analysis_metrics": {
+            "total_correlations_calculated": 1,
+            "high_correlation_alerts": 0,
+            "average_calculation_time": 0.044885873794555664
+          },
+          "greek_data_points": 120,
+          "cache_size": 1,
+          "correlation_window": 100,
+          "recent_activity": {
+            "greek_updates_last_10min": 120,
+            "unique_components_last_10min": 6
+          }
+        },
+        "stress_testing_metrics": {
+          "stress_test_metrics": {
+            "total_stress_tests": 4,
+            "extreme_scenarios_detected": 0,
+            "average_test_time": 0.0002582073211669922,
+            "var_breaches": 0
+          },
+          "available_scenarios": [
+            "market_crash",
+            "volatility_explosion",
+            "flash_crash",
+            "volatility_collapse",
+            "black_swan",
+            "regime_shift"
+          ],
+          "test_history_size": 4,
+          "recent_stress_tests": {
+            "recent_tests_count": 4,
+            "average_worst_case_pnl": -127.75,
+            "last_test_timestamp": "2025-06-23T22:04:32.666044"
+          }
+        },
+        "integration_metrics": {
+          "total_integrated_analyses": 4,
+          "average_analysis_time": 0.012143254280090332,
+          "alert_generation_rate": 0.0
+        }
+      }
+    },
+    "performance_validation_tests": {
+      "processing_performance": {
+        "average_time": 0.0003220796585083008,
+        "maximum_time": 0.0004210472106933594,
+        "minimum_time": 0.0002951622009277344,
+        "target_met": "True",
+        "target": "<0.5 seconds"
+      },
+      "alert_generation": {
+        "high_volatility": {
+          "average_alerts": 0.0,
+          "description": "Should generate high volatility alerts",
+          "alert_consistency": "True"
+        },
+        "normal": {
+          "average_alerts": 0.0,
+          "description": "Should generate moderate alerts",
+          "alert_consistency": "True"
+        },
+        "low_volatility": {
+          "average_alerts": 0.0,
+          "description": "Should generate few alerts",
+          "alert_consistency": "True"
+        }
+      },
+      "data_quality": {
+        "minimal_data_confidence": 0.7000000000000001,
+        "rich_data_confidence": 0.9,
+        "confidence_improvement": 0.19999999999999996,
+        "data_quality_impact": true
+      },
+      "overall_compliance": {
+        "all_targets_met": "True",
+        "processing_compliant": "True",
+        "data_quality_compliant": "True",
+        "alert_generation_consistent": true
+      }
+    }
+  },
+  "summary": {
+    "iv_surface_analysis": "PASS",
+    "greek_correlation_analysis": "PASS",
+    "stress_testing_framework": "PASS",
+    "integrated_system": "PASS",
+    "performance_validation": "PASS",
+    "overall_status": "PASS"
+  },
+  "recommendations": [
+    "All performance targets met - Phase 3 implementation successful"
+  ]
+}

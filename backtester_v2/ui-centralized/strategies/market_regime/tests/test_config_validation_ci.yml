@@ -1,0 +1,153 @@
+# Configuration Validation CI/CD Pipeline
+# 
+# Runs comprehensive configuration validation tests on all changes
+# to market regime configuration files or validation logic
+
+name: Market Regime Config Validation
+
+on:
+  push:
+    paths:
+      - 'backtester_v2/strategies/market_regime/**/*.py'
+      - 'backtester_v2/strategies/market_regime/**/*.xlsx'
+      - 'backtester_v2/strategies/market_regime/**/*.json'
+  pull_request:
+    paths:
+      - 'backtester_v2/strategies/market_regime/**'
+
+jobs:
+  validate-configs:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, 3.10]
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Cache pip packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas numpy openpyxl pytest pytest-cov
+        pip install -r requirements.txt
+    
+    - name: Create test fixtures
+      run: |
+        cd backtester_v2/strategies/market_regime/tests/fixtures
+        python create_test_configs.py
+    
+    - name: Run configuration validation tests
+      run: |
+        cd backtester_v2/strategies/market_regime
+        python -m pytest tests/test_config_validation.py -v --cov=advanced_config_validator --cov-report=xml
+    
+    - name: Upload coverage reports
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: config-validation
+        name: config-validation-coverage
+    
+    - name: Test refactored detectors
+      run: |
+        cd backtester_v2/strategies/market_regime
+        python -m pytest tests/test_refactored_detectors.py -v
+    
+    - name: Validate production configs
+      run: |
+        cd backtester_v2/strategies/market_regime
+        python -c "
+from advanced_config_validator import ConfigurationValidator
+import os
+import sys
+
+validator = ConfigurationValidator()
+config_dir = 'input_sheets/enhanced'
+failed = False
+
+for file in os.listdir(config_dir):
+    if file.endswith('.xlsx'):
+        print(f'Validating {file}...')
+        path = os.path.join(config_dir, file)
+        is_valid, issues, _ = validator.validate_excel_file(path)
+        
+        if not is_valid:
+            print(f'  ❌ FAILED - {len([i for i in issues if i.severity == \"error\"])} errors')
+            for issue in issues:
+                if issue.severity == 'error':
+                    print(f'    - {issue.message}')
+            failed = True
+        else:
+            print(f'  ✅ PASSED')
+
+sys.exit(1 if failed else 0)
+        "
+    
+    - name: Performance benchmarks
+      run: |
+        cd backtester_v2/strategies/market_regime
+        python -c "
+import time
+from enhanced_modules.refactored_12_regime_detector import Refactored12RegimeDetector
+from enhanced_modules.refactored_18_regime_classifier import Refactored18RegimeClassifier
+import pandas as pd
+from datetime import datetime
+
+# Create sample data
+data = {
+    'timestamp': datetime.now(),
+    'underlying_price': 50000,
+    'option_chain': pd.DataFrame({
+        'strike_price': list(range(49000, 51000, 50)),
+        'option_type': ['CE']*20 + ['PE']*20,
+        'last_price': list(range(100, 140)),
+        'volume': [1000]*40,
+        'implied_volatility': [15]*40
+    })
+}
+
+# Benchmark 12-regime
+detector12 = Refactored12RegimeDetector()
+start = time.time()
+for _ in range(100):
+    detector12.calculate_regime(data)
+time_12 = (time.time() - start) / 100
+print(f'12-regime avg time: {time_12*1000:.2f}ms')
+
+# Benchmark 18-regime  
+detector18 = Refactored18RegimeClassifier()
+start = time.time()
+for _ in range(100):
+    detector18.calculate_regime(data)
+time_18 = (time.time() - start) / 100
+print(f'18-regime avg time: {time_18*1000:.2f}ms')
+
+# Check performance targets
+assert time_12 < 0.01, f'12-regime too slow: {time_12}s'
+assert time_18 < 0.01, f'18-regime too slow: {time_18}s'
+print('✅ Performance targets met')
+        "
+    
+    - name: Archive test results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results-${{ matrix.python-version }}
+        path: |
+          **/test-results/
+          **/coverage.xml
+          **/fixtures/config_fixtures/

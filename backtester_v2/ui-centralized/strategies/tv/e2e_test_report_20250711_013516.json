@@ -1,0 +1,150 @@
+{
+  "phases_completed": [
+    "Phase 1: Configuration Loading",
+    "Phase 2: Unified Configuration",
+    "Phase 3: Golden Format Generation",
+    "Phase 5: HeavyDB Integration (skipped)",
+    "Phase 6: Error Handling",
+    "Phase 7: Performance Benchmarks"
+  ],
+  "phases_failed": [
+    "Phase 4: Parallel Processing"
+  ],
+  "performance_metrics": {
+    "avg_parsing_time": 0.00832228660583496,
+    "avg_signal_processing": 1.1396408081054687e-05,
+    "memory_usage_mb": 104.28125,
+    "Phase 1: Configuration Loading": 0.11973118782043457,
+    "Phase 2: Unified Configuration": 0.06730413436889648,
+    "Phase 3: Golden Format Generation": 0.04295492172241211,
+    "Phase 4: Parallel Processing": 0.024949073791503906,
+    "Phase 6: Error Handling": 0.032449960708618164,
+    "Phase 7: Performance Benchmarks": 0.09322190284729004
+  },
+  "error_summary": {
+    "total_errors": 2,
+    "critical_count": 1,
+    "warning_count": 1,
+    "info_count": 0,
+    "errors": {
+      "critical": [
+        {
+          "message": "Phase 4: Parallel Processing failed",
+          "timestamp": "2025-07-11T01:35:16.034379",
+          "exception": "No output files generated",
+          "traceback": "Traceback (most recent call last):\n  File \"/srv/samba/shared/bt/backtester_stable/worktrees/strategies/strategy-tv/backtester_v2/strategies/tv/test_e2e_complete.py\", line 334, in test_phase4_parallel_processing\n    assert len(output_files) > 0, \"No output files generated\"\nAssertionError: No output files generated\n"
+        }
+      ],
+      "warning": [
+        {
+          "message": "Some error handling tests failed: 1/4",
+          "timestamp": "2025-07-11T01:35:16.067258",
+          "exception": null,
+          "traceback": null
+        }
+      ],
+      "info": []
+    }
+  },
+  "test_data": {
+    "tv_config": {
+      "name": "TV_Backtest_Sample",
+      "enabled": true,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "signal_date_format": "%Y%m%d %H%M%S",
+      "tv_exit_applicable": true,
+      "intraday_sqoff_applicable": true,
+      "do_rollover": false,
+      "use_db_exit_timing": false,
+      "manual_trade_entry_time": "00:00:00",
+      "first_trade_entry_time": "00:00:00",
+      "intraday_exit_time": "15:30:00",
+      "expiry_day_exit_time": "15:20:00",
+      "rollover_time": "15:20:00",
+      "manual_trade_lots": 0,
+      "increase_entry_signal_time_by": 0,
+      "increase_exit_signal_time_by": 0,
+      "exit_search_interval": 5,
+      "slippage_percent": 0.1,
+      "signal_file_path": "TV_CONFIG_SIGNALS_1.0.0.xlsx",
+      "long_portfolio_file_path": "TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx",
+      "short_portfolio_file_path": "TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx",
+      "manual_portfolio_file_path": "TV_CONFIG_PORTFOLIO_MANUAL_1.0.0.xlsx",
+      "exit_price_source": "SPOT"
+    },
+    "signals": [
+      {
+        "trade_no": "T001",
+        "signal_type": "Entry Long",
+        "lots": 1,
+        "datetime": "2024-01-01 09:16:00"
+      },
+      {
+        "trade_no": "T001",
+        "signal_type": "Exit Long",
+        "lots": 1,
+        "datetime": "2024-01-01 12:00:00"
+      },
+      {
+        "trade_no": "T002",
+        "signal_type": "Entry Short",
+        "lots": 2,
+        "datetime": "2024-01-01 13:00:00"
+      },
+      {
+        "trade_no": "T002",
+        "signal_type": "Exit Short",
+        "lots": 2,
+        "datetime": "2024-01-01 15:00:00"
+      }
+    ],
+    "processed_signals": [
+      {
+        "trade_no": "T001",
+        "signal_direction": "LONG",
+        "entry_date": "2024-01-01",
+        "entry_time": "00:00:00",
+        "exit_date": "2024-01-01",
+        "exit_time": "12:00:00",
+        "lots": 1,
+        "is_rollover_trade": false,
+        "original_trade_no": "T001",
+        "portfolio_file": "TV_CONFIG_PORTFOLIO_LONG_1.0.0.xlsx"
+      },
+      {
+        "trade_no": "T002",
+        "signal_direction": "SHORT",
+        "entry_date": "2024-01-01",
+        "entry_time": "00:00:00",
+        "exit_date": "2024-01-01",
+        "exit_time": "15:00:00",
+        "lots": 2,
+        "is_rollover_trade": false,
+        "original_trade_no": "T002",
+        "portfolio_file": "TV_CONFIG_PORTFOLIO_SHORT_1.0.0.xlsx"
+      }
+    ],
+    "unified_summary": {
+      "strategy_name": "TV_Backtest_Sample",
+      "hierarchy_type": "6-file",
+      "total_capital": 3000000,
+      "signal_count": 4,
+      "portfolio_count": 3,
+      "leg_count": 2,
+      "date_range": {
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      }
+    }
+  },
+  "summary": {
+    "total_phases": 7,
+    "phases_passed": 6,
+    "phases_failed": 1,
+    "success_rate": 85.71428571428571,
+    "has_critical_errors": true,
+    "total_execution_time": 0.3806111812591553,
+    "timestamp": "2025-07-11T01:35:16.160675"
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "test_suite": "Phase 4 Production Deployment Features",
+  "timestamp": "2025-06-23T22:15:03.004610",
+  "total_test_time": 17.880103826522827,
+  "test_results": {
+    "oi_flow_analysis_tests": {
+      "initialization": {
+        "analyzer_created": true,
+        "max_flow_history": 500,
+        "flow_history_size": 0,
+        "significant_flow_threshold": 1000
+      },
+      "oi_data_updates": {
+        "strikes_updated": 5,
+        "sample_updates": {
+          "strike_90.0": {
+            "data_created": true,
+            "net_oi_flow": 35,
+            "call_oi_change": -394,
+            "put_oi_change": -429
+          },
+          "strike_95.0": {
+            "data_created": true,
+            "net_oi_flow": 493,
+            "call_oi_change": 114,
+            "put_oi_change": -379
+          },
+          "strike_100.0": {
+            "data_created": true,
+            "net_oi_flow": -128,
+            "call_oi_change": -170,
+            "put_oi_change": -42
+          }
+        }
+      },
+      "cross_strike_analysis": {
+        "normal": {
+          "analysis_completed": true,
+          "data_points_analyzed": 10,
+          "strike_analyses_count": 5,
+          "flow_signals_count": 0,
+          "overall_flow_bias": "bullish"
+        },
+        "high_call_flow": {
+          "analysis_completed": true,
+          "data_points_analyzed": 15,
+          "strike_analyses_count": 5,
+          "flow_signals_count": 13,
+          "overall_flow_bias": "bullish"
+        },
+        "high_put_flow": {
+          "analysis_completed": true,
+          "data_points_analyzed": 20,
+          "strike_analyses_count": 5,
+          "flow_signals_count": 10,
+          "overall_flow_bias": "bullish"
+        }
+      },
+      "performance_metrics": {
+        "analysis_metrics": {
+          "total_flow_analyses": 3,
+          "significant_flows_detected": 0,
+          "average_analysis_time": 0.001138130823771159,
+          "cache_hit_rate": 0.0
+        },
+        "flow_history_size": 20,
+        "cache_size": 5,
+        "pattern_count": 5,
+        "recent_activity": {
+          "total_flows_last_10min": 20,
+          "significant_flows_last_10min": 10,
+          "unique_strikes_last_10min": 5
+        }
+      }
+    },
+    "oi_skew_analysis_tests": {
+      "initialization": {
+        "analyzer_created": true,
+        "skew_history_size": 0,
+        "min_strikes_for_skew": 5,
+        "skew_significance_threshold": 0.3
+      },
+      "skew_calculation": {
+        "skew_calculated": true,
+        "put_call_oi_ratio": 1.0833333333333333,
+        "skew_direction": "bearish",
+        "skew_magnitude": 3.0651340996168583,
+        "confidence_score": 0.8
+      },
+      "skew_evolution": {
+        "evolution_analyzed": true,
+        "data_points": 11,
+        "skew_trend": "stable",
+        "direction_consistency": 1.0,
+        "skew_alerts_count": 1
+      },
+      "performance_metrics": {
+        "skew_metrics": {
+          "total_skew_calculations": 11,
+          "significant_skews_detected": 11,
+          "average_calculation_time": 1.634250987659801e-05
+        },
+        "skew_history_size": 11,
+        "cache_size": 0,
+        "recent_skew_activity": {
+          "skew_calculations_last_15min": 11,
+          "average_magnitude": 3.055371992809047,
+          "average_confidence": 0.8,
+          "dominant_direction": "bearish"
+        }
+      }
+    },
+    "production_optimization_tests": {
+      "initialization": {
+        "optimizer_created": true,
+        "health_status": "healthy",
+        "monitoring_active": true,
+        "config_loaded": true
+      },
+      "metrics_recording": {
+        "total_requests": 5,
+        "successful_requests": 4,
+        "failed_requests": 1,
+        "average_response_time": 155.0,
+        "error_log_size": 1
+      },
+      "health_check": {
+        "health_check_completed": true,
+        "health_status": "degraded",
+        "uptime_percentage": 100.0,
+        "system_resources_checked": true,
+        "performance_metrics_checked": true,
+        "health_issues_count": 1
+      },
+      "performance_optimization": {
+        "optimization_completed": true,
+        "optimizations_applied": [
+          "error_handling_optimization",
+          "cache_optimization"
+        ],
+        "optimization_count": 2,
+        "performance_improvement_expected": true
+      },
+      "graceful_degradation": {
+        "degradation_enabled": true,
+        "degradation_level": "moderate",
+        "config_updated": true
+      },
+      "comprehensive_status": {
+        "status_retrieved": true,
+        "health_status": "degraded",
+        "uptime_info_present": true,
+        "performance_summary_present": true
+      }
+    },
+    "integrated_system_tests": {
+      "initialization": {
+        "system_created": true,
+        "system_status": "ready",
+        "components_initialized": {
+          "oi_flow_analyzer": true,
+          "oi_skew_analyzer": true,
+          "production_optimizer": true
+        },
+        "system_config": {
+          "analysis_timeout_ms": 500,
+          "max_concurrent_analyses": 10,
+          "enable_real_time_monitoring": true,
+          "enable_automatic_optimization": true,
+          "enable_alerting": true
+        }
+      },
+      "comprehensive_analysis": {
+        "analysis_completed": true,
+        "analysis_time_seconds": 0.30532264709472656,
+        "analysis_id_present": true,
+        "oi_flow_analysis_present": true,
+        "oi_skew_analysis_present": true,
+        "production_metrics_present": true,
+        "integrated_insights_present": true,
+        "production_alerts_count": 0,
+        "system_health_present": true
+      },
+      "multiple_scenarios": {
+        "normal": {
+          "analysis_time": 0.3051466941833496,
+          "analysis_completed": true,
+          "market_sentiment": "bearish",
+          "alerts_count": 1,
+          "confidence_score": 0.5206704677732458
+        },
+        "high_call_flow": {
+          "analysis_time": 0.3088035583496094,
+          "analysis_completed": true,
+          "market_sentiment": "bearish",
+          "alerts_count": 3,
+          "confidence_score": 0.5540038011065791
+        },
+        "high_put_flow": {
+          "analysis_time": 0.3085780143737793,
+          "analysis_completed": true,
+          "market_sentiment": "bearish",
+          "alerts_count": 13,
+          "confidence_score": 0.6024296733951157
+        }
+      },
+      "system_status": {
+        "status_retrieved": true,
+        "system_status": "ready",
+        "integration_metrics_present": true,
+        "component_status_present": true,
+        "active_analyses_count": 0,
+        "system_health_summary_present": true
+      },
+      "error_handling": {
+        "error_handled_gracefully": false,
+        "error_handling_time": 0.3038051128387451,
+        "partial_results_provided": false,
+        "system_remained_stable": true
+      }
+    },
+    "performance_validation_tests": {
+      "processing_performance": {
+        "average_time": 0.30661678314208984,
+        "maximum_time": 0.3092072010040283,
+        "minimum_time": 0.3046386241912842,
+        "target_met": "False",
+        "target": "<0.2 seconds"
+      },
+      "uptime_reliability": {
+        "total_analyses": 20,
+        "successful_analyses": 20,
+        "failed_analyses": 0,
+        "success_rate_percent": 100.0,
+        "uptime_duration_seconds": 6.190544605255127,
+        "target_met": true,
+        "target": ">99% success rate"
+      },
+      "resource_usage": {
+        "memory_usage_mb": 96.0,
+        "cpu_usage_percent": 13.6,
+        "average_response_time_ms": 103.5409688949585,
+        "memory_target_met": true,
+        "cpu_target_met": true,
+        "response_time_target_met": true
+      },
+      "alert_monitoring": {
+        "extreme_scenarios_tested": 2,
+        "average_alerts_per_extreme_scenario": 6.5,
+        "alert_generation_working": "True",
+        "monitoring_responsive": true
+      },
+      "overall_compliance": {
+        "all_targets_met": "False",
+        "processing_compliant": "False",
+        "uptime_compliant": true,
+        "memory_compliant": true,
+        "cpu_compliant": true,
+        "response_time_compliant": true,
+        "alert_system_working": "True"
+      }
+    }
+  },
+  "summary": {
+    "oi_flow_analysis": "PASS",
+    "oi_skew_analysis": "PASS",
+    "production_optimization": "PASS",
+    "integrated_system": "PASS",
+    "performance_validation": "FAIL",
+    "overall_status": "PARTIAL"
+  },
+  "recommendations": [
+    "Processing time 0.307s exceeds 200ms target - optimize production analysis algorithms"
+  ]
+}

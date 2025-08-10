@@ -1,0 +1,118 @@
+{
+  "test_summary": {
+    "timestamp": "2025-07-07T00:22:02.256282",
+    "test_type": "Simple HeavyDB Validation for Refactored Straddle Analysis",
+    "version": "1.0.0"
+  },
+  "results": {
+    "connection_test": {
+      "success": true,
+      "timestamp": "2025-07-07T00:22:02.192972"
+    },
+    "data_retrieval": {
+      "success": true,
+      "records_found": 50,
+      "date_range": "2025-06-17 09:15:00 to 2025-06-17 09:32:00",
+      "sample_underlying_price": 24927.0
+    },
+    "calculation_test": {
+      "success": true,
+      "calculations_completed": 10,
+      "avg_calculation_time": 1.5974044799804688e-06,
+      "max_calculation_time": 3.814697265625e-06,
+      "performance_target_met": "True",
+      "sample_results": [
+        {
+          "timestamp": "2025-06-17 09:15:00",
+          "underlying_price": 24927.0,
+          "atm_straddle": 460.9,
+          "itm1_straddle": 0,
+          "otm1_straddle": 0,
+          "combined_straddle": 153.63333333333333,
+          "regime": "low_vol_balanced",
+          "volatility": 0.0,
+          "calculation_time": 3.814697265625e-06
+        },
+        {
+          "timestamp": "2025-06-17 09:15:00",
+          "underlying_price": 24927.0,
+          "atm_straddle": 251.4,
+          "itm1_straddle": 0,
+          "otm1_straddle": 0,
+          "combined_straddle": 83.8,
+          "regime": "low_vol_put_bias",
+          "volatility": 0.0,
+          "calculation_time": 1.430511474609375e-06
+        },
+        {
+          "timestamp": "2025-06-17 09:16:00",
+          "underlying_price": 24945.7,
+          "atm_straddle": 999.95,
+          "itm1_straddle": 0,
+          "otm1_straddle": 0,
+          "combined_straddle": 333.31666666666666,
+          "regime": "low_vol_call_bias",
+          "volatility": 0.0,
+          "calculation_time": 1.430511474609375e-06
+        }
+      ],
+      "regime_distribution": {
+        "low_vol_call_bias": 5,
+        "low_vol_balanced": 4,
+        "low_vol_put_bias": 1
+      }
+    },
+    "performance_test": {
+      "batch_processing": {
+        "total_time": 4.410743713378906e-05,
+        "avg_individual_time": 1.0848045349121093e-06,
+        "success_rate": 1.0,
+        "throughput_per_sec": 453438.2702702703
+      },
+      "performance_targets": {
+        "individual_under_3s": 1.0,
+        "batch_efficiency": 2.032967032967033
+      }
+    },
+    "cleanup_validation": {},
+    "data_quality": {
+      "total_points": 50,
+      "missing_data": {
+        "ATM_CE": {
+          "missing_count": 0,
+          "coverage": 1.0
+        },
+        "ATM_PE": {
+          "missing_count": 0,
+          "coverage": 1.0
+        },
+        "ITM1_CE": {
+          "missing_count": 50,
+          "coverage": 0.0
+        },
+        "ITM1_PE": {
+          "missing_count": 50,
+          "coverage": 0.0
+        },
+        "OTM1_CE": {
+          "missing_count": 50,
+          "coverage": 0.0
+        },
+        "OTM1_PE": {
+          "missing_count": 50,
+          "coverage": 0.0
+        }
+      },
+      "price_validity": {
+        "underlying_min": 24872.45,
+        "underlying_max": 24954.2,
+        "underlying_avg": 24893.791,
+        "price_stability": 0.0008884091389516279
+      },
+      "data_consistency": {
+        "valid_price_relationships": 0.0
+      }
+    }
+  },
+  "overall_status": "PASSED - All Tests Successful"
+}

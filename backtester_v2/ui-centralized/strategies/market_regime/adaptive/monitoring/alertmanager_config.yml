@@ -1,0 +1,140 @@
+# AlertManager Configuration for Adaptive Market Regime System
+
+global:
+  # The smarthost and SMTP sender used for mail notifications.
+  smtp_smarthost: 'smtp.company.com:587'
+  smtp_from: 'regime-alerts@company.com'
+  smtp_auth_username: 'regime-alerts@company.com'
+  smtp_auth_password: 'smtp_password'
+  
+  # Slack webhook
+  slack_api_url: 'https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK'
+
+# The directory from which notification templates are read.
+templates:
+  - '/etc/alertmanager/templates/*.tmpl'
+
+# The root route on which each incoming alert enters.
+route:
+  # The labels by which incoming alerts are grouped together.
+  group_by: ['alertname', 'cluster', 'service']
+  
+  # When a new group of alerts is created by an incoming alert, wait at
+  # least 'group_wait' to send the initial notification.
+  group_wait: 30s
+  
+  # When the first notification was sent, wait 'group_interval' to send a batch
+  # of new alerts that started firing for that group.
+  group_interval: 5m
+  
+  # If an alert has successfully been sent, wait 'repeat_interval' to
+  # resend them.
+  repeat_interval: 12h
+  
+  # A default receiver
+  receiver: 'regime-team'
+  
+  # All the above attributes are inherited by all child routes and can be
+  # overwritten on each.
+  routes:
+    # Critical alerts - immediate notification
+    - match:
+        severity: critical
+      receiver: 'critical-receiver'
+      group_wait: 10s
+      repeat_interval: 1h
+      
+    # Performance alerts
+    - match_re:
+        alertname: '^(High.*Latency|Low.*Accuracy)$'
+      receiver: 'performance-team'
+      group_wait: 5m
+      
+    # SLA violations
+    - match:
+        sla: '.*'
+      receiver: 'sla-violations'
+      group_wait: 1m
+      repeat_interval: 4h
+
+# Inhibition rules allow to mute a set of alerts given that another alert is firing.
+inhibit_rules:
+  # Mute any warning-level notifications if the same alert is already critical.
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'instance']
+    
+  # Mute component alerts if the whole system is down
+  - source_match:
+      alertname: 'RegimeSystemDown'
+    target_match_re:
+      alertname: 'Component.*'
+
+# Receivers
+receivers:
+  - name: 'regime-team'
+    email_configs:
+      - to: 'regime-team@company.com'
+        headers:
+          Subject: 'Regime System Alert: {{ .GroupLabels.alertname }}'
+    slack_configs:
+      - channel: '#regime-alerts'
+        title: 'Regime System Alert'
+        text: '{{ range .Alerts }}{{ .Annotations.summary }}\n{{ end }}'
+        
+  - name: 'critical-receiver'
+    email_configs:
+      - to: 'regime-oncall@company.com'
+        headers:
+          Subject: 'CRITICAL: {{ .GroupLabels.alertname }}'
+        html: |
+          <h2>Critical Alert!</h2>
+          <p><b>Alert:</b> {{ .GroupLabels.alertname }}</p>
+          <p><b>Instance:</b> {{ .GroupLabels.instance }}</p>
+          {{ range .Alerts }}
+          <hr>
+          <p><b>Summary:</b> {{ .Annotations.summary }}</p>
+          <p><b>Description:</b> {{ .Annotations.description }}</p>
+          {{ if .Annotations.runbook_url }}
+          <p><b>Runbook:</b> <a href="{{ .Annotations.runbook_url }}">{{ .Annotations.runbook_url }}</a></p>
+          {{ end }}
+          {{ end }}
+    pagerduty_configs:
+      - service_key: 'YOUR-PAGERDUTY-SERVICE-KEY'
+        description: '{{ .GroupLabels.alertname }}: {{ range .Alerts }}{{ .Annotations.summary }}{{ end }}'
+    slack_configs:
+      - channel: '#regime-critical'
+        username: 'Critical Alert'
+        color: 'danger'
+        title: '🚨 CRITICAL: {{ .GroupLabels.alertname }}'
+        text: '{{ range .Alerts }}{{ .Annotations.summary }}\n{{ .Annotations.description }}{{ end }}'
+        send_resolved: true
+        
+  - name: 'performance-team'
+    email_configs:
+      - to: 'regime-performance@company.com'
+        send_resolved: true
+    slack_configs:
+      - channel: '#regime-performance'
+        title: 'Performance Alert: {{ .GroupLabels.alertname }}'
+        text: '{{ range .Alerts }}{{ .Annotations.description }}{{ end }}'
+        
+  - name: 'sla-violations'
+    email_configs:
+      - to: 'regime-team@company.com,management@company.com'
+        headers:
+          Subject: 'SLA Violation: {{ .GroupLabels.sla }}'
+        html: |
+          <h2>SLA Violation Detected</h2>
+          <p><b>SLA Type:</b> {{ .GroupLabels.sla }}</p>
+          {{ range .Alerts }}
+          <p><b>Alert:</b> {{ .Labels.alertname }}</p>
+          <p><b>Summary:</b> {{ .Annotations.summary }}</p>
+          <p><b>Description:</b> {{ .Annotations.description }}</p>
+          <p><b>Time:</b> {{ .StartsAt.Format "2006-01-02 15:04:05 MST" }}</p>
+          {{ end }}
+    webhook_configs:
+      - url: 'http://sla-tracker.company.com/webhook'
+        send_resolved: true

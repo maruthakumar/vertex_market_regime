@@ -1,0 +1,30 @@
+{
+  "directional_thresholds": {
+    "strong_bullish": 0.45,
+    "mild_bullish": 0.18,
+    "neutral": 0.08,
+    "sideways": 0.04,
+    "mild_bearish": -0.18,
+    "strong_bearish": -0.45
+  },
+  "volatility_thresholds": {
+    "high": 0.7,
+    "normal_high": 0.45,
+    "normal_low": 0.25,
+    "low": 0.12
+  },
+  "indicator_weights": {
+    "greek_sentiment": 0.38,
+    "oi_analysis": 0.27,
+    "price_action": 0.18,
+    "technical_indicators": 0.12,
+    "volatility_measures": 0.05
+  },
+  "regime_stability": {
+    "minimum_duration_minutes": 12,
+    "confirmation_buffer_minutes": 4,
+    "confidence_threshold": 0.75,
+    "hysteresis_buffer": 0.08,
+    "rapid_switching_prevention": true
+  }
+}

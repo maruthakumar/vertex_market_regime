@@ -1,0 +1,977 @@
+{
+  "test_suite": "Phase 2 Dynamic Weight Systems",
+  "timestamp": "2025-06-23T21:58:29.379475",
+  "total_test_time": 0.10941743850708008,
+  "test_results": {
+    "volatility_optimization_tests": {
+      "regime_detection": {
+        "low_volatility": {
+          "regime_type": "normal_volatility",
+          "adjustment_factor": 0.8,
+          "vix_level": 12.0
+        },
+        "normal": {
+          "regime_type": "normal_volatility",
+          "adjustment_factor": 1.03,
+          "vix_level": 20.0
+        },
+        "high_volatility": {
+          "regime_type": "high_volatility",
+          "adjustment_factor": 1.5,
+          "vix_level": 45.0
+        }
+      },
+      "weight_optimization": {
+        "low_volatility": {
+          "weights": {
+            "atm_straddle": 0.27472527472527464,
+            "itm1_straddle": 0.1758241758241758,
+            "otm1_straddle": 0.19780219780219774,
+            "combined_straddle": 0.19780219780219782,
+            "atm_ce": 0.07692307692307691,
+            "atm_pe": 0.07692307692307691
+          },
+          "weight_sum": 0.9999999999999998,
+          "max_weight": 0.27472527472527464,
+          "min_weight": 0.07692307692307691
+        },
+        "normal": {
+          "weights": {
+            "atm_straddle": 0.27472527472527475,
+            "itm1_straddle": 0.17582417582417587,
+            "otm1_straddle": 0.19780219780219777,
+            "combined_straddle": 0.19780219780219782,
+            "atm_ce": 0.07692307692307691,
+            "atm_pe": 0.07692307692307691
+          },
+          "weight_sum": 1.0,
+          "max_weight": 0.27472527472527475,
+          "min_weight": 0.07692307692307691
+        },
+        "high_volatility": {
+          "weights": {
+            "atm_straddle": 0.23535564853556484,
+            "itm1_straddle": 0.15899581589958156,
+            "otm1_straddle": 0.24476987447698745,
+            "combined_straddle": 0.2071129707112971,
+            "atm_ce": 0.07688284518828452,
+            "atm_pe": 0.07688284518828452
+          },
+          "weight_sum": 0.9999999999999999,
+          "max_weight": 0.24476987447698745,
+          "min_weight": 0.07688284518828452
+        }
+      },
+      "weight_statistics": {
+        "total_adjustments": 3,
+        "recent_adjustments": 3,
+        "average_weight_change": 0.056278449583889084,
+        "weight_stability": 0.9437215504161109,
+        "regime_distribution": {
+          "normal_volatility": 2,
+          "high_volatility": 1
+        },
+        "current_regime": "high_volatility"
+      }
+    },
+    "correlation_optimization_tests": {
+      "correlation_detection": {
+        "low": {
+          "high_correlation_pairs": 0,
+          "max_correlation": 0,
+          "correlation_matrix_shape": [
+            6,
+            6
+          ]
+        },
+        "normal": {
+          "high_correlation_pairs": 0,
+          "max_correlation": 0,
+          "correlation_matrix_shape": [
+            6,
+            6
+          ]
+        },
+        "high": {
+          "high_correlation_pairs": 14,
+          "max_correlation": 0.8934737329230351,
+          "correlation_matrix_shape": [
+            6,
+            6
+          ]
+        }
+      },
+      "correlation_optimization": {
+        "low": {
+          "optimization_method": "no_optimization_needed",
+          "correlation_reduction": 0.0,
+          "confidence_score": 1.0,
+          "optimized_weights": {
+            "atm_straddle": 0.25,
+            "itm1_straddle": 0.2,
+            "otm1_straddle": 0.15,
+            "combined_straddle": 0.2,
+            "atm_ce": 0.1,
+            "atm_pe": 0.1
+          }
+        },
+        "normal": {
+          "optimization_method": "no_optimization_needed",
+          "correlation_reduction": 0.0,
+          "confidence_score": 1.0,
+          "optimized_weights": {
+            "atm_straddle": 0.25,
+            "itm1_straddle": 0.2,
+            "otm1_straddle": 0.15,
+            "combined_straddle": 0.2,
+            "atm_ce": 0.1,
+            "atm_pe": 0.1
+          }
+        },
+        "high": {
+          "optimization_method": "correlation_minimization",
+          "correlation_reduction": 0.5363186994858611,
+          "confidence_score": 1.0,
+          "optimized_weights": {
+            "atm_straddle": 0.05000000000195742,
+            "itm1_straddle": 0.3999999999981836,
+            "otm1_straddle": 0.05000000000017467,
+            "combined_straddle": 0.3999999999979389,
+            "atm_ce": 0.050000000000853646,
+            "atm_pe": 0.05000000000089184
+          }
+        }
+      },
+      "correlation_statistics": {
+        "total_correlation_analyses": 6,
+        "recent_analyses": 6,
+        "average_high_correlations": 4.5,
+        "max_correlation_observed": 0.9384365561503594,
+        "correlation_threshold": 0.8,
+        "total_optimizations": 1,
+        "average_correlation_reduction": 0.5363186994858611,
+        "average_optimization_confidence": 1.0
+      }
+    },
+    "ml_dte_optimization_tests": {
+      "feature_extraction": {
+        "dte_0": {
+          "feature_count": 18,
+          "gamma_exposure": 0.01,
+          "theta_decay_rate": 0.1,
+          "time_to_expiry_hours": 0
+        },
+        "dte_1": {
+          "feature_count": 18,
+          "gamma_exposure": 0.005,
+          "theta_decay_rate": 0.00909090909090909,
+          "time_to_expiry_hours": 24
+        },
+        "dte_2": {
+          "feature_count": 18,
+          "gamma_exposure": 0.003333333333333333,
+          "theta_decay_rate": 0.0047619047619047615,
+          "time_to_expiry_hours": 48
+        },
+        "dte_3": {
+          "feature_count": 18,
+          "gamma_exposure": 0.0025,
+          "theta_decay_rate": 0.0032258064516129032,
+          "time_to_expiry_hours": 72
+        },
+        "dte_4": {
+          "feature_count": 18,
+          "gamma_exposure": 0.002,
+          "theta_decay_rate": 0.002439024390243903,
+          "time_to_expiry_hours": 96
+        }
+      },
+      "weight_prediction": {
+        "dte_0": {
+          "predicted_weights": {
+            "atm_straddle": 0.27036311633259,
+            "itm1_straddle": 0.1852609824640301,
+            "otm1_straddle": 0.17385393627531978,
+            "combined_straddle": 0.1852609824640301,
+            "atm_ce": 0.09263049123201506,
+            "atm_pe": 0.09263049123201506
+          },
+          "weight_sum": 1.0,
+          "max_weight": 0.27036311633259,
+          "min_weight": 0.09263049123201506
+        },
+        "dte_1": {
+          "predicted_weights": {
+            "atm_straddle": 0.25,
+            "itm1_straddle": 0.2,
+            "otm1_straddle": 0.15,
+            "combined_straddle": 0.2,
+            "atm_ce": 0.1,
+            "atm_pe": 0.1
+          },
+          "weight_sum": 1.0,
+          "max_weight": 0.25,
+          "min_weight": 0.1
+        },
+        "dte_2": {
+          "predicted_weights": {
+            "atm_straddle": 0.25,
+            "itm1_straddle": 0.2,
+            "otm1_straddle": 0.15,
+            "combined_straddle": 0.2,
+            "atm_ce": 0.1,
+            "atm_pe": 0.1
+          },
+          "weight_sum": 1.0,
+          "max_weight": 0.25,
+          "min_weight": 0.1
+        },
+        "dte_3": {
+          "predicted_weights": {
+            "atm_straddle": 0.23615610837284517,
+            "itm1_straddle": 0.21265727234482726,
+            "otm1_straddle": 0.14169366502370712,
+            "combined_straddle": 0.22056806756034428,
+            "atm_ce": 0.09446244334913807,
+            "atm_pe": 0.09446244334913807
+          },
+          "weight_sum": 1.0,
+          "max_weight": 0.23615610837284517,
+          "min_weight": 0.09446244334913807
+        },
+        "dte_4": {
+          "predicted_weights": {
+            "atm_straddle": 0.23615610837284517,
+            "itm1_straddle": 0.21265727234482726,
+            "otm1_straddle": 0.14169366502370712,
+            "combined_straddle": 0.22056806756034428,
+            "atm_ce": 0.09446244334913807,
+            "atm_pe": 0.09446244334913807
+          },
+          "weight_sum": 1.0,
+          "max_weight": 0.23615610837284517,
+          "min_weight": 0.09446244334913807
+        }
+      },
+      "model_training": {
+        "training_success": true,
+        "model_performance": {},
+        "training_data_size": 200
+      }
+    },
+    "integrated_system_tests": {
+      "initialization": {
+        "system_created": true,
+        "optimization_weights": {
+          "volatility": 0.4,
+          "correlation": 0.35,
+          "ml_dte": 0.25
+        },
+        "components_initialized": {
+          "volatility_optimizer": true,
+          "correlation_optimizer": true,
+          "ml_optimizer": true
+        }
+      },
+      "comprehensive_optimization": {
+        "low_volatility_low_dte0": {
+          "optimized_weights": {
+            "atm_straddle": 0.2735993371962265,
+            "itm1_straddle": 0.17820899884363134,
+            "otm1_straddle": 0.19177366627287948,
+            "combined_straddle": 0.19469251532714787,
+            "atm_ce": 0.08086274118005743,
+            "atm_pe": 0.08086274118005743
+          },
+          "optimization_time": 0.0005738735198974609,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.2735993371962265,
+            "min_weight": 0.08086274118005743,
+            "weight_range": 0.19273659601616905
+          }
+        },
+        "low_volatility_low_dte2": {
+          "optimized_weights": {
+            "atm_straddle": 0.26854395604395603,
+            "itm1_straddle": 0.18186813186813186,
+            "otm1_straddle": 0.18585164835164836,
+            "combined_straddle": 0.19835164835164842,
+            "atm_ce": 0.08269230769230769,
+            "atm_pe": 0.08269230769230769
+          },
+          "optimization_time": 0.0005195140838623047,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.26854395604395603,
+            "min_weight": 0.08269230769230769,
+            "weight_range": 0.18585164835164836
+          }
+        },
+        "low_volatility_low_dte4": {
+          "optimized_weights": {
+            "atm_straddle": 0.26510752103277946,
+            "itm1_straddle": 0.1850100153069218,
+            "otm1_straddle": 0.18378978734494242,
+            "combined_straddle": 0.20345720893968205,
+            "atm_ce": 0.08131773368783708,
+            "atm_pe": 0.08131773368783708
+          },
+          "optimization_time": 0.0005099773406982422,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.26510752103277946,
+            "min_weight": 0.08131773368783708,
+            "weight_range": 0.1837897873449424
+          }
+        },
+        "low_volatility_normal_dte0": {
+          "optimized_weights": {
+            "atm_straddle": 0.2735993371962265,
+            "itm1_straddle": 0.17820899884363134,
+            "otm1_straddle": 0.19177366627287948,
+            "combined_straddle": 0.19469251532714787,
+            "atm_ce": 0.08086274118005743,
+            "atm_pe": 0.08086274118005743
+          },
+          "optimization_time": 0.0005137920379638672,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.2735993371962265,
+            "min_weight": 0.08086274118005743,
+            "weight_range": 0.19273659601616905
+          }
+        },
+        "low_volatility_normal_dte2": {
+          "optimized_weights": {
+            "atm_straddle": 0.26854395604395603,
+            "itm1_straddle": 0.18186813186813186,
+            "otm1_straddle": 0.18585164835164836,
+            "combined_straddle": 0.19835164835164842,
+            "atm_ce": 0.08269230769230769,
+            "atm_pe": 0.08269230769230769
+          },
+          "optimization_time": 0.0005054473876953125,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.26854395604395603,
+            "min_weight": 0.08269230769230769,
+            "weight_range": 0.18585164835164836
+          }
+        },
+        "low_volatility_normal_dte4": {
+          "optimized_weights": {
+            "atm_straddle": 0.26510752103277946,
+            "itm1_straddle": 0.1850100153069218,
+            "otm1_straddle": 0.18378978734494242,
+            "combined_straddle": 0.20345720893968205,
+            "atm_ce": 0.08131773368783708,
+            "atm_pe": 0.08131773368783708
+          },
+          "optimization_time": 0.0005428791046142578,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.26510752103277946,
+            "min_weight": 0.08131773368783708,
+            "weight_range": 0.1837897873449424
+          }
+        },
+        "low_volatility_high_dte0": {
+          "optimized_weights": {
+            "atm_straddle": 0.19494549104238046,
+            "itm1_straddle": 0.2566705373051696,
+            "otm1_straddle": 0.2625428970421102,
+            "combined_straddle": 0.1429617460963786,
+            "atm_ce": 0.0714396642569805,
+            "atm_pe": 0.0714396642569805
+          },
+          "optimization_time": 0.002569437026977539,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.2625428970421102,
+            "min_weight": 0.0714396642569805,
+            "weight_range": 0.1911032327851297
+          }
+        },
+        "low_volatility_high_dte2": {
+          "optimized_weights": {
+            "atm_straddle": 0.18989010989011004,
+            "itm1_straddle": 0.26032967032967014,
+            "otm1_straddle": 0.2566208791208791,
+            "combined_straddle": 0.14662087912087915,
+            "atm_ce": 0.07326923076923078,
+            "atm_pe": 0.07326923076923078
+          },
+          "optimization_time": 0.002504110336303711,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.26032967032967014,
+            "min_weight": 0.07326923076923078,
+            "weight_range": 0.18706043956043936
+          }
+        },
+        "low_volatility_high_dte4": {
+          "optimized_weights": {
+            "atm_straddle": 0.1864536748789335,
+            "itm1_straddle": 0.2634715537684601,
+            "otm1_straddle": 0.2545590181141732,
+            "combined_straddle": 0.15172643970891284,
+            "atm_ce": 0.07189465676476017,
+            "atm_pe": 0.07189465676476017
+          },
+          "optimization_time": 0.0024607181549072266,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.2634715537684601,
+            "min_weight": 0.07189465676476017,
+            "weight_range": 0.19157689700369993
+          }
+        },
+        "normal_low_dte0": {
+          "optimized_weights": {
+            "atm_straddle": 0.27359933719622653,
+            "itm1_straddle": 0.17820899884363137,
+            "otm1_straddle": 0.19177366627287945,
+            "combined_straddle": 0.19469251532714785,
+            "atm_ce": 0.08086274118005742,
+            "atm_pe": 0.08086274118005742
+          },
+          "optimization_time": 0.0005168914794921875,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.27359933719622653,
+            "min_weight": 0.08086274118005742,
+            "weight_range": 0.1927365960161691
+          }
+        },
+        "normal_low_dte2": {
+          "optimized_weights": {
+            "atm_straddle": 0.2685439560439561,
+            "itm1_straddle": 0.1818681318681319,
+            "otm1_straddle": 0.18585164835164833,
+            "combined_straddle": 0.19835164835164837,
+            "atm_ce": 0.08269230769230768,
+            "atm_pe": 0.08269230769230768
+          },
+          "optimization_time": 0.0005953311920166016,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.2685439560439561,
+            "min_weight": 0.08269230769230768,
+            "weight_range": 0.1858516483516484
+          }
+        },
+        "normal_low_dte4": {
+          "optimized_weights": {
+            "atm_straddle": 0.26510752103277957,
+            "itm1_straddle": 0.18501001530692185,
+            "otm1_straddle": 0.18378978734494242,
+            "combined_straddle": 0.20345720893968205,
+            "atm_ce": 0.08131773368783708,
+            "atm_pe": 0.08131773368783708
+          },
+          "optimization_time": 0.0005543231964111328,
+          "weight_sum": 1.0000000000000002,
+          "weight_distribution": {
+            "max_weight": 0.26510752103277957,
+            "min_weight": 0.08131773368783708,
+            "weight_range": 0.1837897873449425
+          }
+        },
+        "normal_normal_dte0": {
+          "optimized_weights": {
+            "atm_straddle": 0.27359933719622653,
+            "itm1_straddle": 0.17820899884363137,
+            "otm1_straddle": 0.19177366627287945,
+            "combined_straddle": 0.19469251532714785,
+            "atm_ce": 0.08086274118005742,
+            "atm_pe": 0.08086274118005742
+          },
+          "optimization_time": 0.0005319118499755859,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.27359933719622653,
+            "min_weight": 0.08086274118005742,
+            "weight_range": 0.1927365960161691
+          }
+        },
+        "normal_normal_dte2": {
+          "optimized_weights": {
+            "atm_straddle": 0.2685439560439561,
+            "itm1_straddle": 0.1818681318681319,
+            "otm1_straddle": 0.18585164835164833,
+            "combined_straddle": 0.19835164835164837,
+            "atm_ce": 0.08269230769230768,
+            "atm_pe": 0.08269230769230768
+          },
+          "optimization_time": 0.0005452632904052734,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.2685439560439561,
+            "min_weight": 0.08269230769230768,
+            "weight_range": 0.1858516483516484
+          }
+        },
+        "normal_normal_dte4": {
+          "optimized_weights": {
+            "atm_straddle": 0.26510752103277957,
+            "itm1_straddle": 0.18501001530692185,
+            "otm1_straddle": 0.18378978734494242,
+            "combined_straddle": 0.20345720893968205,
+            "atm_ce": 0.08131773368783708,
+            "atm_pe": 0.08131773368783708
+          },
+          "optimization_time": 0.0005280971527099609,
+          "weight_sum": 1.0000000000000002,
+          "weight_distribution": {
+            "max_weight": 0.26510752103277957,
+            "min_weight": 0.08131773368783708,
+            "weight_range": 0.1837897873449425
+          }
+        },
+        "normal_high_dte0": {
+          "optimized_weights": {
+            "atm_straddle": 0.19494549104238038,
+            "itm1_straddle": 0.25667053730516975,
+            "otm1_straddle": 0.2625428970421102,
+            "combined_straddle": 0.1429617460963786,
+            "atm_ce": 0.0714396642569805,
+            "atm_pe": 0.0714396642569805
+          },
+          "optimization_time": 0.0025568008422851562,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.2625428970421102,
+            "min_weight": 0.0714396642569805,
+            "weight_range": 0.1911032327851297
+          }
+        },
+        "normal_high_dte2": {
+          "optimized_weights": {
+            "atm_straddle": 0.1898901098901099,
+            "itm1_straddle": 0.26032967032967025,
+            "otm1_straddle": 0.2566208791208791,
+            "combined_straddle": 0.14662087912087912,
+            "atm_ce": 0.07326923076923077,
+            "atm_pe": 0.07326923076923077
+          },
+          "optimization_time": 0.0024416446685791016,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.26032967032967025,
+            "min_weight": 0.07326923076923077,
+            "weight_range": 0.1870604395604395
+          }
+        },
+        "normal_high_dte4": {
+          "optimized_weights": {
+            "atm_straddle": 0.18645367487893338,
+            "itm1_straddle": 0.2634715537684602,
+            "otm1_straddle": 0.2545590181141732,
+            "combined_straddle": 0.1517264397089128,
+            "atm_ce": 0.07189465676476016,
+            "atm_pe": 0.07189465676476016
+          },
+          "optimization_time": 0.002453327178955078,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.2634715537684602,
+            "min_weight": 0.07189465676476016,
+            "weight_range": 0.19157689700370006
+          }
+        },
+        "high_volatility_low_dte0": {
+          "optimized_weights": {
+            "atm_straddle": 0.24407211755394412,
+            "itm1_straddle": 0.16558772890018564,
+            "otm1_straddle": 0.2269994237789717,
+            "combined_straddle": 0.2016755950089723,
+            "atm_ce": 0.08083256737896312,
+            "atm_pe": 0.08083256737896312
+          },
+          "optimization_time": 0.0005207061767578125,
+          "weight_sum": 1.0000000000000002,
+          "weight_distribution": {
+            "max_weight": 0.24407211755394412,
+            "min_weight": 0.08083256737896312,
+            "weight_range": 0.16323955017498099
+          }
+        },
+        "high_volatility_low_dte2": {
+          "optimized_weights": {
+            "atm_straddle": 0.23901673640167365,
+            "itm1_straddle": 0.1692468619246862,
+            "otm1_straddle": 0.22107740585774058,
+            "combined_straddle": 0.20533472803347286,
+            "atm_ce": 0.08266213389121338,
+            "atm_pe": 0.08266213389121338
+          },
+          "optimization_time": 0.0005030632019042969,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.23901673640167365,
+            "min_weight": 0.08266213389121338,
+            "weight_range": 0.15635460251046027
+          }
+        },
+        "high_volatility_low_dte4": {
+          "optimized_weights": {
+            "atm_straddle": 0.23558030139049713,
+            "itm1_straddle": 0.17238874536347612,
+            "otm1_straddle": 0.21901554485103467,
+            "combined_straddle": 0.21044028862150654,
+            "atm_ce": 0.08128755988674279,
+            "atm_pe": 0.08128755988674279
+          },
+          "optimization_time": 0.0005121231079101562,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.23558030139049713,
+            "min_weight": 0.08128755988674279,
+            "weight_range": 0.15429274150375433
+          }
+        },
+        "high_volatility_normal_dte0": {
+          "optimized_weights": {
+            "atm_straddle": 0.24407211755394412,
+            "itm1_straddle": 0.16558772890018564,
+            "otm1_straddle": 0.2269994237789717,
+            "combined_straddle": 0.2016755950089723,
+            "atm_ce": 0.08083256737896312,
+            "atm_pe": 0.08083256737896312
+          },
+          "optimization_time": 0.0005338191986083984,
+          "weight_sum": 1.0000000000000002,
+          "weight_distribution": {
+            "max_weight": 0.24407211755394412,
+            "min_weight": 0.08083256737896312,
+            "weight_range": 0.16323955017498099
+          }
+        },
+        "high_volatility_normal_dte2": {
+          "optimized_weights": {
+            "atm_straddle": 0.23901673640167365,
+            "itm1_straddle": 0.1692468619246862,
+            "otm1_straddle": 0.22107740585774058,
+            "combined_straddle": 0.20533472803347286,
+            "atm_ce": 0.08266213389121338,
+            "atm_pe": 0.08266213389121338
+          },
+          "optimization_time": 0.000499725341796875,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.23901673640167365,
+            "min_weight": 0.08266213389121338,
+            "weight_range": 0.15635460251046027
+          }
+        },
+        "high_volatility_normal_dte4": {
+          "optimized_weights": {
+            "atm_straddle": 0.23558030139049713,
+            "itm1_straddle": 0.17238874536347612,
+            "otm1_straddle": 0.21901554485103467,
+            "combined_straddle": 0.21044028862150654,
+            "atm_ce": 0.08128755988674279,
+            "atm_pe": 0.08128755988674279
+          },
+          "optimization_time": 0.0005042552947998047,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.23558030139049713,
+            "min_weight": 0.08128755988674279,
+            "weight_range": 0.15429274150375433
+          }
+        },
+        "high_volatility_high_dte0": {
+          "optimized_weights": {
+            "atm_straddle": 0.17919764056649642,
+            "itm1_straddle": 0.24993919333533196,
+            "otm1_straddle": 0.28132996771202606,
+            "combined_straddle": 0.14668605526001835,
+            "atm_ce": 0.07142357156306364,
+            "atm_pe": 0.0714235715630636
+          },
+          "optimization_time": 0.0026695728302001953,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.28132996771202606,
+            "min_weight": 0.0714235715630636,
+            "weight_range": 0.20990639614896245
+          }
+        },
+        "high_volatility_high_dte2": {
+          "optimized_weights": {
+            "atm_straddle": 0.17414225941422595,
+            "itm1_straddle": 0.2535983263598325,
+            "otm1_straddle": 0.27540794979079497,
+            "combined_straddle": 0.15034518828451887,
+            "atm_ce": 0.07325313807531392,
+            "atm_pe": 0.07325313807531386
+          },
+          "optimization_time": 0.002363920211791992,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.27540794979079497,
+            "min_weight": 0.07325313807531386,
+            "weight_range": 0.2021548117154811
+          }
+        },
+        "high_volatility_high_dte4": {
+          "optimized_weights": {
+            "atm_straddle": 0.17070582440304943,
+            "itm1_straddle": 0.25674020979862244,
+            "otm1_straddle": 0.27334608878408906,
+            "combined_straddle": 0.15545074887255256,
+            "atm_ce": 0.07187856407084331,
+            "atm_pe": 0.07187856407084327
+          },
+          "optimization_time": 0.0023660659790039062,
+          "weight_sum": 1.0,
+          "weight_distribution": {
+            "max_weight": 0.27334608878408906,
+            "min_weight": 0.07187856407084327,
+            "weight_range": 0.2014675247132458
+          }
+        }
+      },
+      "performance_report": {
+        "integrated_system": {
+          "total_optimizations": 27,
+          "average_correlation_reduction": 0.18094563473002517,
+          "optimization_weights": {
+            "volatility": 0.4,
+            "correlation": 0.35,
+            "ml_dte": 0.25
+          }
+        },
+        "volatility_optimization": {
+          "total_adjustments": 27,
+          "recent_adjustments": 27,
+          "average_weight_change": 0.004329111506453006,
+          "weight_stability": 0.995670888493547,
+          "regime_distribution": {
+            "normal_volatility": 18,
+            "high_volatility": 9
+          },
+          "current_regime": "high_volatility"
+        },
+        "correlation_optimization": {
+          "total_correlation_analyses": 27,
+          "recent_analyses": 27,
+          "average_high_correlations": 4.0,
+          "max_correlation_observed": 0.8860237128584052,
+          "correlation_threshold": 0.8,
+          "total_optimizations": 9,
+          "average_correlation_reduction": 0.5428369041900756,
+          "average_optimization_confidence": 1.0
+        },
+        "ml_optimization": {
+          "models_trained": 5,
+          "model_performance": {}
+        },
+        "recent_optimizations": [
+          {
+            "timestamp": "2025-06-23 21:58:29.311704",
+            "weights": {
+              "atm_straddle": 0.18645367487893338,
+              "itm1_straddle": 0.2634715537684602,
+              "otm1_straddle": 0.2545590181141732,
+              "combined_straddle": 0.1517264397089128,
+              "atm_ce": 0.07189465676476016,
+              "atm_pe": 0.07189465676476016
+            },
+            "correlation_reduction": 0.5463954041807589,
+            "optimization_time": 0.0024466514587402344,
+            "dte": 4,
+            "volatility_regime": "normal_volatility"
+          },
+          {
+            "timestamp": "2025-06-23 21:58:29.312431",
+            "weights": {
+              "atm_straddle": 0.24407211755394412,
+              "itm1_straddle": 0.16558772890018564,
+              "otm1_straddle": 0.2269994237789717,
+              "combined_straddle": 0.2016755950089723,
+              "atm_ce": 0.08083256737896312,
+              "atm_pe": 0.08083256737896312
+            },
+            "correlation_reduction": 0.0,
+            "optimization_time": 0.0005152225494384766,
+            "dte": 0,
+            "volatility_regime": "high_volatility"
+          },
+          {
+            "timestamp": "2025-06-23 21:58:29.313135",
+            "weights": {
+              "atm_straddle": 0.23901673640167365,
+              "itm1_straddle": 0.1692468619246862,
+              "otm1_straddle": 0.22107740585774058,
+              "combined_straddle": 0.20533472803347286,
+              "atm_ce": 0.08266213389121338,
+              "atm_pe": 0.08266213389121338
+            },
+            "correlation_reduction": 0.0,
+            "optimization_time": 0.0004968643188476562,
+            "dte": 2,
+            "volatility_regime": "high_volatility"
+          },
+          {
+            "timestamp": "2025-06-23 21:58:29.313845",
+            "weights": {
+              "atm_straddle": 0.23558030139049713,
+              "itm1_straddle": 0.17238874536347612,
+              "otm1_straddle": 0.21901554485103467,
+              "combined_straddle": 0.21044028862150654,
+              "atm_ce": 0.08128755988674279,
+              "atm_pe": 0.08128755988674279
+            },
+            "correlation_reduction": 0.0,
+            "optimization_time": 0.0005066394805908203,
+            "dte": 4,
+            "volatility_regime": "high_volatility"
+          },
+          {
+            "timestamp": "2025-06-23 21:58:29.314579",
+            "weights": {
+              "atm_straddle": 0.24407211755394412,
+              "itm1_straddle": 0.16558772890018564,
+              "otm1_straddle": 0.2269994237789717,
+              "combined_straddle": 0.2016755950089723,
+              "atm_ce": 0.08083256737896312,
+              "atm_pe": 0.08083256737896312
+            },
+            "correlation_reduction": 0.0,
+            "optimization_time": 0.0005280971527099609,
+            "dte": 0,
+            "volatility_regime": "high_volatility"
+          },
+          {
+            "timestamp": "2025-06-23 21:58:29.315287",
+            "weights": {
+              "atm_straddle": 0.23901673640167365,
+              "itm1_straddle": 0.1692468619246862,
+              "otm1_straddle": 0.22107740585774058,
+              "combined_straddle": 0.20533472803347286,
+              "atm_ce": 0.08266213389121338,
+              "atm_pe": 0.08266213389121338
+            },
+            "correlation_reduction": 0.0,
+            "optimization_time": 0.0004935264587402344,
+            "dte": 2,
+            "volatility_regime": "high_volatility"
+          },
+          {
+            "timestamp": "2025-06-23 21:58:29.315994",
+            "weights": {
+              "atm_straddle": 0.23558030139049713,
+              "itm1_straddle": 0.17238874536347612,
+              "otm1_straddle": 0.21901554485103467,
+              "combined_straddle": 0.21044028862150654,
+              "atm_ce": 0.08128755988674279,
+              "atm_pe": 0.08128755988674279
+            },
+            "correlation_reduction": 0.0,
+            "optimization_time": 0.0004987716674804688,
+            "dte": 4,
+            "volatility_regime": "high_volatility"
+          },
+          {
+            "timestamp": "2025-06-23 21:58:29.318863",
+            "weights": {
+              "atm_straddle": 0.17919764056649642,
+              "itm1_straddle": 0.24993919333533196,
+              "otm1_straddle": 0.28132996771202606,
+              "combined_straddle": 0.14668605526001835,
+              "atm_ce": 0.07142357156306364,
+              "atm_pe": 0.0714235715630636
+            },
+            "correlation_reduction": 0.5357199042087096,
+            "optimization_time": 0.00266265869140625,
+            "dte": 0,
+            "volatility_regime": "high_volatility"
+          },
+          {
+            "timestamp": "2025-06-23 21:58:29.321433",
+            "weights": {
+              "atm_straddle": 0.17414225941422595,
+              "itm1_straddle": 0.2535983263598325,
+              "otm1_straddle": 0.27540794979079497,
+              "combined_straddle": 0.15034518828451887,
+              "atm_ce": 0.07325313807531392,
+              "atm_pe": 0.07325313807531386
+            },
+            "correlation_reduction": 0.5357199042087096,
+            "optimization_time": 0.0023567676544189453,
+            "dte": 2,
+            "volatility_regime": "high_volatility"
+          },
+          {
+            "timestamp": "2025-06-23 21:58:29.324003",
+            "weights": {
+              "atm_straddle": 0.17070582440304943,
+              "itm1_straddle": 0.25674020979862244,
+              "otm1_straddle": 0.27334608878408906,
+              "combined_straddle": 0.15545074887255256,
+              "atm_ce": 0.07187856407084331,
+              "atm_pe": 0.07187856407084327
+            },
+            "correlation_reduction": 0.5357199042087096,
+            "optimization_time": 0.002359151840209961,
+            "dte": 4,
+            "volatility_regime": "high_volatility"
+          }
+        ]
+      },
+      "weight_updates": {
+        "original_weights": {
+          "volatility": 0.4,
+          "correlation": 0.35,
+          "ml_dte": 0.25
+        },
+        "updated_weights": {
+          "volatility": 0.5,
+          "correlation": 0.3,
+          "ml_dte": 0.2
+        },
+        "update_successful": true
+      }
+    },
+    "performance_validation_tests": {
+      "processing_performance": {
+        "average_time": 0.0005253434181213378,
+        "maximum_time": 0.0005927085876464844,
+        "minimum_time": 0.0004975795745849609,
+        "target_met": "True",
+        "target": "<0.1 seconds"
+      },
+      "correlation_reduction": {
+        "average_reduction": 0.11228701619273804,
+        "target_met": "True",
+        "target": ">10% correlation reduction"
+      },
+      "weight_stability": {
+        "average_weight_change": 0.013287804697581517,
+        "stability_score": 0.9867121953024185,
+        "target_met": "True",
+        "target": ">80% weight stability"
+      },
+      "overall_compliance": {
+        "all_targets_met": "True",
+        "processing_compliant": "True",
+        "correlation_compliant": "True",
+        "stability_compliant": "True"
+      }
+    }
+  },
+  "summary": {
+    "volatility_optimization": "PASS",
+    "correlation_optimization": "PASS",
+    "ml_dte_optimization": "PASS",
+    "integrated_system": "PASS",
+    "performance_validation": "PASS",
+    "overall_status": "PASS"
+  },
+  "recommendations": [
+    "All performance targets met - Phase 2 implementation successful"
+  ]
+}

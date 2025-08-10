@@ -1,0 +1,311 @@
+{
+  "sessionId": "validation_1753090988839",
+  "timestamp": "2025-07-21T09:43:08.839Z",
+  "duration": 26.717,
+  "targetUrl": "http://173.208.247.17:3000/",
+  "summary": {
+    "totalIssues": 12,
+    "criticalIssues": 0,
+    "highIssues": 2,
+    "mediumIssues": 10,
+    "lowIssues": 0,
+    "screenshotsCaptured": 3
+  },
+  "issues": [
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Home",
+      "description": "Missing Footer element (footer)",
+      "selector": "footer"
+    },
+    {
+      "type": "accessibility-labels",
+      "severity": "MEDIUM",
+      "page": "Home",
+      "description": "1 form inputs missing labels",
+      "count": 1
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Dashboard",
+      "description": "Missing Footer element (footer)",
+      "selector": "footer"
+    },
+    {
+      "type": "accessibility-labels",
+      "severity": "MEDIUM",
+      "page": "Dashboard",
+      "description": "1 form inputs missing labels",
+      "count": 1
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Backtest",
+      "description": "Missing Navigation element (nav)",
+      "selector": "nav"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Backtest",
+      "description": "Missing Header element (header)",
+      "selector": "header"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Backtest",
+      "description": "Missing Main content element (main)",
+      "selector": "main"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Backtest",
+      "description": "Missing Footer element (footer)",
+      "selector": "footer"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Backtest",
+      "description": "Missing Forms element (form)",
+      "selector": "form"
+    },
+    {
+      "type": "missing-element",
+      "severity": "MEDIUM",
+      "page": "Backtest",
+      "description": "Missing Inputs element (input)",
+      "selector": "input"
+    },
+    {
+      "type": "navigation",
+      "severity": "HIGH",
+      "page": "Results",
+      "description": "Failed to load page: HTTP 500",
+      "url": "http://173.208.247.17:3000/results",
+      "id": "issue_1753090986720_udcd2qhww",
+      "timestamp": "2025-07-21T09:43:06.720Z"
+    },
+    {
+      "type": "navigation",
+      "severity": "HIGH",
+      "page": "Settings",
+      "description": "Failed to load page: HTTP 500",
+      "url": "http://173.208.247.17:3000/settings",
+      "id": "issue_1753090988796_oz4bvt9zt",
+      "timestamp": "2025-07-21T09:43:08.796Z"
+    }
+  ],
+  "screenshots": [
+    {
+      "page": "Home",
+      "path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/live-validation-results/screenshots/home_2025-07-21T09-42-46-818Z.png",
+      "timestamp": "2025-07-21T09:42:47.289Z"
+    },
+    {
+      "page": "Dashboard",
+      "path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/live-validation-results/screenshots/dashboard_2025-07-21T09-42-51-479Z.png",
+      "timestamp": "2025-07-21T09:42:51.943Z"
+    },
+    {
+      "page": "Backtest",
+      "path": "/srv/samba/shared/bt/backtester_stable/worktrees/ui-refactor/ui-centralized/docs/frontend_validation/live-validation-results/screenshots/backtest_2025-07-21T09-43-00-362Z.png",
+      "timestamp": "2025-07-21T09:43:00.594Z"
+    }
+  ],
+  "issuesByType": {
+    "missing-element": [
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Home",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Dashboard",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Navigation element (nav)",
+        "selector": "nav"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Header element (header)",
+        "selector": "header"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Main content element (main)",
+        "selector": "main"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Forms element (form)",
+        "selector": "form"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Inputs element (input)",
+        "selector": "input"
+      }
+    ],
+    "accessibility-labels": [
+      {
+        "type": "accessibility-labels",
+        "severity": "MEDIUM",
+        "page": "Home",
+        "description": "1 form inputs missing labels",
+        "count": 1
+      },
+      {
+        "type": "accessibility-labels",
+        "severity": "MEDIUM",
+        "page": "Dashboard",
+        "description": "1 form inputs missing labels",
+        "count": 1
+      }
+    ],
+    "navigation": [
+      {
+        "type": "navigation",
+        "severity": "HIGH",
+        "page": "Results",
+        "description": "Failed to load page: HTTP 500",
+        "url": "http://173.208.247.17:3000/results",
+        "id": "issue_1753090986720_udcd2qhww",
+        "timestamp": "2025-07-21T09:43:06.720Z"
+      },
+      {
+        "type": "navigation",
+        "severity": "HIGH",
+        "page": "Settings",
+        "description": "Failed to load page: HTTP 500",
+        "url": "http://173.208.247.17:3000/settings",
+        "id": "issue_1753090988796_oz4bvt9zt",
+        "timestamp": "2025-07-21T09:43:08.796Z"
+      }
+    ]
+  },
+  "issuesBySeverity": {
+    "MEDIUM": [
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Home",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "accessibility-labels",
+        "severity": "MEDIUM",
+        "page": "Home",
+        "description": "1 form inputs missing labels",
+        "count": 1
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Dashboard",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "accessibility-labels",
+        "severity": "MEDIUM",
+        "page": "Dashboard",
+        "description": "1 form inputs missing labels",
+        "count": 1
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Navigation element (nav)",
+        "selector": "nav"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Header element (header)",
+        "selector": "header"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Main content element (main)",
+        "selector": "main"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Footer element (footer)",
+        "selector": "footer"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Forms element (form)",
+        "selector": "form"
+      },
+      {
+        "type": "missing-element",
+        "severity": "MEDIUM",
+        "page": "Backtest",
+        "description": "Missing Inputs element (input)",
+        "selector": "input"
+      }
+    ],
+    "HIGH": [
+      {
+        "type": "navigation",
+        "severity": "HIGH",
+        "page": "Results",
+        "description": "Failed to load page: HTTP 500",
+        "url": "http://173.208.247.17:3000/results",
+        "id": "issue_1753090986720_udcd2qhww",
+        "timestamp": "2025-07-21T09:43:06.720Z"
+      },
+      {
+        "type": "navigation",
+        "severity": "HIGH",
+        "page": "Settings",
+        "description": "Failed to load page: HTTP 500",
+        "url": "http://173.208.247.17:3000/settings",
+        "id": "issue_1753090988796_oz4bvt9zt",
+        "timestamp": "2025-07-21T09:43:08.796Z"
+      }
+    ]
+  }
+}

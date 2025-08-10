@@ -1,0 +1,95 @@
+{
+  "test_name": "HeavyDB Connection Validation",
+  "timestamp": "2025-07-11T18:21:28.029570",
+  "status": "PASSED",
+  "checks": [
+    {
+      "name": "Connection Establishment",
+      "passed": true,
+      "details": {
+        "connection_type": "Connection",
+        "connection_established": true
+      }
+    },
+    {
+      "name": "Basic Query Execution",
+      "passed": true,
+      "details": {
+        "query_result": "1"
+      }
+    },
+    {
+      "name": "Table Structure Validation",
+      "passed": true,
+      "details": {
+        "table_exists": true,
+        "column_count": 48,
+        "columns": [
+          "trade_date",
+          "trade_time",
+          "expiry_date",
+          "index_name",
+          "spot",
+          "atm_strike",
+          "strike",
+          "dte",
+          "expiry_bucket",
+          "zone_id"
+        ]
+      }
+    },
+    {
+      "name": "Data Availability Check",
+      "passed": true,
+      "details": {
+        "total_rows": 33191869,
+        "recent_rows": "133330",
+        "date_range": {
+          "min_date": "2018-01-01",
+          "max_date": "2025-06-18",
+          "unique_dates": "1820"
+        }
+      }
+    },
+    {
+      "name": "Query Performance Test",
+      "passed": true,
+      "details": {
+        "performance_acceptable": true
+      },
+      "metrics": {
+        "simple_query_time": 0.15737152099609375,
+        "complex_query_time": 0.24226760864257812,
+        "simple_query_threshold": 5.0,
+        "complex_query_threshold": 10.0,
+        "total_rows": "33191869",
+        "complex_result_count": 0
+      }
+    },
+    {
+      "name": "Health Monitoring Test",
+      "passed": true,
+      "details": {
+        "health_check_time": 0.02311229705810547,
+        "health_status": "HEALTHY",
+        "connection_status": {
+          "connection_available": true,
+          "real_data_validated": true,
+          "table_exists": true,
+          "table_row_count": 33191869,
+          "data_authenticity_score": 1.0
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "performance_metrics": {
+    "simple_query_time": 0.15737152099609375,
+    "complex_query_time": 0.24226760864257812,
+    "simple_query_threshold": 5.0,
+    "complex_query_threshold": 10.0,
+    "total_rows": "33191869",
+    "complex_result_count": 0
+  }
+}
