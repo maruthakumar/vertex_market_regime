@@ -1577,7 +1577,7 @@ Error: The provided API key is invalid or expired
 **Solution**:
 ```bash
 # Verify API key format
-echo $ANTHROPIC_API_KEY | grep -E "^sk-ant-api03-"
+echo $ANTHROPIC_API_KEY | grep -E "^sk-ant-"
 
 # Test API key with curl
 curl -H "Authorization: Bearer $ANTHROPIC_API_KEY" \
