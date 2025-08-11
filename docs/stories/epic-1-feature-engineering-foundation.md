@@ -100,13 +100,17 @@ All outputs must be defined in the schema registry with names, types, ranges, an
 
 ---
 
-### Story 5: Component 4 Feature Engineering (87 Features)
-- Dual DTE (specific + ranges); put/call skew; term structure  
-- Target: <200ms
+### Story 5: Component 4 Feature Engineering (87 Features) - Enhanced IV Percentile Analysis
+- Individual DTE tracking (dte=0...dte=58); 7-regime IV percentile classification; 4-timeframe momentum analysis; sophisticated IVP+IVR implementation
+- Target: <350ms (Enhanced for precision IV percentile analysis)
 
 **Acceptance Criteria:**
-- [ ] 87 features materialized and validated
-- [ ] DTE-specific vs range aggregation parity
+- [ ] 87 features materialized and validated with enhanced IV percentile sophistication
+- [ ] Individual DTE-level IV percentile tracking (dte=0, dte=1...dte=58)
+- [ ] 7-regime classification system (Extremely Low to Extremely High IV regimes)
+- [ ] 4-timeframe momentum analysis (5min/15min/30min/1hour)
+- [ ] 4-zone intraday analysis (MID_MORN/LUNCH/AFTERNOON/CLOSE) per production schema
+- [ ] Advanced IVP + IVR integration with historical ranking system
 
 ---
 
