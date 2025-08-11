@@ -1,0 +1,123 @@
+# Terraform Variables Example File
+# Copy this to terraform.tfvars and update with your actual values
+# Version: 1.0
+# Date: 2025-08-10
+
+# REQUIRED VARIABLES - Must be set for deployment
+project_id         = "your-gcp-project-id"
+billing_account_id = "123456-789012-345678"
+
+# ENVIRONMENT CONFIGURATION
+environment = "dev"  # Options: dev, staging, prod
+region      = "us-central1"
+zone        = "us-central1-a"
+
+# COST MANAGEMENT
+cost_budget_amount = 500  # Monthly budget in USD
+
+# VERTEX AI CONFIGURATION
+vertex_ai_config = {
+  machine_type = "n1-standard-4"
+  gpu_type     = "NVIDIA_TESLA_T4"
+  gpu_count    = 1
+  disk_size_gb = 100
+}
+
+# BIGQUERY CONFIGURATION
+bigquery_config = {
+  location                    = "US"
+  default_table_expiration_ms = 7776000000  # 90 days
+}
+
+# CLOUD STORAGE CONFIGURATION
+storage_config = {
+  location      = "US-CENTRAL1"
+  storage_class = "STANDARD"
+  versioning    = true
+}
+
+# NETWORK CONFIGURATION
+network_config = {
+  subnet_cidr           = "10.1.0.0/24"
+  services_cidr         = "10.1.1.0/24"
+  enable_private_access = true
+}
+
+# MONITORING CONFIGURATION
+monitoring_config = {
+  email_address                = "your-admin-email@company.com"
+  cost_alert_threshold         = 100      # USD threshold for cost alerts
+  performance_alert_threshold  = 1000     # Milliseconds threshold for latency alerts
+}
+
+# SECURITY CONFIGURATION
+security_config = {
+  allowed_ip_ranges = [
+    "0.0.0.0/0"  # SECURITY WARNING: Restrict this to your IP ranges in production
+    # Example: ["203.0.113.0/24", "198.51.100.0/24"]  # Replace with your office IP ranges
+  ]
+  enable_audit_logs = true
+}
+
+# DATA RETENTION CONFIGURATION
+data_retention_config = {
+  raw_data_retention_days     = 180  # 6 months for raw market data
+  feature_data_retention_days = 365  # 1 year for engineered features
+  model_retention_days        = 90   # 3 months for ML model versions
+}
+
+# ENVIRONMENT-SPECIFIC EXAMPLES:
+
+# DEVELOPMENT ENVIRONMENT
+# environment = "dev"
+# cost_budget_amount = 100
+# vertex_ai_config = {
+#   machine_type = "n1-standard-2"
+#   gpu_type     = "NVIDIA_TESLA_T4"
+#   gpu_count    = 1
+#   disk_size_gb = 50
+# }
+
+# STAGING ENVIRONMENT
+# environment = "staging"
+# cost_budget_amount = 300
+# vertex_ai_config = {
+#   machine_type = "n1-standard-4"
+#   gpu_type     = "NVIDIA_TESLA_T4"
+#   gpu_count    = 1
+#   disk_size_gb = 100
+# }
+
+# PRODUCTION ENVIRONMENT
+# environment = "prod"
+# cost_budget_amount = 1000
+# vertex_ai_config = {
+#   machine_type = "n1-standard-8"
+#   gpu_type     = "NVIDIA_TESLA_V100"
+#   gpu_count    = 2
+#   disk_size_gb = 200
+# }
+# security_config = {
+#   allowed_ip_ranges = ["YOUR.OFFICE.IP.RANGE/24"]
+#   enable_audit_logs = true
+# }
+
+# DEPLOYMENT INSTRUCTIONS:
+# 1. Copy this file to terraform.tfvars
+# 2. Update the REQUIRED VARIABLES with your GCP project details
+# 3. Customize other variables based on your environment needs
+# 4. Run: terraform init
+# 5. Run: terraform plan
+# 6. Run: terraform apply
+
+# COST ESTIMATION:
+# Development:   ~$50-100/month
+# Staging:       ~$150-300/month  
+# Production:    ~$400-1000/month (depending on usage)
+
+# SECURITY NOTES:
+# - Update allowed_ip_ranges to restrict access to your network
+# - Ensure billing_account_id has appropriate budget controls
+# - Enable audit logging in production environments
+# - Regularly rotate service account keys
+# - Monitor cost alerts and usage patterns

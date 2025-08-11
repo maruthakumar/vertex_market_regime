@@ -1,5 +1,7 @@
 # Component 2: Greeks Sentiment Analysis System
 
+> Vertex AI Feature Engineering (Required): All 98 features, including gamma=1.5 and second-order Greeks, must be engineered/served via Vertex AI Pipelines and Feature Store with strict training/serving parity. Data: GCS Parquet → Arrow/RAPIDS.
+
 ## **🧠 DETAILED SYSTEM LOGIC & METHODOLOGY**
 
 ### **CORE CONCEPT: GREEKS-BASED MARKET REGIME DETECTION**

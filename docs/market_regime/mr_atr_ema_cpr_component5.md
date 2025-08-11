@@ -1,6 +1,8 @@
 # Market Regime Component 5: ATR-EMA with CPR Integration
 ## Advanced Volatility-Price Action Fusion System with Dual DTE Analysis
 
+> Vertex AI Feature Engineering (Required): 94 features must be engineered by Vertex AI Pipelines and served via Vertex AI Feature Store with training/serving parity. Data: GCS Parquet; processing: Arrow/RAPIDS.
+
 ### Overview
 
 Component 5 represents the fusion of volatility analysis (ATR), trend identification (EMA), and pivot analysis (CPR) applied to **both rolling straddle prices AND underlying prices** with comprehensive DTE-specific and DTE-range learning capabilities. This enhanced system provides dual-asset analysis across both granular (specific DTE) and categorical (DTE ranges) frameworks for optimal regime classification.

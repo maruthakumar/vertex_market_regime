@@ -1,4 +1,7 @@
 # Component 4: IV Skew Analysis System
+
+> Vertex AI Feature Engineering (Required): 87 features to be engineered by Vertex AI Pipelines and managed via Vertex AI Feature Store with training/serving parity. Data: GCS Parquet → Arrow/RAPIDS.
+
 ## Market Regime Classification Framework
 
 ---

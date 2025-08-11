@@ -1,0 +1,114 @@
+# Vertex Market Regime - Cloud-Native Requirements
+
+# Core Python dependencies
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+scikit-learn>=1.3.0
+
+# Google Cloud Platform
+google-cloud-aiplatform>=1.40.0
+google-cloud-bigquery>=3.13.0
+google-cloud-storage>=2.10.0
+google-cloud-dataflow-client>=0.8.4
+google-auth>=2.23.0
+google-auth-oauthlib>=1.1.0
+
+# Data Processing
+pyarrow>=14.0.0
+parquet-python>=1.3.1
+apache-beam[gcp]>=2.51.0
+
+# Machine Learning
+tensorflow>=2.15.0
+tensorflow-probability>=0.22.0
+xgboost>=2.0.0
+lightgbm>=4.1.0
+
+# API Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+httpx>=0.25.0
+
+# Configuration Management
+pyyaml>=6.0.1
+openpyxl>=3.1.2
+xlsxwriter>=3.1.9
+configparser>=6.0.0
+python-dotenv>=1.0.0
+
+# Data Validation
+marshmallow>=3.20.0
+cerberus>=1.3.5
+jsonschema>=4.19.0
+
+# Async Processing
+asyncio>=3.4.3
+aiofiles>=23.2.1
+asyncpg>=0.29.0
+
+# Monitoring & Logging
+prometheus-client>=0.19.0
+opencensus-ext-azure>=1.1.13
+structlog>=23.2.0
+colorlog>=6.8.0
+
+# System Monitoring & Performance
+psutil>=5.9.0
+nvidia-ml-py3>=7.352.0  # GPU monitoring (optional)
+
+# Performance & GPU
+cupy-cuda12x>=12.3.0  # GPU acceleration (optional)
+numba>=0.58.0
+cython>=3.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+pytest-mock>=3.12.0
+httpx[testing]>=0.25.0
+
+# Development Tools
+black>=23.11.0
+isort>=5.12.0
+mypy>=1.7.0
+flake8>=6.1.0
+pre-commit>=3.5.0
+
+# Documentation
+sphinx>=7.2.0
+sphinx-rtd-theme>=1.3.0
+
+# Utilities
+tqdm>=4.66.0
+click>=8.1.7
+rich>=13.7.0
+tabulate>=0.9.0
+
+# Financial Data (optional)
+yfinance>=0.2.24
+alpha-vantage>=2.3.1
+quandl>=3.7.0
+
+# Database Connectivity
+sqlalchemy>=2.0.23
+psycopg2-binary>=2.9.9
+redis>=5.0.1
+
+# Caching
+diskcache>=5.6.3
+joblib>=1.3.2
+
+# Security
+cryptography>=41.0.0
+passlib[bcrypt]>=1.7.4
+
+# Kubernetes (for deployment)
+kubernetes>=28.1.0
+
+# Optional: Jupyter for development
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+ipywidgets>=8.1.0

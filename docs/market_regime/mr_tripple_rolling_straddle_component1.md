@@ -1,5 +1,7 @@
 # Component 1: Enhanced 10-Component Triple Rolling Straddle System
 
+> Vertex AI Feature Engineering (Required): This component’s 120 features must be engineered and served via Vertex AI Pipelines and Feature Store with training/serving parity. Data source: GCS Parquet; processing: Arrow/RAPIDS.
+
 ## **🚨 CRITICAL PARADIGM SHIFT: ROLLING STRADDLE OVERLAY SYSTEM 🚨**
 
 ### **FUNDAMENTAL UNDERSTANDING - ROLLING STRADDLE ANALYSIS**

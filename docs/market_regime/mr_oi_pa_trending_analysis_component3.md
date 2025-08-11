@@ -1,4 +1,7 @@
 # Component 3: OI-PA Trending Analysis System
+
+> Vertex AI Feature Engineering (Required): 105 features must be produced by Vertex AI Pipelines and stored/served via Vertex AI Feature Store. Data: GCS Parquet; processing: Arrow/RAPIDS. Enforce training-serving parity.
+
 ## Market Regime Classification Framework
 
 ---
@@ -14,6 +17,8 @@ Unlike traditional single-strike OI analysis, our system uses **cumulative OI an
 - **Smart Money Positioning Changes** - Detected through cumulative CE/PE flow patterns
 - **Liquidity Absorption Patterns** - Analyzed across the complete strike range spectrum  
 - **Trend Continuation vs Reversal Signals** - Generated from multi-strike correlation patterns
+
+**🔗 COMPONENT 6 INTEGRATION**: This component's sophisticated option seller correlation framework (3-way CE+PE+Future correlation matrix with comprehensive intermediate analysis) is fully integrated into Component 6's correlation analysis engine, where it contributes to the unified 8-regime market classification system (LVLD, HVC, VCPE, TBVE, TBVS, SCGS, PSED, CBV) for system-wide correlation intelligence and cross-component validation.
 
 ### **Critical Methodology: Cumulative Multi-Strike Analysis**
 - **Strike Range**: ATM ±7 strikes (expandable to ±15 during high volatility)
@@ -2019,6 +2024,7 @@ Component 3: Expert-Enhanced OI-PA Trending Analysis System now provides:
 10. **Performance Tracking** with continuous improvement recommendations
 11. **CE-PE OI Correlation & Non-Correlation Analysis** with institutional sentiment detection
 12. **Future OI Integration & Analysis** with underlying price correlation and divergence detection
+**🔗 13. Component 6 Correlation Integration** - Complete option seller framework propagated to Component 6 for system-wide correlation intelligence
 
 ### **Expert Enhancements (13-17):**
 13. **🔥 Cross-Validation Logic & Signal Conflict Resolution** 
@@ -2092,3 +2098,26 @@ The enhanced Component 3 now represents a **comprehensive institutional-grade OI
 - Ready for both historical backtesting and live trading implementation
 
 This cumulative multi-strike approach represents a **significant advancement over traditional single-strike OI analysis** and provides institutional-grade insight into market participant behavior across the complete options chain structure.
+
+---
+
+## **🔗 Component 6 Integration Summary**
+
+**Option Seller Correlation Framework Propagation Complete:**
+
+This component's sophisticated correlation intelligence has been successfully integrated into Component 6's correlation analysis engine, providing:
+
+### **Propagated Framework Elements:**
+1. **3-Way Correlation Matrix**: CE + PE + Future correlation analysis with option seller perspective
+2. **Unified 8-Regime System Contribution**: Sophisticated intermediate analysis mapped to final 8 market regime classifications (LVLD, HVC, VCPE, TBVE, TBVS, SCGS, PSED, CBV)
+3. **Option Seller Pattern Analysis**: CE/PE/Future seller pattern classification (short buildup, long buildup, etc.)
+4. **Enhanced Cross-Component Validation**: All Components 1-5 now benefit from sophisticated correlation validation
+
+### **System-Wide Benefits:**
+- **Unified Regime Classification**: Component 6 synthesizes all component inputs into single coherent 8-regime system
+- **Correlation Intelligence**: Component 6 now provides advanced correlation validation for all components
+- **Institutional Positioning Insights**: Smart money flow detection propagated across entire system  
+- **Single Source of Truth**: Consistent market regime classification across entire market regime system
+- **Enhanced System Coherence**: Cross-component validation ensures signal consistency
+
+**Result**: The market regime classification system now benefits from Component 3's proven option seller intelligence across all components through Component 6's enhanced correlation engine.

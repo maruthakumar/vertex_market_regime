@@ -1,6 +1,8 @@
 # Market Regime Master Framework v1.0
 ## Revolutionary Adaptive Options-Based Market Regime Classification System
 
+> Vertex AI Feature Engineering (Required - All Components): All eight components must use Vertex AI Pipelines and Feature Store for feature engineering and serving (training/serving parity). Data: GCS Parquet; processing: Arrow/RAPIDS. Total expert features: 774.
+
 ---
 
 ## **🚨 REVOLUTIONARY SYSTEM OVERVIEW 🚨**
