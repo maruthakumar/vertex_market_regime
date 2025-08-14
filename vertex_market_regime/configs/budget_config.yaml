@@ -1,0 +1,254 @@
+# Budget and Cost Monitoring Configuration
+# Story 2.5: IAM, Artifact Registry, Budgets/Monitoring
+# Comprehensive cost control and monitoring for Vertex AI infrastructure
+
+project_id: "arched-bot-269016"
+billing_account: "REPLACE_WITH_BILLING_ACCOUNT_ID"
+region: "us-central1"
+
+# Budget Configurations
+budgets:
+  vertex_ai:
+    name: "Vertex AI ML Training Budget"
+    description: "Budget for Vertex AI training pipelines and model operations"
+    amount_usd: 1000
+    period: "monthly"
+    
+    alert_thresholds:
+      - percent: 50
+        action: "notification"
+      - percent: 80
+        action: "notification_and_warning"
+      - percent: 90
+        action: "notification_and_escalation"
+      - percent: 100
+        action: "notification_and_block"
+    
+    notification_topic: "projects/arched-bot-269016/topics/vertex-ai-budget-alerts"
+    
+    services_included:
+      - "Vertex AI Training"
+      - "Vertex AI Prediction"
+      - "Vertex AI Feature Store"
+      - "Vertex AI Pipelines"
+
+  storage:
+    name: "Data Storage Budget"
+    description: "Budget for GCS, BigQuery, and Artifact Registry storage"
+    amount_usd: 500
+    period: "monthly"
+    
+    alert_thresholds:
+      - percent: 60
+        action: "notification"
+      - percent: 85
+        action: "notification_and_warning"
+      - percent: 95
+        action: "notification_and_escalation"
+    
+    notification_topic: "projects/arched-bot-269016/topics/storage-budget-alerts"
+    
+    services_included:
+      - "Cloud Storage"
+      - "BigQuery"
+      - "Artifact Registry"
+
+  compute:
+    name: "Compute Resources Budget"
+    description: "Budget for GKE, Compute Engine, and other compute resources"
+    amount_usd: 300
+    period: "monthly"
+    
+    alert_thresholds:
+      - percent: 70
+        action: "notification"
+      - percent: 90
+        action: "notification_and_warning"
+    
+    notification_topic: "projects/arched-bot-269016/topics/compute-budget-alerts"
+
+# Cost Allocation and Tagging
+cost_allocation:
+  required_labels:
+    environment: "Environment (prod/staging/dev)"
+    team: "Responsible team (vertex-ai/data-eng)"
+    component: "System component (training/serving/storage)"
+    cost_center: "Cost center for billing allocation"
+    project: "Project identifier (market-regime)"
+    
+  labeling_policies:
+    enforcement: "required"
+    automation: true
+    validation: "daily"
+    
+  cost_centers:
+    - name: "ML Training"
+      code: "ML-TRAIN-001"
+      budget_allocation: 60
+      
+    - name: "ML Serving" 
+      code: "ML-SERVE-002"
+      budget_allocation: 25
+      
+    - name: "Data Storage"
+      code: "DATA-STOR-003"
+      budget_allocation: 15
+
+# Resource Quotas and Limits
+resource_quotas:
+  vertex_ai:
+    training_jobs_concurrent: 5
+    custom_training_cpu_hours_per_day: 100
+    custom_training_gpu_hours_per_day: 50
+    prediction_nodes_per_region: 20
+    feature_store_online_serving_requests_per_minute: 10000
+    
+  compute_engine:
+    instances_per_region: 50
+    cpus_per_region: 200
+    gpus_per_region: 20
+    
+  storage:
+    gcs_storage_gb: 10000
+    bigquery_slots: 100
+    artifact_registry_gb: 500
+
+# Cost Monitoring Dashboards
+cost_monitoring:
+  dashboards:
+    - name: "Vertex AI Cost Overview"
+      description: "High-level cost metrics for ML operations"
+      widgets:
+        - "Monthly spend by service"
+        - "Cost per training job"
+        - "Storage costs trend"
+        - "Budget utilization"
+        
+    - name: "Resource Utilization"
+      description: "Resource usage and efficiency metrics"
+      widgets:
+        - "CPU/GPU utilization"
+        - "Storage utilization"
+        - "Training job success rate"
+        - "Cost per successful training"
+        
+    - name: "Cost Allocation"
+      description: "Cost breakdown by team and component"
+      widgets:
+        - "Cost by cost center"
+        - "Cost by component"
+        - "Cost by environment"
+        - "Monthly trend by allocation"
+
+# Cost Optimization Strategies
+cost_optimization:
+  automated_strategies:
+    - "Use preemptible instances for training jobs"
+    - "Automatic scaling down of idle resources"
+    - "Storage lifecycle policies for old data"
+    - "Scheduled resource management"
+    
+  compute_strategies:
+    - name: "Preemptible Training"
+      description: "Use preemptible instances for non-critical training jobs"
+      savings: "60-70% on compute costs"
+      implementation: "Automated through Vertex AI configuration"
+      
+    - name: "Right-sizing"
+      description: "Optimize instance types based on workload requirements"
+      savings: "20-30% on compute costs"
+      implementation: "Monitoring and recommendations"
+      
+    - name: "Auto-scaling"
+      description: "Dynamic scaling based on workload demand"
+      savings: "15-25% on idle resource costs"
+      implementation: "Kubernetes HPA and VPA"
+      
+  storage_strategies:
+    - name: "Lifecycle Policies"
+      description: "Automatic transition to cheaper storage classes"
+      impact: "40-60% reduction in storage costs"
+      
+    - name: "Data Compression"
+      description: "Use efficient compression for Parquet files"
+      impact: "20-30% storage reduction"
+      
+    - name: "Intelligent Tiering"
+      description: "Automatic migration to appropriate storage tiers"
+      impact: "30-50% cost reduction for cold data"
+      
+  training_strategies:
+    - name: "Model Optimization"
+      description: "Optimize models for faster training"
+      reduction: "20-40% training time"
+      
+    - name: "Batch Processing"
+      description: "Batch multiple training jobs for efficiency"
+      reduction: "15-25% resource overhead"
+      
+    - name: "Early Stopping"
+      description: "Stop training jobs that aren't improving"
+      reduction: "10-30% unnecessary compute"
+
+# Alerting Configuration
+alerting:
+  budget_alerts:
+    - name: "Vertex AI Budget 80%"
+      condition: "vertex_ai_spend >= 80% of budget"
+      severity: "WARNING"
+      channels: ["email", "slack"]
+      
+    - name: "Unexpected Spend Spike"
+      condition: "daily_spend > 150% of average"
+      severity: "CRITICAL" 
+      channels: ["email", "slack", "pagerduty"]
+      
+    - name: "Quota Utilization High"
+      condition: "quota_utilization > 85%"
+      severity: "WARNING"
+      channels: ["email"]
+      
+  cost_anomaly_detection:
+    enabled: true
+    sensitivity: "medium"
+    lookback_period: "7 days"
+    minimum_impact: "$50"
+
+# Reporting and Analytics
+reporting:
+  automated_reports:
+    - name: "Weekly Cost Summary"
+      frequency: "weekly"
+      recipients: ["ml-team@company.com"]
+      content: ["spend_summary", "budget_status", "top_cost_drivers"]
+      
+    - name: "Monthly Cost Analysis"
+      frequency: "monthly"
+      recipients: ["management@company.com", "finance@company.com"]
+      content: ["detailed_breakdown", "trends", "optimization_recommendations"]
+      
+  cost_attribution:
+    granularity: "daily"
+    dimensions: ["service", "team", "component", "environment"]
+    export_format: "bigquery"
+    retention_days: 365
+
+# Compliance and Governance
+governance:
+  spending_controls:
+    approval_required_above: "$500"
+    auto_shutdown_enabled: true
+    emergency_contacts: ["oncall@company.com"]
+    
+  audit_requirements:
+    cost_tracking_mandatory: true
+    labeling_compliance: "required"
+    monthly_reviews: true
+    
+  policies:
+    - "No resources without proper cost allocation labels"
+    - "All training jobs must have cost estimates"
+    - "Regular cost optimization reviews required"
+    - "Budget overruns require approval"
+
+generated_date: "2025-08-13"

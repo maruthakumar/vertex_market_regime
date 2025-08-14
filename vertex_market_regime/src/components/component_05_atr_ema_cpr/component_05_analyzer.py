@@ -219,6 +219,7 @@ class Component05Analyzer(BaseMarketRegimeComponent):
         # Production settings
         self.fallback_enabled = config.get('fallback_enabled', True)
         self.error_recovery_enabled = config.get('error_recovery_enabled', True)
+        self.processing_budget_ms = config.get('processing_budget_ms', 110)
         
         self.logger.info(f"Initialized Component 5 with 94 features and {self.processing_budget_ms}ms budget")
 
@@ -796,6 +797,65 @@ class Component05Analyzer(BaseMarketRegimeComponent):
         compliance_factors.append(1.0)  # Always compliant with 94 features
         
         return np.mean(compliance_factors)
+    
+    async def update_weights(self, performance_feedback) -> dict:
+        """
+        Update component weights based on performance feedback
+        
+        Args:
+            performance_feedback: Performance metrics for learning
+            
+        Returns:
+            Updated weights dictionary
+        """
+        # Extract performance metrics
+        accuracy = getattr(performance_feedback, 'accuracy', 0.0)
+        regime_accuracy = getattr(performance_feedback, 'regime_accuracy', {})
+        
+        # Update engine weights based on performance
+        weight_updates = {}
+        
+        # Straddle engine weight adjustment
+        straddle_accuracy = regime_accuracy.get('straddle', accuracy)
+        if straddle_accuracy > 0.85:
+            weight_updates['straddle'] = min(0.5, self.straddle_engine.weight * 1.05)
+        else:
+            weight_updates['straddle'] = max(0.3, self.straddle_engine.weight * 0.95)
+        
+        # Underlying engine weight adjustment
+        underlying_accuracy = regime_accuracy.get('underlying', accuracy)
+        if underlying_accuracy > 0.85:
+            weight_updates['underlying'] = min(0.5, self.underlying_engine.weight * 1.05)
+        else:
+            weight_updates['underlying'] = max(0.3, self.underlying_engine.weight * 0.95)
+        
+        # Cross-asset weight adjustment
+        cross_asset_accuracy = regime_accuracy.get('cross_asset', accuracy)
+        if cross_asset_accuracy > 0.85:
+            weight_updates['cross_asset'] = min(0.3, self.cross_asset_engine.weight * 1.05)
+        else:
+            weight_updates['cross_asset'] = max(0.1, self.cross_asset_engine.weight * 0.95)
+        
+        # Normalize weights to sum to 1.0
+        total_weight = sum(weight_updates.values())
+        for key in weight_updates:
+            weight_updates[key] /= total_weight
+        
+        # Apply weight updates
+        self.straddle_engine.weight = weight_updates.get('straddle', 0.4)
+        self.underlying_engine.weight = weight_updates.get('underlying', 0.4)
+        self.cross_asset_engine.weight = weight_updates.get('cross_asset', 0.2)
+        
+        # Update DTE-specific weights if provided
+        if hasattr(performance_feedback, 'dte_performance'):
+            self.dte_framework.update_dte_weights(performance_feedback.dte_performance)
+        
+        return {
+            'component_id': self.component_id,
+            'weights_updated': True,
+            'new_weights': weight_updates,
+            'timestamp': datetime.utcnow().isoformat()
+        }
 
     def _log_performance_compliance(self, performance_metrics: Component05PerformanceMetrics):
         """Log performance compliance details"""

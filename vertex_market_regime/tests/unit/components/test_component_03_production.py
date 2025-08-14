@@ -26,10 +26,10 @@ import warnings
 # Add src to path for imports
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 
-from production_oi_extractor import ProductionOIExtractor
-from cumulative_multistrike_analyzer import CumulativeMultiStrikeAnalyzer
-from institutional_flow_detector import InstitutionalFlowDetector
-from oi_pa_trending_engine import OIPATrendingEngine
+from src.components.component_03_oi_pa_trending.production_oi_extractor import ProductionOIExtractor
+from src.components.component_03_oi_pa_trending.cumulative_multistrike_analyzer import CumulativeMultiStrikeAnalyzer
+from src.components.component_03_oi_pa_trending.institutional_flow_detector import InstitutionalFlowDetector
+from src.components.component_03_oi_pa_trending.oi_pa_trending_engine import OIPATrendingEngine
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')

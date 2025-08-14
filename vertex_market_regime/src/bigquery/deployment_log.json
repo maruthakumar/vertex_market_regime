@@ -1,0 +1,128 @@
+[
+  {
+    "action": "create_dataset",
+    "dataset": "arched-bot-269016.market_regime_dev",
+    "status": "success",
+    "timestamp": 1755120255.869004
+  },
+  {
+    "table": "c1_features",
+    "status": "success",
+    "features": 150,
+    "partitioned": true,
+    "clustered": true,
+    "timestamp": 1755120256.372726
+  },
+  {
+    "table": "c2_features",
+    "status": "success",
+    "features": 98,
+    "partitioned": true,
+    "clustered": true,
+    "timestamp": 1755120256.875092
+  },
+  {
+    "table": "c3_features",
+    "status": "success",
+    "features": 105,
+    "partitioned": true,
+    "clustered": true,
+    "timestamp": 1755120257.375985
+  },
+  {
+    "table": "c4_features",
+    "status": "success",
+    "features": 87,
+    "partitioned": true,
+    "clustered": true,
+    "timestamp": 1755120257.8762188
+  },
+  {
+    "table": "c5_features",
+    "status": "success",
+    "features": 94,
+    "partitioned": true,
+    "clustered": true,
+    "timestamp": 1755120258.3812742
+  },
+  {
+    "table": "c6_features",
+    "status": "success",
+    "features": 220,
+    "partitioned": true,
+    "clustered": true,
+    "timestamp": 1755120258.883956
+  },
+  {
+    "table": "c7_features",
+    "status": "success",
+    "features": 130,
+    "partitioned": true,
+    "clustered": true,
+    "timestamp": 1755120259.385119
+  },
+  {
+    "table": "c8_features",
+    "status": "success",
+    "features": 48,
+    "partitioned": true,
+    "clustered": true,
+    "timestamp": 1755120259.887371
+  },
+  {
+    "table": "training_dataset",
+    "status": "success",
+    "features": 932,
+    "partitioned": true,
+    "clustered": true,
+    "timestamp": 1755120260.3925571
+  },
+  {
+    "action": "load_sample_data",
+    "table": "c1_features",
+    "rows_loaded": 1000,
+    "status": "success"
+  },
+  {
+    "action": "load_sample_data",
+    "table": "c2_features",
+    "rows_loaded": 1000,
+    "status": "success"
+  },
+  {
+    "action": "load_sample_data",
+    "table": "c3_features",
+    "rows_loaded": 1000,
+    "status": "success"
+  },
+  {
+    "action": "load_sample_data",
+    "table": "c4_features",
+    "rows_loaded": 1000,
+    "status": "success"
+  },
+  {
+    "action": "load_sample_data",
+    "table": "c5_features",
+    "rows_loaded": 1000,
+    "status": "success"
+  },
+  {
+    "action": "load_sample_data",
+    "table": "c6_features",
+    "rows_loaded": 1000,
+    "status": "success"
+  },
+  {
+    "action": "load_sample_data",
+    "table": "c7_features",
+    "rows_loaded": 1000,
+    "status": "success"
+  },
+  {
+    "action": "load_sample_data",
+    "table": "c8_features",
+    "rows_loaded": 1000,
+    "status": "success"
+  }
+]

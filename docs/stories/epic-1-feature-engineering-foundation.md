@@ -1,6 +1,6 @@
 # Epic 1: Feature Engineering Foundation
-**Duration:** Weeks 1-2  
-**Status:** Ready for Development  
+**Duration:** Weeks 1-2 (Phase 1), Weeks 3-6 (Phase 2)  
+**Status:** 🔄 PHASE 2 - Momentum & Correlation Enhancement (In Progress)  
 **Priority:** CRITICAL - Foundation for all subsequent components
 
 ## Epic Goal
@@ -14,7 +14,7 @@ Implement the full feature engineering pipeline for all 8 components using the l
 
 ### Deliverables
 - Feature Engineering Framework (shared utilities, schema registry, caching)
-- Component feature sets implemented and validated (total 774 features across 8 components)
+- Component feature sets implemented and validated (total 932 features across 8 components - Phase 1: 872 + Phase 2: 60 momentum enhancements)
 - Parity harness and unit tests for deterministic feature outputs
 - Performance baselines per component and overall
 
@@ -30,7 +30,7 @@ Contracts by component:
 - Component 3 (OI-PA Trending): institutional_flow_score, divergence_type, range_expansion_score, thresholds for flow reversals and divergence strength
 - Component 4 (IV Skew): skew_bias_score, term_structure_signal, iv_regime_level, thresholds for skew inversion and percentile bands
 - Component 5 (ATR-EMA-CPR): momentum_score, volatility_regime_score, confluence_score, thresholds for ATR band breaks and EMA confluence
-- Component 6 (Correlation): correlation_agreement_score, breakdown_alert, system_stability_score, thresholds for correlation breakdown/onset
+- Component 6 (Enhanced Correlation & Predictive Analysis): correlation_agreement_score, breakdown_alert, system_stability_score, gap_prediction_score, regime_transition_probability, thresholds for correlation breakdown/onset and regime transitions
 - Component 7 (Support/Resistance): level_strength_score, breakout_probability, thresholds for breakout/failed-break reclassifications
 - Component 8 (Master Integration inputs only in Epic 1): integration_feature_staging, proposed_transition_thresholds, component_weight_hints (final integration in Epic 3)
 
@@ -49,9 +49,35 @@ All outputs must be defined in the schema registry with names, types, ranges, an
 - Component 8: [mr_dte_adaptive_overlay_component8.md](../market_regime/mr_dte_adaptive_overlay_component8.md)
 
 ### Success Criteria
-- Per-component feature counts match specification (120/98/105/87/94/150/72/48)
+- Per-component feature counts match specification (Phase 1: 120/98/105/87/94/200+/72/48 | Phase 2: 150/98/105/87/94/220/130/48)
 - Parity tests pass across train/infer paths for all components
 - Performance: per-component budgets met locally; overall baseline recorded
+- ML model preparation: Feature vectors properly formatted for Vertex AI integration in Epic 3
+
+## 🚀 **PHASE 2 ENHANCEMENTS** (Epic Reopened - August 2025)
+
+### **Coordinated Enhancement Framework**:
+- **Component 1**: +30 momentum features (RSI/MACD across 4 timeframes, 10 parameters)
+- **Component 6**: +20 enhanced correlation features leveraging momentum data  
+- **Component 7**: +10 momentum-based support/resistance features
+- **Story 2.2**: BigQuery schema updates for all enhanced features
+
+### **Implementation Sequence**:
+1. Component 1 Momentum Enhancement (Week 1-1.5)
+2. Component 6 Correlation Enhancement (Week 2-2.5) 
+3. Component 7 Support/Resistance Enhancement (Week 3-3.5)
+4. Story 2.2 Schema Updates & Deployment (Week 4)
+
+### **Dependencies**:
+- Component 6 enhancements depend on Component 1 momentum features
+- Component 7 enhancements depend on both Component 1 momentum AND Component 6 correlation enhancements
+- Clear dependency chain: **Component 1 → Component 6 → Component 7**
+
+### **Performance Updates**:
+- Component 1: Processing budget increase 150ms → 190ms (approved)
+- Total system: 932 features with coordinated momentum/correlation analysis
+
+---
 
 ## Epic Stories
 
@@ -124,13 +150,20 @@ All outputs must be defined in the schema registry with names, types, ranges, an
 
 ---
 
-### Story 7: Component 6 Feature Engineering (150 Features)
-- 30x30 correlation matrix (expert-optimized 774 set backbone)  
-- Target: <180ms
+### Story 7: Component 6 Enhanced Correlation & Predictive Feature Engineering (200+ Features)
+- **Traditional Correlation Intelligence** (120 features): 4-timeframe correlation analysis, zone-based patterns, cross-component validation
+- **Predictive Straddle Intelligence** (50 features): Previous day close → current day open analysis, gap prediction, intraday evolution forecasting  
+- **Meta-Correlation Intelligence** (30 features): Confidence scoring, adaptive learning, regime classification enhancement
+- **6-Factor Overnight Integration**: SGX NIFTY + Dow Jones + News/VIX/USD-INR/Commodities
+- Target: <200ms (feature engineering only, ML inference in Epic 3)
 
 **Acceptance Criteria:**
-- [ ] 150 correlation features materialized and validated
-- [ ] Progressive computation stability (no explosion)
+- [ ] 200+ correlation and predictive features materialized and validated (120 + 50 + 30)
+- [ ] Gap-adjusted correlation framework operational with strike migration handling
+- [ ] 4-timeframe intraday correlation analysis (3min, 5min, 10min, 15min) functional
+- [ ] Zone-based correlation weighting (PRE_OPEN/MID_MORN/LUNCH/AFTERNOON/CLOSE) implemented
+- [ ] Previous day to opening correlation analysis with overnight factor integration
+- [ ] Feature vectors properly formatted for Vertex AI ML model integration in Epic 3
 
 ---
 

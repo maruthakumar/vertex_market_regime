@@ -1,11 +1,34 @@
-# Component 8: DTE-Adaptive Overlay System
-## Final Integration Layer for 8-Regime Strategic Classification
+# Component 8: Master Integration Feature Engineering Framework
+## Cross-Component Feature Integration for ML Regime Classification
+
+> Vertex AI Feature Engineering (Required): 48 master integration features must be engineered via Vertex AI Pipelines and managed in Vertex AI Feature Store with training/serving parity. Data: GCS Parquet → Arrow/RAPIDS.
 
 ### Overview
 
-Component 8 represents the **master integration engine** that combines all Components 1-7 into a unified 8-regime strategic overlay system. This component dynamically adapts its integration weights, regime classification logic, and decision-making based on current DTE, historical performance, and real-time market structure changes.
+Component 8 represents the **master integration feature engineering engine** that combines signals from all Components 1-7 into systematic integration features for ML-based regime classification. This component performs pure feature engineering to create cross-component interaction metrics, weight optimization features, and system coherence measurements.
 
-**Revolutionary Approach**: Unlike static regime classification systems, Component 8 uses **dynamic multi-component integration** with comprehensive historical learning that adapts to any market structure, creating the ultimate adaptive market regime detection system.
+**🎯 FEATURE ENGINEERING APPROACH**: Component 8 calculates component agreement scores, cross-component correlations, signal strength metrics, and integration confidence measures, letting Vertex AI ML models perform the final 8-regime classification (LVLD, HVC, VCPE, TBVE, TBVS, SCGS, PSED, CBV).
+
+## 🎯 **CRITICAL ARCHITECTURAL APPROACH: FEATURE ENGINEERING ONLY**
+
+### **✅ WHAT COMPONENT 8 DOES (Feature Engineering)**:
+- **Calculate component agreement scores** across all 7 components without regime classification
+- **Measure cross-component correlation strength** and signal coherence metrics
+- **Extract DTE-specific weight optimization features** based on historical performance
+- **Compute system stability metrics, confidence scores, and integration quality measures**
+- **Generate 48 master integration features** for ML model consumption
+
+### **❌ WHAT COMPONENT 8 DOES NOT DO**:
+- **NO 8-regime classification logic** (e.g., if component_agreement > 0.7 then "LVLD")
+- **NO adaptive weight decision making** - only weight performance measurements
+- **NO regime transition prediction** - only component transition probability metrics
+- **NO final regime selection** - all classification left to Vertex AI ML models
+
+### **🚀 VERTEX AI ML MODEL RESPONSIBILITIES** (Epic 3):
+- **8-Regime Classification**: Final classification (LVLD, HVC, VCPE, TBVE, TBVS, SCGS, PSED, CBV) from all component features
+- **Dynamic Weight Learning**: Optimize component weights based on performance features
+- **Regime Transition Detection**: Predict regime changes from component agreement patterns
+- **System Integration**: Combine all 824+ features (Components 1-8) for comprehensive regime analysis
 
 ---
 

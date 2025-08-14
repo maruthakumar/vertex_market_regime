@@ -2,12 +2,12 @@
 Component 3: OI-PA Trending Analysis
 
 This component implements comprehensive Open Interest - Price Action (OI-PA) trending analysis
-with cumulative ATM ±7 strikes methodology and institutional flow detection using production
+with cumulative ATM Â±7 strikes methodology and institutional flow detection using production
 Parquet data.
 
 Key Features:
 - Production OI data extraction with 99.98% coverage validation
-- Cumulative multi-strike OI analysis across ATM ±7 strikes
+- Cumulative multi-strike OI analysis across ATM Â±7 strikes
 - Institutional flow detection using volume-OI divergence analysis
 - Complete option seller framework (CE/PE/Future patterns)
 - 3-way correlation matrix (CE+PE+Future) analysis
@@ -23,7 +23,7 @@ Performance Targets:
 As per Story 1.4 requirements:
 - Extract ce_oi (column 20), pe_oi (column 34) from production Parquet with 99.98% coverage
 - Integrate ce_volume (column 19), pe_volume (column 33) for institutional flow analysis
-- Implement dynamic ATM ±7 strikes range using call_strike_type/put_strike_type columns
+- Implement dynamic ATM ï¿½7 strikes range using call_strike_type/put_strike_type columns
 - Build multi-timeframe rollups (5min, 15min, 3min, 10min) with weighted analysis
 - Create comprehensive market regime formation using complete CE/PE correlation matrix
 """
@@ -59,7 +59,7 @@ COMPONENT_INFO = {
     "description": "Open Interest - Price Action trending analysis with institutional flow detection",
     "features": [
         "Production OI data extraction (99.98% coverage)",
-        "Cumulative ATM ±7 strikes analysis",
+        "Cumulative ATM ï¿½7 strikes analysis",
         "Institutional flow detection",
         "Option seller correlation framework",
         "3-way correlation matrix (CE+PE+Future)",

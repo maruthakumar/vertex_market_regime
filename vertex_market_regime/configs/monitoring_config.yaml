@@ -1,0 +1,391 @@
+# Monitoring and Alerting Configuration
+# Story 2.5: IAM, Artifact Registry, Budgets/Monitoring
+# Comprehensive monitoring setup for Vertex AI ML infrastructure
+
+project_id: "arched-bot-269016"
+region: "us-central1"
+
+# Cloud Monitoring Workspace Configuration
+monitoring_workspace:
+  display_name: "Market Regime ML Monitoring"
+  description: "Monitoring workspace for Vertex AI ML infrastructure"
+  
+  notification_channels:
+    email_ml_team:
+      type: "email"
+      display_name: "ML Team Email"
+      labels:
+        email_address: "ml-team@company.com"
+        
+    email_oncall:
+      type: "email"
+      display_name: "On-Call Email"
+      labels:
+        email_address: "oncall@company.com"
+        
+    slack_alerts:
+      type: "slack"
+      display_name: "ML Team Slack"
+      labels:
+        channel_name: "#ml-alerts"
+        url: "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK"
+
+# Custom Metrics for Training Pipeline Monitoring
+custom_metrics:
+  training_pipeline_metrics:
+    - name: "custom.googleapis.com/ml/training_job_duration"
+      display_name: "Training Job Duration"
+      description: "Duration of ML training jobs in minutes"
+      metric_kind: "GAUGE"
+      value_type: "DOUBLE"
+      unit: "min"
+      labels:
+        - key: "component"
+          description: "ML component name (component_01, component_02, etc.)"
+        - key: "job_type"
+          description: "Type of training job (custom, hyperparameter_tuning)"
+        - key: "status"
+          description: "Job status (running, succeeded, failed)"
+          
+    - name: "custom.googleapis.com/ml/training_job_cost"
+      display_name: "Training Job Cost"
+      description: "Cost of ML training jobs in USD"
+      metric_kind: "GAUGE"
+      value_type: "DOUBLE"
+      unit: "USD"
+      labels:
+        - key: "component"
+          description: "ML component name"
+        - key: "resource_type"
+          description: "Resource type (cpu, gpu, memory)"
+          
+    - name: "custom.googleapis.com/ml/model_accuracy"
+      display_name: "Model Accuracy"
+      description: "ML model accuracy percentage"
+      metric_kind: "GAUGE"
+      value_type: "DOUBLE"
+      unit: "%"
+      labels:
+        - key: "component"
+          description: "ML component name"
+        - key: "model_version"
+          description: "Model version"
+          
+    - name: "custom.googleapis.com/ml/feature_store_latency"
+      display_name: "Feature Store Latency"
+      description: "Feature Store online serving latency"
+      metric_kind: "GAUGE"
+      value_type: "DOUBLE"
+      unit: "ms"
+      labels:
+        - key: "feature_group"
+          description: "Feature group name"
+        - key: "operation"
+          description: "Operation type (read, write)"
+
+# Alert Policies
+alert_policies:
+  training_pipeline_alerts:
+    - name: "Training Job Failure Rate High"
+      display_name: "Training Job Failure Rate High"
+      condition:
+        display_name: "Training job failure rate > 20%"
+        filter: "custom.googleapis.com/ml/training_job_duration AND status=\"failed\""
+        comparison: "COMPARISON_GT"
+        threshold_value: 0.2
+        duration: "300s"
+        aggregation:
+          alignment_period: "300s"
+          per_series_aligner: "ALIGN_RATE"
+      notification_channels: ["email_ml_team", "slack_alerts"]
+      severity: "WARNING"
+      documentation: "High failure rate in ML training jobs. Check logs and resource availability."
+      
+    - name: "Training Job Duration Excessive"
+      display_name: "Training Job Duration Excessive"
+      condition:
+        display_name: "Training job duration > 120 minutes"
+        filter: "custom.googleapis.com/ml/training_job_duration"
+        comparison: "COMPARISON_GT"
+        threshold_value: 120
+        duration: "60s"
+        aggregation:
+          alignment_period: "60s"
+          per_series_aligner: "ALIGN_MAX"
+      notification_channels: ["email_ml_team"]
+      severity: "INFO"
+      documentation: "Training job running longer than expected. Monitor for potential issues."
+      
+    - name: "Model Accuracy Degradation"
+      display_name: "Model Accuracy Degradation"
+      condition:
+        display_name: "Model accuracy < 85%"
+        filter: "custom.googleapis.com/ml/model_accuracy"
+        comparison: "COMPARISON_LT"
+        threshold_value: 85
+        duration: "300s"
+        aggregation:
+          alignment_period: "300s"
+          per_series_aligner: "ALIGN_MEAN"
+      notification_channels: ["email_ml_team", "email_oncall"]
+      severity: "CRITICAL"
+      documentation: "Model accuracy below acceptable threshold. Investigate data quality and model performance."
+
+  infrastructure_alerts:
+    - name: "Vertex AI API Error Rate High"
+      display_name: "Vertex AI API Error Rate High"
+      condition:
+        display_name: "Vertex AI API error rate > 5%"
+        filter: "serviceruntime.googleapis.com/api/request_count AND service=\"aiplatform.googleapis.com\" AND response_code_class=\"4xx\" OR response_code_class=\"5xx\""
+        comparison: "COMPARISON_GT"
+        threshold_value: 0.05
+        duration: "300s"
+        aggregation:
+          alignment_period: "300s"
+          per_series_aligner: "ALIGN_RATE"
+      notification_channels: ["email_ml_team", "slack_alerts"]
+      severity: "WARNING"
+      documentation: "High error rate in Vertex AI API calls. Check service status and authentication."
+      
+    - name: "Feature Store Latency High"
+      display_name: "Feature Store Latency High"
+      condition:
+        display_name: "Feature store latency > 100ms"
+        filter: "custom.googleapis.com/ml/feature_store_latency"
+        comparison: "COMPARISON_GT"
+        threshold_value: 100
+        duration: "300s"
+        aggregation:
+          alignment_period: "300s"
+          per_series_aligner: "ALIGN_PERCENTILE_95"
+      notification_channels: ["email_ml_team"]
+      severity: "WARNING"
+      documentation: "Feature Store latency above target. Check online serving performance."
+      
+    - name: "Artifact Registry Storage Quota"
+      display_name: "Artifact Registry Storage Quota High"
+      condition:
+        display_name: "Artifact Registry storage > 80% of quota"
+        filter: "artifactregistry.googleapis.com/repository/storage_utilization_by_repository"
+        comparison: "COMPARISON_GT"
+        threshold_value: 0.8
+        duration: "3600s"
+        aggregation:
+          alignment_period: "3600s"
+          per_series_aligner: "ALIGN_MEAN"
+      notification_channels: ["email_ml_team"]
+      severity: "WARNING"
+      documentation: "Artifact Registry storage approaching quota. Clean up old images or increase quota."
+
+# Service Level Indicators (SLIs) and Objectives (SLOs)
+sli_slo_definitions:
+  training_pipeline_slos:
+    - name: "Training Job Success Rate"
+      description: "Percentage of training jobs that complete successfully"
+      sli:
+        metric: "custom.googleapis.com/ml/training_job_duration"
+        filter: "status=\"succeeded\" OR status=\"failed\""
+        good_total_ratio:
+          good_service_filter: "status=\"succeeded\""
+          total_service_filter: "status=\"succeeded\" OR status=\"failed\""
+      slo:
+        target: 0.95  # 95% success rate
+        rolling_period: "30d"
+        
+    - name: "Training Job Performance"
+      description: "Training jobs complete within performance budget"
+      sli:
+        metric: "custom.googleapis.com/ml/training_job_duration"
+        threshold:
+          value: 60  # 60 minutes
+          comparison: "COMPARISON_LT"
+      slo:
+        target: 0.90  # 90% of jobs complete within 60 minutes
+        rolling_period: "7d"
+        
+    - name: "Model Accuracy SLO"
+      description: "Model accuracy meets business requirements"
+      sli:
+        metric: "custom.googleapis.com/ml/model_accuracy"
+        threshold:
+          value: 87  # 87% accuracy threshold
+          comparison: "COMPARISON_GT"
+      slo:
+        target: 0.99  # 99% of time accuracy > 87%
+        rolling_period: "30d"
+
+  infrastructure_slos:
+    - name: "Vertex AI API Availability"
+      description: "Vertex AI API requests succeed"
+      sli:
+        metric: "serviceruntime.googleapis.com/api/request_count"
+        filter: "service=\"aiplatform.googleapis.com\""
+        good_total_ratio:
+          good_service_filter: "response_code_class=\"2xx\""
+      slo:
+        target: 0.999  # 99.9% availability
+        rolling_period: "30d"
+        
+    - name: "Feature Store Latency SLO"
+      description: "Feature Store responds within latency budget"
+      sli:
+        metric: "custom.googleapis.com/ml/feature_store_latency"
+        threshold:
+          value: 50  # 50ms
+          comparison: "COMPARISON_LT"
+      slo:
+        target: 0.95  # 95% of requests < 50ms
+        rolling_period: "7d"
+
+# Dashboards
+dashboards:
+  ml_operations_overview:
+    display_name: "ML Operations Overview"
+    description: "High-level overview of ML infrastructure health"
+    widgets:
+      - title: "Training Jobs Status"
+        type: "scorecard"
+        metric: "custom.googleapis.com/ml/training_job_duration"
+        aggregation: "count"
+        group_by: ["status"]
+        
+      - title: "Training Job Duration Trend"
+        type: "xy_chart"
+        metric: "custom.googleapis.com/ml/training_job_duration"
+        aggregation: "mean"
+        time_range: "24h"
+        
+      - title: "Model Accuracy by Component"
+        type: "xy_chart"
+        metric: "custom.googleapis.com/ml/model_accuracy"
+        aggregation: "latest"
+        group_by: ["component"]
+        
+      - title: "Vertex AI API Error Rate"
+        type: "xy_chart"
+        metric: "serviceruntime.googleapis.com/api/request_count"
+        filter: "service=\"aiplatform.googleapis.com\" AND response_code_class!=\"2xx\""
+        aggregation: "rate"
+        time_range: "6h"
+
+  component_performance:
+    display_name: "Component Performance Dashboard"
+    description: "Detailed performance metrics for each ML component"
+    widgets:
+      - title: "Component 01 - Triple Straddle Performance"
+        type: "table"
+        metrics:
+          - "custom.googleapis.com/ml/training_job_duration"
+          - "custom.googleapis.com/ml/model_accuracy"
+          - "custom.googleapis.com/ml/training_job_cost"
+        filter: "component=\"component_01\""
+        
+      - title: "Component 02 - Greeks Sentiment Performance"
+        type: "table"
+        metrics:
+          - "custom.googleapis.com/ml/training_job_duration"
+          - "custom.googleapis.com/ml/model_accuracy"
+          - "custom.googleapis.com/ml/training_job_cost"
+        filter: "component=\"component_02\""
+        
+      - title: "All Components Cost Comparison"
+        type: "stacked_bar"
+        metric: "custom.googleapis.com/ml/training_job_cost"
+        aggregation: "sum"
+        group_by: ["component"]
+        time_range: "30d"
+
+  infrastructure_health:
+    display_name: "Infrastructure Health Dashboard"
+    description: "Infrastructure and service health monitoring"
+    widgets:
+      - title: "Vertex AI API Request Volume"
+        type: "xy_chart"
+        metric: "serviceruntime.googleapis.com/api/request_count"
+        filter: "service=\"aiplatform.googleapis.com\""
+        aggregation: "rate"
+        
+      - title: "Feature Store Latency Percentiles"
+        type: "xy_chart"
+        metric: "custom.googleapis.com/ml/feature_store_latency"
+        aggregations: ["percentile_50", "percentile_95", "percentile_99"]
+        
+      - title: "Artifact Registry Storage Usage"
+        type: "gauge"
+        metric: "artifactregistry.googleapis.com/repository/storage_utilization_by_repository"
+        aggregation: "latest"
+        
+      - title: "BigQuery Slot Utilization"
+        type: "xy_chart"
+        metric: "bigquery.googleapis.com/slots/allocated"
+        aggregation: "mean"
+        time_range: "24h"
+
+# Log-based Metrics
+log_based_metrics:
+  - name: "training_job_errors"
+    description: "Count of training job errors from logs"
+    filter: "resource.type=\"aiplatform_training_job\" AND severity=\"ERROR\""
+    metric_descriptor:
+      metric_kind: "GAUGE"
+      value_type: "INT64"
+    label_extractors:
+      component: "EXTRACT(jsonPayload.component)"
+      error_type: "EXTRACT(jsonPayload.error_type)"
+      
+  - name: "security_violations"
+    description: "Count of security policy violations"
+    filter: "protoPayload.serviceName=\"iam.googleapis.com\" AND protoPayload.response.error.code!=0"
+    metric_descriptor:
+      metric_kind: "GAUGE"
+      value_type: "INT64"
+    label_extractors:
+      violation_type: "EXTRACT(protoPayload.methodName)"
+
+# Uptime Checks
+uptime_checks:
+  - name: "Vertex AI API Health Check"
+    display_name: "Vertex AI API Health"
+    http_check:
+      path: "/healthz"
+      port: 443
+      use_ssl: true
+    monitored_resource:
+      type: "uptime_url"
+      labels:
+        project_id: "arched-bot-269016"
+        host: "aiplatform.googleapis.com"
+    period: "60s"
+    timeout: "10s"
+    
+  - name: "Feature Store Health Check"
+    display_name: "Feature Store Health"
+    http_check:
+      path: "/v1/projects/arched-bot-269016/locations/us-central1/featurestores"
+      port: 443
+      use_ssl: true
+      headers:
+        Authorization: "Bearer $(gcloud auth print-access-token)"
+    monitored_resource:
+      type: "uptime_url"
+      labels:
+        project_id: "arched-bot-269016"
+        host: "aiplatform.googleapis.com"
+    period: "300s"
+    timeout: "30s"
+
+# Error Reporting Configuration
+error_reporting:
+  enabled: true
+  notification_settings:
+    email_notifications: true
+    email_addresses: ["ml-team@company.com"]
+  
+  filters:
+    - name: "Training Pipeline Errors"
+      filter: "resource.type=\"aiplatform_training_job\""
+      
+    - name: "Serving Errors"
+      filter: "resource.type=\"aiplatform_model_endpoint\""
+
+generated_date: "2025-08-13"

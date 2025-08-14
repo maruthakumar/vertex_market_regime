@@ -36,6 +36,7 @@ from .dynamic_weighting import DynamicWeightingSystem, WeightingAnalysisResult
 from .ema_analysis import RollingStraddleEMAEngine, RollingStraddleEMAAnalysis  
 from .vwap_analysis import RollingStraddleVWAPEngine, RollingStraddleVWAPAnalysis
 from .pivot_analysis import RollingStraddlePivotEngine, RollingStraddlePivotAnalysis
+from .momentum_analysis import MomentumAnalysisEngine, MomentumAnalysisResult
 
 
 @dataclass
@@ -49,8 +50,9 @@ class Component1AnalysisResult:
     ema_analysis: RollingStraddleEMAAnalysis
     vwap_analysis: RollingStraddleVWAPAnalysis
     pivot_analysis: RollingStraddlePivotAnalysis
+    momentum_analysis: MomentumAnalysisResult
     
-    # Final feature vector (exactly 120 features)
+    # Final feature vector (now 150 features: 120 + 30 momentum)
     feature_vector: FeatureVector
     
     # Component performance metrics
@@ -96,8 +98,8 @@ class Component01TripleStraddleAnalyzer(BaseMarketRegimeComponent):
         component_config.update({
             'component_id': 1,
             'component_name': 'Component01TripleStraddleAnalyzer',
-            'feature_count': 120,  # Exactly 120 features as per story
-            'processing_budget_ms': 150,  # Component budget
+            'feature_count': 150,  # Updated: 120 + 30 momentum features
+            'processing_budget_ms': 190,  # Updated budget for Phase 2
             'memory_budget_mb': 512      # Component memory budget
         })
         
@@ -106,8 +108,8 @@ class Component01TripleStraddleAnalyzer(BaseMarketRegimeComponent):
         # Initialize sub-engines
         self._initialize_engines()
         
-        # Feature configuration
-        self.expected_feature_count = 120
+        # Feature configuration (Phase 2 Enhancement)
+        self.expected_feature_count = 150
         self.feature_categories = {
             'rolling_straddle_core': 15,     # Core straddle features
             'dynamic_weighting': 20,         # 10-component weighting features
@@ -115,7 +117,8 @@ class Component01TripleStraddleAnalyzer(BaseMarketRegimeComponent):
             'vwap_analysis': 25,             # VWAP features and volume analysis
             'pivot_analysis': 20,            # Pivot and CPR features
             'multi_timeframe': 10,           # Multi-timeframe features
-            'dte_framework': 5               # DTE-specific features
+            'dte_framework': 5,              # DTE-specific features
+            'momentum_analysis': 30          # NEW: RSI/MACD momentum features
         }
         
         # Performance tracking
@@ -164,7 +167,18 @@ class Component01TripleStraddleAnalyzer(BaseMarketRegimeComponent):
             'processing_budget_ms': 25
         })
         
-        self.logger.info("All sub-engines initialized successfully")
+        self.momentum_engine = MomentumAnalysisEngine({
+            **base_config,
+            'momentum_processing_budget_ms': 40,  # 40ms budget for momentum analysis
+            'rsi_period': 14,
+            'macd_fast_period': 12,
+            'macd_slow_period': 26,
+            'macd_signal_period': 9,
+            'rsi_overbought': 70,
+            'rsi_oversold': 30
+        })
+        
+        self.logger.info("All sub-engines initialized successfully (including momentum engine)")
     
     async def analyze(self, market_data: Any) -> ComponentAnalysisResult:
         """
@@ -224,8 +238,8 @@ class Component01TripleStraddleAnalyzer(BaseMarketRegimeComponent):
                 'future_volume': straddle_time_series.volume_series
             }
             
-            # Step 5: Run all analysis engines in parallel
-            self.logger.info("Running parallel analysis engines...")
+            # Step 5: Run all analysis engines in parallel (including momentum)
+            self.logger.info("Running parallel analysis engines with momentum analysis...")
             
             # Create analysis tasks
             weighting_task = self.weighting_system.calculate_dynamic_weights(
@@ -242,32 +256,37 @@ class Component01TripleStraddleAnalyzer(BaseMarketRegimeComponent):
                 straddle_data, futures_data, None, straddle_time_series.timestamps
             )
             
-            # Execute tasks concurrently
-            weighting_result, ema_result, vwap_result, pivot_result = await asyncio.gather(
-                weighting_task, ema_task, vwap_task, pivot_task
+            # NEW: Momentum analysis task (Phase 2 enhancement)
+            momentum_task = self.momentum_engine.analyze_momentum(
+                straddle_data, volume_data, straddle_time_series.timestamps
             )
             
-            # Step 6: Generate feature vector (exactly 120 features)
-            self.logger.info("Generating 120-feature vector...")
+            # Execute tasks concurrently
+            weighting_result, ema_result, vwap_result, pivot_result, momentum_result = await asyncio.gather(
+                weighting_task, ema_task, vwap_task, pivot_task, momentum_task
+            )
+            
+            # Step 6: Generate feature vector (150 features: 120 + 30 momentum)
+            self.logger.info("Generating 150-feature vector with momentum analysis...")
             feature_vector = await self._generate_feature_vector(
-                straddle_time_series, weighting_result, ema_result, vwap_result, pivot_result
+                straddle_time_series, weighting_result, ema_result, vwap_result, pivot_result, momentum_result
             )
             
             # Step 7: Calculate performance metrics
             processing_time = (time.time() - start_time) * 1000
             memory_usage = self._get_memory_usage()
             
-            # Step 8: Calculate analysis scores
+            # Step 8: Calculate analysis scores (including momentum)
             analysis_score, confidence = self._calculate_analysis_scores(
-                weighting_result, ema_result, vwap_result, pivot_result
+                weighting_result, ema_result, vwap_result, pivot_result, momentum_result
             )
             
             # Track performance
             self._track_performance(processing_time, success=True)
             self.accuracy_scores.append(analysis_score)
             
-            # Validate performance targets
-            if processing_time > self.config.get('processing_budget_ms', 150):
+            # Validate performance targets (updated for Phase 2)
+            if processing_time > self.config.get('processing_budget_ms', 190):
                 self.logger.warning(f"Processing time {processing_time:.2f}ms exceeded budget")
             
             if memory_usage > self.config.get('memory_budget_mb', 512):
@@ -280,6 +299,7 @@ class Component01TripleStraddleAnalyzer(BaseMarketRegimeComponent):
                 ema_analysis=ema_result,
                 vwap_analysis=vwap_result,
                 pivot_analysis=pivot_result,
+                momentum_analysis=momentum_result,
                 feature_vector=feature_vector,
                 total_processing_time_ms=processing_time,
                 memory_usage_mb=memory_usage,
@@ -290,9 +310,9 @@ class Component01TripleStraddleAnalyzer(BaseMarketRegimeComponent):
                     'component_id': 1,
                     'feature_categories': self.feature_categories,
                     'performance_targets_met': {
-                        'processing_time': processing_time <= 150,
+                        'processing_time': processing_time <= 190,  # Updated budget
                         'memory_usage': memory_usage <= 512,
-                        'feature_count': len(feature_vector.features) == 120
+                        'feature_count': len(feature_vector.features) == 150  # Updated count
                     }
                 }
             )
@@ -319,13 +339,13 @@ class Component01TripleStraddleAnalyzer(BaseMarketRegimeComponent):
     
     async def extract_features(self, market_data: Any) -> FeatureVector:
         """
-        Extract 120 features from Component 1 analysis
+        Extract 150 features from Component 1 analysis (Phase 2 Enhanced)
         
         Args:
             market_data: Market data input
             
         Returns:
-            FeatureVector with exactly 120 features
+            FeatureVector with exactly 150 features (120 original + 30 momentum)
         """
         # Run full analysis to get features
         analysis_result = await self.analyze(market_data)
@@ -371,12 +391,13 @@ class Component01TripleStraddleAnalyzer(BaseMarketRegimeComponent):
                                      weighting: WeightingAnalysisResult,
                                      ema: RollingStraddleEMAAnalysis,
                                      vwap: RollingStraddleVWAPAnalysis,
-                                     pivot: RollingStraddlePivotAnalysis) -> FeatureVector:
+                                     pivot: RollingStraddlePivotAnalysis,
+                                     momentum: MomentumAnalysisResult) -> FeatureVector:
         """
-        Generate exactly 120 features from all analysis components
+        Generate exactly 150 features from all analysis components (Phase 2 Enhanced)
         
         Returns:
-            FeatureVector with 120 features
+            FeatureVector with 150 features (120 original + 30 momentum)
         """
         features = []
         feature_names = []
@@ -526,13 +547,34 @@ class Component01TripleStraddleAnalyzer(BaseMarketRegimeComponent):
         features.extend(dte_features)
         feature_names.extend(dte_names)
         
-        # Ensure exactly 120 features
-        if len(features) != 120:
-            if len(features) > 120:
-                features = features[:120]
-                feature_names = feature_names[:120]
+        # Category 8: NEW - Momentum Analysis Features (30 features)
+        momentum_features_array = momentum.momentum_features
+        momentum_feature_names = momentum.feature_names
+        
+        # Ensure exactly 30 momentum features
+        if len(momentum_features_array) != 30:
+            if len(momentum_features_array) > 30:
+                momentum_features_array = momentum_features_array[:30]
+                momentum_feature_names = momentum_feature_names[:30]
             else:
-                while len(features) < 120:
+                momentum_features_list = list(momentum_features_array)
+                momentum_names_list = list(momentum_feature_names)
+                while len(momentum_features_list) < 30:
+                    momentum_features_list.append(0.0)
+                    momentum_names_list.append(f'momentum_padding_{len(momentum_features_list)}')
+                momentum_features_array = np.array(momentum_features_list)
+                momentum_feature_names = momentum_names_list
+        
+        features.extend(momentum_features_array.tolist())
+        feature_names.extend(momentum_feature_names)
+        
+        # Ensure exactly 150 features (120 original + 30 momentum)
+        if len(features) != 150:
+            if len(features) > 150:
+                features = features[:150]
+                feature_names = feature_names[:150]
+            else:
+                while len(features) < 150:
                     features.append(0.0)
                     feature_names.append(f'padding_feature_{len(features)}')
         
@@ -546,18 +588,19 @@ class Component01TripleStraddleAnalyzer(BaseMarketRegimeComponent):
         return FeatureVector(
             features=feature_array,
             feature_names=feature_names,
-            feature_count=120,
+            feature_count=150,
             processing_time_ms=sum([
                 straddle_ts.processing_time_ms,
                 weighting.processing_time_ms,
                 ema.processing_time_ms,
                 vwap.processing_time_ms,
-                pivot.processing_time_ms
+                pivot.processing_time_ms,
+                momentum.total_processing_time_ms
             ]),
             metadata={
                 'categories': self.feature_categories,
                 'actual_feature_count': len(features),
-                'target_feature_count': 120,
+                'target_feature_count': 150,
                 'feature_validation': 'passed'
             }
         )
@@ -566,36 +609,42 @@ class Component01TripleStraddleAnalyzer(BaseMarketRegimeComponent):
                                  weighting: WeightingAnalysisResult,
                                  ema: RollingStraddleEMAAnalysis,
                                  vwap: RollingStraddleVWAPAnalysis,
-                                 pivot: RollingStraddlePivotAnalysis) -> Tuple[float, float]:
+                                 pivot: RollingStraddlePivotAnalysis,
+                                 momentum: MomentumAnalysisResult) -> Tuple[float, float]:
         """
-        Calculate overall analysis score and confidence
+        Calculate overall analysis score and confidence (Phase 2 Enhanced)
         
         Returns:
             Tuple of (analysis_score, confidence_score)
         """
         try:
-            # Weighted scoring
+            # Weighted scoring (Phase 2: adjusted weights to include momentum)
             scores = []
             confidences = []
             
-            # Weighting system score
-            scores.append(weighting.total_score * 0.25)
+            # Weighting system score (20% weight)
+            scores.append(weighting.total_score * 0.20)
             confidences.append(weighting.confidence)
             
-            # EMA analysis score
+            # EMA analysis score (20% weight)
             ema_score = (ema.overall_alignment_score + 1.0) / 2.0  # Normalize to [0, 1]
-            scores.append(ema_score * 0.25)
+            scores.append(ema_score * 0.20)
             confidences.append(ema.trend_consistency)
             
-            # VWAP analysis score
+            # VWAP analysis score (20% weight)
             vwap_score = 1.0 - ema.overall_deviation_score  # Inverse deviation
-            scores.append(vwap_score * 0.25)
+            scores.append(vwap_score * 0.20)
             confidences.append(abs(vwap.vwap_trend_alignment))
             
-            # Pivot analysis score  
+            # Pivot analysis score (20% weight)
             pivot_score = (pivot.overall_pivot_alignment + 1.0) / 2.0  # Normalize to [0, 1]
-            scores.append(pivot_score * 0.25)
+            scores.append(pivot_score * 0.20)
             confidences.append(pivot.pivot_confluence_strength)
+            
+            # NEW: Momentum analysis score (20% weight)
+            momentum_score = momentum.momentum_confidence
+            scores.append(momentum_score * 0.20)
+            confidences.append(momentum.signal_quality)
             
             # Calculate final scores
             final_score = float(np.sum(scores))

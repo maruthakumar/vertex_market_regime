@@ -1,0 +1,296 @@
+# Security Configuration for Vertex AI Infrastructure
+# Story 2.5: IAM, Artifact Registry, Budgets/Monitoring
+# Comprehensive security monitoring and audit logging
+
+project_id: "arched-bot-269016"
+region: "us-central1"
+
+# Audit Logging Configuration
+audit_logging:
+  enabled_services:
+    - service: "aiplatform.googleapis.com"
+      description: "Vertex AI operations"
+      log_types:
+        - "ADMIN_READ"
+        - "DATA_READ" 
+        - "DATA_WRITE"
+      retention_days: 2555  # 7 years
+      
+    - service: "artifactregistry.googleapis.com"
+      description: "Artifact Registry operations"
+      log_types:
+        - "ADMIN_READ"
+        - "DATA_READ"
+        - "DATA_WRITE"
+      retention_days: 2555
+      
+    - service: "storage.googleapis.com"
+      description: "Cloud Storage operations"
+      log_types:
+        - "ADMIN_READ"
+        - "DATA_READ"
+        - "DATA_WRITE"
+      retention_days: 2555
+      
+    - service: "bigquery.googleapis.com"
+      description: "BigQuery operations"
+      log_types:
+        - "ADMIN_READ"
+        - "DATA_READ"
+        - "DATA_WRITE"
+      retention_days: 2555
+      
+    - service: "iam.googleapis.com"
+      description: "IAM operations"
+      log_types:
+        - "ADMIN_READ"
+        - "DATA_READ"
+        - "DATA_WRITE"
+      retention_days: 2555
+
+  log_sinks:
+    security_sink:
+      name: "security-audit-logs"
+      destination: "projects/arched-bot-269016/datasets/security_audit_logs"
+      filter: |
+        (protoPayload.serviceName="aiplatform.googleapis.com" OR
+         protoPayload.serviceName="artifactregistry.googleapis.com" OR
+         protoPayload.serviceName="iam.googleapis.com") AND
+        (protoPayload.methodName!="google.logging.v2.ConfigServiceV2.ListSinks")
+      unique_writer_identity: true
+
+# Security Monitoring Alerts
+security_alerts:
+  iam_alerts:
+    - name: "Privileged Role Assignment"
+      description: "Alert when admin or owner roles are assigned"
+      condition: |
+        resource.type="gce_project" AND
+        protoPayload.serviceName="cloudresourcemanager.googleapis.com" AND
+        protoPayload.methodName="SetIamPolicy" AND
+        (protoPayload.request.policy.bindings.role="roles/owner" OR
+         protoPayload.request.policy.bindings.role="roles/editor" OR
+         protoPayload.request.policy.bindings.role="roles/iam.securityAdmin")
+      severity: "CRITICAL"
+      notification_channels: ["email", "slack", "pagerduty"]
+      
+    - name: "Service Account Key Creation"
+      description: "Alert when service account keys are created"
+      condition: |
+        protoPayload.serviceName="iam.googleapis.com" AND
+        protoPayload.methodName="google.iam.admin.v1.IAM.CreateServiceAccountKey"
+      severity: "HIGH"
+      notification_channels: ["email", "slack"]
+      
+    - name: "Unusual IAM Changes"
+      description: "Alert on unexpected IAM policy changes"
+      condition: |
+        protoPayload.serviceName="iam.googleapis.com" AND
+        (protoPayload.methodName="SetIamPolicy" OR
+         protoPayload.methodName="google.iam.admin.v1.IAM.CreateRole" OR
+         protoPayload.methodName="google.iam.admin.v1.IAM.UpdateRole") AND
+        NOT (protoPayload.authenticationInfo.principalEmail=~".*@arched-bot-269016.iam.gserviceaccount.com")
+      severity: "HIGH"
+      notification_channels: ["email", "slack"]
+
+  vertex_ai_alerts:
+    - name: "Unauthorized Vertex AI Access"
+      description: "Alert on failed Vertex AI operations"
+      condition: |
+        protoPayload.serviceName="aiplatform.googleapis.com" AND
+        protoPayload.response.error.code!=0
+      severity: "MEDIUM"
+      notification_channels: ["email"]
+      
+    - name: "Large Training Job Submitted"
+      description: "Alert on training jobs exceeding resource limits"
+      condition: |
+        protoPayload.serviceName="aiplatform.googleapis.com" AND
+        protoPayload.methodName="google.cloud.aiplatform.v1.JobService.CreateCustomJob" AND
+        (protoPayload.request.job.jobSpec.workerPoolSpecs.machineSpec.machineType=~".*n1-highmem-.*" OR
+         protoPayload.request.job.jobSpec.workerPoolSpecs.replicaCount>5)
+      severity: "MEDIUM"
+      notification_channels: ["email"]
+
+  artifact_registry_alerts:
+    - name: "Container Image Vulnerability"
+      description: "Alert on critical vulnerabilities in container images"
+      condition: |
+        protoPayload.serviceName="containeranalysis.googleapis.com" AND
+        protoPayload.methodName="grafeas.v1.Grafeas.CreateOccurrence" AND
+        protoPayload.request.occurrence.vulnerability.severity="CRITICAL"
+      severity: "HIGH"
+      notification_channels: ["email", "slack"]
+      
+    - name: "Unauthorized Registry Access"
+      description: "Alert on failed registry operations"
+      condition: |
+        protoPayload.serviceName="artifactregistry.googleapis.com" AND
+        protoPayload.response.error.code!=0 AND
+        NOT (protoPayload.response.error.code=7)  # Exclude permission denied for normal operations
+      severity: "MEDIUM"
+      notification_channels: ["email"]
+
+# Access Logging Configuration
+access_logging:
+  vertex_ai:
+    enabled: true
+    log_data_access: true
+    log_admin_access: true
+    
+  artifact_registry:
+    enabled: true
+    log_push_operations: true
+    log_pull_operations: true
+    log_admin_operations: true
+    
+  storage:
+    enabled: true
+    log_bucket_access: true
+    log_object_access: false  # Too verbose for ML data access
+    
+  bigquery:
+    enabled: true
+    log_query_operations: true
+    log_table_access: true
+
+# Compliance Scanning
+compliance_scanning:
+  container_images:
+    vulnerability_scanning:
+      enabled: true
+      scan_on_push: true
+      scan_schedule: "daily"
+      severity_threshold: "HIGH"
+      
+    policy_compliance:
+      enabled: true
+      policies:
+        - "CIS_DOCKER_BENCHMARK"
+        - "NIST_CYBERSECURITY_FRAMEWORK"
+        - "OWASP_CONTAINER_SECURITY"
+        
+    binary_authorization:
+      enabled: true
+      policy: "REQUIRE_ATTESTATION"
+      exemptions: []
+
+  infrastructure_compliance:
+    security_command_center:
+      enabled: true
+      asset_discovery: true
+      security_health_analytics: true
+      
+    policy_intelligence:
+      enabled: true
+      iam_recommender: true
+      policy_analyzer: true
+      
+    org_policy_constraints:
+      - "constraints/compute.requireShieldedVm"
+      - "constraints/iam.disableServiceAccountKeyCreation"
+      - "constraints/storage.uniformBucketLevelAccess"
+
+# Security Incident Response
+incident_response:
+  detection:
+    automated_detection: true
+    threat_intelligence: true
+    anomaly_detection: true
+    
+  escalation_matrix:
+    critical:
+      response_time: "15 minutes"
+      contacts: ["security-oncall@company.com", "ml-team-lead@company.com"]
+      actions: ["immediate_investigation", "potential_isolation"]
+      
+    high:
+      response_time: "1 hour"
+      contacts: ["security-team@company.com", "ml-team@company.com"]
+      actions: ["investigation", "documentation"]
+      
+    medium:
+      response_time: "4 hours"
+      contacts: ["ml-team@company.com"]
+      actions: ["review", "documentation"]
+      
+    low:
+      response_time: "24 hours"
+      contacts: ["ml-team@company.com"]
+      actions: ["review"]
+
+  response_procedures:
+    iam_compromise:
+      immediate_actions:
+        - "Disable compromised service account"
+        - "Revoke all active sessions"
+        - "Audit recent activities"
+        - "Notify security team"
+      
+    data_access_anomaly:
+      immediate_actions:
+        - "Analyze access patterns"
+        - "Verify legitimate business need"
+        - "Check for data exfiltration"
+        - "Document findings"
+        
+    container_vulnerability:
+      immediate_actions:
+        - "Stop deploying affected images"
+        - "Assess vulnerability impact"
+        - "Plan remediation strategy"
+        - "Update security policies"
+
+# Security Metrics and KPIs
+security_metrics:
+  dashboards:
+    - name: "Security Overview"
+      widgets:
+        - "Failed authentication attempts"
+        - "Privilege escalation events"
+        - "Container vulnerabilities by severity"
+        - "Security policy violations"
+        
+    - name: "Compliance Status"
+      widgets:
+        - "Policy compliance score"
+        - "Audit finding trends"
+        - "Remediation timeline"
+        - "Risk assessment summary"
+
+  kpis:
+    - name: "Mean Time to Detection (MTTD)"
+      target: "< 15 minutes"
+      measurement: "Time from incident to alert"
+      
+    - name: "Mean Time to Response (MTTR)"
+      target: "< 1 hour"
+      measurement: "Time from alert to response initiation"
+      
+    - name: "Security Policy Compliance"
+      target: "> 95%"
+      measurement: "Percentage of resources compliant with security policies"
+      
+    - name: "Vulnerability Remediation"
+      target: "< 7 days for HIGH, < 1 day for CRITICAL"
+      measurement: "Time from vulnerability discovery to remediation"
+
+# Integration with Security Tools
+security_tools:
+  siem_integration:
+    enabled: true
+    tool: "Chronicle" 
+    log_forwarding: true
+    real_time_analysis: true
+    
+  vulnerability_management:
+    tool: "Container Analysis"
+    integration: "native"
+    automated_scanning: true
+    
+  threat_detection:
+    tool: "Security Command Center"
+    integration: "native"
+    automated_response: true
+
+generated_date: "2025-08-13"

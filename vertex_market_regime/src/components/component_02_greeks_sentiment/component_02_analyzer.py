@@ -542,3 +542,52 @@ class Component02GreeksSentimentAnalyzer(BaseMarketRegimeComponent):
             
         self.logger.info("✅ Component 2 implementation validation PASSED")
         return validation
+    
+    async def update_weights(self, performance_feedback) -> dict:
+        """
+        Update component weights based on performance feedback
+        
+        Args:
+            performance_feedback: Performance metrics for learning
+            
+        Returns:
+            Updated weights dictionary
+        """
+        # Extract performance metrics
+        accuracy = getattr(performance_feedback, 'accuracy', 0.0)
+        regime_accuracy = getattr(performance_feedback, 'regime_accuracy', {})
+        
+        # Update Greeks weights based on performance
+        if accuracy > 0.88:  # Target accuracy threshold
+            # Maintain current weights if performing well
+            weight_update = {
+                'delta': self.sentiment_engine.greeks_weights['delta'],
+                'gamma': 1.5,  # Keep gamma at 1.5 (highest weight)
+                'theta': self.sentiment_engine.greeks_weights['theta'],
+                'vega': self.sentiment_engine.greeks_weights['vega']
+            }
+        else:
+            # Adaptive weight adjustment
+            weight_update = {
+                'delta': self.sentiment_engine.greeks_weights['delta'] * (1.0 + (accuracy - 0.88) * 0.1),
+                'gamma': 1.5,  # Always keep gamma at 1.5 for pin risk
+                'theta': self.sentiment_engine.greeks_weights['theta'] * (1.0 + (accuracy - 0.88) * 0.1),
+                'vega': self.sentiment_engine.greeks_weights['vega'] * (1.0 + (accuracy - 0.88) * 0.1)
+            }
+        
+        # Update sentiment engine weights
+        self.sentiment_engine.greeks_weights.update(weight_update)
+        
+        # Update DTE-specific weights if needed
+        if hasattr(performance_feedback, 'dte_performance'):
+            dte_performance = performance_feedback.dte_performance
+            for dte_range, perf in dte_performance.items():
+                if perf < 0.85:  # Underperforming DTE range
+                    self.dte_adjuster.update_dte_weights(dte_range, perf)
+        
+        return {
+            'component_id': self.component_id,
+            'weights_updated': True,
+            'new_weights': weight_update,
+            'timestamp': datetime.utcnow().isoformat()
+        }

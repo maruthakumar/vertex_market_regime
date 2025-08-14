@@ -1,11 +1,34 @@
-# Component 7: Support & Resistance Formation Logic
-## Advanced Dynamic Levels Detection with Dual DTE Learning
+# Component 7: Support & Resistance Feature Engineering Framework
+## Raw Level Detection and Measurement Engine (Feature Engineering Only)
+
+> Vertex AI Feature Engineering (Required): 72 support/resistance features must be engineered via Vertex AI Pipelines and managed in Vertex AI Feature Store with training/serving parity. Data: GCS Parquet → Arrow/RAPIDS.
 
 ### Overview
 
-Component 7 represents the **dynamic support and resistance detection engine** that analyzes both rolling straddle prices and underlying prices to identify critical levels that adapt to market structure changes. This system employs comprehensive historical learning with dual DTE analysis and dynamic weight adjustment based on performance feedback.
+Component 7 represents the **raw support and resistance feature engineering engine** that extracts mathematical measurements from both rolling straddle prices and underlying prices to calculate level-based features for ML consumption. This system performs pure feature engineering without any level strength classification or breakout prediction logic.
 
-**Revolutionary Approach**: Unlike static support/resistance levels, this system uses **adaptive level formation** that learns from historical price reactions and adjusts level significance based on DTE-specific and market-condition-specific performance patterns.
+**🎯 FEATURE ENGINEERING APPROACH**: Component 7 calculates raw level metrics, touch counts, bounce rates, volume measurements, and statistical features, letting Vertex AI ML models discover optimal level strength patterns and breakout/breakdown predictions.
+
+## 🎯 **CRITICAL ARCHITECTURAL APPROACH: FEATURE ENGINEERING ONLY**
+
+### **✅ WHAT COMPONENT 7 DOES (Feature Engineering)**:
+- **Calculate support/resistance price levels** from straddle and underlying prices
+- **Count touches, bounces, and breakout attempts** without strength classification
+- **Measure volume at levels, time at levels, and level age** as raw metrics
+- **Extract confluence measurements, pivot levels, and fibonacci retracements**
+- **Generate 72 systematic features** for ML model consumption
+
+### **❌ WHAT COMPONENT 7 DOES NOT DO**:
+- **NO level strength classification** (e.g., if touch_count > 3 then "strong support")
+- **NO breakout prediction logic** (e.g., if volume > threshold then "breakout likely")
+- **NO manual support/resistance strength rules** - all decisions left to ML models
+- **NO trend classification** - only raw trend slope and momentum measurements
+
+### **🚀 ML MODEL RESPONSIBILITIES** (Vertex AI in Epic 3):
+- **Level Strength Classification**: Determine strong/weak support/resistance from raw features
+- **Breakout Prediction**: Predict breakout probability from touch counts, volume, and confluence
+- **Trend Analysis**: Classify market structure from raw level measurements
+- **Level Significance**: Learn which level characteristics indicate importance
 
 ---
 
@@ -14,20 +37,24 @@ Component 7 represents the **dynamic support and resistance detection engine** t
 ### Multi-Asset Support/Resistance Framework
 
 ```python
-class DynamicSupportResistanceEngine:
+class SupportResistanceFeatureEngine:
+    """
+    🎯 FEATURE ENGINEERING ONLY: Raw level measurements for ML consumption
+    NO level strength classification or breakout prediction logic
+    """
     def __init__(self):
-        # Dual Asset Analysis Framework
-        self.asset_types = {
-            'rolling_straddle_prices': {
-                'component_1_atm_straddle': {'weight': 0.35, 'strikes': ['ATM']},
-                'component_1_itm1_straddle': {'weight': 0.20, 'strikes': ['ITM1']}, 
-                'component_1_otm1_straddle': {'weight': 0.20, 'strikes': ['OTM1']},
-                'component_3_cumulative_straddles': {'weight': 0.25, 'strikes': ['ATM±7']}
+        # Dual Asset Feature Calculation Framework
+        self.asset_measurement_types = {
+            'rolling_straddle_levels': {
+                'component_1_atm_straddle': {'price_source': 'ATM straddle prices'},
+                'component_1_itm1_straddle': {'price_source': 'ITM1 straddle prices'}, 
+                'component_1_otm1_straddle': {'price_source': 'OTM1 straddle prices'},
+                'component_3_cumulative_straddles': {'price_source': 'ATM±7 cumulative straddle prices'}
             },
-            'underlying_prices': {
-                'daily_levels': {'weight': 0.40, 'timeframe': 'daily'},
-                'weekly_levels': {'weight': 0.35, 'timeframe': 'weekly'},
-                'monthly_levels': {'weight': 0.25, 'timeframe': 'monthly'}
+            'underlying_price_levels': {
+                'daily_levels': {'timeframe': 'daily candlestick levels'},
+                'weekly_levels': {'timeframe': 'weekly candlestick levels'},
+                'monthly_levels': {'timeframe': 'monthly candlestick levels'}
             }
         }
         

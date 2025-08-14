@@ -1,0 +1,183 @@
+# IAM Configuration for Vertex AI ML Infrastructure
+# Story 2.5: IAM, Artifact Registry, Budgets/Monitoring
+# Minimal-privilege service accounts with least-required permissions
+
+project_id: "arched-bot-269016"
+region: "us-central1"
+
+# Service Accounts Configuration
+service_accounts:
+  vertex_ai_pipeline:
+    name: "vertex-ai-pipeline-sa"
+    display_name: "Vertex AI Pipeline Service Account"
+    description: "Service account for Vertex AI training pipelines and model operations"
+    roles:
+      # Vertex AI Permissions
+      - "roles/aiplatform.user"
+      - "roles/aiplatform.customCodeServiceAgent"
+      
+      # BigQuery Permissions (Story 2.4 requirement)
+      - "roles/bigquery.jobUser"
+      - "roles/bigquery.dataEditor"
+      
+      # GCS Permissions (training data access)
+      - "roles/storage.objectViewer"
+      - "roles/storage.legacyBucketReader"
+      
+      # Artifact Registry Permissions
+      - "roles/artifactregistry.writer"
+      
+      # Service Account Token Creator (for impersonation)
+      - "roles/iam.serviceAccountTokenCreator"
+
+  vertex_ai_serving:
+    name: "vertex-ai-serving-sa"
+    display_name: "Vertex AI Model Serving Service Account"
+    description: "Service account for Vertex AI model endpoints and serving"
+    roles:
+      # Vertex AI Serving Permissions
+      - "roles/aiplatform.predictor"
+      
+      # Feature Store Access
+      - "roles/aiplatform.featurestoreUser"
+      
+      # GCS Read-only for model artifacts
+      - "roles/storage.objectViewer"
+      
+      # Artifact Registry Reader
+      - "roles/artifactregistry.reader"
+
+  monitoring_alerts:
+    name: "monitoring-alerts-sa"
+    display_name: "Cloud Monitoring Service Account"
+    description: "Service account for monitoring, alerting, and budget management"
+    roles:
+      # Monitoring Permissions
+      - "roles/monitoring.editor"
+      - "roles/monitoring.alertPolicyEditor"
+      
+      # Billing and Budget Permissions
+      - "roles/billing.viewer"
+      - "roles/billing.budgetsViewer"
+      
+      # Logging Permissions
+      - "roles/logging.viewer"
+      - "roles/logging.configWriter"
+
+# IAM Security Matrix Documentation
+iam_security_matrix:
+  principle: "Least Privilege Access"
+  validation_date: "2025-08-13"
+  
+  service_account_permissions:
+    vertex_ai_pipeline:
+      vertex_ai:
+        - "Create and manage training jobs"
+        - "Upload and manage models"
+        - "Access Feature Store for training"
+      bigquery:
+        - "Run queries on offline feature tables"
+        - "Read/write training datasets"
+      gcs:
+        - "Read training data from gs://vertex-mr-data/"
+        - "Read configuration files"
+      artifact_registry:
+        - "Push custom training containers"
+        - "Pull base images for training"
+    
+    vertex_ai_serving:
+      vertex_ai:
+        - "Deploy and manage endpoints"
+        - "Serve predictions"
+        - "Access online features"
+      gcs:
+        - "Read model artifacts"
+      artifact_registry:
+        - "Pull serving containers"
+    
+    monitoring_alerts:
+      monitoring:
+        - "Create and manage dashboards"
+        - "Configure alert policies"
+        - "Access metrics and logs"
+      billing:
+        - "View billing data"
+        - "Monitor budget alerts"
+
+# Resource-specific IAM bindings
+resource_bindings:
+  gcs_buckets:
+    - bucket: "vertex-mr-data"
+      members:
+        - "serviceAccount:vertex-ai-pipeline-sa@arched-bot-269016.iam.gserviceaccount.com"
+      role: "roles/storage.objectViewer"
+    
+    - bucket: "vertex-mr-models"
+      members:
+        - "serviceAccount:vertex-ai-pipeline-sa@arched-bot-269016.iam.gserviceaccount.com"
+        - "serviceAccount:vertex-ai-serving-sa@arched-bot-269016.iam.gserviceaccount.com"
+      role: "roles/storage.objectViewer"
+
+  bigquery_datasets:
+    - dataset: "market_regime_features"
+      members:
+        - "serviceAccount:vertex-ai-pipeline-sa@arched-bot-269016.iam.gserviceaccount.com"
+      roles:
+        - "roles/bigquery.dataViewer"
+        - "roles/bigquery.jobUser"
+
+  artifact_registry:
+    - repository: "mr-ml"
+      location: "us-central1"
+      members:
+        - "serviceAccount:vertex-ai-pipeline-sa@arched-bot-269016.iam.gserviceaccount.com"
+      role: "roles/artifactregistry.writer"
+
+# Security Policies
+security_policies:
+  service_account_keys:
+    policy: "No service account keys allowed"
+    enforcement: "Organization policy constraint"
+    exception_process: "Security team approval required"
+  
+  cross_project_access:
+    policy: "Deny cross-project service account usage"
+    enforcement: "IAM condition"
+  
+  privileged_roles:
+    policy: "No *Admin or Owner roles for service accounts"
+    monitoring: "Cloud Asset Inventory alerts"
+  
+  rotation_policy:
+    service_account_review: "90 days"
+    permission_audit: "30 days"
+    compliance_check: "Weekly"
+
+# Compliance Requirements
+compliance:
+  audit_requirements:
+    - "All IAM changes logged to Cloud Audit Logs"
+    - "Service account usage tracked and monitored"
+    - "Regular access reviews and permission validation"
+  
+  security_controls:
+    - "Multi-factor authentication for human users"
+    - "Service account impersonation tracking"
+    - "Automated security scanning of permissions"
+
+# Terraform Integration
+terraform_resources:
+  google_service_account:
+    - vertex_ai_pipeline_sa
+    - vertex_ai_serving_sa 
+    - monitoring_alerts_sa
+  
+  google_project_iam_member:
+    - vertex_ai_roles
+    - bigquery_roles
+    - storage_roles
+    - registry_roles
+  
+  google_storage_bucket_iam_member:
+    - data_bucket_access
+    - model_bucket_access

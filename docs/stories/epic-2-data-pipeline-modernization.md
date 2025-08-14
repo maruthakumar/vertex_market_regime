@@ -3,13 +3,78 @@
 > Note (2025-08-10): This epic is sequenced after `docs/stories/epic-1-feature-engineering-foundation.md` (BMAD-aligned). Cloud infrastructure provisioning (BigQuery/Feature Store/Endpoints) proceeds here using finalized feature schemas from Epic 1.
 
 **Duration:** Weeks 1-2  
-**Status:** Ready for Development  
+**Status:** In Progress (2025-08-12)  
 **Priority:** CRITICAL - Foundation for all subsequent components
 
 ## Epic Goal
 Transform the legacy HeavyDB-based data processing pipeline into a modern Parquet → Arrow → GPU architecture while establishing cloud integration foundation, ensuring zero disruption to existing trading operations.
 
 ## Epic Description
+
+### Vertex AI Foundation (Trimmed Scope)
+This epic is trimmed to ONLY deliver Vertex AI ML foundations required for market regime formation. HeavyDB is deprecated and out of scope. Canonical data: GCS Parquet (local for dev), BigQuery for offline features, Vertex AI Feature Store for online features.
+
+#### Goals
+- BigQuery offline feature tables per component (C1..C8) + unified training dataset
+- Vertex AI Feature Store with entity types and a minimal online feature set for low-latency serving
+- Containerized FE/ingestion jobs runnable as Vertex AI CustomJobs; optional Pipelines orchestration
+- Artifact Registry for images; Experiments/Model Registry for training outputs
+- IAM/budgets/monitoring configured for the above
+
+#### Trimmed Epic 2 Stories (Vertex AI only)
+1) Feature Store Design & Spec (CRITICAL)
+- Define entity types and feature defs derived from schema registry (Epic 1)
+- Keys: entity_id = `${symbol}_${yyyymmddHHMM}_${dte}` for minute-level; alt daily entity for aggregates
+- TTL for online features (e.g., 48h); offline store = BigQuery tables
+- Acceptance:
+  - [ ] Spec doc with entity types, features, TTLs, data types, owners
+  - [ ] Mapping from schema registry → FS names (snake_case)
+
+2) BigQuery Offline Feature Tables
+- Dataset `market_regime_{env}` with partitioned, clustered tables: `c1_features`..`c8_features` and `training_dataset`
+- Partition: by `date` (DATE) or `ts_minute` (TIMESTAMP); Cluster: `symbol`, `dte`
+- Acceptance:
+  - [ ] DDLs defined in docs; dry-run queries validated
+  - [ ] Minimum one populated sample table from Parquet for smoke test
+
+3) FE Container + CustomJob
+- Containerize FE ingestion job reading Parquet → produce BigQuery tables
+- Submit Vertex AI CustomJob (GPU optional) to process a 1-day slice
+- Acceptance:
+  - [ ] Dockerfile + run script documented (Artifact Registry path)
+  - [ ] CustomJob spec YAML/Python sample; job runs successfully on sample slice
+
+4) Training Pipeline Skeleton + Experiments/Registry
+- Define KFP v2 (Vertex AI Pipelines) skeleton: BQ dataset creation → train → eval → register
+- Baseline models (not tuned):
+  - Regime classifier (TabNet/XGBoost/Transformer tabular)
+  - Transition forecaster (LSTM/Temporal Fusion transformer candidate)
+- Acceptance:
+  - [ ] Pipeline spec documented with IO contracts
+  - [ ] Model registered in Vertex AI Model Registry (no endpoint yet)
+
+5) IAM, Artifact Registry, Budgets/Monitoring
+- Service accounts + least-priv roles: Vertex AI, BQ JobUser/DataEditor, GCS viewer, AR writer
+- Create Artifact Registry repo (region-scoped)
+- Budgets and alerting rules
+- Acceptance:
+  - [ ] IAM matrix documented; AR path set; budgets in place
+
+6) Minimal Online Feature Registration
+- Register a small core online feature set (≈32) across components for Epic 3 serving path
+- Acceptance:
+  - [ ] FS created; entity types exist; features registered; sample ingestion verified
+
+#### Validation Gates (Go/No-Go for Epic 3)
+- [ ] BigQuery dataset exists with ≥1 offline feature table populated
+- [ ] Feature Store created; core online features registered; sample read latency validated
+- [ ] CustomJob executed successfully on sample Parquet slice; logs stored
+- [ ] Training pipeline skeleton completed; baseline model registered in Model Registry
+- [ ] IAM/AR/budgets configured and validated
+
+#### Out of Scope (deferred to Epic 3)
+- Endpoint deployment and API v2 integration
+- Full-scale training/tuning; online inference wiring
 
 ### Existing System Context
 - **Current System:** HeavyDB-based CSV processing in backtester_v2

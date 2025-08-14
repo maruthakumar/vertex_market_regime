@@ -1,0 +1,219 @@
+# Artifact Registry Configuration
+# Story 2.5: IAM, Artifact Registry, Budgets/Monitoring
+# Container registry setup with security scanning and naming conventions
+
+project_id: "arched-bot-269016"
+region: "us-central1"
+
+# Repository Configuration
+repository:
+  name: "mr-ml"
+  location: "us-central1"
+  format: "DOCKER"
+  description: "Market Regime ML container repository for training and serving images"
+  
+  # Repository URL
+  url: "us-central1-docker.pkg.dev/arched-bot-269016/mr-ml"
+  
+  # Security Configuration
+  security:
+    vulnerability_scanning: true
+    binary_authorization: true
+    immutable_tags: false
+    
+    # Scanning policies
+    scan_on_push: true
+    critical_vulnerability_policy: "BLOCK"
+    high_vulnerability_policy: "BLOCK"
+    medium_vulnerability_policy: "WARN"
+    low_vulnerability_policy: "ALLOW"
+
+# Image Naming and Tagging Conventions
+naming_conventions:
+  base_pattern: "{region}-docker.pkg.dev/{project}/{repository}/{image}:{tag}"
+  
+  image_types:
+    training:
+      pattern: "mr-training-{component}-{version}"
+      example: "mr-training-component01-v1.0.0"
+      
+    serving:
+      pattern: "mr-serving-{component}-{version}"
+      example: "mr-serving-component01-v1.0.0"
+      
+    base:
+      pattern: "mr-base-{env}-{version}"
+      example: "mr-base-prod-v1.0.0"
+
+  tag_conventions:
+    semantic_versioning: "v{MAJOR}.{MINOR}.{PATCH}"
+    environment_tags:
+      - "latest"
+      - "prod"
+      - "staging"
+      - "dev"
+    
+    git_based_tags:
+      - "commit-{SHORT_SHA}"
+      - "branch-{BRANCH_NAME}"
+      - "pr-{PR_NUMBER}"
+
+# Container Image Structure
+container_images:
+  mr_base_image:
+    name: "mr-base-prod"
+    description: "Base image with Python 3.8+, common ML libraries"
+    base_from: "python:3.8-slim"
+    components:
+      - "numpy"
+      - "pandas" 
+      - "scikit-learn"
+      - "google-cloud-aiplatform"
+      - "google-cloud-storage"
+      - "fastapi"
+    size_target: "<500MB"
+
+  mr_training_images:
+    component_01:
+      name: "mr-training-component01"
+      description: "Triple straddle component training image"
+      base_from: "us-central1-docker.pkg.dev/arched-bot-269016/mr-ml/mr-base-prod:latest"
+      
+    component_02:
+      name: "mr-training-component02" 
+      description: "Greeks sentiment component training image"
+      base_from: "us-central1-docker.pkg.dev/arched-bot-269016/mr-ml/mr-base-prod:latest"
+      
+    # Additional components follow same pattern
+    master_training:
+      name: "mr-training-master"
+      description: "Master integration training pipeline"
+      base_from: "us-central1-docker.pkg.dev/arched-bot-269016/mr-ml/mr-base-prod:latest"
+
+  mr_serving_images:
+    api_server:
+      name: "mr-serving-api"
+      description: "FastAPI serving container"
+      base_from: "us-central1-docker.pkg.dev/arched-bot-269016/mr-ml/mr-base-prod:latest"
+      
+    prediction_server:
+      name: "mr-serving-prediction"
+      description: "Vertex AI prediction container"
+      base_from: "us-central1-docker.pkg.dev/arched-bot-269016/mr-ml/mr-base-prod:latest"
+
+# Access Control Configuration
+access_control:
+  service_accounts:
+    vertex_ai_pipeline:
+      email: "vertex-ai-pipeline-sa@arched-bot-269016.iam.gserviceaccount.com"
+      permissions:
+        - "artifactregistry.repositories.uploadArtifacts"
+        - "artifactregistry.repositories.downloadArtifacts"
+        - "artifactregistry.repositories.get"
+        - "artifactregistry.repositories.list"
+      
+    vertex_ai_serving:
+      email: "vertex-ai-serving-sa@arched-bot-269016.iam.gserviceaccount.com"
+      permissions:
+        - "artifactregistry.repositories.downloadArtifacts"
+        - "artifactregistry.repositories.get"
+        - "artifactregistry.repositories.list"
+
+# Security Scanning Configuration
+security_scanning:
+  vulnerability_scanning:
+    enabled: true
+    scan_triggers:
+      - "on_push"
+      - "scheduled_daily"
+    
+    severity_thresholds:
+      critical: "BLOCK_DEPLOYMENT"
+      high: "BLOCK_DEPLOYMENT" 
+      medium: "WARN_AND_LOG"
+      low: "LOG_ONLY"
+  
+  compliance_scanning:
+    enabled: true
+    policies:
+      - "CIS_DOCKER_BENCHMARK"
+      - "NIST_CYBERSECURITY_FRAMEWORK"
+    
+    custom_policies:
+      - name: "ML_SECURITY_POLICY"
+        rules:
+          - "No hardcoded credentials in container layers"
+          - "No sensitive data in environment variables"
+          - "Minimal attack surface (no unnecessary packages)"
+
+# Container Registry Operations
+operations:
+  image_lifecycle:
+    retention_policy:
+      untagged_images: "30 days"
+      tagged_images: "365 days"
+      critical_tags: "never_delete"
+    
+    cleanup_schedule: "weekly"
+    
+  backup_strategy:
+    cross_region_replication: false
+    backup_frequency: "daily"
+    retention_period: "90 days"
+
+# Monitoring and Alerting
+monitoring:
+  metrics:
+    - "artifactregistry.googleapis.com/repository/request_count"
+    - "artifactregistry.googleapis.com/repository/received_bytes"
+    - "artifactregistry.googleapis.com/repository/sent_bytes"
+    
+  alerts:
+    - name: "High Push Rate"
+      condition: "push_rate > 100/hour"
+      severity: "WARNING"
+      
+    - name: "Vulnerability Detected"
+      condition: "critical_vulnerability_count > 0"
+      severity: "CRITICAL"
+      
+    - name: "Storage Quota"
+      condition: "storage_usage > 80%"
+      severity: "WARNING"
+
+# Documentation and Usage Guidelines
+usage_guidelines:
+  docker_commands:
+    configure_auth: |
+      gcloud auth configure-docker us-central1-docker.pkg.dev
+    
+    build_and_push: |
+      docker build -t us-central1-docker.pkg.dev/arched-bot-269016/mr-ml/mr-training-component01:v1.0.0 .
+      docker push us-central1-docker.pkg.dev/arched-bot-269016/mr-ml/mr-training-component01:v1.0.0
+    
+    pull_image: |
+      docker pull us-central1-docker.pkg.dev/arched-bot-269016/mr-ml/mr-training-component01:v1.0.0
+
+  ci_cd_integration:
+    github_actions:
+      - "Configure workload identity for authentication"
+      - "Use official Google Cloud GitHub Actions"
+      - "Implement vulnerability scanning in pipeline"
+      
+    build_pipeline:
+      - "Automated builds on main branch commits"
+      - "Security scanning before image promotion"
+      - "Multi-stage builds for optimization"
+
+# Cost Optimization
+cost_optimization:
+  strategies:
+    - "Use multi-stage Docker builds to reduce image size"
+    - "Implement layer caching for faster builds"
+    - "Regular cleanup of unused images"
+    - "Optimize base images for minimal size"
+    
+  monitoring:
+    - "Track storage costs per repository"
+    - "Monitor data transfer costs"
+    - "Set up billing alerts for unexpected usage"

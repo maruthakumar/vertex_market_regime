@@ -1,0 +1,325 @@
+---
+# Vertex AI Feature Store Configuration
+# Story 2.3: Vertex AI Feature Store Integration
+# Created for 32 core online features with <50ms latency target
+
+project_config:
+  project_id: "arched-bot-269016"
+  location: "us-central1"
+  
+feature_store:
+  name: "market-regime-feature-store"
+  # Note: Using hyphens for GCP resource names, underscores for entity/feature names
+  featurestore_id: "market_regime_featurestore"
+  
+  entity_types:
+    instrument_minute:
+      entity_type_id: "instrument_minute"
+      description: "Market regime features at minute-level granularity"
+      entity_id_columns: ["entity_id"]
+      # Entity ID format: ${symbol}_${yyyymmddHHMM}_${dte}
+      entity_id_format: "{symbol}_{timestamp}_{dte}"
+      
+      # Online feature set (32 core features for <50ms serving)
+      online_features:
+        # Component 1: Triple Rolling Straddle
+        c1_momentum_score:
+          value_type: "DOUBLE"
+          description: "Momentum score from straddle analysis"
+          ttl_hours: 48
+        c1_vol_compression:
+          value_type: "DOUBLE" 
+          description: "Volume compression indicator"
+          ttl_hours: 48
+        c1_breakout_probability:
+          value_type: "DOUBLE"
+          description: "Probability of breakout from current range"
+          ttl_hours: 48
+        c1_transition_probability:
+          value_type: "DOUBLE"
+          description: "Regime transition probability"
+          ttl_hours: 48
+          
+        # Component 2: Greeks & Sentiment
+        c2_gamma_exposure:
+          value_type: "DOUBLE"
+          description: "Market gamma exposure level"
+          ttl_hours: 48
+        c2_sentiment_level:
+          value_type: "DOUBLE"
+          description: "Options sentiment classification"
+          ttl_hours: 48
+        c2_pin_risk_score:
+          value_type: "DOUBLE"
+          description: "Pin risk assessment score"
+          ttl_hours: 48
+        c2_max_pain_level:
+          value_type: "DOUBLE"
+          description: "Max pain level indicator"
+          ttl_hours: 48
+          
+        # Component 3: OI & PA Trending
+        c3_institutional_flow_score:
+          value_type: "DOUBLE"
+          description: "Institutional flow direction score"
+          ttl_hours: 48
+        c3_divergence_type:
+          value_type: "STRING"
+          description: "Volume/OI divergence classification"
+          ttl_hours: 48
+        c3_range_expansion_score:
+          value_type: "DOUBLE"
+          description: "Range expansion probability"
+          ttl_hours: 48
+        c3_volume_profile:
+          value_type: "STRING"
+          description: "Volume profile classification"
+          ttl_hours: 48
+          
+        # Component 4: IV Skew Analysis  
+        c4_skew_bias_score:
+          value_type: "DOUBLE"
+          description: "Skew bias directional score"
+          ttl_hours: 48
+        c4_term_structure_signal:
+          value_type: "DOUBLE"
+          description: "Term structure signal strength"
+          ttl_hours: 48
+        c4_iv_regime_level:
+          value_type: "DOUBLE"
+          description: "IV regime classification level"
+          ttl_hours: 48
+        c4_volatility_rank:
+          value_type: "DOUBLE"
+          description: "Historical volatility rank"
+          ttl_hours: 48
+          
+        # Component 5: ATR-EMA-CPR
+        c5_momentum_score:
+          value_type: "DOUBLE"
+          description: "Technical momentum score"
+          ttl_hours: 48
+        c5_volatility_regime_score:
+          value_type: "DOUBLE"
+          description: "Volatility regime assessment"
+          ttl_hours: 48
+        c5_confluence_score:
+          value_type: "DOUBLE"
+          description: "Technical confluence score"
+          ttl_hours: 48
+        c5_trend_strength:
+          value_type: "DOUBLE"
+          description: "Trend strength indicator"
+          ttl_hours: 48
+          
+        # Component 6: Correlation Analysis
+        c6_correlation_agreement_score:
+          value_type: "DOUBLE"
+          description: "Cross-component correlation agreement"
+          ttl_hours: 48
+        c6_breakdown_alert:
+          value_type: "BOOLEAN"
+          description: "Correlation breakdown alert flag"
+          ttl_hours: 48
+        c6_system_stability_score:
+          value_type: "DOUBLE"
+          description: "Overall system stability score"
+          ttl_hours: 48
+        c6_prediction_confidence:
+          value_type: "DOUBLE"
+          description: "Prediction confidence level"
+          ttl_hours: 48
+          
+        # Component 7: Support/Resistance
+        c7_level_strength_score:
+          value_type: "DOUBLE"
+          description: "Support/resistance level strength"
+          ttl_hours: 48
+        c7_breakout_probability:
+          value_type: "DOUBLE"
+          description: "Level breakout probability"
+          ttl_hours: 48
+        c7_support_confluence:
+          value_type: "DOUBLE"
+          description: "Support level confluence score"
+          ttl_hours: 48
+        c7_resistance_confluence:
+          value_type: "DOUBLE"
+          description: "Resistance level confluence score"
+          ttl_hours: 48
+          
+        # Component 8: Master Integration
+        c8_component_agreement_score:
+          value_type: "DOUBLE"
+          description: "Overall component agreement score"
+          ttl_hours: 48
+        c8_integration_confidence:
+          value_type: "DOUBLE"
+          description: "Integration confidence level"
+          ttl_hours: 48
+        c8_transition_probability_hint:
+          value_type: "DOUBLE"
+          description: "Market transition probability hint"
+          ttl_hours: 48
+        c8_regime_classification:
+          value_type: "STRING"
+          description: "Final regime classification"
+          ttl_hours: 48
+
+performance_targets:
+  latency:
+    p50_ms: 25
+    p95_ms: 40
+    p99_ms: 50
+    timeout_ms: 100
+  throughput:
+    target_rps: 1000
+    max_concurrent: 100
+  availability:
+    uptime_target: 99.9
+    
+online_serving:
+  endpoint_config:
+    machine_type: "n1-standard-4"
+    min_replica_count: 2
+    max_replica_count: 10
+    auto_scaling:
+      target_cpu_utilization: 70
+      target_memory_utilization: 80
+      target_rps_per_replica: 100
+      
+  caching:
+    enabled: true
+    ttl_seconds: 60
+    cache_size_mb: 1024
+    cache_policy: "LRU"
+    
+  optimization:
+    connection_pooling: true
+    batch_prediction: true
+    compression: "snappy"
+    feature_vector_optimization: true
+
+ingestion:
+  batch_config:
+    frequency: "*/1 * * * *"  # Every minute
+    batch_size: 10000
+    parallelism: 4
+    timeout_minutes: 5
+    retry_attempts: 3
+    
+  streaming_config:
+    enabled: true
+    buffer_size: 1000
+    flush_interval_seconds: 30
+    max_latency_ms: 30000
+    
+  data_sources:
+    bigquery:
+      project_id: "arched-bot-269016"
+      dataset_pattern: "market_regime_{env}"
+      tables:
+        - "c1_features"
+        - "c2_features" 
+        - "c3_features"
+        - "c4_features"
+        - "c5_features"
+        - "c6_features"
+        - "c7_features"
+        - "c8_features"
+      training_dataset_table: "training_dataset"
+      
+  validation:
+    schema_validation: true
+    null_checks: true
+    range_checks: true
+    anomaly_detection: true
+    drift_detection: true
+    
+monitoring:
+  metrics:
+    - ingestion_latency_ms
+    - feature_serving_latency_ms
+    - records_processed_count
+    - validation_failures_count
+    - feature_freshness_seconds
+    - cache_hit_ratio
+    - error_rate_percent
+    
+  alerting:
+    channels:
+      - email
+      - slack
+    thresholds:
+      ingestion_latency_ms: 5000
+      serving_latency_p99_ms: 55
+      error_rate_percent: 1.0
+      feature_staleness_minutes: 5
+      
+  dashboards:
+    - name: "Feature Store Performance"
+      metrics:
+        - serving_latency
+        - throughput
+        - error_rates
+    - name: "Feature Quality"
+      metrics:
+        - feature_freshness
+        - validation_failures
+        - drift_alerts
+
+security:
+  authentication:
+    method: "service_account"
+    service_account_email: "feature-store-sa@arched-bot-269016.iam.gserviceaccount.com"
+    
+  authorization:
+    roles:
+      - "roles/aiplatform.featureStoreUser"
+      - "roles/aiplatform.featureStoreResourceViewer"
+      - "roles/bigquery.dataViewer"
+      
+  encryption:
+    at_rest: "google_managed"
+    in_transit: "tls_1_3"
+    
+environments:
+  dev:
+    scale_factor: 0.1
+    feature_store_id: "market_regime_featurestore_dev"
+    auto_scaling:
+      min_replicas: 1
+      max_replicas: 3
+      
+  staging:
+    scale_factor: 0.3
+    feature_store_id: "market_regime_featurestore_staging"
+    auto_scaling:
+      min_replicas: 1
+      max_replicas: 5
+      
+  production:
+    scale_factor: 1.0
+    feature_store_id: "market_regime_featurestore_prod"
+    auto_scaling:
+      min_replicas: 2
+      max_replicas: 10
+
+cost_optimization:
+  storage:
+    ttl_hours: 48  # Online features TTL
+    cleanup_schedule: "0 2 * * *"  # Daily at 2 AM
+    
+  compute:
+    auto_shutdown_idle_minutes: 30
+    cost_alerts:
+      daily_threshold_usd: 50
+      monthly_threshold_usd: 1000
+      
+feature_versioning:
+  strategy: "semantic"
+  current_version: "v1.0.0"
+  backward_compatibility: true
+  deprecation_period_days: 30
+  rollback_capability: true
+  max_versions_retained: 3
